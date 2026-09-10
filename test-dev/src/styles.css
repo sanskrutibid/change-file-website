@@ -1,0 +1,177 @@
+/* Theme Variables for Clean Light Theme (Academic/Government Style) */
+:root {
+  --primary-navy: #0f294a; /* Deep formal navy blue */
+  --bg-navy-gradient: linear-gradient(180deg, #ffffff 0%, #f8fafc 100%);
+  --accent-blue: #0284c7; /* Sky blue */
+  --accent-blue-rgb: 2, 132, 199;
+  --gold-accent: #d97706; /* Clean solid amber gold */
+  --gold-accent-hover: #b45309;
+  --bg-dark: #f8fafc;
+  --text-light: #334155; /* Slate-600 for body text */
+  --text-muted-dark: #64748b; /* Slate-500 */
+  --glass-dark-bg: #ffffff;
+  --glass-dark-border: #e2e8f0;
+  --glass-dark-shadow: 0 4px 20px 0 rgba(0, 0, 0, 0.05);
+  --blue-glow: none;
+  --gold-glow: none;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background: #ffffff;
+  color: var(--text-light);
+  margin: 0;
+  padding: 0;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 700;
+  color: var(--primary-navy);
+}
+
+/* Glassmorphism Card Utility (Converted to Clean Light Card) */
+.glass-card-dark {
+  background: #ffffff;
+  border: 1px solid var(--glass-dark-border);
+  box-shadow: var(--glass-dark-shadow);
+  border-radius: 8px;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Colors */
+.text-gold {
+  color: var(--gold-accent);
+}
+
+.text-glow-blue {
+  color: var(--accent-blue);
+}
+
+.text-glow-gold {
+  color: var(--gold-accent);
+}
+
+/* Redesigned Button Hierarchy */
+.btn-gold-solid {
+  background-color: var(--gold-accent);
+  color: #ffffff;
+  font-weight: 600;
+  border: none;
+  border-radius: 4px;
+  padding: 10px 24px;
+  transition: all 0.2s ease;
+  text-decoration: none;
+  display: inline-block;
+  box-shadow: 0 2px 6px rgba(217, 119, 6, 0.15);
+}
+
+.btn-gold-solid:hover {
+  background-color: var(--gold-accent-hover);
+  color: #ffffff;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(217, 119, 6, 0.3);
+}
+
+.btn-navy-solid {
+  background-color: var(--primary-navy);
+  color: #ffffff;
+  font-weight: 600;
+  border: none;
+  border-radius: 4px;
+  padding: 10px 24px;
+  transition: all 0.2s ease;
+  text-decoration: none;
+  display: inline-block;
+}
+
+.btn-navy-solid:hover {
+  background-color: #0b1e36;
+  color: #ffffff;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(15, 41, 74, 0.2);
+}
+
+.btn-gold-outline {
+  background: transparent;
+  color: var(--gold-accent);
+  font-weight: 600;
+  border: 2px solid var(--gold-accent);
+  border-radius: 4px;
+  padding: 8px 22px;
+  transition: all 0.2s ease;
+  text-decoration: none;
+  display: inline-block;
+}
+
+.btn-gold-outline:hover {
+  background-color: var(--gold-accent);
+  color: #ffffff;
+  transform: translateY(-1px);
+}
+
+.btn-white-outline {
+  background: #ffffff;
+  color: var(--primary-navy);
+  font-weight: 600;
+  border: 1px solid #cbd5e1;
+  border-radius: 4px;
+  padding: 8px 22px;
+  transition: all 0.2s ease;
+  text-decoration: none;
+  display: inline-block;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+}
+
+.btn-white-outline:hover {
+  background-color: #f8fafc;
+  color: var(--primary-navy);
+  border-color: #94a3b8;
+  transform: translateY(-1px);
+}
+
+/* Custom Checkmark styling for lists */
+.check-list {
+  list-style: none;
+  padding-left: 0;
+}
+
+.check-list li {
+  position: relative;
+  padding-left: 28px;
+  margin-bottom: 12px;
+  color: var(--text-light);
+}
+
+.check-list li::before {
+  content: "\F272"; /* Bootstrap icon check-circle-fill */
+  font-family: "bootstrap-icons";
+  position: absolute;
+  left: 0;
+  top: 2px;
+  color: var(--accent-blue);
+  font-size: 1.1rem;
+}
+
+/* Scrollbar styles */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f5f9;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+}
+
+/* Performance Rendering Containment */
+section, footer, .card-item, .accordion-item {
+  content-visibility: auto;
+  contain-intrinsic-size: 1px 300px;
+}

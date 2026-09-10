@@ -1,0 +1,65 @@
+body {
+  font-family: 'Poppins', sans-serif;
+}
+
+h1, h2, h3 {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+}
+
+p {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 400;
+}
+
+
+
+.image-section {
+        background-image: url('/assets/images/image-30.jpg');
+        background-size: cover;
+        background-position: center;
+        height: 550px;
+        width: 100%;
+    }
+
+    p{
+font-size: 1.5rem;
+    }
+    li{
+      font-size: 1.2rem;
+    }
+
+
+    .career-highlight-section {
+  position: relative;
+  background: #121212; /* deep dark shade */
+}
+
+.career-highlight-section .highlight-text {
+  font-size: 1.3rem;
+  line-height: 1.8;
+  border-left: 5px solid #ffcc66; /* gold accent */
+  padding-left: 15px;
+  display: inline-block;
+}
+
+.career-highlight-section .text-warning {
+  font-weight: bold;
+}
+
+
+.feature-card {
+  background: linear-gradient(135deg, #d4af37, #e5e4e2); /* Gold to Platinum */
+  border: none;
+  border-radius: 14px;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.feature-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+}
+
+.feature-card .card-body {
+  padding: 30px 15px;
+}

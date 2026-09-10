@@ -1,0 +1,1061 @@
+/* =========================================================
+   ABOUT HERO BANNER
+========================================================= */
+
+.about-hero-section {
+  position: relative;
+  background:
+    linear-gradient(
+      180deg,
+      rgba(10, 20, 35, 0.8) 0%,
+      rgba(10, 20, 35, 0.92) 100%
+    ),
+    url('/assets/images/cruise-2.jpg') center/cover no-repeat;
+
+  padding: 180px 0 100px 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  color: #ffffff;
+}
+
+.about-eyebrow {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--gold-accent);
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.about-title {
+  font-size: 3rem;
+  font-weight: 800;
+  color: #ffffff;
+  letter-spacing: 1px;
+}
+
+.about-lead-text {
+  color: #cbd5e1 !important;
+  font-size: 1.15rem;
+  font-weight: 500;
+  line-height: 1.6;
+}
+
+/* =========================================================
+   STORY SECTION
+========================================================= */
+
+.story-section {
+  background-color: #ffffff;
+}
+
+.story-paragraph {
+  font-size: 0.98rem;
+  color: #475569;
+  line-height: 1.7;
+  margin-bottom: 1.25rem;
+}
+
+.story-paragraph:last-child {
+  margin-bottom: 0;
+}
+
+/* =========================================================
+   OLD STORY VIDEO
+========================================================= */
+
+.about-video-wrapper {
+  border: 1px solid rgba(15, 41, 74, 0.08);
+  background-color: #ffffff;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.06);
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.about-video-wrapper:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+}
+
+/* =========================================================
+   CAPTURING MOMENTS
+========================================================= */
+
+.capturing-moments-banner {
+  background:
+    linear-gradient(
+      rgba(15, 41, 74, 0.7),
+      rgba(15, 41, 74, 0.7)
+    ),
+    url('/assets/images/cruise-3.jpg') center/cover no-repeat;
+
+  padding: 100px 0;
+  border-bottom: 2px solid var(--gold-accent);
+}
+
+.capturing-title {
+  font-size: 2.6rem;
+  letter-spacing: 2px;
+  font-weight: 800;
+  text-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+  color: #ffffff;
+}
+
+.capturing-moments-text {
+  background-color: #000000;
+}
+
+.capturing-paragraph {
+  max-width: 800px;
+  font-size: 1.25rem;
+  font-weight: 400;
+  line-height: 1.8;
+  color: #cbd5e1;
+}
+
+.cursor-blink {
+  font-weight: bold;
+  color: var(--gold-accent);
+  animation: blink 0.7s infinite;
+  margin-left: 4px;
+}
+
+@keyframes blink {
+  50% {
+    opacity: 0;
+  }
+}
+
+/* =========================================================
+   VISION SECTION
+========================================================= */
+
+.vision-redesigned-section {
+  position: relative;
+  background:
+    url('/assets/images/cruise-4.jpg') center/cover no-repeat;
+
+  min-height: 480px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.vision-banner-overlay {
+  background:
+    linear-gradient(
+      135deg,
+      rgba(10, 20, 35, 0.8) 0%,
+      rgba(15, 41, 74, 0.75) 100%
+    );
+
+  width: 100%;
+  min-height: 480px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.vision-banner-title {
+  font-size: 4.5rem;
+  font-weight: 800;
+  color: #ffffff;
+  letter-spacing: 5px;
+  text-shadow: 0 4px 15px rgba(0, 0, 0, 0.45);
+  transition: font-size 0.3s ease;
+}
+
+.vision-banner-text {
+  max-width: 880px;
+  font-size: 1.35rem;
+  font-weight: 500;
+  line-height: 1.7;
+  color: #ffffff;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+}
+
+/* =========================================================
+   MISSION SECTION
+========================================================= */
+
+.mission-section {
+  background-color: #000000;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.excellence-card {
+  position: relative;
+
+  background:
+    linear-gradient(
+      90deg,
+      rgba(10, 20, 35, 0.95) 0%,
+      rgba(10, 20, 35, 0.7) 50%,
+      rgba(10, 20, 35, 0.3) 100%
+    ),
+    url('/assets/images/2150254631.jpg') center/cover no-repeat;
+
+  border-radius: 12px;
+  min-height: 380px;
+  overflow: hidden;
+
+  display: flex;
+  align-items: center;
+
+  border: 1px solid rgba(255, 255, 255, 0.1);
+
+  box-shadow:
+    0 10px 30px rgba(0, 0, 0, 0.5);
+
+  transition:
+    transform 0.3s ease,
+    min-height 0.3s ease;
+}
+
+.excellence-card:hover {
+  transform: translateY(-3px);
+}
+
+.excellence-overlay {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+.excellence-content {
+  position: relative;
+  z-index: 2;
+  max-width: 85%;
+  padding: 30px;
+}
+
+.excellence-title {
+  font-size: 2.2rem;
+  font-weight: 800;
+  color: #ffffff;
+  letter-spacing: 2px;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
+}
+
+.excellence-text {
+  font-size: 1.1rem;
+  line-height: 1.5;
+  color: #e2e8f0;
+  font-weight: 400;
+  text-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+}
+
+.mission-title {
+  color: #ffb703;
+  font-size: 2rem;
+  font-weight: 800;
+  letter-spacing: 2px;
+}
+
+.mission-text {
+  font-size: 1.15rem;
+  line-height: 1.8;
+  color: #e2e8f0;
+  max-width: 580px;
+}
+
+/* =========================================================
+   VALUES SECTION
+========================================================= */
+
+.values-redesigned-section {
+  background-color: #000000;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.values-list {
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+}
+
+.value-text {
+  font-size: 1.15rem;
+  line-height: 1.7;
+  color: #cbd5e1;
+}
+
+.value-term {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #ffffff !important;
+}
+
+.values-card {
+  position: relative;
+
+  background:
+    linear-gradient(
+      135deg,
+      rgba(10, 20, 35, 0.85) 0%,
+      rgba(15, 41, 74, 0.7) 100%
+    ),
+    url('/assets/images/cruise-5.jpg') center/cover no-repeat;
+
+  border-radius: 12px;
+  min-height: 380px;
+  overflow: hidden;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border: 1px solid rgba(255, 255, 255, 0.1);
+
+  box-shadow:
+    0 10px 30px rgba(0, 0, 0, 0.5);
+
+  transition:
+    transform 0.3s ease,
+    min-height 0.3s ease;
+}
+
+.values-card:hover {
+  transform: translateY(-3px);
+}
+
+.values-card-content {
+  position: relative;
+  z-index: 2;
+  max-width: 85%;
+  padding: 30px;
+}
+
+.values-card-title {
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: #ffffff;
+  letter-spacing: 3px;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+}
+
+.values-card-text {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: #ffffff;
+  text-shadow: 0 2px 5px rgba(0, 0, 0, 0.4);
+}
+
+/* =========================================================
+   LEADERSHIP SECTION
+========================================================= */
+
+.leadership-section {
+  background-color: #ffffff;
+}
+
+.leadership-card {
+  background-color: #ffffff;
+  border-radius: 14px;
+  overflow: hidden;
+
+  border: 1px solid #e2e8f0;
+
+  box-shadow:
+    0 8px 25px rgba(15, 41, 74, 0.08);
+
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.leadership-card:hover {
+  transform: translateY(-6px);
+
+  box-shadow:
+    0 15px 35px rgba(15, 41, 74, 0.15);
+}
+
+.leadership-image-wrapper {
+  width: 100%;
+  height: 320px;
+  overflow: hidden;
+  background-color: #f1f5f9;
+}
+
+.leadership-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+
+  transition: transform 0.5s ease;
+}
+
+.leadership-card:hover .leadership-image {
+  transform: scale(1.04);
+}
+
+.leadership-name {
+  font-size: 1.5rem;
+}
+
+.leadership-role {
+  color: var(--gold-accent);
+  font-weight: 700;
+  font-size: 1rem;
+}
+
+.leadership-description {
+  color: #64748b;
+  line-height: 1.7;
+  font-size: 0.95rem;
+}
+
+/* =========================================================
+   TRAINING EXPERIENCE SECTION
+========================================================= */
+
+.training-experience-section {
+  background-color: #f8fafc;
+  overflow: hidden;
+}
+
+.training-experience-intro {
+  max-width: 800px;
+  margin: 0 auto;
+
+  color: #64748b;
+  font-size: 1.05rem;
+  line-height: 1.8;
+}
+
+.training-category-section {
+  position: relative;
+  margin-bottom: 60px;
+}
+
+.training-category-title {
+  color: var(--primary-navy);
+  font-size: 1.7rem;
+  font-weight: 800;
+  letter-spacing: 1px;
+  margin-bottom: 10px;
+}
+
+.training-category-title i {
+  color: var(--gold-accent);
+}
+
+.training-category-description {
+  max-width: 700px;
+  margin: 0 auto;
+
+  color: #64748b;
+  font-size: 0.98rem;
+  line-height: 1.7;
+}
+
+/* =========================================================
+   STUDIO SECTION ONLY
+   HORIZONTAL AUTOMATIC SLIDER
+========================================================= */
+
+.studio-slider-wrapper {
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+
+  padding: 10px 0 25px;
+}
+
+.studio-slider-wrapper::before {
+  content: "";
+
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  width: 90px;
+  height: 100%;
+
+  z-index: 3;
+  pointer-events: none;
+
+  background:
+    linear-gradient(
+      to right,
+      #f8fafc,
+      rgba(248, 250, 252, 0)
+    );
+}
+
+.studio-slider-wrapper::after {
+  content: "";
+
+  position: absolute;
+  top: 0;
+  right: 0;
+
+  width: 90px;
+  height: 100%;
+
+  z-index: 3;
+  pointer-events: none;
+
+  background:
+    linear-gradient(
+      to left,
+      #f8fafc,
+      rgba(248, 250, 252, 0)
+    );
+}
+
+.studio-slider {
+  display: flex;
+  width: max-content;
+
+  gap: 24px;
+
+  animation:
+    studioSliderMove 30s linear infinite;
+}
+
+.studio-slider:hover {
+  animation-play-state: paused;
+}
+
+.studio-slide {
+  flex: 0 0 310px;
+  width: 310px;
+}
+
+@keyframes studioSliderMove {
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+/* =========================================================
+   TRAINING MEDIA CARD
+========================================================= */
+
+.training-media-card {
+  position: relative;
+
+  width: 100%;
+  height: 230px;
+
+  overflow: hidden;
+
+  border-radius: 14px;
+
+  background-color: #0f294a;
+
+  border: 1px solid #e2e8f0;
+
+  box-shadow:
+    0 8px 25px rgba(15, 41, 74, 0.10);
+
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.training-media-card:hover {
+  transform: translateY(-6px);
+
+  box-shadow:
+    0 15px 35px rgba(15, 41, 74, 0.18);
+}
+
+/* =========================================================
+   TRAINING IMAGES
+========================================================= */
+
+.training-media-image {
+  width: 100%;
+  height: 100%;
+
+  display: block;
+
+  object-fit: cover;
+
+  transition:
+    transform 0.5s ease;
+}
+
+.training-media-card:hover .training-media-image {
+  transform: scale(1.05);
+}
+
+/* =========================================================
+   TRAINING VIDEOS
+========================================================= */
+
+.training-media-video {
+  width: 100%;
+  height: 100%;
+
+  display: block;
+
+  object-fit: cover;
+
+  background-color: #000000;
+}
+
+.training-media-card.video-card {
+  background-color: #000000;
+}
+
+/* =========================================================
+   MEDIA OVERLAY
+========================================================= */
+
+.training-media-card::after {
+  content: "";
+
+  position: absolute;
+  inset: 0;
+
+  pointer-events: none;
+
+  background:
+    linear-gradient(
+      180deg,
+      rgba(0, 0, 0, 0) 55%,
+      rgba(10, 20, 35, 0.25) 100%
+    );
+}
+
+/* =========================================================
+   CLASSROOM TRAINING
+   NORMAL GRID - NO SLIDER
+========================================================= */
+
+.classroom-training-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+}
+
+.classroom-training-grid .training-media-card {
+  height: 270px;
+}
+
+/* =========================================================
+   STUDENT PRACTICAL
+   NORMAL GRID - NO SLIDER
+========================================================= */
+
+.student-practical-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+}
+
+.student-practical-grid .training-media-card {
+  height: 300px;
+}
+
+/* =========================================================
+   GALLERY
+========================================================= */
+
+.gallery-section {
+  background-color: #f8fafc;
+}
+
+.gallery-img-wrapper {
+  position: relative;
+
+  width: 100%;
+
+  aspect-ratio: 3 / 2;
+
+  border-color: #e2e8f0 !important;
+
+  transition: all 0.3s ease;
+}
+
+.gallery-img-wrapper:hover {
+  transform: translateY(-4px);
+
+  box-shadow:
+    0 10px 25px rgba(0, 0, 0, 0.08);
+
+  border-color:
+    var(--accent-blue) !important;
+}
+
+.gallery-img {
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+
+  transition:
+    transform 0.5s ease;
+}
+
+.gallery-img-wrapper:hover .gallery-img {
+  transform: scale(1.05);
+}
+
+/* =========================================================
+   LIGHTBOX MODAL
+========================================================= */
+
+.lightbox-modal {
+  position: fixed;
+
+  z-index: 9999;
+
+  left: 0;
+  top: 0;
+
+  width: 100%;
+  height: 100%;
+
+  background-color:
+    rgba(10, 20, 35, 0.95);
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  cursor: zoom-out;
+
+  animation:
+    fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+.lightbox-content {
+  position: relative;
+
+  max-width: 85%;
+  max-height: 80%;
+
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+
+  cursor: default;
+}
+
+.lightbox-img {
+  max-width: 100%;
+  max-height: 80vh;
+
+  object-fit: contain;
+
+  border-radius: 8px;
+
+  box-shadow:
+    0 10px 40px rgba(0, 0, 0, 0.5);
+
+  animation:
+    zoomIn 0.3s cubic-bezier(
+      0.34,
+      1.56,
+      0.64,
+      1
+    );
+}
+
+@keyframes zoomIn {
+  from {
+    transform: scale(0.95);
+    opacity: 0;
+  }
+
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.lightbox-caption {
+  color: #e2e8f0;
+
+  margin-top: 15px;
+
+  font-size: 1.1rem;
+
+  font-weight: 500;
+
+  text-shadow:
+    0 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.lightbox-close {
+  position: absolute;
+
+  top: 25px;
+  right: 35px;
+
+  color: #f1f5f9;
+
+  font-size: 40px;
+  font-weight: 300;
+
+  background: none;
+  border: none;
+
+  cursor: pointer;
+
+  transition:
+    color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.lightbox-close:hover {
+  color: var(--gold-accent);
+
+  transform: scale(1.1);
+}
+
+.lightbox-nav {
+  position: absolute;
+
+  top: 50%;
+
+  transform: translateY(-50%);
+
+  background:
+    rgba(255, 255, 255, 0.05);
+
+  border:
+    1px solid rgba(255, 255, 255, 0.1);
+
+  color: #f1f5f9;
+
+  width: 56px;
+  height: 56px;
+
+  font-size: 20px;
+
+  cursor: pointer;
+
+  border-radius: 50%;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  transition: all 0.2s ease;
+
+  user-select: none;
+}
+
+.lightbox-nav:hover {
+  background:
+    var(--accent-blue);
+
+  color: #ffffff;
+
+  border-color:
+    var(--accent-blue);
+
+  transform:
+    translateY(-50%) scale(1.08);
+}
+
+.lightbox-nav.prev {
+  left: 35px;
+}
+
+.lightbox-nav.next {
+  right: 35px;
+}
+
+/* =========================================================
+   TABLET RESPONSIVE
+========================================================= */
+
+@media (max-width: 991px) {
+  .about-hero-section {
+    padding: 140px 0 70px 0;
+  }
+
+  .about-title {
+    font-size: 2.3rem;
+  }
+
+  .vision-banner-title {
+    font-size: 3rem;
+  }
+
+  .vision-banner-text {
+    font-size: 1.15rem;
+  }
+
+  .excellence-title {
+    font-size: 1.8rem;
+  }
+
+  .values-card-title {
+    font-size: 2rem;
+  }
+
+  .studio-slide {
+    flex: 0 0 280px;
+    width: 280px;
+  }
+
+  .training-media-card {
+    height: 210px;
+  }
+
+  .classroom-training-grid .training-media-card {
+    height: 240px;
+  }
+
+  .student-practical-grid .training-media-card {
+    height: 260px;
+  }
+
+  .leadership-image-wrapper {
+    height: 280px;
+  }
+
+  .lightbox-nav {
+    width: 44px;
+    height: 44px;
+    font-size: 16px;
+  }
+
+  .lightbox-nav.prev {
+    left: 15px;
+  }
+
+  .lightbox-nav.next {
+    right: 15px;
+  }
+
+  .lightbox-close {
+    top: 15px;
+    right: 20px;
+    font-size: 35px;
+  }
+}
+
+/* =========================================================
+   MOBILE RESPONSIVE
+========================================================= */
+
+@media (max-width: 575px) {
+  .about-hero-section {
+    padding: 120px 0 50px 0;
+  }
+
+  .about-title {
+    font-size: 1.8rem;
+  }
+
+  .about-lead-text {
+    font-size: 1rem;
+  }
+
+  .capturing-title {
+    font-size: 1.8rem;
+  }
+
+  .vision-banner-title {
+    font-size: 2.2rem;
+    letter-spacing: 2px;
+  }
+
+  .vision-banner-text {
+    font-size: 1rem;
+  }
+
+  .excellence-title {
+    font-size: 1.5rem;
+  }
+
+  .excellence-text {
+    font-size: 0.95rem;
+  }
+
+  .values-card-title {
+    font-size: 1.8rem;
+  }
+
+  .values-card-text {
+    font-size: 0.95rem;
+  }
+
+  .excellence-card,
+  .values-card {
+    min-height: 300px;
+  }
+
+  .training-experience-intro {
+    font-size: 0.95rem;
+  }
+
+  .training-category-title {
+    font-size: 1.3rem;
+  }
+
+  .training-category-description {
+    font-size: 0.9rem;
+  }
+
+  .studio-slide {
+    flex: 0 0 260px;
+    width: 260px;
+  }
+
+  .studio-slider {
+    gap: 16px;
+    animation-duration: 25s;
+  }
+
+  .classroom-training-grid,
+  .student-practical-grid {
+    gap: 16px;
+  }
+
+  .classroom-training-grid .training-media-card {
+    height: 210px;
+  }
+
+  .student-practical-grid .training-media-card {
+    height: 220px;
+  }
+
+  .leadership-image-wrapper {
+    height: 250px;
+  }
+
+  .leadership-name {
+    font-size: 1.3rem;
+  }
+
+  .leadership-description {
+    font-size: 0.9rem;
+  }
+
+  .studio-slider-wrapper::before,
+  .studio-slider-wrapper::after {
+    width: 45px;
+  }
+}

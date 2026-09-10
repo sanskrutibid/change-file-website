@@ -1,0 +1,14 @@
+{
+  "extends": "./tsconfig.json",
+  "compilerOptions": {
+    "outDir": "./dist/out-tsc/server",
+    "baseUrl": ".",
+    "types": ["node"]
+  },
+  "files": [
+    "src/main.server.ts"  // <-- only the server entry
+  ],
+  "angularCompilerOptions": {
+    "strictInjectionParameters": true
+  }
+}

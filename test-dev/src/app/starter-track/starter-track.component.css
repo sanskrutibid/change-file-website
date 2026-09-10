@@ -1,0 +1,362 @@
+/* ================= Base Styles & Theme Variables ================= */
+:host {
+  display: block;
+}
+
+/* ================= Starter Hero Section ================= */
+.starter-hero-section {
+  position: relative;
+  background: linear-gradient(135deg, rgba(10, 20, 35, 0.85) 0%, rgba(15, 41, 74, 0.7) 100%), url('/assets/images/cruise-10.jpg') center/cover no-repeat;
+  min-height: 480px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-top: 150px;
+  padding-bottom: 80px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  color: #ffffff;
+  width: 100%;
+}
+
+.starter-eyebrow {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--gold-accent, #d97706);
+  letter-spacing: 2px;
+}
+
+.starter-title {
+  font-size: 3.5rem;
+  font-weight: 800;
+  letter-spacing: 1px;
+  color: #ffffff !important;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+}
+
+.starter-subtitle {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--gold-accent, #d97706);
+  letter-spacing: 1px;
+}
+
+/* ================= Section Headings ================= */
+.section-eyebrow {
+  font-size: 1rem;
+  font-weight: 700;
+  letter-spacing: 2px;
+}
+
+.section-main-title {
+  font-size: 2.2rem;
+  font-weight: 800;
+  letter-spacing: 1px;
+  color: var(--primary-navy, #0f294a);
+}
+
+/* ================= Tracks Cards Section ================= */
+.tracks-section {
+  background-color: #ffffff !important;
+}
+
+.tracks-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+  margin-top: 40px;
+}
+
+.track-card {
+  background: #ffffff;
+  border-radius: 12px;
+  overflow: hidden;
+  border: 1px solid #e2e8f0;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.03);
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), border-color 0.3s ease, box-shadow 0.3s ease;
+  display: flex;
+  flex-direction: column;
+}
+
+.track-card:hover {
+  transform: translateY(-5px);
+  border-color: var(--gold-accent, #d97706);
+  box-shadow: 0 12px 30px rgba(15, 41, 74, 0.08);
+}
+
+.track-img-wrapper {
+  width: 100%;
+  height: 180px;
+  overflow: hidden;
+}
+
+.track-img-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.track-card:hover .track-img-wrapper img {
+  transform: scale(1.05);
+}
+
+.track-content {
+  padding: 24px;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.track-card-title {
+  font-size: 1.3rem;
+  color: var(--primary-navy, #0f294a);
+  margin-bottom: 16px;
+  border-bottom: 1px solid #f1f5f9;
+  padding-bottom: 10px;
+}
+
+.track-card-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.track-card-list li {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: #334155;
+  margin-bottom: 8px;
+}
+
+.track-card-list li:last-child {
+  margin-bottom: 0;
+}
+
+/* ================= Who For Section ================= */
+.who-for-section {
+  background: #f8fafc;
+  border-top: 1px solid #e2e8f0;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.who-list li {
+  font-size: 1.05rem;
+  color: #334155;
+}
+
+.text-navy {
+  color: var(--primary-navy, #0f294a) !important;
+}
+
+.info-point {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.02);
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.info-point:hover {
+  transform: translateY(-3px);
+  border-color: rgba(217, 119, 6, 0.3);
+  box-shadow: 0 10px 25px rgba(15, 41, 74, 0.05);
+}
+
+.info-point i {
+  color: var(--gold-accent, #d97706) !important;
+}
+
+/* ================= Course Flow Timeline ================= */
+.course-flow-section {
+  background: #ffffff;
+}
+
+.course-flow-grid {
+  display: grid;
+  grid-template-columns: 0.8fr 1.1fr 1.1fr;
+  gap: 30px;
+  margin-top: 40px;
+}
+
+.flow-logo-card {
+  background: #f8fafc;
+  border-radius: 12px;
+  border: 1px solid #e2e8f0;
+}
+
+.flow-card {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.02);
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.flow-card:hover {
+  transform: translateY(-5px);
+  border-color: var(--gold-accent, #d97706);
+  box-shadow: 0 12px 30px rgba(217, 119, 6, 0.1);
+}
+
+.flow-step-badge {
+  display: inline-block;
+  background: rgba(217, 119, 6, 0.1);
+  color: var(--gold-accent, #d97706);
+  padding: 6px 16px;
+  border-radius: 30px;
+  font-size: 0.9rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.flow-step-title {
+  font-size: 1.35rem;
+  color: var(--primary-navy, #0f294a);
+}
+
+.flow-step-text {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #334155;
+}
+
+/* ================= Learn Image Section ================= */
+.learn-image-section {
+  background: #f8fafc;
+  border-top: 1px solid #e2e8f0;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.learn-img-wrapper {
+  border: 1px solid #cbd5e1;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+}
+
+.learn-checklist li {
+  font-size: 1rem;
+  color: #334155;
+}
+
+.learn-checklist i {
+  color: var(--gold-accent, #d97706) !important;
+  font-size: 1.1rem;
+}
+
+.learn-note {
+  color: #64748b !important;
+}
+
+/* ================= Duration & Fees Section ================= */
+.duration-fees-section {
+  position: relative;
+  background: linear-gradient(135deg, rgba(10, 20, 35, 0.9) 0%, rgba(15, 41, 74, 0.8) 100%), url('/assets/images/cruise-3.jpg') center/cover no-repeat;
+  padding: 80px 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+  color: #ffffff;
+  width: 100%;
+}
+
+.fees-details-card {
+  background: #ffffff !important;
+  border: 1px solid #cbd5e1 !important;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08) !important;
+}
+
+.fees-details-card li {
+  border-bottom: 1px solid #e2e8f0 !important;
+  color: #334155;
+}
+
+.fees-details-card li:last-child {
+  border-bottom: none !important;
+}
+
+.fees-details-card strong {
+  color: var(--primary-navy, #0f294a) !important;
+}
+
+.fees-details-card span {
+  color: #334155;
+}
+
+.duration-fees-section .btn-warning {
+  background-color: var(--gold-accent, #d97706);
+  border-color: var(--gold-accent, #d97706);
+  color: #ffffff;
+  transition: all 0.3s ease;
+}
+
+.duration-fees-section .btn-warning:hover {
+  background-color: var(--gold-accent-hover, #b45309);
+  border-color: var(--gold-accent-hover, #b45309);
+  color: #ffffff;
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px rgba(217, 119, 6, 0.25);
+}
+
+/* ================= Responsive Adjustments ================= */
+@media (max-width: 1199px) {
+  .tracks-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+}
+
+@media (max-width: 991px) {
+  .starter-hero-section {
+    padding-top: 130px;
+    padding-bottom: 60px;
+  }
+  .starter-title {
+    font-size: 2.8rem;
+  }
+  .starter-subtitle {
+    font-size: 1.3rem;
+  }
+  .course-flow-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  .flow-logo-card {
+    padding: 30px !important;
+  }
+}
+
+@media (max-width: 767px) {
+  .starter-title {
+    font-size: 2.2rem;
+  }
+  .section-main-title {
+    font-size: 1.8rem;
+  }
+}
+
+@media (max-width: 575px) {
+  .starter-hero-section {
+    padding-top: 110px;
+    padding-bottom: 50px;
+  }
+  .starter-title {
+    font-size: 1.8rem;
+  }
+  .starter-subtitle {
+    font-size: 1.1rem;
+  }
+  .starter-lead-text {
+    font-size: 1rem !important;
+  }
+  .tracks-grid {
+    grid-template-columns: 1fr;
+  }
+  .track-img-wrapper {
+    height: 160px;
+  }
+  .flow-card {
+    padding: 24px !important;
+  }
+}

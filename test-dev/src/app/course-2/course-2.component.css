@@ -1,0 +1,442 @@
+/* ================= Course Hero Section ================= */
+.course-hero-section {
+  position: relative;
+  background: linear-gradient(135deg, rgba(10, 20, 35, 0.85) 0%, rgba(15, 41, 74, 0.7) 100%), url('/assets/images/cruise-5.jpg') center/cover no-repeat;
+  min-height: 480px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-top: 150px;
+  padding-bottom: 80px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  color: #ffffff;
+  width: 100%;
+}
+
+.course-eyebrow {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--gold-accent, #d97706);
+  letter-spacing: 2px;
+}
+
+.course-title {
+  font-size: 3.5rem;
+  font-weight: 800;
+  letter-spacing: 1px;
+  color: #ffffff !important;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+}
+
+.course-subtitle {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--gold-accent, #d97706);
+  letter-spacing: 1px;
+}
+
+/* ================= General Utilities & Headings ================= */
+.text-navy {
+  color: var(--primary-navy, #0f294a) !important;
+}
+
+.text-gold {
+  color: var(--gold-accent, #d97706) !important;
+}
+
+.divider-gold {
+  width: 55px;
+  height: 2px;
+  background-color: var(--gold-accent, #d97706);
+}
+
+.section-main-title {
+  font-size: 2.2rem;
+  font-weight: 800;
+  letter-spacing: 1px;
+  color: var(--primary-navy, #0f294a);
+}
+
+/* ================= 3D Carousel Section ================= */
+.carousel-section {
+  background-color: #ffffff;
+}
+
+.crew-carousel {
+  width: 100%;
+  max-width: 1200px;
+  height: 350px;
+  position: relative;
+  perspective: 1000px;
+}
+
+.crew-track {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.crew-card {
+  position: absolute;
+  width: 380px;
+  height: 250px;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 8px 24px rgba(15, 41, 74, 0.1);
+  transition: all 0.75s cubic-bezier(0.25, 0.8, 0.25, 1);
+  cursor: pointer;
+  z-index: 1;
+  opacity: 0;
+  transform: translate3d(0, 0, -200px);
+  border: 1px solid #e2e8f0;
+}
+
+/* 3D Positioning */
+.crew-card.center {
+  opacity: 1;
+  transform: translate3d(0, 0, 0) scale(1.08);
+  z-index: 5;
+  box-shadow: 0 15px 35px rgba(15, 41, 74, 0.18);
+  border-color: var(--gold-accent, #d97706);
+}
+
+.crew-card.left-1 {
+  opacity: 0.8;
+  transform: translate3d(-310px, 0, -80px) scale(0.9);
+  z-index: 3;
+}
+
+.crew-card.right-1 {
+  opacity: 0.8;
+  transform: translate3d(310px, 0, -80px) scale(0.9);
+  z-index: 3;
+}
+
+.crew-card.left-2 {
+  opacity: 0.4;
+  transform: translate3d(-540px, 0, -150px) scale(0.75);
+  z-index: 2;
+}
+
+.crew-card.right-2 {
+  opacity: 0.4;
+  transform: translate3d(540px, 0, -150px) scale(0.75);
+  z-index: 2;
+}
+
+.crew-card.hidden {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.crew-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.crew-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 16px 20px;
+  background: linear-gradient(to top, rgba(15, 41, 74, 0.95) 45%, rgba(15, 41, 74, 0.2) 100%);
+  text-align: center;
+  transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+  transform: translateY(82px);
+}
+
+.crew-card:hover .crew-overlay,
+.crew-card.center .crew-overlay {
+  transform: translateY(0);
+}
+
+.crew-overlay h3 {
+  font-size: 1.1rem;
+  margin-bottom: 6px;
+  font-weight: 700;
+  color: #ffffff;
+}
+
+.crew-overlay p {
+  font-size: 0.82rem;
+  margin-bottom: 0;
+  line-height: 1.45;
+  color: rgba(255, 255, 255, 0.85);
+  opacity: 0;
+  transition: opacity 0.3s ease 0.1s;
+}
+
+.crew-card:hover .crew-overlay p,
+.crew-card.center .crew-overlay p {
+  opacity: 1;
+}
+
+/* Carousel controls */
+.crew-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: #ffffff;
+  border: 1px solid #cbd5e1;
+  color: var(--primary-navy, #0f294a);
+  border-radius: 50%;
+  width: 46px;
+  height: 46px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.8rem;
+  cursor: pointer;
+  z-index: 10;
+  transition: all 0.25s ease;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+}
+
+.crew-arrow:hover {
+  background: var(--gold-accent, #d97706);
+  border-color: var(--gold-accent, #d97706);
+  color: #ffffff;
+  box-shadow: 0 6px 15px rgba(217, 119, 6, 0.3);
+}
+
+.crew-left {
+  left: 20px;
+}
+
+.crew-right {
+  right: 20px;
+}
+
+.crew-dots {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+}
+
+.crew-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: #cbd5e1;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+.crew-dot.active {
+  background-color: var(--gold-accent, #d97706);
+  transform: scale(1.25);
+}
+
+/* ================= STCW Section & Intro ================= */
+.stcw-section {
+  background-color: #f8fafc;
+}
+
+.premium-light-box {
+  border: 1px solid #e2e8f0;
+  box-shadow: 0 10px 25px rgba(15, 41, 74, 0.03);
+}
+
+/* ================= Features Section ================= */
+.course-section {
+  background-color: #ffffff;
+}
+
+.course-section h2 {
+  font-weight: 800;
+  letter-spacing: 1px;
+}
+
+.course-section li {
+  line-height: 1.7;
+}
+
+.course-section li i {
+  color: var(--gold-accent, #d97706) !important;
+}
+
+.half-wrap {
+  border: 1px solid #cbd5e1;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.04);
+}
+
+.highlight-box {
+  background: #f8fafc !important;
+  border: 1px solid #cbd5e1 !important;
+  box-shadow: none !important;
+}
+
+/* ================= Program Breakdown ================= */
+.program-breakdown {
+  background-color: #ffffff;
+}
+
+.breakdown-card {
+  background: #ffffff;
+  border-radius: 12px;
+  border: 1px solid #e2e8f0;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.02) !important;
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.breakdown-card:hover {
+  transform: translateY(-5px);
+  border-color: var(--gold-accent, #d97706);
+  box-shadow: 0 12px 30px rgba(15, 41, 74, 0.08) !important;
+}
+
+.breakdown-card li {
+  font-size: 0.95rem;
+  color: #334155;
+  margin-bottom: 6px;
+}
+
+.breakdown-card li i {
+  color: var(--gold-accent, #d97706) !important;
+}
+
+/* ================= Required Documents ================= */
+.document-card {
+  background: #ffffff;
+  border-radius: 12px;
+  border: 1px solid #cbd5e1;
+}
+
+.document-card h4 {
+  color: var(--primary-navy, #0f294a);
+}
+
+/* ================= Duration & Fees Section ================= */
+.duration-fees-section {
+  position: relative;
+  background: linear-gradient(135deg, rgba(10, 20, 35, 0.9) 0%, rgba(15, 41, 74, 0.8) 100%), url('/assets/images/cruise-3.jpg') center/cover no-repeat;
+  padding: 80px 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #ffffff;
+  width: 100%;
+}
+
+.fees-details-card {
+  background: #ffffff !important;
+  border: 1px solid #cbd5e1 !important;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08) !important;
+}
+
+.fees-details-card li {
+  border-bottom: 1px solid #e2e8f0 !important;
+  color: #334155;
+}
+
+.fees-details-card li:last-child {
+  border-bottom: none !important;
+}
+
+.fees-details-card strong {
+  color: var(--primary-navy, #0f294a) !important;
+}
+
+.fees-details-card span {
+  color: #334155;
+}
+
+.duration-fees-section .btn-warning {
+  background-color: var(--gold-accent, #d97706);
+  border-color: var(--gold-accent, #d97706);
+  color: #ffffff;
+  transition: all 0.3s ease;
+}
+
+.duration-fees-section .btn-warning:hover {
+  background-color: var(--gold-accent-hover, #b45309);
+  border-color: var(--gold-accent-hover, #b45309);
+  color: #ffffff;
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px rgba(217, 119, 6, 0.25);
+}
+
+/* ================= Responsive Adjustments ================= */
+@media (max-width: 991px) {
+  .course-hero-section {
+    padding-top: 130px;
+    padding-bottom: 60px;
+  }
+  .course-title {
+    font-size: 2.8rem;
+  }
+  .course-subtitle {
+    font-size: 1.3rem;
+  }
+  .crew-carousel {
+    height: 300px;
+  }
+  .crew-card {
+    width: 300px;
+    height: 200px;
+  }
+  .crew-card.left-1 {
+    transform: translate3d(-200px, 0, -80px) scale(0.9);
+  }
+  .crew-card.right-1 {
+    transform: translate3d(200px, 0, -80px) scale(0.9);
+  }
+  .crew-card.left-2, .crew-card.right-2 {
+    display: none;
+  }
+}
+
+@media (max-width: 767px) {
+  .course-title {
+    font-size: 2.2rem;
+  }
+  .section-main-title {
+    font-size: 1.8rem;
+  }
+}
+
+@media (max-width: 575px) {
+  .course-hero-section {
+    padding-top: 110px;
+    padding-bottom: 50px;
+  }
+  .course-title {
+    font-size: 1.8rem;
+  }
+  .course-subtitle {
+    font-size: 1.1rem;
+  }
+  .course-lead-text {
+    font-size: 1rem !important;
+  }
+  .crew-carousel {
+    height: 260px;
+  }
+  .crew-card {
+    width: 240px;
+    height: 160px;
+  }
+  .crew-card.left-1 {
+    transform: translate3d(-130px, 0, -60px) scale(0.85);
+  }
+  .crew-card.right-1 {
+    transform: translate3d(130px, 0, -60px) scale(0.85);
+  }
+  .crew-arrow {
+    width: 36px;
+    height: 36px;
+    font-size: 1.4rem;
+  }
+  .crew-left {
+    left: 5px;
+  }
+  .crew-right {
+    right: 5px;
+  }
+}

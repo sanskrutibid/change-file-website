@@ -1,0 +1,22 @@
+<app-header></app-header>
+<router-outlet></router-outlet>
+<app-footer></app-footer>
+
+
+<!-- IMAGE POPUP -->
+<div class="image-popup-backdrop" *ngIf="showImagePopup">
+  <div class="image-popup animate-in">
+    <button class="close-btn" (click)="closePopup()">×</button>
+
+    <img
+      [src]="images[currentImageIndex]"
+      class="popup-image"
+      alt="Cruise Lens Academy"
+    />
+
+    <!-- Arrows -->
+    <button class="arrow left" (click)="prevImage()">❮</button>
+    <button class="arrow right" (click)="nextImage()">❯</button>
+  </div>
+</div>
+

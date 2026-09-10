@@ -1,0 +1,89 @@
+.refund-page {
+font-family: 'Poppins', sans-serif;
+  line-height: 1.8;
+}
+
+.policy-banner {
+  background: url('/assets/images/image-19.jpg') center/cover no-repeat;
+  position: relative;
+  height: 250px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.policy-banner .overlay {
+  background: rgba(0, 0, 0, 0.6);
+  padding: 40px;
+  text-align: center;
+  border-radius: 10px;
+}
+
+.banner-title {
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: #ffcc66;
+  text-align: center;
+}
+
+.banner-subtitle {
+  font-size: 1rem;
+  color: #ffcc66;
+}
+
+.policy-content {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.policy-content h2 {
+  font-size: 1.3rem;
+  font-weight: 600;
+  margin-top: 30px;
+  margin-bottom: 15px;
+  color: #ffcc66;
+}
+
+.policy-content p,
+.policy-content li {
+  color: #dcdcdc;
+}
+
+.policy-content ul {
+  padding-left: 20px;
+}
+
+a {
+  color: #4da3ff;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* Mobile friendly */
+@media (max-width: 768px) {
+  .banner-title {
+    font-size: 1.6rem;
+  }
+  .policy-banner {
+    height: 180px;
+  }
+}
+
+
+body {
+  font-family: 'Poppins', sans-serif;
+}
+
+h1, h2, h3 {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+}
+
+p {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 400;
+}
+

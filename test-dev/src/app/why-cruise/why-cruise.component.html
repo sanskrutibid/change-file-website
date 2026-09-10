@@ -1,0 +1,94 @@
+<section class="bg-dark">
+    <section class="image-section">
+    </section>
+</section>
+
+<section class="career-highlight-section bg-dark text-white py-5">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-lg-10 text-center">
+        <p class="lead fw-semibold highlight-text">
+          At <span class="text-warning">Cruise Lens Academy</span>, we don’t just prepare you for a job—we prepare you for a 
+          <span class="text-warning">career at sea</span> with global opportunities. Our specialized training programs are 
+          designed for individuals who dream of working on cruise ships and building a rewarding career in photography and beyond.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<section class="container-fluid bg-dark p-5">
+  <div class="row g-4">
+    <!-- Example Card -->
+    <div class="col-md-3 col-sm-6" *ngFor="let feature of features">
+      <div class="card h-100 text-center feature-card">
+        <div class="card-body d-flex flex-column align-items-center justify-content-center">
+          <i class="bi bi-check-circle-fill text-white fs-2 mb-3"></i>
+          <h6 class="card-title text-dark">{{ feature }}</h6>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<section class="py-5 text-white" style="background-color: #6a4028;">
+    <div class="container">
+
+      <div id="attractionCarousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="3000">
+        <div class="carousel-inner">
+          <!-- Slide 1 -->
+          <div class="carousel-item active">
+            <div class="row">
+              <div class="col-md-4 text-center">
+                <img src="assets/images/image-45.jpg" class="rounded-circle shadow img-fluid mb-2"
+                  style="width: 300px; height: 300px; object-fit: cover;" alt="" loading="lazy">
+                 </div>
+              <div class="col-md-4 text-center">
+                <img src="assets/images/image-51.jpg" class="rounded-circle shadow img-fluid mb-2"
+                  style="width: 300px; height: 300px; object-fit: cover;" alt="" loading="lazy">
+                
+              </div>
+              <div class="col-md-4 text-center">
+                <img src="assets/images/image-47.jpg" class="rounded-circle shadow img-fluid mb-2"
+                  style="width: 300px; height: 300px; object-fit: cover;" alt="" loading="lazy">
+                </div>
+            </div>
+          </div>
+
+          <!-- Slide 2 -->
+          <div class="carousel-item">
+            <div class="row">
+              <div class="col-md-4 text-center">
+                <img src="assets/images/image-48.jpg" class="rounded-circle shadow img-fluid mb-2"
+                  style="width: 300px; height: 300px; object-fit: cover;" alt="" loading="lazy">
+                
+              </div>
+              <div class="col-md-4 text-center">
+                <img src="assets/images/image-49.jpg" class="rounded-circle shadow img-fluid mb-2"
+                  style="width: 300px; height: 300px; object-fit: cover;" alt="" loading="lazy">
+                 </div>
+              <div class="col-md-4 text-center">
+                <img src="assets/images/image-50.jpg" class="rounded-circle shadow img-fluid mb-2"
+                  style="width: 300px; height: 300px; object-fit: cover;" alt="" loading="lazy">
+               </div>
+            </div>
+          </div>
+
+         
+        </div>
+
+
+        <!-- Carousel Controls -->
+        <button class="carousel-control-prev" type="button" data-bs-target="#attractionCarousel" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#attractionCarousel" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+      </div>
+    </div>
+  </section>

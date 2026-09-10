@@ -1,0 +1,57 @@
+<section class="py-5 bg-light text-center mt-5">
+  <div class="container">
+
+    <!-- ✅ Academy Logo -->
+    <div class="mb-3">
+      <img
+        src="assets/images/logo.png"
+        alt="Cruise Lens Academy Logo"
+        width="150"
+        class="img-fluid mb-3"
+      />
+    </div>
+
+    <h2
+      [ngClass]="{
+        'text-success': paymentData?.status === 'success',
+        'text-danger': paymentData?.status === 'failure',
+        'text-warning': paymentData?.status === 'pending'
+      }"
+      class="mb-4 fw-bold"
+    >
+      {{ statusMessage }}
+    </h2>
+
+    <div *ngIf="isLoading">Loading payment details...</div>
+    <div *ngIf="errorMessage" class="text-danger">{{ errorMessage }}</div>
+
+    <div
+      *ngIf="paymentData"
+      class="card mx-auto shadow-lg p-4 border-0"
+      style="max-width: 500px; border-radius: 12px;"
+    >
+      <h4 class="mb-3 text-primary fw-semibold">Transaction Details</h4>
+      <p><strong>Transaction ID:</strong> {{ paymentData.txnid }}</p>
+      <p><strong>Full Name:</strong> {{ paymentData.fullName }}</p>
+      <p><strong>Email:</strong> {{ paymentData.email }}</p>
+      <p><strong>Phone:</strong> {{ paymentData.phone }}</p>
+      <!-- <p><strong>Course:</strong> {{ paymentData.course }}</p> -->
+      <p><strong>Amount Paid:</strong> ₹{{ paymentData.amount }}</p>
+      <p>
+        <strong>Status:</strong>
+        <span class="badge {{ statusBadgeClass }}">{{ statusMessage }}</span>
+      </p>
+
+      <!-- ✅ Buttons -->
+      <div class="text-center mt-4 d-flex justify-content-center gap-3 flex-wrap">
+        <button class="btn btn-outline-primary" (click)="downloadReceipt()">
+          📄 Download Receipt
+        </button>
+
+        <button class="btn btn-success" (click)="goToHome()">
+          🏠 Go to Home
+        </button>
+      </div>
+    </div>
+  </div>
+</section>

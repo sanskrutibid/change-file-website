@@ -1,0 +1,399 @@
+/* ================= Partners Hero Section ================= */
+.partners-hero {
+  position: relative;
+  background: linear-gradient(135deg, rgba(10, 20, 35, 0.85) 0%, rgba(15, 41, 74, 0.7) 100%), url('/assets/images/cruise-4.jpg') center/cover no-repeat;
+  min-height: 480px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-top: 150px;
+  padding-bottom: 80px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  color: #ffffff;
+  width: 100%;
+}
+
+.partners-eyebrow {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--gold-accent, #d97706);
+  letter-spacing: 2px;
+}
+
+.partners-title {
+  font-size: 3.5rem;
+  font-weight: 800;
+  letter-spacing: 1px;
+  color: #ffffff !important;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+}
+
+.partners-subtitle {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--gold-accent, #d97706);
+  letter-spacing: 1px;
+}
+
+/* ================= General Utilities & Headings ================= */
+.text-navy {
+  color: var(--primary-navy, #0f294a) !important;
+}
+
+.text-gold {
+  color: var(--gold-accent, #d97706) !important;
+}
+
+.section-main-title {
+  font-size: 2.2rem;
+  font-weight: 800;
+  letter-spacing: 1px;
+  color: var(--primary-navy, #0f294a);
+}
+
+.section-divider-gold {
+  width: 55px;
+  height: 2px;
+  background-color: var(--gold-accent, #d97706);
+}
+
+.section-subtitle {
+  font-size: 1.05rem;
+  line-height: 1.7;
+  max-width: 800px;
+}
+
+/* ================= Gallery Card Grid ================= */
+.gallery-section {
+  background-color: #ffffff;
+}
+
+.gallery-card {
+  height: 180px;
+  cursor: pointer;
+  background-color: #ffffff;
+  border: 1px solid #e2e8f0;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.gallery-card img {
+  transition: transform 0.45s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+.gallery-card:hover img {
+  transform: scale(1.06);
+}
+
+.gallery-hover-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to top, rgba(15, 41, 74, 0.85) 0%, rgba(15, 41, 74, 0.2) 60%, transparent 100%);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: 2;
+}
+
+.gallery-card:hover .gallery-hover-overlay {
+  opacity: 1;
+}
+
+/* ================= Experts Section ================= */
+.team-overlay-section {
+  background-color: #f8fafc;
+}
+
+.expert-card {
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.expert-card:hover {
+  transform: translateY(-5px);
+  border-color: var(--gold-accent, #d97706) !important;
+  box-shadow: 0 12px 30px rgba(15, 41, 74, 0.08) !important;
+}
+
+/* ================= Leadership Section ================= */
+.team-img-wrapper {
+  border: 1px solid #cbd5e1;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.04);
+}
+
+.team-img-wrapper img {
+  transition: transform 0.3s ease;
+}
+
+.team-img-wrapper:hover img {
+  transform: scale(1.02);
+}
+
+.lead-text-box p {
+  margin: 0;
+  text-align: justify;
+}
+
+/* ================= Special Strengths List ================= */
+.special-points {
+  border: 1px solid #cbd5e1;
+  box-shadow: 0 10px 25px rgba(15, 41, 74, 0.03) !important;
+}
+
+.special-points li i {
+  color: var(--gold-accent, #d97706) !important;
+}
+
+/* ================= Offers / What We Offer ================= */
+.offers-flow {
+  background-color: #ffffff;
+}
+
+.offers-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+  gap: 30px;
+  max-width: 1200px;
+  margin: auto;
+}
+
+.offers-left {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  flex: 1.2;
+}
+
+.offers-right {
+  flex: 0.8;
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+}
+
+.offer-card {
+  background: #ffffff;
+  border-radius: 14px;
+  border: 1px solid #cbd5e1;
+  box-shadow: 0 4px 15px rgba(15, 41, 74, 0.03);
+  transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+.offer-card:hover {
+  transform: translateY(-4px);
+  border-color: var(--gold-accent, #d97706);
+  box-shadow: 0 10px 25px rgba(15, 41, 74, 0.06);
+}
+
+.offer-card .icon {
+  font-size: 2.2rem;
+  color: var(--gold-accent, #d97706);
+  display: inline-block;
+}
+
+.offer-card.big {
+  min-height: 100%;
+}
+
+.offer-card.big .icon {
+  font-size: 3rem;
+  color: var(--primary-navy, #0f294a);
+}
+
+/* ================= Lightbox Overlay Modal ================= */
+.lightbox-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(10, 20, 35, 0.95);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  z-index: 99999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: fadeIn 0.3s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.lightbox-close-btn {
+  position: absolute;
+  top: 24px;
+  right: 32px;
+  background: none;
+  border: none;
+  color: #ffffff;
+  font-size: 3rem;
+  cursor: pointer;
+  transition: color 0.2s ease, transform 0.2s ease;
+  z-index: 100000;
+  line-height: 1;
+}
+
+.lightbox-close-btn:hover {
+  color: var(--gold-accent, #d97706);
+  transform: scale(1.1);
+}
+
+.lightbox-nav-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: #ffffff;
+  font-size: 1.5rem;
+  width: 54px;
+  height: 54px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  z-index: 100000;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.lightbox-nav-btn:hover {
+  background: var(--gold-accent, #d97706);
+  border-color: var(--gold-accent, #d97706);
+  box-shadow: 0 6px 15px rgba(217, 119, 6, 0.35);
+}
+
+.prev-btn {
+  left: 32px;
+}
+
+.next-btn {
+  right: 32px;
+}
+
+.lightbox-content-box {
+  max-width: 80vw;
+  max-height: 80vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  animation: zoomIn 0.35s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+}
+
+@keyframes zoomIn {
+  from { transform: scale(0.92); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}
+
+.lightbox-image {
+  max-width: 100%;
+  max-height: 70vh;
+  object-fit: contain;
+  border-radius: 8px;
+  box-shadow: 0 15px 45px rgba(0, 0, 0, 0.4);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.lightbox-caption {
+  width: 100%;
+}
+
+.lightbox-caption h5 {
+  letter-spacing: 0.5px;
+}
+
+/* ================= Responsive Adjustments ================= */
+@media (max-width: 991px) {
+  .partners-hero {
+    padding-top: 130px;
+    padding-bottom: 60px;
+  }
+  
+  .partners-title {
+    font-size: 2.8rem;
+  }
+  
+  .partners-subtitle {
+    font-size: 1.3rem;
+  }
+  
+  .offers-wrapper {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  
+  .offers-left {
+    grid-template-columns: 1fr;
+  }
+  
+  .offers-right {
+    margin-top: 20px;
+  }
+  
+  .gallery-card {
+    height: 140px;
+  }
+  
+  .prev-btn {
+    left: 15px;
+  }
+  
+  .next-btn {
+    right: 15px;
+  }
+  
+  .lightbox-nav-btn {
+    width: 44px;
+    height: 44px;
+    font-size: 1.1rem;
+  }
+}
+
+@media (max-width: 767px) {
+  .partners-title {
+    font-size: 2.2rem;
+  }
+  
+  .section-main-title {
+    font-size: 1.8rem;
+  }
+  
+  .gallery-card {
+    height: 110px;
+  }
+  
+  .lightbox-close-btn {
+    top: 16px;
+    right: 20px;
+    font-size: 2.2rem;
+  }
+}
+
+@media (max-width: 575px) {
+  .partners-hero {
+    padding-top: 110px;
+    padding-bottom: 50px;
+  }
+  
+  .partners-title {
+    font-size: 1.8rem;
+  }
+  
+  .partners-subtitle {
+    font-size: 1.1rem;
+  }
+  
+  .partners-lead-text {
+    font-size: 1rem !important;
+  }
+  
+  .gallery-card {
+    height: 90px;
+  }
+}

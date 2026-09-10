@@ -1,0 +1,284 @@
+<!-- Hero Banner Section -->
+<section class="partners-hero text-center text-white">
+  <div class="container">
+    <span class="partners-eyebrow fw-bold text-uppercase">ACADEMY NETWORK</span>
+    <h1 class="partners-title fw-bold mt-2 mb-3">Partners & Leadership</h1>
+    <span class="partners-subtitle fw-bold d-block mb-3">MEET THE EXPERTS SHAPING YOUR FUTURE</span>
+    <div class="section-divider-gold mx-auto mb-4" style="width: 70px; height: 3px; background-color: var(--gold-accent);"></div>
+    <p class="partners-lead-text mx-auto" style="max-width: 800px; font-size: 1.15rem; color: #cbd5e1; line-height: 1.7;">
+      Discover the collaborative power behind Cruise Lens Academy. Meet our leadership, our experienced mentors, and our network of maritime and placement partners.
+    </p>
+  </div>
+</section>
+
+<!-- Photo Gallery Grid 1: Student Life & Training -->
+<section class="gallery-section py-5 bg-white border-bottom">
+  <div class="container py-3">
+    <div class="text-center mb-5">
+      <span class="section-eyebrow fw-bold text-uppercase" style="color: var(--gold-accent);">TRAINING & CULTURE</span>
+      <h2 class="section-main-title fw-bold mt-2 text-navy text-uppercase">Academy Life & Training Gallery</h2>
+      <div class="section-divider-gold mx-auto mb-4" style="width: 70px; height: 3px; background-color: var(--gold-accent);"></div>
+      <p class="section-subtitle mx-auto text-secondary" style="max-width: 800px; font-size: 1.05rem;">
+        Take a visual tour of our state-of-the-art photography classrooms, practical studio sessions, and seafarer documentation camps. Click on any photo to zoom in.
+      </p>
+    </div>
+
+    <!-- Grid Layout (First 10 images) -->
+    <div class="row row-cols-2 row-cols-md-3 row-cols-lg-5 g-3">
+      <div class="col" *ngFor="let img of galleryImages.slice(0, 10); let i = index">
+        <div class="gallery-card shadow-sm rounded-3 overflow-hidden position-relative border" (click)="openLightbox(i)">
+          <img [src]="img.url" [alt]="img.caption" class="w-100 h-100" style="object-fit: cover;" loading="lazy">
+          <div class="gallery-hover-overlay d-flex align-items-end p-2 p-md-3">
+            <span class="text-white fw-bold small text-uppercase" style="font-size: 0.72rem; letter-spacing: 0.5px;">{{ img.caption }}</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Experts Cards Grid -->
+<section class="team-overlay-section bg-light py-5">
+  <div class="container py-3">
+    <div class="text-center mb-5">
+      <span class="section-eyebrow fw-bold text-uppercase" style="color: var(--gold-accent);">MENTORS</span>
+      <h2 class="section-main-title fw-bold mt-2 text-navy text-uppercase">Meet the Experts Behind Your Success</h2>
+      <div class="section-divider-gold mx-auto mb-4" style="width: 70px; height: 3px; background-color: var(--gold-accent);"></div>
+      <p class="section-subtitle mx-auto text-secondary" style="max-width: 800px; font-size: 1.05rem; line-height: 1.7;">
+        At Cruise Lens Academy, our greatest strength is our people. Our team is a blend of seasoned cruise professionals, experienced trainers, and dedicated mentors who work together to shape your career at sea.
+      </p>
+    </div>
+
+    <div class="row g-4">
+      <!-- Expert Card 1 -->
+      <div class="col-md-3 col-sm-6">
+        <div class="expert-card h-100 shadow-sm border bg-white rounded-3 overflow-hidden text-center transition-card">
+          <img src="assets/images/image-58.jpg" class="w-100 d-block" style="height: 240px; object-fit: cover;" alt="Expert 1" loading="lazy">
+          <div class="p-3">
+            <h5 class="fw-bold text-navy mb-0" style="font-size: 1rem; line-height: 1.4;">Industry Professionals as Trainers</h5>
+          </div>
+        </div>
+      </div>
+
+      <!-- Expert Card 2 -->
+      <div class="col-md-3 col-sm-6">
+        <div class="expert-card h-100 shadow-sm border bg-white rounded-3 overflow-hidden text-center transition-card">
+          <img src="assets/images/image-64.jpg" class="w-100 d-block" style="height: 240px; object-fit: cover;" alt="Expert 2" loading="lazy">
+          <div class="p-3">
+            <h5 class="fw-bold text-navy mb-0" style="font-size: 1rem; line-height: 1.4;">Student-Centric Mentors</h5>
+          </div>
+        </div>
+      </div>
+
+      <!-- Expert Card 3 -->
+      <div class="col-md-3 col-sm-6">
+        <div class="expert-card h-100 shadow-sm border bg-white rounded-3 overflow-hidden text-center transition-card">
+          <img src="assets/images/image-29.jpg" class="w-100 d-block" style="height: 240px; object-fit: cover;" alt="Expert 3" loading="lazy">
+          <div class="p-3">
+            <h5 class="fw-bold text-navy mb-0" style="font-size: 1rem; line-height: 1.4;">Placement & Career Advisors</h5>
+          </div>
+        </div>
+      </div>
+
+      <!-- Expert Card 4 -->
+      <div class="col-md-3 col-sm-6">
+        <div class="expert-card h-100 shadow-sm border bg-white rounded-3 overflow-hidden text-center transition-card">
+          <img src="assets/images/image-66.jpg" class="w-100 d-block" style="height: 240px; object-fit: cover;" alt="Expert 4" loading="lazy">
+          <div class="p-3">
+            <h5 class="fw-bold text-navy mb-0" style="font-size: 1rem; line-height: 1.4;">Support Staff & Counselors</h5>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Leadership Section -->
+<section class="team-section py-5 bg-white border-bottom">
+  <div class="container py-3">
+    <span class="section-eyebrow fw-bold text-uppercase text-center d-block" style="color: var(--gold-accent);">LEADERSHIP</span>
+    <h2 class="section-main-title fw-bold text-center mt-2 mb-4 text-navy text-uppercase">Our Leadership Team</h2>
+    <div class="section-divider-gold mx-auto mb-5" style="width: 70px; height: 3px; background-color: var(--gold-accent);"></div>
+    
+    <!-- Member 1 -->
+    <div class="row align-items-center g-5 mb-5">
+      <!-- Left: Image -->
+      <div class="col-lg-5 text-center">
+        <div class="team-img-wrapper p-2 bg-white border shadow-sm rounded-3">
+          <img src="assets/images/rohan.png" alt="Rohan Singh" class="img-fluid rounded-2 w-100" style="max-height: 400px; object-fit: cover;" loading="lazy">
+        </div>
+      </div>
+      <!-- Right: Content -->
+      <div class="col-lg-7 text-start text-secondary">
+        <h3 class="fw-bold text-navy text-uppercase mb-1" style="letter-spacing: 0.5px;">Rohan Singh</h3>
+        <h5 class="text-gold fw-bold mb-4">Founder & CEO</h5>
+        <div class="lead-text-box" style="font-size: 1.05rem; line-height: 1.75;">
+          <p class="mb-3">
+            Rohan Singh, our Founder & CEO, worked as a Photo Manager on some of the world's leading cruise lines, traveling to 43 countries and leading multicultural teams onboard. During his time at sea, he encountered hundreds of talented Indian photographers working in local studios, weddings, or freelance gigs, all with the potential to go global, but stuck due to one harsh reality: they simply didn't know how.
+          </p>
+          <p class="mb-3">
+            Most didn't have the required maritime documents. Many lacked formal creative training or the discipline expected onboard. And almost none had access to the kind of mentorship or placement guidance that could help them break into cruise photography careers. Rohan knew the talent was there, but the structure was missing.
+          </p>
+          <p class="mb-0">
+            Meanwhile, Suraj Thakre, a long-time friend and now Co-Founder, was building a strong reputation in the fitness and lifestyle sector, managing client journeys, mentoring teams, and driving performance-based results. With over 7 years of operational experience, Suraj had a deep understanding of what it takes to scale systems, build trust, and create career pathways for young professionals.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Member 2 -->
+    <div class="row align-items-center g-5 flex-lg-row-reverse">
+      <!-- Right: Image -->
+      <div class="col-lg-5 text-center">
+        <div class="team-img-wrapper p-2 bg-white border shadow-sm rounded-3">
+          <img src="assets/images/suraj.png" alt="Suraj Thakre" class="img-fluid rounded-2 w-100" style="max-height: 400px; object-fit: cover;" loading="lazy">
+        </div>
+      </div>
+      <!-- Left: Content -->
+      <div class="col-lg-7 text-start text-secondary">
+        <h3 class="fw-bold text-navy text-uppercase mb-1" style="letter-spacing: 0.5px;">Suraj Thakre</h3>
+        <h5 class="text-gold fw-bold mb-4">Director, Business Development</h5>
+        <div class="lead-text-box" style="font-size: 1.05rem; line-height: 1.75;">
+          <p class="mb-3">
+            Suraj Thakre is a passionate business development leader with a solid foundation in hospitality and client management. With over 4 years in the hospitality sector and 7+ years guiding clients in the fitness industry, he brings a deep understanding of people, relationships, and personal growth to his role.
+          </p>
+          <p class="mb-3">
+            As Director of Business Development at CruiseLens Academy, Suraj goes beyond strategy and numbers—he connects with students on a personal level. His approach is not just theoretical but rooted in real conversations, emotional understanding, and a student-first mindset. From the first inquiry to final placement, Suraj ensures that every student feels heard, guided, and inspired throughout their journey.
+          </p>
+          <p class="mb-0">
+            He oversees outreach, marketing, and end-to-end student support—including STCW training and cruise ship placements—helping aspiring photographers turn their passion into a global career. His mission is to make CruiseLens Academy not just an institution, but a launchpad for dreams, learning, and unforgettable journeys.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- What Makes Our Team Special -->
+<section class="team-special py-5 bg-light border-bottom">
+  <div class="container py-3 text-center">
+    <span class="section-eyebrow fw-bold text-uppercase" style="color: var(--gold-accent);">STRENGTHS</span>
+    <h2 class="section-main-title fw-bold mt-2 text-navy text-uppercase">What Makes Our Team Special?</h2>
+    <div class="section-divider-gold mx-auto mb-5" style="width: 70px; height: 3px; background-color: var(--gold-accent);"></div>
+    
+    <div class="row justify-content-center">
+      <div class="col-lg-8">
+        <div class="special-points bg-white border p-4 p-md-5 rounded-3 shadow-sm text-start">
+          <ul class="list-unstyled d-flex flex-column gap-3 text-secondary m-0" style="font-size: 1.05rem;">
+            <li class="d-flex align-items-start gap-3">
+              <i class="bi bi-patch-check-fill text-gold fs-5 mt-0.5"></i>
+              <span><strong>Years of collective cruise line experience:</strong> Mentors who have sailed and managed photography teams onboard major luxury cruise lines.</span>
+            </li>
+            <li class="d-flex align-items-start gap-3">
+              <i class="bi bi-patch-check-fill text-gold fs-5 mt-0.5"></i>
+              <span><strong>Passion for teaching and mentoring:</strong> Deep investment in student growth, starting from raw skills up to professional cruise standards.</span>
+            </li>
+            <li class="d-flex align-items-start gap-3">
+              <i class="bi bi-patch-check-fill text-gold fs-5 mt-0.5"></i>
+              <span><strong>Strong connections within the cruise industry:</strong> Direct tie-ups and placement lines with global cruise line employers.</span>
+            </li>
+            <li class="d-flex align-items-start gap-3">
+              <i class="bi bi-patch-check-fill text-gold fs-5 mt-0.5"></i>
+              <span><strong>Dedicated student support:</strong> Guiding seafarers through passports, documentation, SID registrations, and flights.</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- What We Offer -->
+<section class="offers-flow py-5 bg-white">
+  <div class="container py-3">
+    <div class="text-center mb-5">
+      <span class="section-eyebrow fw-bold text-uppercase" style="color: var(--gold-accent);">BENEFITS</span>
+      <h2 class="section-main-title fw-bold mt-2 text-navy text-uppercase">What We Offer Our Students</h2>
+      <div class="section-divider-gold mx-auto mb-4" style="width: 70px; height: 3px; background-color: var(--gold-accent);"></div>
+    </div>
+    
+    <div class="offers-wrapper">
+      <!-- Left side (Grid) -->
+      <div class="offers-left">
+        <div class="offer-card text-center p-4 bg-white border shadow-sm rounded-3">
+          <i class="bi bi-rocket-takeoff-fill icon mb-3"></i>
+          <h5 class="fw-bold text-navy mb-2" style="font-size: 1.05rem;">Career Launch</h5>
+          <p class="text-secondary small m-0">End-to-end career launch support</p>
+        </div>
+        <div class="offer-card text-center p-4 bg-white border shadow-sm rounded-3">
+          <i class="bi bi-people-fill icon mb-3"></i>
+          <h5 class="fw-bold text-navy mb-2" style="font-size: 1.05rem;">Small Batches</h5>
+          <p class="text-secondary small m-0">Small batch sizes (6–8 students)</p>
+        </div>
+        <div class="offer-card text-center p-4 bg-white border shadow-sm rounded-3">
+          <i class="bi bi-mortarboard-fill icon mb-3"></i>
+          <h5 class="fw-bold text-navy mb-2" style="font-size: 1.05rem;">Maritime Academy Tie-ups</h5>
+          <p class="text-secondary small m-0">Partnerships with registered maritime academies</p>
+        </div>
+        <div class="offer-card text-center p-4 bg-white border shadow-sm rounded-3">
+          <i class="bi bi-building icon mb-3"></i> 
+          <h5 class="fw-bold text-navy mb-2" style="font-size: 1.05rem;">Employer Tie-ups</h5>
+          <p class="text-secondary small m-0">Employer tie-ups with cruise companies</p>
+        </div>
+      </div>
+      
+      <!-- Right side (Highlight Box) -->
+      <div class="offers-right">
+        <div class="offer-card big text-center p-4 p-md-5 bg-white border shadow-sm rounded-3 d-flex flex-column justify-content-center align-items-center">
+          <i class="bi bi-bullseye icon mb-3" style="font-size: 3rem;"></i>
+          <h4 class="fw-bold text-navy mb-3">Career Upgrades</h4>
+          <p class="text-secondary small m-0" style="line-height: 1.6;">
+            Structured career support even for working photographers with evaluations, portfolio reviews, & mock interviews.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Photo Gallery Grid 2: Cruise Placements & Ships -->
+<section class="gallery-section py-5 bg-light border-top border-bottom">
+  <div class="container py-3">
+    <div class="text-center mb-5">
+      <span class="section-eyebrow fw-bold text-uppercase" style="color: var(--gold-accent);">PLACEMENTS</span>
+      <h2 class="section-main-title fw-bold mt-2 text-navy text-uppercase">Onboard Placements & Destinations</h2>
+      <div class="section-divider-gold mx-auto mb-4" style="width: 70px; height: 3px; background-color: var(--gold-accent);"></div>
+      <p class="section-subtitle mx-auto text-secondary" style="max-width: 800px; font-size: 1.05rem;">
+        Browse visual snapshots of our students working onboard international cruise lines, ports of call, and global landmarks. Click to open in slideshow mode.
+      </p>
+    </div>
+
+    <!-- Grid Layout (Remaining 10 images) -->
+    <div class="row row-cols-2 row-cols-md-3 row-cols-lg-5 g-3">
+      <div class="col" *ngFor="let img of galleryImages.slice(10, 20); let i = index">
+        <div class="gallery-card shadow-sm rounded-3 overflow-hidden position-relative border" (click)="openLightbox(i + 10)">
+          <img [src]="img.url" [alt]="img.caption" class="w-100 h-100" style="object-fit: cover;" loading="lazy">
+          <div class="gallery-hover-overlay d-flex align-items-end p-2 p-md-3">
+            <span class="text-white fw-bold small text-uppercase" style="font-size: 0.72rem; letter-spacing: 0.5px;">{{ img.caption }}</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Lightbox Overlay Modal -->
+<div class="lightbox-overlay" *ngIf="showLightbox" (click)="closeLightbox()">
+  <!-- Close Button -->
+  <button class="lightbox-close-btn" (click)="closeLightbox()">&times;</button>
+  
+  <!-- Left Nav Arrow -->
+  <button class="lightbox-nav-btn prev-btn" (click)="prevImage($event)">&#10094;</button>
+  
+  <!-- Lightbox Central Panel -->
+  <div class="lightbox-content-box" (click)="$event.stopPropagation()">
+    <img [src]="galleryImages[activeImageIndex].url" [alt]="galleryImages[activeImageIndex].caption" class="lightbox-image">
+    <div class="lightbox-caption text-center p-3">
+      <h5 class="fw-bold text-white mb-1">{{ galleryImages[activeImageIndex].caption }}</h5>
+      <span class="text-muted small">Image {{ activeImageIndex + 1 }} of {{ galleryImages.length }}</span>
+    </div>
+  </div>
+  
+  <!-- Right Nav Arrow -->
+  <button class="lightbox-nav-btn next-btn" (click)="nextImage($event)">&#10095;</button>
+</div>

@@ -1,0 +1,491 @@
+/* ================= Apply Now Hero Section ================= */
+.apply-hero-section {
+  position: relative;
+  background: linear-gradient(135deg, rgba(10, 20, 35, 0.85) 0%, rgba(15, 41, 74, 0.7) 100%), url('/assets/images/cruise-12.jpg') center/cover no-repeat;
+  min-height: 400px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-top: 160px;
+  padding-bottom: 70px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  color: #ffffff;
+  width: 100%;
+}
+
+.apply-eyebrow {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--gold-accent, #d97706);
+  letter-spacing: 2px;
+}
+
+.apply-title {
+  font-size: 3.5rem;
+  font-weight: 800;
+  letter-spacing: 1px;
+  color: #ffffff !important;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+}
+
+.apply-subtitle {
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: var(--gold-accent, #d97706);
+  letter-spacing: 1px;
+}
+
+/* ================= Base Styles ================= */
+.apply-page {
+  background: linear-gradient(180deg, #ffffff 0%, #f1f5f9 100%);
+  min-height: 100vh;
+}
+
+/* ================= Sticky Left Sidebar Info ================= */
+.bg-gold {
+  background-color: var(--gold-accent, #d97706) !important;
+}
+
+.text-navy {
+  color: var(--primary-navy, #0f294a) !important;
+}
+
+.text-gold {
+  color: var(--gold-accent, #d97706) !important;
+}
+
+.icon-box-round {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  min-width: 48px;
+  background-color: rgba(217, 119, 6, 0.05) !important;
+  color: var(--gold-accent, #d97706) !important;
+  border: 1px solid rgba(217, 119, 6, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.video-card {
+  border-radius: 16px;
+  border: 1px solid #e2e8f0;
+  background-color: #ffffff;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.video-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 30px rgba(15, 41, 74, 0.08) !important;
+}
+
+.trust-badge-card {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  padding: 18px 22px;
+  box-shadow: 0 4px 10px rgba(15, 41, 74, 0.02);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  border-left: 3px solid #e2e8f0;
+}
+
+.trust-badge-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px rgba(15, 41, 74, 0.06);
+  border-left: 3px solid var(--gold-accent, #d97706);
+  background: #ffffff;
+}
+
+/* ================= Form Card Styles ================= */
+.form-card {
+  background: #ffffff;
+  border: 1px solid rgba(15, 41, 74, 0.08);
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.03), 0 20px 40px -1px rgba(0, 0, 0, 0.04) !important;
+  color: #334155;
+  border-radius: 16px;
+}
+
+.form-header {
+  border-color: #f1f5f9 !important;
+}
+
+.form-card label {
+  color: #334155;
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+/* ================= Premium Timeline Progress Indicator ================= */
+.step-indicator-timeline {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+  width: 100%;
+}
+
+.timeline-step {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  z-index: 2;
+  flex-grow: 1;
+}
+
+.step-number {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background-color: #ffffff;
+  border: 2px solid #e2e8f0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 0.95rem;
+  color: #94a3b8;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.step-label {
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: #94a3b8;
+  margin-top: 8px;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Timeline Active State */
+.timeline-step.active .step-number {
+  border-color: var(--gold-accent, #d97706);
+  color: var(--gold-accent, #d97706);
+  box-shadow: 0 0 0 5px rgba(217, 119, 6, 0.1);
+  background-color: #ffffff;
+}
+
+.timeline-step.active .step-label {
+  color: var(--primary-navy, #0f294a);
+}
+
+/* Timeline Completed State */
+.timeline-step.completed .step-number {
+  border-color: var(--primary-navy, #0f294a);
+  background-color: var(--primary-navy, #0f294a);
+  color: #ffffff;
+}
+
+.timeline-step.completed .step-label {
+  color: var(--primary-navy, #0f294a);
+}
+
+/* Timeline Connector Lines */
+.timeline-line {
+  height: 3px;
+  background-color: #e2e8f0;
+  flex-grow: 2;
+  position: relative;
+  top: -14px;
+  margin: 0 -8px;
+  z-index: 1;
+  transition: background-color 0.4s ease;
+  border-radius: 4px;
+}
+
+.timeline-line.filled {
+  background-color: var(--primary-navy, #0f294a);
+}
+
+/* ================= Light Input Controls ================= */
+.form-control,
+.form-select {
+  background-color: #ffffff;
+  border: 1px solid #cbd5e1;
+  color: #0f294a !important;
+  border-radius: 8px;
+  padding: 12px 16px;
+  font-size: 0.95rem;
+  transition: all 0.25s ease-in-out;
+}
+
+.form-control:focus,
+.form-select:focus {
+  background-color: #ffffff;
+  color: #0f294a !important;
+  border-color: var(--gold-accent, #d97706);
+  box-shadow: 0 0 0 3px rgba(217, 119, 6, 0.12);
+  outline: none;
+}
+
+.form-control::placeholder {
+  color: #94a3b8;
+}
+
+/* ================= Checkboxes & Radios ================= */
+.form-check-input {
+  background-color: #ffffff;
+  border: 1px solid #cbd5e1;
+  width: 1.25em;
+  height: 1.25em;
+  cursor: pointer;
+  transition: background-color 0.2s ease, border-color 0.2s ease;
+}
+
+.form-check-input:checked {
+  background-color: var(--gold-accent, #d97706);
+  border-color: var(--gold-accent, #d97706);
+}
+
+.form-check-label {
+  color: #334155 !important;
+  font-weight: 500 !important;
+  font-size: 0.95rem;
+  cursor: pointer;
+  padding-left: 6px;
+}
+
+/* ================= Sub-form Containers ================= */
+.course-sub-form {
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-left: 4px solid var(--gold-accent, #d97706);
+}
+
+/* ================= Premium Drag & Drop Upload Zone ================= */
+.file-upload-dropzone {
+  border: 2px dashed #cbd5e1;
+  background-color: #f8fafc;
+  cursor: pointer;
+  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+  border-radius: 12px;
+}
+
+.file-upload-dropzone:hover {
+  border-color: var(--gold-accent, #d97706);
+  background-color: rgba(217, 119, 6, 0.02);
+}
+
+.file-upload-dropzone i {
+  color: var(--gold-accent, #d97706);
+  transition: transform 0.2s ease;
+}
+
+.file-upload-dropzone:hover i {
+  transform: translateY(-3px);
+}
+
+/* ================= Payment Option Cards ================= */
+.payment-options-list {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.payment-option-card {
+  background: #ffffff;
+  border: 1px solid #cbd5e1;
+  border-radius: 10px;
+  padding: 18px 22px;
+  cursor: pointer;
+  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+  display: flex;
+  align-items: center;
+  gap: 18px;
+}
+
+.payment-option-card:hover {
+  background: #f8fafc;
+  border-color: rgba(217, 119, 6, 0.35);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.02);
+}
+
+.payment-option-card.selected {
+  border-color: var(--gold-accent, #d97706);
+  background: rgba(217, 119, 6, 0.04);
+  box-shadow: 0 4px 15px rgba(217, 119, 6, 0.08);
+}
+
+.payment-option-card label {
+  cursor: pointer;
+}
+
+.payment-option-card .text-navy {
+  color: var(--primary-navy, #0f294a) !important;
+}
+
+.payment-option-card .text-muted {
+  color: #64748b !important;
+}
+
+/* ================= Buttons ================= */
+.btn-warning {
+  background-color: var(--gold-accent, #d97706);
+  border: none;
+  color: #ffffff;
+  font-weight: 700;
+  padding: 14px 28px;
+  border-radius: 8px;
+  transition: all 0.25s ease;
+  box-shadow: 0 2px 6px rgba(217, 119, 6, 0.15);
+}
+
+.btn-warning:hover {
+  background-color: var(--gold-accent-hover, #b45309);
+  color: #ffffff;
+  transform: translateY(-1px);
+  box-shadow: 0 6px 15px rgba(217, 119, 6, 0.3);
+}
+
+.btn-warning:disabled {
+  background-color: #cbd5e1 !important;
+  color: #94a3b8 !important;
+  box-shadow: none;
+  transform: none;
+  cursor: not-allowed;
+}
+
+.btn-secondary {
+  background-color: #ffffff;
+  border: 1px solid #cbd5e1;
+  color: var(--primary-navy, #0f294a);
+  font-weight: 700;
+  padding: 14px 28px;
+  border-radius: 8px;
+  transition: all 0.25s ease;
+}
+
+.btn-secondary:hover {
+  background-color: #f8fafc;
+  border-color: #94a3b8;
+  color: var(--primary-navy, #0f294a);
+  transform: translateY(-1px);
+}
+
+.btn-success {
+  background-color: #10b981;
+  border: none;
+  color: #ffffff;
+  font-weight: 700;
+  padding: 14px 28px;
+  border-radius: 8px;
+  transition: all 0.25s ease;
+  box-shadow: 0 2px 6px rgba(16, 185, 129, 0.15);
+}
+
+.btn-success:hover {
+  background-color: #059669;
+  color: #ffffff;
+  transform: translateY(-1px);
+  box-shadow: 0 6px 15px rgba(16, 185, 129, 0.3);
+}
+
+.btn-success:disabled {
+  background-color: #cbd5e1 !important;
+  color: #94a3b8 !important;
+  box-shadow: none;
+  transform: none;
+  cursor: not-allowed;
+}
+
+/* ================= Document Upload List ================= */
+.alert-info {
+  background-color: rgba(2, 132, 199, 0.08) !important;
+  border: 1px solid rgba(2, 132, 199, 0.2) !important;
+  color: #0284c7 !important;
+  border-radius: 8px;
+}
+
+.uploaded-files-container {
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+}
+
+.btn-outline-danger {
+  color: #ef4444;
+  border-color: rgba(239, 68, 68, 0.4);
+  font-size: 0.85rem;
+  font-weight: 600;
+  transition: all 0.2s ease;
+}
+
+.btn-outline-danger:hover {
+  background-color: #ef4444;
+  border-color: #ef4444;
+  color: #ffffff;
+}
+
+/* ================= Animations ================= */
+.animate-fade {
+  animation: fadeIn 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ================= Sticky Top Offset on Desktop ================= */
+@media (min-width: 992px) {
+  .sticky-lg-top {
+    position: sticky;
+    top: 110px;
+    z-index: 10;
+  }
+}
+
+/* ================= Responsive Adjustments ================= */
+@media (max-width: 991px) {
+  .timeline-step {
+    padding: 0;
+  }
+  .step-label {
+    font-size: 0.7rem;
+    letter-spacing: 0.3px;
+  }
+}
+
+@media (max-width: 768px) {
+  .apply-hero-section {
+    padding-top: 120px;
+    padding-bottom: 50px;
+    min-height: 320px;
+  }
+  .apply-title {
+    font-size: 2.5rem;
+  }
+  .apply-subtitle {
+    font-size: 1.1rem;
+  }
+  .apply-lead-text {
+    font-size: 0.95rem !important;
+  }
+  .form-card {
+    padding: 24px !important;
+    border-radius: 12px;
+  }
+  .form-card h1 {
+    font-size: 1.5rem;
+  }
+  .btn-warning, .btn-secondary, .btn-success {
+    padding: 12px 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .step-label {
+    display: none; /* Hide labels on extra small screens to save space */
+  }
+  .timeline-line {
+    top: -18px;
+  }
+}
