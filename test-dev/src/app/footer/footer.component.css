@@ -108,6 +108,153 @@ hr {
   .footer-social a {
     justify-content: center; /* centers text + icon together */
   }
+  footer {
+  background: #0b1d3b;
+  padding: 20px;
+  font-family: 'Poppins', sans-serif;
+  color: #f0f0f0;
+}
+
+.footer-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 40px;
+  margin-bottom: 30px;
+}
+
+.footer-col {
+  flex: 1;
+  min-width: 220px;
+}
+
+.footer-col h4 {
+  font-size: 1.4rem;
+  margin-bottom: 20px;
+  font-weight: 700;
+  color: #ffcc66;
+  letter-spacing: 1px;
+}
+
+.footer-links a {
+  display: block;
+  margin-bottom: 12px;
+  font-size: 1rem;
+  color: white;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.footer-links a:hover {
+  color: #ffcc66;
+}
+
+/* Stack social icons vertically */
+/* Vertical social links with icon + name */
+.footer-social {
+  display: flex;
+  flex-direction: column; /* stack vertically */
+  gap: 15px;
+}
+
+.footer-social a {
+  display: flex;
+  align-items: center;
+  gap: 10px; /* space between icon and text */
+  font-size: 1rem;
+  color: #f0f0f0;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.footer-social a i {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 35px;
+  height: 35px;
+  background: #ffcc66;
+  color: #0b1d3b;
+  border-radius: 50%;
+  font-size: 1.2rem;
+  transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.footer-social a:hover {
+  color: #ffcc66;
+   transform: scale(1.2);
+}
+
+
+.footer-map iframe {
+  width: 100%;
+  height: 200px;
+  border: 0;
+  border-radius: 8px;
+}
+
+.footer-copy {
+  text-align: center;
+  font-size: 1rem;
+  color: #bbb;
+}
+
+hr {
+  border: 0;
+  border-top: 1px solid #aca4a4;
+}
+
+/* Responsive */
+@media (max-width: 992px) {
+  .footer-row {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .footer-social {
+    justify-content: center;
+    align-items: center; /* centers horizontally */
+  }
+
+  .footer-social a {
+    justify-content: center; /* centers text + icon together */
+  }
+}
+
+/* ================= Extra Mobile Fine-Tuning (added) ================= */
+@media (max-width: 575px) {
+  footer {
+    padding: 15px;
+  }
+
+  .footer-row {
+    gap: 25px;
+    margin-bottom: 20px;
+  }
+
+  .footer-col h4 {
+    font-size: 1.15rem;
+    margin-bottom: 14px;
+  }
+
+  .footer-links a {
+    font-size: 0.92rem;
+    margin-bottom: 10px;
+  }
+
+  .footer-social a i {
+    width: 30px;
+    height: 30px;
+    font-size: 1rem;
+  }
+
+  .footer-map iframe {
+    height: 180px;
+  }
+
+  .footer-copy {
+    font-size: 0.85rem;
+  }
+}
 }
 
 

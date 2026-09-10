@@ -1,1567 +1,1469 @@
-<!-- Apply Now Hero Banner Section -->
-<section class="apply-hero-section text-center text-white">
-  <div class="container">
-    <span class="apply-eyebrow fw-bold text-uppercase">
-      ADMISSIONS OPEN
-    </span>
+<div class="application-page">
 
-    <h1 class="apply-title fw-bold mt-2 mb-3">
-      APPLY NOW
-    </h1>
+  <!-- ==========================================================
+       HEADER
+  =========================================================== -->
 
-    <span class="apply-subtitle fw-bold d-block mb-3">
-      JOIN CRUISE LENS ACADEMY
-    </span>
+  <div class="application-header">
 
-    <div
-      class="section-divider-gold mx-auto mb-4"
-      style="
-        width: 70px;
-        height: 3px;
-        background-color: var(--gold-accent);
-      "
-    ></div>
+    <div class="header-content">
 
-    <p
-      class="apply-lead-text mx-auto"
-      style="
-        max-width: 800px;
-        font-size: 1.1rem;
-        color: #cbd5e1;
-        line-height: 1.6;
-      "
-    >
-      Take the first step towards a global career in cruise photography.
-      Complete our multi-step application form, and our admissions team will
-      guide you through the process.
-    </p>
+      <span class="header-label">
+        APPLICATION
+      </span>
+
+      <h1>
+        Start Your Cruise Career
+      </h1>
+
+      <p>
+        Complete the application below to begin your journey.
+      </p>
+
+    </div>
+
   </div>
-</section>
 
-<section class="apply-page py-5 bg-light">
-  <div class="container py-3">
-    <div class="row g-5 align-items-start">
 
-      <!-- ========================================================= -->
-      <!-- LEFT COLUMN -->
-      <!-- ========================================================= -->
-      <div class="col-lg-5 col-md-12 text-start">
+  <!-- ==========================================================
+       PROGRESS
+  =========================================================== -->
 
-        <div
-          class="sticky-lg-top"
-          style="top: 100px; z-index: 1;"
-        >
+  <div class="progress-wrapper">
 
-          <span
-            class="badge text-white px-3 py-2 text-uppercase mb-3 fw-bold letter-spacing-1 bg-gold shadow-sm"
-          >
-            Admissions Open
-          </span>
+    <div class="progress-steps">
 
-          <h2
-            class="fw-bold text-navy mb-3"
-            style="font-size: 2.2rem; line-height: 1.2;"
-          >
-            START YOUR CRUISE CAREER TODAY
-          </h2>
+      <!-- STEP 1 -->
+      <div
+        class="progress-step"
+        [class.active]="step === 1"
+        [class.completed]="step > 1"
+      >
 
-          <!-- UPDATED 48 HOURS -->
-          <p
-            class="text-muted mb-4"
-            style="font-size: 1.05rem; line-height: 1.6;"
-          >
-            Fill out the application form to secure your seat. Our admissions
-            team will review your profile and get in touch with you within
-            <strong>48 hours</strong>.
-          </p>
-
-          <!-- ===================================================== -->
-          <!-- DOCUMENTATION SUPPORT -->
-          <!-- ===================================================== -->
-
-          <div
-            class="documentation-support-card shadow-sm rounded-3 border bg-white p-4 mb-4"
-          >
-            <div class="d-flex align-items-start gap-3">
-
-              <div
-                class="icon-box-round bg-light d-flex align-items-center justify-content-center flex-shrink-0"
-                style="width: 48px; height: 48px;"
-              >
-                <i class="bi bi-file-earmark-text-fill fs-5 text-gold"></i>
-              </div>
-
-              <div>
-                <h5 class="fw-bold text-navy mb-2">
-                  DOCUMENTATION SUPPORT
-                </h5>
-
-                <p
-                  class="text-muted mb-0"
-                  style="line-height: 1.6;"
-                >
-                  Our team provides guidance and support throughout the
-                  application and documentation process, helping candidates
-                  understand the required documents and next steps as they
-                  prepare for their training and career pathway.
-                </p>
-              </div>
-
-            </div>
-          </div>
-
-          <!-- ===================================================== -->
-          <!-- TRUST BADGES -->
-          <!-- ===================================================== -->
-
-          <div class="d-flex flex-column gap-3 mt-4">
-
-            <!-- Trust Badge 1 -->
-            <div
-              class="trust-badge-card d-flex align-items-center gap-3"
-            >
-              <div
-                class="icon-box-round bg-light d-flex align-items-center justify-content-center text-primary"
-              >
-                <i class="bi bi-patch-check-fill fs-5 text-gold"></i>
-              </div>
-
-              <div
-                class="d-flex align-items-center gap-2 flex-grow-1"
-              >
-                <div>
-                  <h6 class="m-0 fw-bold text-navy">
-                    Approved Training Partner
-                  </h6>
-
-                  <p class="m-0 text-muted small">
-                    Medhavi Skills University & Skill India
-                  </p>
-                </div>
-
-                <img
-                  src="assets/images/skill-india-logo.png"
-                  alt="Skill India"
-                  style="height: 32px; width: auto;"
-                  class="ms-auto"
-                />
-              </div>
-            </div>
-
-            <!-- Trust Badge 2 -->
-            <div
-              class="trust-badge-card d-flex align-items-center gap-3"
-            >
-              <div
-                class="icon-box-round bg-light d-flex align-items-center justify-content-center text-primary"
-              >
-                <i class="bi bi-mortarboard-fill fs-5 text-gold"></i>
-              </div>
-
-              <div>
-                <h6 class="m-0 fw-bold text-navy">
-                  MSU University Certified
-                </h6>
-
-                <p class="m-0 text-muted small">
-                  Academic credibility for your resume
-                </p>
-              </div>
-            </div>
-
-            <!-- Trust Badge 3 -->
-            <div
-              class="trust-badge-card d-flex align-items-center gap-3"
-            >
-              <div
-                class="icon-box-round bg-light d-flex align-items-center justify-content-center text-primary"
-              >
-                <i class="bi bi-shield-check fs-5 text-gold"></i>
-              </div>
-
-              <div>
-                <h6 class="m-0 fw-bold text-navy">
-                  100% Placement Assistance
-                </h6>
-
-                <p class="m-0 text-muted small">
-                  Global career support on luxury cruise ships
-                </p>
-              </div>
-            </div>
-
-          </div>
+        <div class="step-number">
+          <span *ngIf="step <= 1">1</span>
+          <span *ngIf="step > 1">✓</span>
         </div>
+
+        <span class="step-label">
+          Personal
+        </span>
+
       </div>
 
 
-      <!-- ========================================================= -->
-      <!-- RIGHT COLUMN - FORM -->
-      <!-- ========================================================= -->
+      <div
+        class="progress-line"
+        [class.completed]="step > 1"
+      ></div>
 
-      <div class="col-lg-7 col-md-12">
 
-        <div
-          class="form-card p-4 p-md-5 shadow-sm border bg-white rounded-3"
+      <!-- STEP 2 -->
+      <div
+        class="progress-step"
+        [class.active]="step === 2"
+        [class.completed]="step > 2"
+      >
+
+        <div class="step-number">
+          <span *ngIf="step <= 2">2</span>
+          <span *ngIf="step > 2">✓</span>
+        </div>
+
+        <span class="step-label">
+          Course
+        </span>
+
+      </div>
+
+
+      <div
+        class="progress-line"
+        [class.completed]="step > 2"
+      ></div>
+
+
+      <!-- STEP 3 -->
+      <div
+        class="progress-step"
+        [class.active]="step === 3"
+        [class.completed]="step > 3"
+      >
+
+        <div class="step-number">
+          <span *ngIf="step <= 3">3</span>
+          <span *ngIf="step > 3">✓</span>
+        </div>
+
+        <span class="step-label">
+          Documents
+        </span>
+
+      </div>
+
+
+      <div
+        class="progress-line"
+        [class.completed]="step > 3"
+      ></div>
+
+
+      <!-- STEP 4 -->
+      <div
+        class="progress-step"
+        [class.active]="step === 4"
+      >
+
+        <div class="step-number">
+          4
+        </div>
+
+        <span class="step-label">
+          Payment
+        </span>
+
+      </div>
+
+    </div>
+
+  </div>
+
+
+  <!-- ==========================================================
+       MAIN CARD
+  =========================================================== -->
+
+  <main class="application-container">
+
+    <div class="application-card">
+
+
+      <!-- ======================================================
+           STEP 1 - PERSONAL DETAILS
+      ======================================================= -->
+
+      <section
+        *ngIf="step === 1"
+        class="form-step"
+      >
+
+        <div class="section-heading">
+
+          <span class="section-number">
+            01
+          </span>
+
+          <div>
+            <h2>
+              Personal Information
+            </h2>
+
+            <p>
+              Tell us a little about yourself.
+            </p>
+          </div>
+
+        </div>
+
+
+        <form
+          [formGroup]="personalForm"
+          novalidate
         >
 
-          <!-- Form Header -->
-          <div class="form-header text-center mb-5 pb-3 border-bottom">
-
-            <h3 class="fw-bold text-navy text-uppercase m-0">
-              Application Form
-            </h3>
-
-            <p class="text-muted small mt-1 mb-0">
-              Follow the steps to complete your registration
-            </p>
-
-          </div>
+          <div class="form-grid">
 
 
-          <!-- ===================================================== -->
-          <!-- STEP TIMELINE -->
-          <!-- ===================================================== -->
+            <!-- FULL NAME -->
+            <div class="form-group full-width">
 
-          <div class="step-indicator-timeline mb-5">
-
-            <div
-              class="timeline-step"
-              [class.active]="step >= 1"
-              [class.completed]="step > 1"
-            >
-              <div class="step-number">1</div>
-              <span class="step-label">Personal</span>
-            </div>
-
-            <div
-              class="timeline-line"
-              [class.filled]="step > 1"
-            ></div>
-
-            <div
-              class="timeline-step"
-              [class.active]="step >= 2"
-              [class.completed]="step > 2"
-            >
-              <div class="step-number">2</div>
-              <span class="step-label">Details</span>
-            </div>
-
-            <div
-              class="timeline-line"
-              [class.filled]="step > 2"
-            ></div>
-
-            <div
-              class="timeline-step"
-              [class.active]="step >= 3"
-              [class.completed]="step > 3"
-            >
-              <div class="step-number">3</div>
-              <span class="step-label">Documents</span>
-            </div>
-
-            <div
-              class="timeline-line"
-              [class.filled]="step > 3"
-            ></div>
-
-            <div
-              class="timeline-step"
-              [class.active]="step >= 4"
-            >
-              <div class="step-number">4</div>
-              <span class="step-label">Payment</span>
-            </div>
-
-          </div>
-
-
-          <!-- ===================================================== -->
-          <!-- STEP 1 - PERSONAL INFO -->
-          <!-- ===================================================== -->
-
-          <div
-            *ngIf="step === 1"
-            [formGroup]="personalForm"
-            class="step-content animate-fade"
-          >
-
-            <h4 class="mb-4 text-gold border-bottom pb-2">
-              Step 1 – Personal Info
-            </h4>
-
-            <!-- Full Name -->
-            <div class="mb-3">
-              <label class="form-label">
-                Full Name *
+              <label for="fullName">
+                Full Name
+                <span>*</span>
               </label>
 
               <input
-                class="form-control"
+                id="fullName"
+                type="text"
                 formControlName="fullName"
                 placeholder="Enter your full name"
+                autocomplete="name"
+                [class.invalid]="
+                  personalForm.get('fullName')?.touched &&
+                  personalForm.get('fullName')?.invalid
+                "
               />
+
+              <small
+                class="error"
+                *ngIf="
+                  personalForm.get('fullName')?.touched &&
+                  personalForm.get('fullName')?.invalid
+                "
+              >
+                Please enter your full name.
+              </small>
+
             </div>
 
-            <!-- Email -->
-            <div class="mb-3">
-              <label class="form-label">
-                Email Address *
+
+            <!-- EMAIL -->
+            <div class="form-group">
+
+              <label for="email">
+                Email Address
+                <span>*</span>
               </label>
 
               <input
+                id="email"
                 type="email"
-                class="form-control"
                 formControlName="email"
-                placeholder="name@example.com"
+                placeholder="you@example.com"
+                autocomplete="email"
+                [class.invalid]="
+                  personalForm.get('email')?.touched &&
+                  personalForm.get('email')?.invalid
+                "
               />
+
+              <small
+                class="error"
+                *ngIf="
+                  personalForm.get('email')?.touched &&
+                  personalForm.get('email')?.invalid
+                "
+              >
+                Please enter a valid email address.
+              </small>
+
             </div>
 
-            <!-- Phone -->
-            <div class="mb-3">
-              <label class="form-label">
-                Phone Number (WhatsApp preferred) *
+
+            <!-- PHONE -->
+            <div class="form-group">
+
+              <label for="phone">
+                Phone Number
+                <span>*</span>
               </label>
 
               <input
-                class="form-control"
+                id="phone"
+                type="tel"
                 formControlName="phone"
-                placeholder="e.g. +91 98765 43210"
+                placeholder="+91 XXXXX XXXXX"
+                autocomplete="tel"
+                [class.invalid]="
+                  personalForm.get('phone')?.touched &&
+                  personalForm.get('phone')?.invalid
+                "
               />
+
+              <small
+                class="error"
+                *ngIf="
+                  personalForm.get('phone')?.touched &&
+                  personalForm.get('phone')?.invalid
+                "
+              >
+                Please enter your phone number.
+              </small>
+
             </div>
 
-            <!-- City -->
-            <div class="mb-3">
-              <label class="form-label">
-                City & State *
+
+            <!-- CITY -->
+            <div class="form-group">
+
+              <label for="city">
+                City
+                <span>*</span>
               </label>
 
               <input
-                class="form-control"
+                id="city"
+                type="text"
                 formControlName="city"
-                placeholder="e.g. Mapusa, Goa"
+                placeholder="Enter your city"
+                autocomplete="address-level2"
+                [class.invalid]="
+                  personalForm.get('city')?.touched &&
+                  personalForm.get('city')?.invalid
+                "
               />
+
+              <small
+                class="error"
+                *ngIf="
+                  personalForm.get('city')?.touched &&
+                  personalForm.get('city')?.invalid
+                "
+              >
+                Please enter your city.
+              </small>
+
             </div>
+
 
             <!-- DOB -->
-            <div class="mb-4">
-              <label class="form-label">
-                Date of Birth *
+            <div class="form-group">
+
+              <label for="dob">
+                Date of Birth
+                <span>*</span>
               </label>
 
               <input
+                id="dob"
                 type="date"
-                class="form-control"
                 formControlName="dob"
+                [class.invalid]="
+                  personalForm.get('dob')?.touched &&
+                  personalForm.get('dob')?.invalid
+                "
               />
-            </div>
 
-            <!-- Preferred Contact -->
-            <div class="mb-4">
-
-              <label class="form-label fw-bold text-navy">
-                Preferred Way To Connect *
-              </label>
-
-              <div class="d-flex flex-wrap gap-4 mt-1">
-
-                <div class="form-check">
-                  <input
-                    class="form-check-input"
-                    type="checkbox"
-                    value="WhatsApp"
-                    id="connectWhatsApp"
-                    (change)="onCheckboxChange($event)"
-                  />
-
-                  <label
-                    class="form-check-label"
-                    for="connectWhatsApp"
-                  >
-                    WhatsApp
-                  </label>
-                </div>
-
-                <div class="form-check">
-                  <input
-                    class="form-check-input"
-                    type="checkbox"
-                    value="Email"
-                    id="connectEmail"
-                    (change)="onCheckboxChange($event)"
-                  />
-
-                  <label
-                    class="form-check-label"
-                    for="connectEmail"
-                  >
-                    Email
-                  </label>
-                </div>
-
-                <div class="form-check">
-                  <input
-                    class="form-check-input"
-                    type="checkbox"
-                    value="Call"
-                    id="connectCall"
-                    (change)="onCheckboxChange($event)"
-                  />
-
-                  <label
-                    class="form-check-label"
-                    for="connectCall"
-                  >
-                    Call
-                  </label>
-                </div>
-
-              </div>
-
-              <div
+              <small
+                class="error"
                 *ngIf="
-                  preferredContactArray.touched &&
-                  preferredContactArray.invalid
+                  personalForm.get('dob')?.touched &&
+                  personalForm.get('dob')?.invalid
                 "
-                class="text-danger small mt-1"
               >
-                Please select at least one option.
-              </div>
+                Please select your date of birth.
+              </small>
 
             </div>
 
 
-            <!-- How did you hear -->
-            <div class="mb-4">
+            <!-- HEARD FROM -->
+            <div class="form-group">
 
-              <label class="form-label fw-bold text-navy">
-                How did you hear about Cruise Lens Academy? *
-              </label>
-
-              <div class="d-flex flex-column gap-2 mt-1">
-
-                <div class="form-check">
-                  <input
-                    class="form-check-input"
-                    type="radio"
-                    value="Instagram"
-                    formControlName="heardFrom"
-                    id="radioInstagram"
-                  />
-
-                  <label
-                    class="form-check-label"
-                    for="radioInstagram"
-                  >
-                    Instagram
-                  </label>
-                </div>
-
-                <div class="form-check">
-                  <input
-                    class="form-check-input"
-                    type="radio"
-                    value="Facebook"
-                    formControlName="heardFrom"
-                    id="radioFacebook"
-                  />
-
-                  <label
-                    class="form-check-label"
-                    for="radioFacebook"
-                  >
-                    Facebook
-                  </label>
-                </div>
-
-                <div class="form-check">
-                  <input
-                    class="form-check-input"
-                    type="radio"
-                    value="LinkedIn"
-                    formControlName="heardFrom"
-                    id="radioLinkedIn"
-                  />
-
-                  <label
-                    class="form-check-label"
-                    for="radioLinkedIn"
-                  >
-                    LinkedIn
-                  </label>
-                </div>
-
-                <div class="form-check">
-                  <input
-                    class="form-check-input"
-                    type="radio"
-                    value="Google"
-                    formControlName="heardFrom"
-                    id="radioGoogle"
-                  />
-
-                  <label
-                    class="form-check-label"
-                    for="radioGoogle"
-                  >
-                    Google
-                  </label>
-                </div>
-
-                <div class="form-check">
-                  <input
-                    class="form-check-input"
-                    type="radio"
-                    value="Others"
-                    formControlName="heardFrom"
-                    id="radioOthers"
-                  />
-
-                  <label
-                    class="form-check-label"
-                    for="radioOthers"
-                  >
-                    Others
-                  </label>
-                </div>
-
-              </div>
-
-              <div
-                *ngIf="
-                  personalForm.get('heardFrom')?.touched &&
-                  personalForm.get('heardFrom')?.invalid
-                "
-                class="text-danger small mt-1"
-              >
-                Please select an option.
-              </div>
-
-            </div>
-
-
-            <!-- Next -->
-            <button
-              type="button"
-              class="btn btn-warning w-100 py-3 mt-3 fw-bold text-uppercase letter-spacing-1"
-              (click)="nextStep()"
-              [disabled]="!isCurrentStepValid()"
-            >
-              Next
-            </button>
-
-          </div>
-
-
-          <!-- ===================================================== -->
-          <!-- STEP 2 - COURSE & DETAILS -->
-          <!-- ===================================================== -->
-
-          <div
-            *ngIf="step === 2"
-            [formGroup]="courseForm"
-            class="step-content animate-fade"
-          >
-
-            <h4 class="mb-4 text-gold border-bottom pb-2">
-              Step 2 – Course & Details
-            </h4>
-
-
-            <!-- COURSE -->
-            <div class="mb-4">
-
-              <label class="form-label">
-                Select Course *
+              <label for="heardFrom">
+                How did you hear about us?
+                <span>*</span>
               </label>
 
               <select
-                class="form-select"
-                formControlName="course"
+                id="heardFrom"
+                formControlName="heardFrom"
+                [class.invalid]="
+                  personalForm.get('heardFrom')?.touched &&
+                  personalForm.get('heardFrom')?.invalid
+                "
               >
 
                 <option value="">
-                  -- Select a Course --
+                  Select an option
                 </option>
 
-                <option value="course1">
-                  Certification in Cruise Photography (₹1,49,000)
+                <option value="google">
+                  Google
                 </option>
 
-                <option value="course2">
-                  Complete Cruise Career Program (₹2,08,000)
+                <option value="instagram">
+                  Instagram
+                </option>
+
+                <option value="facebook">
+                  Facebook
+                </option>
+
+                <option value="youtube">
+                  YouTube
+                </option>
+
+                <option value="friend">
+                  Friend / Family
+                </option>
+
+                <option value="referral">
+                  Referral
+                </option>
+
+                <option value="other">
+                  Other
                 </option>
 
               </select>
 
-            </div>
-
-
-            <!-- ================================================= -->
-            <!-- COMMON QUESTIONS FOR BOTH COURSES -->
-            <!-- ================================================= -->
-
-            <div
-              *ngIf="
-                selectedCourse === 'course1' ||
-                selectedCourse === 'course2'
-              "
-              [formGroup]="courseQuestions"
-              class="course-sub-form p-3 rounded mb-4"
-            >
-
-              <h5 class="mb-4 text-gold border-bottom pb-2">
-                Candidate Details
-              </h5>
-
-
-              <!-- QUESTION 1 -->
-              <div class="mb-4">
-
-                <label class="form-label d-block fw-bold">
-                  1. Used DSLR or professional camera? *
-                </label>
-
-                <div class="d-flex flex-wrap gap-3 mt-2">
-
-                  <div class="form-check">
-                    <input
-                      class="form-check-input"
-                      type="radio"
-                      value="yes"
-                      formControlName="usedCamera"
-                      id="usedCameraYes"
-                    />
-
-                    <label
-                      class="form-check-label"
-                      for="usedCameraYes"
-                    >
-                      Yes
-                    </label>
-                  </div>
-
-                  <div class="form-check">
-                    <input
-                      class="form-check-input"
-                      type="radio"
-                      value="no"
-                      formControlName="usedCamera"
-                      id="usedCameraNo"
-                    />
-
-                    <label
-                      class="form-check-label"
-                      for="usedCameraNo"
-                    >
-                      No
-                    </label>
-                  </div>
-
-                  <div class="form-check">
-                    <input
-                      class="form-check-input"
-                      type="radio"
-                      value="phone"
-                      formControlName="usedCamera"
-                      id="usedCameraPhone"
-                    />
-
-                    <label
-                      class="form-check-label"
-                      for="usedCameraPhone"
-                    >
-                      Phone only
-                    </label>
-                  </div>
-
-                </div>
-
-              </div>
-
-
-              <!-- QUESTION 2 -->
-              <div class="mb-4">
-
-                <label class="form-label d-block fw-bold">
-                  2. Worked in hospitality/events? *
-                </label>
-
-                <div class="d-flex flex-wrap gap-3 mt-2">
-
-                  <div class="form-check">
-                    <input
-                      class="form-check-input"
-                      type="radio"
-                      value="yes"
-                      formControlName="hospitalityExp"
-                      id="hospitalityYes"
-                    />
-
-                    <label
-                      class="form-check-label"
-                      for="hospitalityYes"
-                    >
-                      Yes
-                    </label>
-                  </div>
-
-                  <div class="form-check">
-                    <input
-                      class="form-check-input"
-                      type="radio"
-                      value="no"
-                      formControlName="hospitalityExp"
-                      id="hospitalityNo"
-                    />
-
-                    <label
-                      class="form-check-label"
-                      for="hospitalityNo"
-                    >
-                      No
-                    </label>
-                  </div>
-
-                </div>
-
-              </div>
-
-
-              <!-- QUESTION 3 -->
-              <div class="mb-4">
-
-                <label class="form-label fw-bold">
-                  3. How many years of total professional work experience
-                  do you have? *
-                </label>
-
-                <select
-                  class="form-select"
-                  formControlName="professionalExperience"
-                >
-
-                  <option value="">
-                    -- Select Years --
-                  </option>
-
-                  <option value="0">
-                    Less than 1 year
-                  </option>
-
-                  <option value="1">
-                    1 year
-                  </option>
-
-                  <option value="2">
-                    2 years
-                  </option>
-
-                  <option value="3">
-                    3 years
-                  </option>
-
-                  <option value="4">
-                    4 years
-                  </option>
-
-                  <option value="5">
-                    5 years
-                  </option>
-
-                  <option value="6">
-                    6 years
-                  </option>
-
-                  <option value="7">
-                    7 years
-                  </option>
-
-                  <option value="8">
-                    8 years
-                  </option>
-
-                  <option value="9">
-                    9 years
-                  </option>
-
-                  <option value="10+">
-                    10+ years
-                  </option>
-
-                </select>
-
-              </div>
-
-
-              <!-- QUESTION 4 -->
-              <div class="mb-4">
-
-                <label class="form-label fw-bold">
-                  4. How many years of photography experience do you have? *
-                </label>
-
-                <select
-                  class="form-select"
-                  formControlName="photographyExperience"
-                >
-
-                  <option value="">
-                    -- Select Years --
-                  </option>
-
-                  <option value="0">
-                    Less than 1 year
-                  </option>
-
-                  <option value="1">
-                    1 year
-                  </option>
-
-                  <option value="2">
-                    2 years
-                  </option>
-
-                  <option value="3">
-                    3 years
-                  </option>
-
-                  <option value="4">
-                    4 years
-                  </option>
-
-                  <option value="5">
-                    5 years
-                  </option>
-
-                  <option value="6">
-                    6 years
-                  </option>
-
-                  <option value="7">
-                    7 years
-                  </option>
-
-                  <option value="8">
-                    8 years
-                  </option>
-
-                  <option value="9">
-                    9 years
-                  </option>
-
-                  <option value="10+">
-                    10+ years
-                  </option>
-
-                </select>
-
-              </div>
-
-
-              <!-- QUESTION 5 -->
-              <div class="mb-4">
-
-                <label class="form-label d-block fw-bold">
-                  5. Do you have any visible tattoos? *
-                </label>
-
-                <div class="d-flex flex-wrap gap-3 mt-2">
-
-                  <div class="form-check">
-                    <input
-                      class="form-check-input"
-                      type="radio"
-                      value="yes"
-                      formControlName="visibleTattoos"
-                      id="tattoosYes"
-                    />
-
-                    <label
-                      class="form-check-label"
-                      for="tattoosYes"
-                    >
-                      Yes
-                    </label>
-                  </div>
-
-                  <div class="form-check">
-                    <input
-                      class="form-check-input"
-                      type="radio"
-                      value="no"
-                      formControlName="visibleTattoos"
-                      id="tattoosNo"
-                    />
-
-                    <label
-                      class="form-check-label"
-                      for="tattoosNo"
-                    >
-                      No
-                    </label>
-                  </div>
-
-                </div>
-
-              </div>
-
-
-              <!-- ================================================= -->
-              <!-- COMPLETE CAREER PROGRAM ONLY -->
-              <!-- ================================================= -->
-
-              <div
-                *ngIf="selectedCourse === 'course2'"
-                class="medical-question-box p-3 rounded border mt-4"
+              <small
+                class="error"
+                *ngIf="
+                  personalForm.get('heardFrom')?.touched &&
+                  personalForm.get('heardFrom')?.invalid
+                "
               >
-
-                <label class="form-label d-block fw-bold text-navy">
-                  Do you have any physical disability or medical condition
-                  that may affect your ability to meet the requirements of a
-                  Fit-to-Sea medical examination? *
-                </label>
-
-                <div class="d-flex flex-wrap gap-3 mt-3">
-
-                  <div class="form-check">
-                    <input
-                      class="form-check-input"
-                      type="radio"
-                      value="yes"
-                      formControlName="medicalCondition"
-                      id="medicalYes"
-                    />
-
-                    <label
-                      class="form-check-label"
-                      for="medicalYes"
-                    >
-                      Yes
-                    </label>
-                  </div>
-
-                  <div class="form-check">
-                    <input
-                      class="form-check-input"
-                      type="radio"
-                      value="no"
-                      formControlName="medicalCondition"
-                      id="medicalNo"
-                    />
-
-                    <label
-                      class="form-check-label"
-                      for="medicalNo"
-                    >
-                      No
-                    </label>
-                  </div>
-
-                </div>
-
-              </div>
-
-
-              <!-- Questions -->
-              <div class="mb-3 mt-4">
-
-                <label class="form-label">
-                  Questions for us?
-                </label>
-
-                <textarea
-                  class="form-control"
-                  rows="3"
-                  formControlName="message"
-                  placeholder="Ask us anything..."
-                ></textarea>
-
-              </div>
+                Please select an option.
+              </small>
 
             </div>
 
 
-            <!-- Navigation -->
-            <div class="d-flex justify-content-between gap-3 mt-5">
+            <!-- PREFERRED CONTACT -->
+            <div class="form-group full-width">
 
-              <button
-                type="button"
-                class="btn btn-secondary px-4 py-3 fw-bold text-uppercase letter-spacing-1"
-                (click)="prevStep()"
-              >
-                Back
-              </button>
-
-              <button
-                type="button"
-                class="btn btn-warning flex-grow-1 py-3 fw-bold text-uppercase letter-spacing-1"
-                (click)="nextStep()"
-                [disabled]="!isCurrentStepValid()"
-              >
-                Next
-              </button>
-
-            </div>
-
-          </div>
-
-
-          <!-- ===================================================== -->
-          <!-- STEP 3 - DOCUMENTS -->
-          <!-- ===================================================== -->
-
-          <div
-            *ngIf="step === 3"
-            class="step-content animate-fade"
-          >
-
-            <h4 class="mb-4 text-gold border-bottom pb-2">
-              Step 3 – Documents
-            </h4>
-
-            <div class="mb-4">
-
-              <label class="form-label fw-bold mb-3">
-                Upload Your Resume & Relevant Certificates
+              <label>
+                Preferred Contact Method
+                <span>*</span>
               </label>
 
               <div
-                class="file-upload-dropzone p-4 text-center rounded-3 mb-3 border-2"
-                (click)="fileInput.click()"
+                class="checkbox-group"
+                [class.invalid-box]="
+                  preferredContactArray.touched &&
+                  preferredContactArray.invalid
+                "
               >
 
-                <input
-                  type="file"
-                  #fileInput
-                  class="d-none"
-                  (change)="onFileChange($event)"
-                  multiple
-                  accept=".pdf,.jpg,.jpeg,.png,.doc,.docx"
-                />
+                <label class="checkbox-option">
 
-                <i
-                  class="bi bi-cloud-arrow-up-fill fs-2 mb-2 d-block text-gold"
-                ></i>
+                  <input
+                    type="checkbox"
+                    value="Phone"
+                    (change)="onCheckboxChange($event)"
+                  />
 
-                <span
-                  class="fw-bold text-navy d-block mb-1"
-                  style="font-size: 1.05rem;"
-                >
-                  Drag & drop files here or
-                  <span class="text-gold text-decoration-underline">
-                    Browse
+                  <span class="custom-checkbox"></span>
+
+                  <span>
+                    Phone
                   </span>
-                </span>
 
-                <span class="text-muted small">
-                  Supports PDF, JPG, PNG, DOC, DOCX
-                  (Max 2MB per file)
-                </span>
+                </label>
+
+
+                <label class="checkbox-option">
+
+                  <input
+                    type="checkbox"
+                    value="WhatsApp"
+                    (change)="onCheckboxChange($event)"
+                  />
+
+                  <span class="custom-checkbox"></span>
+
+                  <span>
+                    WhatsApp
+                  </span>
+
+                </label>
+
+
+                <label class="checkbox-option">
+
+                  <input
+                    type="checkbox"
+                    value="Email"
+                    (change)="onCheckboxChange($event)"
+                  />
+
+                  <span class="custom-checkbox"></span>
+
+                  <span>
+                    Email
+                  </span>
+
+                </label>
 
               </div>
 
-            </div>
-
-
-            <!-- Uploaded Files -->
-            <div
-              *ngIf="resumeFiles.length > 0"
-              class="uploaded-files-container mt-4 p-3 rounded"
-            >
-
-              <h6 class="text-navy mb-3 fw-bold">
-                Uploaded Documents ({{ resumeFiles.length }})
-              </h6>
-
-              <ul
-                class="list-group list-group-flush bg-transparent"
+              <small
+                class="error"
+                *ngIf="
+                  preferredContactArray.touched &&
+                  preferredContactArray.invalid
+                "
               >
-
-                <li
-                  *ngFor="let file of resumeFiles; let i = index"
-                  class="list-group-item d-flex justify-content-between align-items-center bg-transparent border-light px-0 py-2"
-                >
-
-                  <span
-                    class="text-secondary"
-                    style="font-size: 0.95rem;"
-                  >
-                    <i
-                      class="bi bi-file-earmark-check-fill text-success me-2"
-                    ></i>
-
-                    {{ file.name }}
-                  </span>
-
-                  <button
-                    type="button"
-                    class="btn btn-sm btn-outline-danger px-3"
-                    (click)="removeFile(i)"
-                  >
-                    Remove
-                  </button>
-
-                </li>
-
-              </ul>
-
-            </div>
-
-
-            <!-- Navigation -->
-            <div class="d-flex justify-content-between gap-3 mt-5">
-
-              <button
-                type="button"
-                class="btn btn-secondary px-4 py-3 fw-bold text-uppercase letter-spacing-1"
-                (click)="prevStep()"
-              >
-                Back
-              </button>
-
-              <button
-                type="button"
-                class="btn btn-success flex-grow-1 py-3 fw-bold text-uppercase letter-spacing-1"
-                (click)="nextStep()"
-                [disabled]="!isCurrentStepValid()"
-              >
-                Next
-              </button>
+                Please select at least one contact method.
+              </small>
 
             </div>
 
           </div>
 
+        </form>
 
-          <!-- ===================================================== -->
-          <!-- STEP 4 - PAYMENT -->
-          <!-- ===================================================== -->
 
-          <div
-            *ngIf="step === 4"
-            class="step-content animate-fade"
+        <!-- NEXT -->
+        <div class="form-actions right">
+
+          <button
+            type="button"
+            class="btn btn-primary"
+            (click)="nextStep()"
           >
 
-            <h4 class="mb-4 text-gold border-bottom pb-2">
-              Step 4 – Payment
-            </h4>
+            Continue
 
-            <p
-              class="text-secondary mb-4"
-              style="font-size: 1rem;"
-            >
-              Please choose a payment option for your selected program:
+            <span class="arrow">
+              →
+            </span>
+
+          </button>
+
+        </div>
+
+      </section>
+
+
+      <!-- ======================================================
+           STEP 2 - COURSE
+      ======================================================= -->
+
+      <section
+        *ngIf="step === 2"
+        class="form-step"
+      >
+
+        <div class="section-heading">
+
+          <span class="section-number">
+            02
+          </span>
+
+          <div>
+            <h2>
+              Choose Your Program
+            </h2>
+
+            <p>
+              Select the program that best matches your career goals.
             </p>
+          </div>
+
+        </div>
 
 
-            <!-- ================================================= -->
-            <!-- COURSE 1 PAYMENT -->
-            <!-- ================================================= -->
+        <form [formGroup]="courseForm">
 
-            <div
-              *ngIf="selectedCourse === 'course1'"
-              class="payment-options-list"
+          <!-- COURSE -->
+          <div class="course-options">
+
+
+            <!-- COURSE 1 -->
+            <label
+              class="course-card"
+              [class.selected]="selectedCourse === 'course1'"
             >
-
-              <!-- OPTION 1 -->
-              <div
-                class="payment-option-card animate-fade"
-                [class.selected]="paymentMode === 'c1_advance'"
-                (click)="selectPaymentMode('c1_advance')"
-              >
-
-                <input
-                  class="form-check-input m-0"
-                  type="radio"
-                  name="payment"
-                  value="c1_advance"
-                  [(ngModel)]="paymentMode"
-                  id="payC1Advance"
-                />
-
-                <label
-                  class="form-check-label fw-bold text-navy cursor-pointer m-0"
-                  for="payC1Advance"
-                >
-
-                  ₹50,000 Advance Payment
-
-                  <span
-                    class="d-block text-muted small fw-normal mt-1"
-                  >
-                    Initial advance payment to secure your seat.
-                  </span>
-
-                </label>
-
-              </div>
-
-
-              <!-- OPTION 2 -->
-              <div
-                class="payment-option-card animate-fade"
-                [class.selected]="paymentMode === 'c1_balance'"
-                (click)="selectPaymentMode('c1_balance')"
-              >
-
-                <input
-                  class="form-check-input m-0"
-                  type="radio"
-                  name="payment"
-                  value="c1_balance"
-                  [(ngModel)]="paymentMode"
-                  id="payC1Balance"
-                />
-
-                <label
-                  class="form-check-label fw-bold text-navy cursor-pointer m-0"
-                  for="payC1Balance"
-                >
-
-                  Remaining Balance – ₹99,000
-
-                  <span
-                    class="d-block text-muted small fw-normal mt-1"
-                  >
-                    ₹1,49,000 − ₹50,000 = ₹99,000
-                  </span>
-
-                </label>
-
-              </div>
-
-
-              <!-- OPTION 3 -->
-              <div
-                class="payment-option-card animate-fade"
-                [class.selected]="paymentMode === 'c1_custom'"
-                (click)="selectPaymentMode('c1_custom')"
-              >
-
-                <input
-                  class="form-check-input m-0"
-                  type="radio"
-                  name="payment"
-                  value="c1_custom"
-                  [(ngModel)]="paymentMode"
-                  id="payC1Custom"
-                />
-
-                <label
-                  class="form-check-label fw-bold text-navy cursor-pointer m-0"
-                  for="payC1Custom"
-                >
-
-                  Custom Amount
-
-                  <span
-                    class="d-block text-muted small fw-normal mt-1"
-                  >
-                    Enter your own payment amount. Minimum ₹5,000.
-                  </span>
-
-                </label>
-
-              </div>
-
-            </div>
-
-
-            <!-- ================================================= -->
-            <!-- COURSE 2 PAYMENT -->
-            <!-- ================================================= -->
-
-            <div
-              *ngIf="selectedCourse === 'course2'"
-              class="payment-options-list"
-            >
-
-              <!-- OPTION 1 -->
-              <div
-                class="payment-option-card animate-fade"
-                [class.selected]="paymentMode === 'c2_advance'"
-                (click)="selectPaymentMode('c2_advance')"
-              >
-
-                <input
-                  class="form-check-input m-0"
-                  type="radio"
-                  name="payment"
-                  value="c2_advance"
-                  [(ngModel)]="paymentMode"
-                  id="payC2Advance"
-                />
-
-                <label
-                  class="form-check-label fw-bold text-navy cursor-pointer m-0"
-                  for="payC2Advance"
-                >
-
-                  ₹50,000 Advance Payment
-
-                  <span
-                    class="d-block text-muted small fw-normal mt-1"
-                  >
-                    Initial advance payment to secure your seat.
-                  </span>
-
-                </label>
-
-              </div>
-
-
-              <!-- OPTION 2 -->
-              <div
-                class="payment-option-card animate-fade"
-                [class.selected]="paymentMode === 'c2_balance'"
-                (click)="selectPaymentMode('c2_balance')"
-              >
-
-                <input
-                  class="form-check-input m-0"
-                  type="radio"
-                  name="payment"
-                  value="c2_balance"
-                  [(ngModel)]="paymentMode"
-                  id="payC2Balance"
-                />
-
-                <label
-                  class="form-check-label fw-bold text-navy cursor-pointer m-0"
-                  for="payC2Balance"
-                >
-
-                  Remaining Balance – ₹1,58,000
-
-                  <span
-                    class="d-block text-muted small fw-normal mt-1"
-                  >
-                    ₹2,08,000 − ₹50,000 = ₹1,58,000
-                  </span>
-
-                </label>
-
-              </div>
-
-
-              <!-- OPTION 3 -->
-              <div
-                class="payment-option-card animate-fade"
-                [class.selected]="paymentMode === 'c2_custom'"
-                (click)="selectPaymentMode('c2_custom')"
-              >
-
-                <input
-                  class="form-check-input m-0"
-                  type="radio"
-                  name="payment"
-                  value="c2_custom"
-                  [(ngModel)]="paymentMode"
-                  id="payC2Custom"
-                />
-
-                <label
-                  class="form-check-label fw-bold text-navy cursor-pointer m-0"
-                  for="payC2Custom"
-                >
-
-                  Custom Amount
-
-                  <span
-                    class="d-block text-muted small fw-normal mt-1"
-                  >
-                    Enter your own payment amount. Minimum ₹5,000.
-                  </span>
-
-                </label>
-
-              </div>
-
-            </div>
-
-
-            <!-- ================================================= -->
-            <!-- CUSTOM AMOUNT -->
-            <!-- ================================================= -->
-
-            <div
-              *ngIf="
-                paymentMode === 'c1_custom' ||
-                paymentMode === 'c2_custom'
-              "
-              class="animate-fade mt-3"
-            >
-
-              <label class="form-label text-gold fw-bold">
-                Enter Custom Amount (₹)
-              </label>
 
               <input
-                type="number"
-                [(ngModel)]="customAmount"
-                class="form-control"
-                placeholder="Enter ₹5,000 or more"
-                min="5000"
-                step="1"
-                (input)="validateCustomAmount()"
+                type="radio"
+                formControlName="course"
+                value="course1"
               />
 
-              <div
-                *ngIf="customAmount > 0 && customAmount < 5000"
-                class="text-danger small mt-2"
-              >
-                Minimum payment amount is ₹5,000.
-              </div>
+              <div class="course-radio"></div>
 
-            </div>
+              <div class="course-content">
 
+                <div class="course-top">
 
-            <!-- ================================================= -->
-            <!-- PAYMENT SUMMARY -->
-            <!-- ================================================= -->
+                  <div>
 
-            <div
-              *ngIf="paymentMode"
-              class="payment-summary-card mt-4 p-4 rounded-3 border bg-light"
-            >
+                    <h3>
+                      Certification in Cruise Photography
+                    </h3>
 
-              <h6 class="fw-bold text-navy mb-3">
-                Payment Summary
-              </h6>
+                    <p>
+                      Build professional photography skills
+                      for a career in the cruise industry.
+                    </p>
 
-              <div
-                class="d-flex justify-content-between align-items-center mb-2"
-              >
-                <span class="text-muted">
-                  Selected Program
-                </span>
+                  </div>
 
-                <strong class="text-navy text-end">
-                  {{ selectedCourseName }}
-                </strong>
-              </div>
+                  <div class="course-price">
+                    ₹1,49,000
+                  </div>
 
-              <div
-                class="d-flex justify-content-between align-items-center"
-              >
-                <span class="text-muted">
-                  Payment Amount
-                </span>
-
-                <strong class="text-gold fs-5">
-                  {{ paymentAmount | currency:'INR':'symbol':'1.0-0' }}
-                </strong>
-              </div>
-
-            </div>
-
-
-            <!-- ================================================= -->
-            <!-- PROCESSING FEE -->
-            <!-- ================================================= -->
-
-            <div
-              class="alert alert-warning mt-4 mb-4"
-              role="alert"
-            >
-
-              <strong>Note:</strong>
-              An additional 2.5% will be added towards online payment
-              processing fees.
-
-            </div>
-
-
-            <!-- ================================================= -->
-            <!-- BANK / UPI / IMPS / NEFT / RTGS -->
-            <!-- ================================================= -->
-
-            <div
-              class="bank-payment-card p-4 rounded-3 border bg-white mt-4"
-            >
-
-              <div class="d-flex align-items-start gap-3">
-
-                <div
-                  class="icon-box-round bg-light d-flex align-items-center justify-content-center flex-shrink-0"
-                  style="width: 48px; height: 48px;"
-                >
-                  <i class="bi bi-bank2 fs-5 text-gold"></i>
                 </div>
 
-                <div class="flex-grow-1">
-
-                  <h5 class="fw-bold text-navy mb-2">
-                    UPI / IMPS / NEFT / RTGS
-                  </h5>
-
-                  <p
-                    class="text-muted small mb-3"
-                    style="line-height: 1.6;"
-                  >
-                    Prefer to make your payment directly through bank
-                    transfer or UPI? View our official bank and payment
-                    details, including account information and QR code.
-                  </p>
-
-                  <a
-                    href="assets/documents/bank-payment-details.pdf"
-                    download
-                    target="_blank"
-                    class="btn btn-outline-warning fw-bold text-uppercase"
-                  >
-                    <i class="bi bi-download me-2"></i>
-                    DOWNLOAD BANK & PAYMENT DETAILS
-                  </a>
-
+                <div class="course-tag">
+                  Photography
                 </div>
 
               </div>
 
+            </label>
+
+
+            <!-- COURSE 2 -->
+            <label
+              class="course-card"
+              [class.selected]="selectedCourse === 'course2'"
+            >
+
+              <input
+                type="radio"
+                formControlName="course"
+                value="course2"
+              />
+
+              <div class="course-radio"></div>
+
+              <div class="course-content">
+
+                <div class="course-top">
+
+                  <div>
+
+                    <h3>
+                      Complete Cruise Career Program
+                    </h3>
+
+                    <p>
+                      Complete career preparation for working
+                      onboard cruise ships.
+                    </p>
+
+                  </div>
+
+                  <div class="course-price">
+                    ₹2,08,000
+                  </div>
+
+                </div>
+
+                <div class="course-tag featured">
+                  Complete Program
+                </div>
+
+              </div>
+
+            </label>
+
+          </div>
+
+        </form>
+
+
+        <!-- QUESTIONS -->
+        <div
+          class="questions-wrapper"
+          *ngIf="selectedCourse"
+        >
+
+          <div class="questions-heading">
+
+            <h3>
+              Course Information
+            </h3>
+
+            <p>
+              Please answer the following questions.
+            </p>
+
+          </div>
+
+
+          <form
+            [formGroup]="courseQuestions"
+            class="questions-form"
+          >
+
+
+            <!-- QUESTION 1 -->
+            <div class="question">
+
+              <label>
+                1. Have you used a professional camera before?
+                <span>*</span>
+              </label>
+
+              <div class="radio-group">
+
+                <label class="radio-option">
+
+                  <input
+                    type="radio"
+                    formControlName="usedCamera"
+                    value="Yes"
+                  />
+
+                  <span class="radio-circle"></span>
+
+                  Yes
+
+                </label>
+
+
+                <label class="radio-option">
+
+                  <input
+                    type="radio"
+                    formControlName="usedCamera"
+                    value="No"
+                  />
+
+                  <span class="radio-circle"></span>
+
+                  No
+
+                </label>
+
+              </div>
+
             </div>
 
 
-            <!-- ================================================= -->
-            <!-- NAVIGATION -->
-            <!-- ================================================= -->
+            <!-- QUESTION 2 -->
+            <div class="question">
 
-            <div class="d-flex justify-content-between gap-3 mt-5">
+              <label>
+                2. Do you have hospitality experience?
+                <span>*</span>
+              </label>
 
-              <button
-                type="button"
-                class="btn btn-secondary px-4 py-3 fw-bold text-uppercase letter-spacing-1"
-                (click)="prevStep()"
-              >
-                Back
-              </button>
+              <div class="radio-group">
 
-              <button
-                type="button"
-                class="btn btn-success flex-grow-1 py-3 fw-bold text-uppercase letter-spacing-1"
-                (click)="proceedToPayment()"
-                [disabled]="!isCurrentStepValid() || isLoading"
-              >
+                <label class="radio-option">
 
-                <span *ngIf="!isLoading">
-                  Pay Now
-                </span>
+                  <input
+                    type="radio"
+                    formControlName="hospitalityExp"
+                    value="Yes"
+                  />
 
-                <span *ngIf="isLoading">
-                  Processing...
-                </span>
+                  <span class="radio-circle"></span>
 
-              </button>
+                  Yes
+
+                </label>
+
+
+                <label class="radio-option">
+
+                  <input
+                    type="radio"
+                    formControlName="hospitalityExp"
+                    value="No"
+                  />
+
+                  <span class="radio-circle"></span>
+
+                  No
+
+                </label>
+
+              </div>
 
             </div>
+
+
+            <!-- QUESTION 3 -->
+            <div class="question">
+
+              <label for="professionalExperience">
+                3. Tell us about your professional experience.
+                <span>*</span>
+              </label>
+
+              <textarea
+                id="professionalExperience"
+                formControlName="professionalExperience"
+                rows="4"
+                placeholder="Briefly describe your professional experience..."
+              ></textarea>
+
+            </div>
+
+
+            <!-- QUESTION 4 -->
+            <div class="question">
+
+              <label for="photographyExperience">
+                4. Tell us about your photography experience.
+                <span>*</span>
+              </label>
+
+              <textarea
+                id="photographyExperience"
+                formControlName="photographyExperience"
+                rows="4"
+                placeholder="Describe your photography experience..."
+              ></textarea>
+
+            </div>
+
+
+            <!-- QUESTION 5 -->
+            <div class="question">
+
+              <label>
+                5. Do you have any visible tattoos?
+                <span>*</span>
+              </label>
+
+              <div class="radio-group">
+
+                <label class="radio-option">
+
+                  <input
+                    type="radio"
+                    formControlName="visibleTattoos"
+                    value="Yes"
+                  />
+
+                  <span class="radio-circle"></span>
+
+                  Yes
+
+                </label>
+
+
+                <label class="radio-option">
+
+                  <input
+                    type="radio"
+                    formControlName="visibleTattoos"
+                    value="No"
+                  />
+
+                  <span class="radio-circle"></span>
+
+                  No
+
+                </label>
+
+              </div>
+
+            </div>
+
+
+            <!-- MEDICAL -->
+            <div
+              class="question"
+              *ngIf="selectedCourse === 'course2'"
+            >
+
+              <label>
+                6. Do you have any medical condition that
+                may affect your ability to work onboard?
+                <span>*</span>
+              </label>
+
+              <div class="radio-group">
+
+                <label class="radio-option">
+
+                  <input
+                    type="radio"
+                    formControlName="medicalCondition"
+                    value="Yes"
+                  />
+
+                  <span class="radio-circle"></span>
+
+                  Yes
+
+                </label>
+
+
+                <label class="radio-option">
+
+                  <input
+                    type="radio"
+                    formControlName="medicalCondition"
+                    value="No"
+                  />
+
+                  <span class="radio-circle"></span>
+
+                  No
+
+                </label>
+
+              </div>
+
+            </div>
+
+
+            <!-- MESSAGE -->
+            <div class="question">
+
+              <label for="message">
+                Additional Message
+                <span class="optional">
+                  Optional
+                </span>
+              </label>
+
+              <textarea
+                id="message"
+                formControlName="message"
+                rows="4"
+                placeholder="Anything else you would like us to know?"
+              ></textarea>
+
+            </div>
+
+          </form>
+
+        </div>
+
+
+        <!-- ACTIONS -->
+        <div class="form-actions">
+
+          <button
+            type="button"
+            class="btn btn-secondary"
+            (click)="prevStep()"
+          >
+            ← Back
+          </button>
+
+
+          <button
+            type="button"
+            class="btn btn-primary"
+            (click)="nextStep()"
+          >
+
+            Continue
+
+            <span class="arrow">
+              →
+            </span>
+
+          </button>
+
+        </div>
+
+      </section>
+
+
+      <!-- ======================================================
+           STEP 3 - DOCUMENTS
+      ======================================================= -->
+
+      <section
+        *ngIf="step === 3"
+        class="form-step"
+      >
+
+        <div class="section-heading">
+
+          <span class="section-number">
+            03
+          </span>
+
+          <div>
+
+            <h2>
+              Upload Your Documents
+            </h2>
+
+            <p>
+              Upload your resume or relevant documents.
+            </p>
 
           </div>
 
         </div>
-      </div>
+
+
+        <!-- UPLOAD BOX -->
+        <div class="upload-area">
+
+          <div class="upload-icon">
+            ↑
+          </div>
+
+          <h3>
+            Upload Resume / Documents
+          </h3>
+
+          <p>
+            PDF, DOC or DOCX files up to 2MB each
+          </p>
+
+          <label class="upload-button">
+
+            Choose Files
+
+            <input
+              type="file"
+              multiple
+              accept=".pdf,.doc,.docx"
+              (change)="onFileChange($event)"
+            />
+
+          </label>
+
+        </div>
+
+
+        <!-- FILE LIST -->
+        <div
+          class="file-list"
+          *ngIf="resumeFiles.length > 0"
+        >
+
+          <h3>
+            Selected Documents
+          </h3>
+
+
+          <div
+            class="file-item"
+            *ngFor="
+              let file of resumeFiles;
+              let i = index
+            "
+          >
+
+            <div class="file-info">
+
+              <div class="file-icon">
+                PDF
+              </div>
+
+              <div>
+
+                <strong>
+                  {{ file.name }}
+                </strong>
+
+                <small>
+                  {{ (file.size / 1024 / 1024).toFixed(2) }} MB
+                </small>
+
+              </div>
+
+            </div>
+
+
+            <button
+              type="button"
+              class="remove-file"
+              (click)="removeFile(i)"
+              aria-label="Remove file"
+            >
+              ×
+            </button>
+
+          </div>
+
+        </div>
+
+
+        <!-- EMPTY STATE -->
+        <div
+          class="upload-warning"
+          *ngIf="resumeFiles.length === 0"
+        >
+
+          <span>!</span>
+
+          <p>
+            Please upload at least one document to continue.
+          </p>
+
+        </div>
+
+
+        <!-- ACTIONS -->
+        <div class="form-actions">
+
+          <button
+            type="button"
+            class="btn btn-secondary"
+            (click)="prevStep()"
+          >
+            ← Back
+          </button>
+
+
+          <button
+            type="button"
+            class="btn btn-primary"
+            (click)="nextStep()"
+            [disabled]="resumeFiles.length === 0"
+          >
+
+            Continue
+
+            <span class="arrow">
+              →
+            </span>
+
+          </button>
+
+        </div>
+
+      </section>
+
+
+      <!-- ======================================================
+           STEP 4 - PAYMENT
+      ======================================================= -->
+
+      <section
+        *ngIf="step === 4"
+        class="form-step"
+      >
+
+        <div class="section-heading">
+
+          <span class="section-number">
+            04
+          </span>
+
+          <div>
+
+            <h2>
+              Complete Your Payment
+            </h2>
+
+            <p>
+              Select a payment option to complete your application.
+            </p>
+
+          </div>
+
+        </div>
+
+
+        <!-- COURSE SUMMARY -->
+        <div class="payment-course-summary">
+
+          <div>
+
+            <span>
+              Selected Program
+            </span>
+
+            <strong>
+              {{ selectedCourseName }}
+            </strong>
+
+          </div>
+
+          <div class="summary-total">
+
+            <span>
+              Course Fee
+            </span>
+
+            <strong>
+              ₹{{ selectedCourseTotal | number:'1.0-0' }}
+            </strong>
+
+          </div>
+
+        </div>
+
+
+        <!-- PAYMENT OPTIONS -->
+        <div class="payment-options">
+
+
+          <!-- ADVANCE -->
+          <button
+            type="button"
+            class="payment-option"
+            [class.selected]="
+              paymentMode ===
+              (selectedCourse === 'course1'
+                ? 'c1_advance'
+                : 'c2_advance')
+            "
+            (click)="
+              selectPaymentMode(
+                selectedCourse === 'course1'
+                  ? 'c1_advance'
+                  : 'c2_advance'
+              )
+            "
+          >
+
+            <span class="payment-radio"></span>
+
+            <span class="payment-content">
+
+              <strong>
+                Pay ₹50,000 Advance
+              </strong>
+
+              <small>
+                Start your enrollment with the advance payment.
+              </small>
+
+            </span>
+
+            <span class="payment-amount">
+              ₹50,000
+            </span>
+
+          </button>
+
+
+          <!-- BALANCE -->
+          <button
+            type="button"
+            class="payment-option"
+            [class.selected]="
+              paymentMode ===
+              (selectedCourse === 'course1'
+                ? 'c1_balance'
+                : 'c2_balance')
+            "
+            (click)="
+              selectPaymentMode(
+                selectedCourse === 'course1'
+                  ? 'c1_balance'
+                  : 'c2_balance'
+              )
+            "
+          >
+
+            <span class="payment-radio"></span>
+
+            <span class="payment-content">
+
+              <strong>
+                Pay Full Remaining Balance
+              </strong>
+
+              <small>
+                Pay the remaining course fee in full.
+              </small>
+
+            </span>
+
+            <span class="payment-amount">
+
+              ₹{{
+                selectedCourse === 'course1'
+                  ? '99,000'
+                  : '1,58,000'
+              }}
+
+            </span>
+
+          </button>
+
+
+          <!-- CUSTOM -->
+          <button
+            type="button"
+            class="payment-option"
+            [class.selected]="
+              paymentMode ===
+              (selectedCourse === 'course1'
+                ? 'c1_custom'
+                : 'c2_custom')
+            "
+            (click)="
+              selectPaymentMode(
+                selectedCourse === 'course1'
+                  ? 'c1_custom'
+                  : 'c2_custom'
+              )
+            "
+          >
+
+            <span class="payment-radio"></span>
+
+            <span class="payment-content">
+
+              <strong>
+                Pay Custom Amount
+              </strong>
+
+              <small>
+                Choose an amount of at least ₹5,000.
+              </small>
+
+            </span>
+
+          </button>
+
+        </div>
+
+
+        <!-- CUSTOM AMOUNT -->
+        <div
+          class="custom-payment"
+          *ngIf="
+            paymentMode === 'c1_custom' ||
+            paymentMode === 'c2_custom'
+          "
+        >
+
+          <label for="customAmount">
+            Enter Payment Amount
+          </label>
+
+          <div class="amount-input">
+
+            <span>
+              ₹
+            </span>
+
+            <input
+              id="customAmount"
+              type="number"
+              min="5000"
+              step="100"
+              [(ngModel)]="customAmount"
+              [ngModelOptions]="{standalone: true}"
+              (input)="validateCustomAmount()"
+              placeholder="5000"
+            />
+
+          </div>
+
+          <small>
+            Minimum payment amount: ₹5,000
+          </small>
+
+        </div>
+
+
+        <!-- PAYMENT SUMMARY -->
+        <div
+          class="payment-summary"
+          *ngIf="paymentMode"
+        >
+
+          <div class="summary-row">
+
+            <span>
+              Payment Amount
+            </span>
+
+            <strong>
+              ₹{{ paymentAmount | number:'1.2-2' }}
+            </strong>
+
+          </div>
+
+
+          <div class="summary-row">
+
+            <span>
+              Processing Fee (2.5%)
+            </span>
+
+            <strong>
+              ₹{{ processingFee | number:'1.2-2' }}
+            </strong>
+
+          </div>
+
+
+          <div class="summary-divider"></div>
+
+
+          <div class="summary-row total">
+
+            <span>
+              Total Payable
+            </span>
+
+            <strong>
+              ₹{{
+                paymentAmountWithProcessingFee
+                  | number:'1.2-2'
+              }}
+            </strong>
+
+          </div>
+
+        </div>
+
+
+        <!-- SECURITY NOTE -->
+        <div class="secure-payment">
+
+          <span class="lock-icon">
+            ✓
+          </span>
+
+          <div>
+
+            <strong>
+              Secure Payment
+            </strong>
+
+            <p>
+              You will be redirected to the secure PayU
+              payment gateway to complete your payment.
+            </p>
+
+          </div>
+
+        </div>
+
+
+        <!-- ACTIONS -->
+        <div class="form-actions">
+
+          <button
+            type="button"
+            class="btn btn-secondary"
+            (click)="prevStep()"
+            [disabled]="isLoading"
+          >
+            ← Back
+          </button>
+
+
+          <button
+            type="button"
+            class="btn btn-payment"
+            (click)="proceedToPayment()"
+            [disabled]="isLoading || !paymentMode"
+          >
+
+            <span
+              class="spinner"
+              *ngIf="isLoading"
+            ></span>
+
+            <span *ngIf="!isLoading">
+              Proceed to Secure Payment
+            </span>
+
+            <span *ngIf="isLoading">
+              Processing...
+            </span>
+
+            <span
+              class="arrow"
+              *ngIf="!isLoading"
+            >
+              →
+            </span>
+
+          </button>
+
+        </div>
+
+      </section>
+
 
     </div>
+
+  </main>
+
+
+  <!-- ==========================================================
+       FOOTER NOTE
+  =========================================================== -->
+
+  <div class="application-footer">
+
+    <span class="footer-check">
+      ✓
+    </span>
+
+    Your information is secure and will only be used
+    for processing your application.
+
   </div>
-</section>
+
+</div>

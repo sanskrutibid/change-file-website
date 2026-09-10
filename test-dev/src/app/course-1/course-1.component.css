@@ -1,19 +1,32 @@
-/* ================= Course Hero Section ================= */
+/* =========================================================
+   COURSE HERO SECTION
+========================================================= */
+
 .course-hero-section {
   position: relative;
-  background: linear-gradient(135deg, rgba(10, 20, 35, 0.85) 0%, rgba(15, 41, 74, 0.7) 100%), url('/assets/images/cruise-13.jpg') center/cover no-repeat;
+  background:
+    linear-gradient(
+      135deg,
+      rgba(10, 20, 35, 0.88) 0%,
+      rgba(15, 41, 74, 0.76) 100%
+    ),
+    url('/assets/images/cruise-13.jpg') center/cover no-repeat;
+
   min-height: 480px;
   display: flex;
   align-items: center;
   justify-content: center;
-  padding-top: 150px;
-  padding-bottom: 80px;
+
+  padding: 150px 0 80px;
+
   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+
   color: #ffffff;
   width: 100%;
 }
 
 .course-eyebrow {
+  display: inline-block;
   font-size: 1.1rem;
   font-weight: 700;
   color: var(--gold-accent, #d97706);
@@ -25,6 +38,7 @@
   font-weight: 800;
   letter-spacing: 1px;
   color: #ffffff !important;
+  line-height: 1.15;
   text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
 }
 
@@ -33,9 +47,25 @@
   font-weight: 600;
   color: var(--gold-accent, #d97706);
   letter-spacing: 1px;
+  line-height: 1.4;
 }
 
-/* ================= General Utilities & Text ================= */
+.course-lead-text {
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+
+  font-size: 1.15rem;
+  color: #cbd5e1;
+  line-height: 1.7;
+  font-weight: 400;
+}
+
+
+/* =========================================================
+   GENERAL UTILITIES
+========================================================= */
+
 .text-navy {
   color: var(--primary-navy, #0f294a) !important;
 }
@@ -55,11 +85,39 @@
   font-weight: 800;
   letter-spacing: 1px;
   color: var(--primary-navy, #0f294a);
+  line-height: 1.25;
 }
 
-/* ================= 3D Carousel Section ================= */
+.section-title {
+  font-size: 2rem;
+  line-height: 1.25;
+}
+
+.highlight {
+  font-size: 2.2rem;
+  font-weight: 800;
+}
+
+.text-navy-dark {
+  color: #0f294a !important;
+}
+
+.letter-spacing-1 {
+  letter-spacing: 1px;
+}
+
+.justify-text {
+  text-align: center;
+}
+
+
+/* =========================================================
+   COURSE STRUCTURE / CAROUSEL
+========================================================= */
+
 .carousel-section {
   background-color: #ffffff;
+  overflow: hidden;
 }
 
 .crew-carousel {
@@ -73,57 +131,93 @@
 .crew-track {
   width: 100%;
   height: 100%;
+
   display: flex;
   align-items: center;
   justify-content: center;
+
   position: relative;
 }
 
 .crew-card {
   position: absolute;
+
   width: 380px;
   height: 250px;
+
   border-radius: 16px;
   overflow: hidden;
+
+  background: #0f294a;
+
   box-shadow: 0 8px 24px rgba(15, 41, 74, 0.1);
-  transition: all 0.75s cubic-bezier(0.25, 0.8, 0.25, 1);
+
+  transition:
+    all 0.75s cubic-bezier(0.25, 0.8, 0.25, 1);
+
   cursor: pointer;
+
   z-index: 1;
   opacity: 0;
+
   transform: translate3d(0, 0, -200px);
+
   border: 1px solid #e2e8f0;
 }
 
-/* 3D Positioning */
 .crew-card.center {
   opacity: 1;
-  transform: translate3d(0, 0, 0) scale(1.08);
+
+  transform:
+    translate3d(0, 0, 0)
+    scale(1.08);
+
   z-index: 5;
-  box-shadow: 0 15px 35px rgba(15, 41, 74, 0.18);
-  border-color: var(--gold-accent, #d97706);
+
+  box-shadow:
+    0 15px 35px rgba(15, 41, 74, 0.18);
+
+  border-color:
+    var(--gold-accent, #d97706);
 }
 
 .crew-card.left-1 {
   opacity: 0.8;
-  transform: translate3d(-310px, 0, -80px) scale(0.9);
+
+  transform:
+    translate3d(-310px, 0, -80px)
+    scale(0.9);
+
   z-index: 3;
 }
 
 .crew-card.right-1 {
   opacity: 0.8;
-  transform: translate3d(310px, 0, -80px) scale(0.9);
+
+  transform:
+    translate3d(310px, 0, -80px)
+    scale(0.9);
+
   z-index: 3;
 }
 
 .crew-card.left-2 {
   opacity: 0.4;
-  transform: translate3d(-540px, 0, -150px) scale(0.75);
+
+  transform:
+    translate3d(-540px, 0, -150px)
+    scale(0.75);
+
   z-index: 2;
 }
 
 .crew-card.right-2 {
   opacity: 0.4;
-  transform: translate3d(540px, 0, -150px) scale(0.75);
+
+  transform:
+    translate3d(540px, 0, -150px)
+    scale(0.75);
+
   z-index: 2;
 }
 
@@ -136,17 +230,42 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
+  display: block;
+
+  transition: transform 0.5s ease;
 }
+
+.crew-card:hover img {
+  transform: scale(1.04);
+}
+
+
+/* =========================================================
+   CAROUSEL OVERLAY
+========================================================= */
 
 .crew-overlay {
   position: absolute;
+
   bottom: 0;
   left: 0;
+
   width: 100%;
+
   padding: 16px 20px;
-  background: linear-gradient(to top, rgba(15, 41, 74, 0.95) 45%, rgba(15, 41, 74, 0.2) 100%);
+
+  background:
+    linear-gradient(
+      to top,
+      rgba(15, 41, 74, 0.95) 45%,
+      rgba(15, 41, 74, 0.2) 100%
+    );
+
   text-align: center;
-  transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+
+  transition:
+    transform 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+
   transform: translateY(82px);
 }
 
@@ -166,8 +285,11 @@
   font-size: 0.82rem;
   margin-bottom: 0;
   line-height: 1.45;
+
   color: rgba(255, 255, 255, 0.85);
+
   opacity: 0;
+
   transition: opacity 0.3s ease 0.1s;
 }
 
@@ -176,32 +298,62 @@
   opacity: 1;
 }
 
-/* Carousel controls */
+
+/* =========================================================
+   CAROUSEL ARROWS
+========================================================= */
+
 .crew-arrow {
   position: absolute;
+
   top: 50%;
+
   transform: translateY(-50%);
+
   background: #ffffff;
+
   border: 1px solid #cbd5e1;
+
   color: var(--primary-navy, #0f294a);
+
   border-radius: 50%;
+
   width: 46px;
   height: 46px;
+
   display: flex;
   align-items: center;
   justify-content: center;
+
   font-size: 1.8rem;
+  line-height: 1;
+
   cursor: pointer;
+
   z-index: 10;
+
   transition: all 0.25s ease;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+
+  box-shadow:
+    0 4px 10px rgba(0, 0, 0, 0.05);
+
+  padding: 0;
 }
 
 .crew-arrow:hover {
-  background: var(--gold-accent, #d97706);
-  border-color: var(--gold-accent, #d97706);
+  background:
+    var(--gold-accent, #d97706);
+
+  border-color:
+    var(--gold-accent, #d97706);
+
   color: #ffffff;
-  box-shadow: 0 6px 15px rgba(217, 119, 6, 0.3);
+
+  box-shadow:
+    0 6px 15px rgba(217, 119, 6, 0.3);
+
+  transform:
+    translateY(-50%) scale(1.05);
 }
 
 .crew-left {
@@ -212,97 +364,266 @@
   right: 20px;
 }
 
+
+/* =========================================================
+   CAROUSEL DOTS
+========================================================= */
+
 .crew-dots {
   display: flex;
   justify-content: center;
+  align-items: center;
   gap: 8px;
 }
 
 .crew-dot {
   width: 10px;
   height: 10px;
+
+  padding: 0;
+  border: none;
+
   border-radius: 50%;
+
   background-color: #cbd5e1;
+
   cursor: pointer;
+
   transition: all 0.25s ease;
 }
 
+.crew-dot:hover {
+  background-color: #94a3b8;
+}
+
 .crew-dot.active {
-  background-color: var(--gold-accent, #d97706);
+  background-color:
+    var(--gold-accent, #d97706);
+
   transform: scale(1.25);
 }
 
-/* ================= Overview Paragraphs ================= */
+
+/* =========================================================
+   PROGRAM OVERVIEW
+========================================================= */
+
 .para-section {
   font-size: 1.05rem;
   line-height: 1.7;
 }
 
-/* ================= Split Grid Images ================= */
+.para-section p {
+  max-width: 900px;
+}
+
+.para-section .highlight {
+  margin-bottom: 1rem;
+}
+
+
+/* =========================================================
+   SPLIT INFORMATION SECTIONS
+========================================================= */
+
+.split-info-sections {
+  width: 100%;
+}
+
 .half-wrap {
   border: 1px solid #cbd5e1;
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.04);
+
+  box-shadow:
+    0 10px 25px rgba(0, 0, 0, 0.04);
+
+  border-radius: 12px;
+
+  overflow: hidden;
+
+  background: #ffffff;
+}
+
+.half-wrap img {
+  width: 100%;
+  height: 400px;
+  object-fit: cover;
+
+  display: block;
+
+  transition:
+    transform 0.5s ease;
+}
+
+.half-wrap:hover img {
+  transform: scale(1.03);
+}
+
+.services-list {
+  margin: 0;
+  padding: 0;
 }
 
 .services-list li {
   font-size: 1.05rem;
   color: #334155;
   margin-bottom: 12px;
+
+  line-height: 1.6;
+
+  display: flex;
+  align-items: flex-start;
 }
 
-/* ================= Program Breakdown Section ================= */
+.services-list li i {
+  flex-shrink: 0;
+  margin-top: 3px;
+}
+
+
+/* =========================================================
+   PROGRAM BREAKDOWN
+========================================================= */
+
+.program-breakdown {
+  background-color: #ffffff;
+}
+
 .breakdown-card {
   background: #ffffff;
+
   border-radius: 12px;
+
   border: 1px solid #e2e8f0;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.02) !important;
-  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), border-color 0.3s ease, box-shadow 0.3s ease;
+
+  box-shadow:
+    0 4px 15px rgba(0, 0, 0, 0.02) !important;
+
+  transition:
+    transform 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+    border-color 0.3s ease,
+    box-shadow 0.3s ease;
+
+  overflow: hidden;
 }
 
 .breakdown-card:hover {
   transform: translateY(-5px);
-  border-color: var(--gold-accent, #d97706);
-  box-shadow: 0 12px 30px rgba(15, 41, 74, 0.08) !important;
+
+  border-color:
+    var(--gold-accent, #d97706);
+
+  box-shadow:
+    0 12px 30px rgba(15, 41, 74, 0.08) !important;
+}
+
+.breakdown-card .card-body {
+  height: 100%;
+}
+
+.breakdown-card .card-title {
+  font-size: 1.05rem;
+  line-height: 1.45;
 }
 
 .breakdown-card li {
   font-size: 0.95rem;
   color: #334155;
+  line-height: 1.5;
 }
 
-/* ================= Required Documents ================= */
+.icon-box {
+  color:
+    var(--gold-accent, #d97706);
+}
+
+
+/* =========================================================
+   DOCUMENT / CERTIFICATION
+========================================================= */
+
+.documents-section {
+  background-color: #f8fafc;
+}
+
 .document-card {
+  max-width: 850px;
+
   background: #ffffff;
+
   border-radius: 12px;
+
   border: 1px solid #cbd5e1;
+
+  box-shadow:
+    0 8px 25px rgba(15, 41, 74, 0.06);
 }
 
 .document-card h4 {
-  color: var(--primary-navy, #0f294a);
+  color:
+    var(--primary-navy, #0f294a);
 }
 
-/* ================= Duration & Fees Section ================= */
+.document-card ul {
+  margin-bottom: 0;
+}
+
+.document-card li {
+  line-height: 1.6;
+}
+
+
+/* =========================================================
+   DURATION & FEES
+========================================================= */
+
 .duration-fees-section {
   position: relative;
-  background: linear-gradient(135deg, rgba(10, 20, 35, 0.9) 0%, rgba(15, 41, 74, 0.8) 100%), url('/assets/images/cruise-3.jpg') center/cover no-repeat;
+
+  background:
+    linear-gradient(
+      135deg,
+      rgba(10, 20, 35, 0.92) 0%,
+      rgba(15, 41, 74, 0.84) 100%
+    ),
+    url('/assets/images/cruise-3.jpg') center/cover no-repeat;
+
   padding: 80px 0;
+
   display: flex;
   align-items: center;
   justify-content: center;
+
   color: #ffffff;
+
   width: 100%;
 }
 
 .fees-details-card {
+  max-width: 650px;
+
   background: #ffffff !important;
+
   border: 1px solid #cbd5e1 !important;
+
   border-radius: 12px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08) !important;
+
+  box-shadow:
+    0 10px 30px rgba(0, 0, 0, 0.08) !important;
+}
+
+.fees-details-card ul {
+  width: 100%;
 }
 
 .fees-details-card li {
-  border-bottom: 1px solid #e2e8f0 !important;
+  border-bottom:
+    1px solid #e2e8f0 !important;
+
   color: #334155;
+
+  padding-bottom: 12px;
+
+  line-height: 1.5;
 }
 
 .fees-details-card li:last-child {
@@ -310,103 +631,380 @@
 }
 
 .fees-details-card strong {
-  color: var(--primary-navy, #0f294a) !important;
+  color:
+    var(--primary-navy, #0f294a) !important;
+
+  flex-shrink: 0;
 }
 
 .fees-details-card span {
   color: #334155;
+  text-align: right;
 }
 
 .duration-fees-section .btn-warning {
-  background-color: var(--gold-accent, #d97706);
-  border-color: var(--gold-accent, #d97706);
+  background-color:
+    var(--gold-accent, #d97706);
+
+  border-color:
+    var(--gold-accent, #d97706);
+
   color: #ffffff;
+
   transition: all 0.3s ease;
 }
 
 .duration-fees-section .btn-warning:hover {
-  background-color: var(--gold-accent-hover, #b45309);
-  border-color: var(--gold-accent-hover, #b45309);
+  background-color:
+    var(--gold-accent-hover, #b45309);
+
+  border-color:
+    var(--gold-accent-hover, #b45309);
+
   color: #ffffff;
+
   transform: translateY(-2px);
-  box-shadow: 0 10px 25px rgba(217, 119, 6, 0.25);
+
+  box-shadow:
+    0 10px 25px rgba(217, 119, 6, 0.25);
 }
 
-/* ================= Responsive Adjustments ================= */
+
+/* =========================================================
+   TABLET
+========================================================= */
+
 @media (max-width: 991px) {
+
   .course-hero-section {
+    min-height: 430px;
     padding-top: 130px;
     padding-bottom: 60px;
   }
+
   .course-title {
     font-size: 2.8rem;
   }
+
   .course-subtitle {
     font-size: 1.3rem;
   }
+
+  .course-lead-text {
+    font-size: 1.05rem;
+  }
+
+  .section-main-title {
+    font-size: 2rem;
+  }
+
+  .highlight {
+    font-size: 2rem;
+  }
+
+  .section-title {
+    font-size: 1.8rem;
+  }
+
   .crew-carousel {
     height: 300px;
   }
+
   .crew-card {
     width: 300px;
     height: 200px;
   }
+
   .crew-card.left-1 {
-    transform: translate3d(-200px, 0, -80px) scale(0.9);
+    transform:
+      translate3d(-200px, 0, -80px)
+      scale(0.9);
   }
+
   .crew-card.right-1 {
-    transform: translate3d(200px, 0, -80px) scale(0.9);
+    transform:
+      translate3d(200px, 0, -80px)
+      scale(0.9);
   }
-  .crew-card.left-2, .crew-card.right-2 {
-    display: none; /* Hide distant cards on tablet */
+
+  .crew-card.left-2,
+  .crew-card.right-2 {
+    display: none;
+  }
+
+  .half-wrap img {
+    height: 350px;
+  }
+
+  .services-list li {
+    font-size: 1rem;
+  }
+
+  .fees-details-card {
+    max-width: 650px;
   }
 }
 
+
+/* =========================================================
+   MOBILE TABLET
+========================================================= */
+
 @media (max-width: 767px) {
+
   .course-title {
     font-size: 2.2rem;
   }
+
+  .course-subtitle {
+    font-size: 1.15rem;
+  }
+
+  .course-lead-text {
+    font-size: 1rem;
+  }
+
   .section-main-title {
     font-size: 1.8rem;
   }
+
+  .highlight {
+    font-size: 1.8rem;
+  }
+
+  .section-title {
+    font-size: 1.6rem;
+  }
+
+  .half-wrap img {
+    height: 300px;
+  }
+
+  .services-list li {
+    font-size: 0.98rem;
+  }
+
+  .breakdown-card .card-title {
+    font-size: 1rem;
+  }
+
+  .fees-details-card {
+    padding: 1.5rem !important;
+  }
+
+  .fees-details-card li {
+    flex-direction: column;
+    align-items: flex-start !important;
+    gap: 4px !important;
+  }
+
+  .fees-details-card span {
+    text-align: left;
+  }
 }
 
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
 @media (max-width: 575px) {
+
   .course-hero-section {
+    min-height: 0;
+
     padding-top: 110px;
     padding-bottom: 50px;
   }
+
+  .course-eyebrow {
+    font-size: 0.9rem;
+    letter-spacing: 1.5px;
+  }
+
   .course-title {
     font-size: 1.8rem;
+    line-height: 1.2;
   }
+
   .course-subtitle {
-    font-size: 1.1rem;
+    font-size: 1.05rem;
+    line-height: 1.45;
   }
+
   .course-lead-text {
-    font-size: 1rem !important;
+    font-size: 0.95rem;
+    line-height: 1.65;
   }
+
+  .section-main-title {
+    font-size: 1.55rem;
+  }
+
+  .highlight {
+    font-size: 1.55rem;
+  }
+
+  .section-title {
+    font-size: 1.45rem;
+  }
+
+  .para-section {
+    font-size: 0.98rem;
+  }
+
   .crew-carousel {
     height: 260px;
   }
+
   .crew-card {
     width: 240px;
     height: 160px;
   }
+
+  .crew-card.center {
+    transform:
+      translate3d(0, 0, 0)
+      scale(1.03);
+  }
+
   .crew-card.left-1 {
-    transform: translate3d(-130px, 0, -60px) scale(0.85);
+    transform:
+      translate3d(-130px, 0, -60px)
+      scale(0.85);
   }
+
   .crew-card.right-1 {
-    transform: translate3d(130px, 0, -60px) scale(0.85);
+    transform:
+      translate3d(130px, 0, -60px)
+      scale(0.85);
   }
+
   .crew-arrow {
     width: 36px;
     height: 36px;
+
     font-size: 1.4rem;
   }
+
   .crew-left {
     left: 5px;
   }
+
   .crew-right {
     right: 5px;
+  }
+
+  .crew-overlay {
+    padding: 10px 12px;
+    transform: translateY(55px);
+  }
+
+  .crew-overlay h3 {
+    font-size: 0.9rem;
+    margin-bottom: 3px;
+  }
+
+  .crew-overlay p {
+    font-size: 0.72rem;
+  }
+
+  .crew-dot {
+    width: 8px;
+    height: 8px;
+  }
+
+  .half-wrap img {
+    height: 230px;
+  }
+
+  .services-list li {
+    font-size: 0.95rem;
+    margin-bottom: 10px;
+  }
+
+  .breakdown-card .card-body {
+    padding: 1.25rem !important;
+  }
+
+  .breakdown-card .card-title {
+    font-size: 0.95rem;
+  }
+
+  .breakdown-card li {
+    font-size: 0.9rem;
+  }
+
+  .document-card {
+    padding: 1.25rem !important;
+  }
+
+  .document-card h4 {
+    font-size: 1.15rem;
+  }
+
+  .duration-fees-section {
+    padding: 50px 0;
+  }
+
+  .fees-details-card {
+    padding: 1.25rem !important;
+  }
+
+  .fees-details-card strong,
+  .fees-details-card span {
+    font-size: 0.95rem !important;
+  }
+
+  .duration-fees-section .btn-warning {
+    width: 100%;
+    max-width: 280px;
+  }
+}
+
+
+/* =========================================================
+   EXTRA SMALL MOBILE
+========================================================= */
+
+@media (max-width: 380px) {
+
+  .course-title {
+    font-size: 1.6rem;
+  }
+
+  .course-subtitle {
+    font-size: 0.95rem;
+  }
+
+  .course-lead-text {
+    font-size: 0.9rem;
+  }
+
+  .crew-carousel {
+    height: 235px;
+  }
+
+  .crew-card {
+    width: 215px;
+    height: 145px;
+  }
+
+  .crew-card.left-1 {
+    transform:
+      translate3d(-105px, 0, -60px)
+      scale(0.78);
+  }
+
+  .crew-card.right-1 {
+    transform:
+      translate3d(105px, 0, -60px)
+      scale(0.78);
+  }
+
+  .crew-arrow {
+    width: 32px;
+    height: 32px;
+    font-size: 1.2rem;
   }
 }

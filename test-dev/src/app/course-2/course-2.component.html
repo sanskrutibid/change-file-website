@@ -1,254 +1,900 @@
-<!-- Hero Banner Section -->
+<!-- =========================================================
+     COURSE 2
+     STCW HOLDER / EX-SEAFARER
+========================================================= -->
+
+
+<!-- ================= HERO BANNER SECTION ================= -->
+
 <section class="course-hero-section text-center text-white">
+
   <div class="container">
-    <span class="course-eyebrow fw-bold text-uppercase">PATHWAY 2</span>
-    <h1 class="course-title fw-bold mt-2 mb-3">STCW Holder / Ex-Seafarer</h1>
-    <span class="course-subtitle fw-bold d-block mb-3">INTENSIVE 10-DAY CRUISE PHOTOGRAPHY PROGRAM</span>
-    <div class="section-divider-gold mx-auto mb-4" style="width: 70px; height: 3px; background-color: var(--gold-accent);"></div>
-    <p class="course-lead-text mx-auto" style="max-width: 800px; font-size: 1.15rem; color: #cbd5e1; line-height: 1.7;">
-      Skip documentation and focus purely on creative and technical photography. Designed for professionals who already hold STCW certificates or have seafaring experience.
+
+    <span class="course-eyebrow fw-bold text-uppercase">
+      PATHWAY 2
+    </span>
+
+    <h1 class="course-title fw-bold mt-2 mb-3">
+      STCW Holder / Ex-Seafarer
+    </h1>
+
+    <span class="course-subtitle fw-bold d-block mb-3">
+      INTENSIVE 10-DAY CRUISE PHOTOGRAPHY PROGRAM
+    </span>
+
+    <div
+      class="section-divider-gold mx-auto mb-4"
+      style="width: 70px; height: 3px; background-color: var(--gold-accent);">
+    </div>
+
+    <p
+      class="course-lead-text mx-auto"
+      style="max-width: 800px; font-size: 1.15rem; color: #cbd5e1; line-height: 1.7;">
+
+      Skip documentation and focus purely on creative and technical
+      photography. Designed for professionals who already hold STCW
+      certificates or have seafaring experience.
+
     </p>
+
   </div>
+
 </section>
 
-<!-- Crew Carousel Section -->
+
+<!-- ================= COURSE STRUCTURE CAROUSEL ================= -->
+
 <section class="carousel-section py-5 bg-white border-bottom">
+
   <div class="container text-center">
-    <h2 class="section-main-title fw-bold mb-4">COURSE STRUCTURE AT A GLANCE</h2>
-    <div class="section-divider-gold mx-auto mb-5" style="width: 70px; height: 3px; background-color: var(--gold-accent);"></div>
-    
+
+    <h2 class="section-main-title fw-bold mb-4">
+      COURSE STRUCTURE AT A GLANCE
+    </h2>
+
+    <div
+      class="section-divider-gold mx-auto mb-5"
+      style="width: 70px; height: 3px; background-color: var(--gold-accent);">
+    </div>
+
+
     <div class="crew-carousel mx-auto">
-      <button class="crew-arrow crew-left" (click)="prev()">‹</button>
+
+      <button
+        type="button"
+        class="crew-arrow crew-left"
+        (click)="prev()"
+        aria-label="Previous">
+
+        ‹
+
+      </button>
+
 
       <div class="crew-track">
-        <div class="crew-card" *ngFor="let member of crewMembers; let i = index" [ngClass]="getCardClass(i)"
+
+        <div
+          class="crew-card"
+          *ngFor="let member of crewMembers; let i = index"
+          [ngClass]="getCardClass(i)"
           (click)="updateCrewCarousel(i)">
-          <img [src]="member.img" [alt]="member.name" />
 
-          <!-- Overlay content -->
+          <img
+            [src]="member.img"
+            [alt]="member.name">
+
           <div class="crew-overlay">
-            <h3 class="text-white">{{ member.name }}</h3>
-            <p class="text-white small">{{ member.role }}</p>
+
+            <h3 class="text-white">
+              {{ member.name }}
+            </h3>
+
+            <p class="text-white small">
+              {{ member.role }}
+            </p>
+
           </div>
+
         </div>
+
       </div>
 
-      <button class="crew-arrow crew-right" (click)="next()">›</button>
+
+      <button
+        type="button"
+        class="crew-arrow crew-right"
+        (click)="next()"
+        aria-label="Next">
+
+        ›
+
+      </button>
+
     </div>
-    
+
+
     <div class="crew-dots mt-4">
-      <div class="crew-dot" *ngFor="let member of crewMembers; let i = index" [class.active]="i === crewIndex"
-        (click)="updateCrewCarousel(i)"></div>
+
+      <div
+        class="crew-dot"
+        *ngFor="let member of crewMembers; let i = index"
+        [class.active]="i === crewIndex"
+        (click)="updateCrewCarousel(i)">
+      </div>
+
     </div>
+
   </div>
+
 </section>
 
-<!-- Overview Panel (Intro & CTA) -->
+
+<!-- ================= OVERVIEW PANEL ================= -->
+
 <section class="stcw-section py-5 bg-light">
+
   <div class="container">
+
     <div class="row justify-content-center">
+
       <div class="col-md-10">
-        
-        <!-- Premium White Content Box -->
-        <div class="premium-light-box text-center p-4 p-md-5 bg-white border shadow-sm rounded-3">
-          <h2 class="fw-bold heading text-navy text-uppercase mb-4">STCW Holder / Ex-Seafarer Pathway</h2>
-          <div class="section-divider-gold mx-auto mb-4" style="width: 50px; height: 2px; background-color: var(--gold-accent);"></div>
-          
-          <p class="lead mb-4 text-secondary" style="font-size: 1.1rem; line-height: 1.7;">
-            Many professionals already possess their <strong>STCW certification</strong> or have past seafaring experience but now wish to transition into cruise ship photography.
-          </p>
-          <p class="text-secondary mb-4" style="font-size: 1.05rem; line-height: 1.7;">
-            The <strong>STCW Holder / Ex-Seafarer course</strong> is a fast-track <strong>10-day intensive program</strong> that skips documentation and focuses purely on creative, technical, and placement preparation.
-          </p>
-          <p class="text-secondary mb-4" style="font-size: 1.05rem; line-height: 1.7;">
-            Over 10 days in Goa, students undergo roleplays, hands-on sessions, editing workshops, and guest lectures — finishing with an exam & certification.
+
+        <div
+          class="premium-light-box text-center p-4 p-md-5 bg-white border shadow-sm rounded-3">
+
+
+          <h2 class="fw-bold heading text-navy text-uppercase mb-4">
+            STCW Holder / Ex-Seafarer Pathway
+          </h2>
+
+
+          <div
+            class="section-divider-gold mx-auto mb-4"
+            style="width: 50px; height: 2px; background-color: var(--gold-accent);">
+          </div>
+
+
+          <p
+            class="lead mb-4 text-secondary"
+            style="font-size: 1.1rem; line-height: 1.7;">
+
+            Many professionals already possess their
+            <strong>STCW certification</strong>
+            or have past seafaring experience but now wish to
+            transition into cruise ship photography.
+
           </p>
 
-          <a routerLink="/apply-now" class="btn btn-warning px-4 py-3 fw-bold shadow-lg text-uppercase text-navy-dark letter-spacing-1 mt-2">
+
+          <p
+            class="text-secondary mb-4"
+            style="font-size: 1.05rem; line-height: 1.7;">
+
+            The
+            <strong>STCW Holder / Ex-Seafarer course</strong>
+            is a fast-track
+            <strong>10-day intensive program</strong>
+            that skips documentation and focuses purely on creative,
+            technical, and placement preparation.
+
+          </p>
+
+
+          <p
+            class="text-secondary mb-4"
+            style="font-size: 1.05rem; line-height: 1.7;">
+
+            Over 10 days in Goa, students undergo roleplays,
+            hands-on sessions, editing workshops, and guest lectures —
+            finishing with an exam &amp; certification.
+
+          </p>
+
+
+          <a
+            routerLink="/apply-now"
+            class="btn btn-warning px-4 py-3 fw-bold shadow-lg text-uppercase text-navy-dark letter-spacing-1 mt-2">
+
             Apply Now
+
           </a>
+
         </div>
 
       </div>
+
     </div>
+
   </div>
+
 </section>
 
-<!-- Why Choose This Course / Features Section -->
+
+<!-- ================= WHY CHOOSE THIS COURSE ================= -->
+
 <section class="course-section py-5 bg-white border-bottom">
+
   <div class="container py-3">
+
     <div class="row align-items-center g-5 text-dark">
-      <!-- Left Content -->
+
+
+      <!-- LEFT CONTENT -->
+
       <div class="col-lg-6 text-start">
-        <span class="section-eyebrow fw-bold text-uppercase" style="color: var(--gold-accent);">BENEFITS</span>
-        <h2 class="fw-bold text-navy text-uppercase mt-2 mb-4">Why Choose This Course?</h2>
+
+        <span
+          class="section-eyebrow fw-bold text-uppercase"
+          style="color: var(--gold-accent);">
+
+          BENEFITS
+
+        </span>
+
+
+        <h2 class="fw-bold text-navy text-uppercase mt-2 mb-4">
+
+          Why Choose This Course?
+
+        </h2>
+
+
         <div class="divider-gold mb-4"></div>
-        <ul class="list-unstyled d-flex flex-column gap-3 text-secondary" style="font-size: 1.05rem;">
+
+
+        <ul
+          class="list-unstyled d-flex flex-column gap-3 text-secondary"
+          style="font-size: 1.05rem;">
+
+
           <li class="d-flex align-items-start gap-2">
+
             <i class="bi bi-lightning-charge-fill text-gold fs-5 mt-1"></i>
-            <span><strong>Skip documentation:</strong> Save time and focus purely on creative & technicals</span>
+
+            <span>
+
+              <strong>Skip documentation:</strong>
+              Save time and focus purely on creative &amp; technical
+              photography.
+
+            </span>
+
           </li>
+
+
           <li class="d-flex align-items-start gap-2">
+
             <i class="bi bi-camera-fill text-gold fs-5 mt-1"></i>
-            <span><strong>Hands-on workshops:</strong> Deep dive into DSLR photography & professional editing</span>
+
+            <span>
+
+              <strong>Hands-on workshops:</strong>
+              Deep dive into DSLR photography &amp; professional editing.
+
+            </span>
+
           </li>
+
+
           <li class="d-flex align-items-start gap-2">
+
             <i class="bi bi-people-fill text-gold fs-5 mt-1"></i>
-            <span><strong>Real-world experience:</strong> Simulated guest roleplays and expert guest lectures</span>
+
+            <span>
+
+              <strong>Real-world experience:</strong>
+              Simulated guest roleplays and expert guest lectures.
+
+            </span>
+
           </li>
+
+
           <li class="d-flex align-items-start gap-2">
+
             <i class="bi bi-award-fill text-gold fs-5 mt-1"></i>
-            <span><strong>Direct interviews:</strong> Complete course exam and gain certification with direct placement assistance</span>
+
+            <span>
+
+              <strong>Direct interviews:</strong>
+              Complete course exam and gain certification with
+              direct placement assistance.
+
+            </span>
+
           </li>
+
+
         </ul>
+
       </div>
 
-      <!-- Right Image -->
+
+      <!-- RIGHT IMAGE -->
+
       <div class="col-lg-6">
+
         <div class="half-wrap rounded overflow-hidden shadow-sm border">
-          <img src="assets/images/image-31.jpg" alt="Cruise Photography" class="w-100 d-block" style="max-height: 400px; object-fit: cover;" loading="lazy">
+
+          <img
+            src="assets/images/image-31.jpg"
+            alt="Cruise Photography"
+            class="w-100 d-block"
+            style="max-height: 400px; object-fit: cover;"
+            loading="lazy">
+
         </div>
+
       </div>
+
     </div>
 
-    <!-- Highlight Box -->
-    <div class="highlight-box text-center p-4 rounded-3 border bg-light mt-5 mx-auto" style="max-width: 700px;">
-      <h5 class="fw-bold text-navy m-0">Duration: <span class="text-gold">10 Days in Goa</span></h5>
-      <p class="mb-0 text-muted small mt-1">Bridge the gap between maritime readiness and cruise photography expertise in just 10 days.</p>
+
+    <!-- HIGHLIGHT BOX -->
+
+    <div
+      class="highlight-box text-center p-4 rounded-3 border bg-light mt-5 mx-auto"
+      style="max-width: 700px;">
+
+      <h5 class="fw-bold text-navy m-0">
+
+        Duration:
+
+        <span class="text-gold">
+          10 Days in Goa
+        </span>
+
+      </h5>
+
+
+      <p class="mb-0 text-muted small mt-1">
+
+        Bridge the gap between maritime readiness and cruise
+        photography expertise in just 10 days.
+
+      </p>
+
     </div>
+
   </div>
+
 </section>
 
-<!-- Program Breakdown Section -->
+
+<!-- ================= PROGRAM BREAKDOWN ================= -->
+
 <section class="program-breakdown py-5 bg-white">
+
   <div class="container text-center">
-    <span class="section-eyebrow fw-bold text-uppercase" style="color: var(--gold-accent);">STRUCTURE</span>
-    <h2 class="section-main-title fw-bold mt-2">PROGRAM BREAKDOWN</h2>
-    <div class="section-divider-gold mx-auto mb-5" style="width: 70px; height: 3px; background-color: var(--gold-accent);"></div>
+
+    <span
+      class="section-eyebrow fw-bold text-uppercase"
+      style="color: var(--gold-accent);">
+
+      STRUCTURE
+
+    </span>
+
+
+    <h2 class="section-main-title fw-bold mt-2">
+
+      PROGRAM BREAKDOWN
+
+    </h2>
+
+
+    <div
+      class="section-divider-gold mx-auto mb-5"
+      style="width: 70px; height: 3px; background-color: var(--gold-accent);">
+    </div>
+
 
     <div class="row g-4">
-      <!-- Card 1 -->
+
+
+      <!-- ================= CARD 1 ================= -->
+
       <div class="col-md-6 col-lg-3">
-        <div class="card breakdown-card h-100 shadow-sm border text-center">
+
+        <div
+          class="card breakdown-card h-100 shadow-sm border text-center">
+
           <div class="card-body p-4">
+
             <div class="icon-box text-gold mb-3 fs-2">
+
               <i class="bi bi-laptop-fill"></i>
+
             </div>
-            <h5 class="card-title fw-bold text-navy mb-3">6 Days Offline Course</h5>
-            <ul class="list-unstyled text-start m-0 d-flex flex-column gap-2 small">
-              <li><i class="bi bi-arrow-right-short text-gold"></i> Cruise culture & orientation</li>
-              <li><i class="bi bi-arrow-right-short text-gold"></i> DSLR training (cruise-specific)</li>
-              <li><i class="bi bi-arrow-right-short text-gold"></i> Lighting & guest engagement</li>
-              <li><i class="bi bi-arrow-right-short text-gold"></i> Lightroom, Photoshop, IRIS</li>
-              <li><i class="bi bi-arrow-right-short text-gold"></i> Assignments with feedback</li>
+
+
+            <h5 class="card-title fw-bold text-navy mb-3">
+
+              6 Days Offline Course
+
+            </h5>
+
+
+            <ul
+              class="list-unstyled text-start m-0 d-flex flex-column gap-2 small">
+
+              <li>
+                <i class="bi bi-arrow-right-short text-gold"></i>
+                Cruise culture &amp; orientation
+              </li>
+
+              <li>
+                <i class="bi bi-arrow-right-short text-gold"></i>
+                DSLR training (cruise-specific)
+              </li>
+
+              <li>
+                <i class="bi bi-arrow-right-short text-gold"></i>
+                Lighting &amp; guest engagement
+              </li>
+
+              <li>
+                <i class="bi bi-arrow-right-short text-gold"></i>
+                Lightroom, Photoshop, IRIS
+              </li>
+
+              <li>
+                <i class="bi bi-arrow-right-short text-gold"></i>
+                Assignments with feedback
+              </li>
+
             </ul>
+
           </div>
+
         </div>
+
       </div>
 
-      <!-- Card 2 -->
+
+      <!-- ================= CARD 2 ================= -->
+
       <div class="col-md-6 col-lg-3">
-        <div class="card breakdown-card h-100 shadow-sm border text-center">
+
+        <div
+          class="card breakdown-card h-100 shadow-sm border text-center">
+
           <div class="card-body p-4">
+
             <div class="icon-box text-gold mb-3 fs-2">
+
               <i class="bi bi-camera-reels-fill"></i>
+
             </div>
-            <h5 class="card-title fw-bold text-navy mb-3">2 Days Practical</h5>
-            <ul class="list-unstyled text-start m-0 d-flex flex-column gap-2 small">
-              <li><i class="bi bi-arrow-right-short text-gold"></i> Studio photography & roleplays</li>
-              <li><i class="bi bi-arrow-right-short text-gold"></i> Simulated deck guest sessions</li>
-              <li><i class="bi bi-arrow-right-short text-gold"></i> Speed challenges (ship conditions)</li>
+
+
+            <h5 class="card-title fw-bold text-navy mb-3">
+
+              2 Days Practical
+
+            </h5>
+
+
+            <ul
+              class="list-unstyled text-start m-0 d-flex flex-column gap-2 small">
+
+              <li>
+                <i class="bi bi-arrow-right-short text-gold"></i>
+                Studio photography &amp; roleplays
+              </li>
+
+              <li>
+                <i class="bi bi-arrow-right-short text-gold"></i>
+                Simulated deck guest sessions
+              </li>
+
+              <li>
+                <i class="bi bi-arrow-right-short text-gold"></i>
+                Speed challenges (ship conditions)
+              </li>
+
             </ul>
+
           </div>
+
         </div>
+
       </div>
 
-      <!-- Card 3 -->
+
+      <!-- ================= CARD 3 ================= -->
+
       <div class="col-md-6 col-lg-3">
-        <div class="card breakdown-card h-100 shadow-sm border text-center">
+
+        <div
+          class="card breakdown-card h-100 shadow-sm border text-center">
+
           <div class="card-body p-4">
+
             <div class="icon-box text-gold mb-3 fs-2">
+
               <i class="bi bi-pencil-square"></i>
+
             </div>
-            <h5 class="card-title fw-bold text-navy mb-3">1 Day Assessment</h5>
-            <ul class="list-unstyled text-start m-0 d-flex flex-column gap-2 small">
-              <li><i class="bi bi-arrow-right-short text-gold"></i> Written + practical evaluation</li>
-              <li><i class="bi bi-arrow-right-short text-gold"></i> Detailed scorecard</li>
-              <li><i class="bi bi-arrow-right-short text-gold"></i> ≥80% score required for placements</li>
+
+
+            <h5 class="card-title fw-bold text-navy mb-3">
+
+              1 Day Assessment
+
+            </h5>
+
+
+            <ul
+              class="list-unstyled text-start m-0 d-flex flex-column gap-2 small">
+
+              <li>
+                <i class="bi bi-arrow-right-short text-gold"></i>
+                Written + practical evaluation
+              </li>
+
+              <li>
+                <i class="bi bi-arrow-right-short text-gold"></i>
+                Detailed scorecard
+              </li>
+
+              <li>
+                <i class="bi bi-arrow-right-short text-gold"></i>
+                ≥80% score required for placements
+              </li>
+
             </ul>
+
           </div>
+
         </div>
+
       </div>
 
-      <!-- Card 4 -->
+
+      <!-- ================= CARD 4 ================= -->
+
       <div class="col-md-6 col-lg-3">
-        <div class="card breakdown-card h-100 shadow-sm border text-center">
+
+        <div
+          class="card breakdown-card h-100 shadow-sm border text-center">
+
           <div class="card-body p-4">
+
             <div class="icon-box text-gold mb-3 fs-2">
+
               <i class="bi bi-award-fill"></i>
+
             </div>
-            <h5 class="card-title fw-bold text-navy mb-3">1 Day Certification</h5>
-            <ul class="list-unstyled text-start m-0 d-flex flex-column gap-2 small">
-              <li><i class="bi bi-arrow-right-short text-gold"></i> Certification ceremony</li>
-              <li><i class="bi bi-arrow-right-short text-gold"></i> Industry expert lectures</li>
-              <li><i class="bi bi-arrow-right-short text-gold"></i> Q&A and networking session</li>
+
+
+            <h5 class="card-title fw-bold text-navy mb-3">
+
+              1 Day Certification
+
+            </h5>
+
+
+            <ul
+              class="list-unstyled text-start m-0 d-flex flex-column gap-2 small">
+
+              <li>
+                <i class="bi bi-arrow-right-short text-gold"></i>
+                Certification ceremony
+              </li>
+
+              <li>
+                <i class="bi bi-arrow-right-short text-gold"></i>
+                Industry expert lectures
+              </li>
+
+              <li>
+                <i class="bi bi-arrow-right-short text-gold"></i>
+                Q&amp;A and networking session
+              </li>
+
             </ul>
+
           </div>
+
         </div>
+
       </div>
+
+
     </div>
+
   </div>
+
 </section>
 
-<!-- Documents Section -->
+
+<!-- ================= DOCUMENTS SECTION ================= -->
+
 <section class="documents-section py-5 bg-light border-top border-bottom">
+
   <div class="container py-3">
-    <div class="document-card p-4 p-md-5 shadow-sm border bg-white rounded-3 mx-auto" style="max-width: 800px;">
-      <h4 class="text-navy fw-bold mb-3"><i class="bi bi-folder-symlink-fill text-gold me-2"></i>📂 Documents Required</h4>
-      <h6 class="text-gold fw-bold mb-4">STCW Holder / Ex-Seafarer Pathway</h6>
-      <p class="text-muted"><strong>Before starting the course, students must prepare:</strong></p>
+
+    <div
+      class="document-card p-4 p-md-5 shadow-sm border bg-white rounded-3 mx-auto"
+      style="max-width: 800px;">
+
+
+      <h4 class="text-navy fw-bold mb-3">
+
+        <i class="bi bi-folder-symlink-fill text-gold me-2"></i>
+
+        📂 Documents Required
+
+      </h4>
+
+
+      <h6 class="text-gold fw-bold mb-4">
+
+        STCW Holder / Ex-Seafarer Pathway
+
+      </h6>
+
+
+      <p class="text-muted">
+
+        <strong>
+          Before starting the course, students must prepare:
+        </strong>
+
+      </p>
+
+
       <ul class="d-flex flex-column gap-2 text-secondary ps-3">
-        <li>Valid Passport (stamp page, front & back page) *</li>
-        <li>Aadhaar Card *</li>
-        <li>Passport-size photograph (white background, formal attire) *</li>
-        <li>Updated Resume / CV *</li>
+
+
         <li>
-          <strong>STCW Certificates</strong>
-          <ul class="small text-muted mt-1">
-            <li>Personal Survival Techniques (PST)</li>
-            <li>Fire Prevention and Fire Fighting (FPFF)</li>
-            <li>Elementary First Aid (EFA)</li>
-            <li>Personal Safety and Social Responsibility (PSSR)</li>
-            <li>Security Training for Seafarers with Designated Security Duties (STSDSD)</li>
-            <li>Passenger Ship Familiarization (PSF)</li>
-          </ul>
+          Valid Passport (stamp page, front &amp; back page) *
         </li>
-        <li>INDOS Registration Number *</li>
-        <li>SID (Seafarer Identity Document) *</li>
-        <li>DG Shipping Approved Medical Fitness Certificate *</li>
+
+
+        <li>
+          Aadhaar Card *
+        </li>
+
+
+        <li>
+          Passport-size photograph
+          (white background, formal attire) *
+        </li>
+
+
+        <li>
+          Updated Resume / CV *
+        </li>
+
+
+        <li>
+
+          <strong>
+            STCW Certificates
+          </strong>
+
+
+          <ul class="small text-muted mt-1">
+
+
+            <li>
+              Personal Survival Techniques (PST)
+            </li>
+
+
+            <li>
+              Fire Prevention and Fire Fighting (FPFF)
+            </li>
+
+
+            <li>
+              Elementary First Aid (EFA)
+            </li>
+
+
+            <li>
+              Personal Safety and Social Responsibility (PSSR)
+            </li>
+
+
+            <li>
+              Security Training for Seafarers with Designated
+              Security Duties (STSDSD)
+            </li>
+
+
+            <li>
+              Passenger Ship Familiarization (PSF)
+            </li>
+
+
+          </ul>
+
+        </li>
+
+
+        <li>
+          INDOS Registration Number *
+        </li>
+
+
+        <li>
+          SID (Seafarer Identity Document) *
+        </li>
+
+
+        <li>
+          DG Shipping Approved Medical Fitness Certificate *
+        </li>
+
+
       </ul>
+
     </div>
+
   </div>
+
 </section>
 
-<!-- Duration & Fees Section -->
+
+<!-- ================= DURATION & FEES SECTION ================= -->
+
 <section class="duration-fees-section text-center text-white py-5">
+
   <div class="container py-5">
-    <h2 class="section-main-title text-white fw-bold mb-4 text-uppercase">DURATION & FEES</h2>
-    <div class="section-divider-gold mx-auto mb-4" style="width: 70px; height: 3px; background-color: var(--gold-accent);"></div>
-    
-    <div class="fees-details-card mx-auto p-4 p-md-5 mb-4 shadow" style="max-width: 600px;">
-      <ul class="list-unstyled text-start m-0 d-flex flex-column gap-3" style="font-size: 1.05rem;">
-        <li class="d-flex justify-content-between border-bottom pb-2"><strong class="text-navy">Course Name:</strong> <span>Complete Cruise Career Program</span></li>
-        <li class="d-flex justify-content-between border-bottom pb-2"><strong class="text-navy">Duration:</strong> <span>15 Days Photo + 14 Days STCW</span></li>
-        <li class="d-flex justify-content-between border-bottom pb-2"><strong class="text-navy">Inclusions:</strong> <span>Stay & Meals Included</span></li>
-        <li class="d-flex justify-content-between border-bottom pb-2"><strong class="text-navy">Location:</strong> <span>Goa / Mumbai, India</span></li>
-        <li class="d-flex justify-content-between pt-2"><strong class="text-gold fw-bold fs-5">Fees:</strong> <span class="text-gold fw-bold fs-5">₹2,08,000</span></li>
-      </ul>
+
+
+    <h2 class="section-main-title text-white fw-bold mb-4 text-uppercase">
+
+      DURATION &amp; FEES
+
+    </h2>
+
+
+    <div
+      class="section-divider-gold mx-auto mb-4"
+      style="width: 70px; height: 3px; background-color: var(--gold-accent);">
     </div>
 
-    <a routerLink="/apply-now" class="btn btn-warning px-4 py-3 btn-lg fw-bold shadow-lg text-uppercase text-navy-dark letter-spacing-1 mt-3">
-       Apply Now
+
+    <div
+      class="fees-details-card mx-auto p-4 p-md-5 mb-4 shadow"
+      style="max-width: 650px;">
+
+
+      <ul
+        class="list-unstyled text-start m-0 d-flex flex-column gap-3"
+        style="font-size: 1.05rem;">
+
+
+        <!-- COURSE NAME -->
+
+        <li class="d-flex justify-content-between border-bottom pb-2">
+
+          <strong class="text-navy">
+            Course Name:
+          </strong>
+
+          <span>
+            STCW Holder / Ex-Seafarer Pathway
+          </span>
+
+        </li>
+
+
+        <!-- DURATION -->
+
+        <li class="d-flex justify-content-between border-bottom pb-2">
+
+          <strong class="text-navy">
+            Duration:
+          </strong>
+
+          <span>
+            10 Working Days
+          </span>
+
+        </li>
+
+
+        <!-- PROGRAM TYPE -->
+
+        <li class="d-flex justify-content-between border-bottom pb-2">
+
+          <strong class="text-navy">
+            Program Type:
+          </strong>
+
+          <span>
+            Intensive Cruise Photography Program
+          </span>
+
+        </li>
+
+
+        <!-- LOCATION -->
+
+        <li class="d-flex justify-content-between border-bottom pb-2">
+
+          <strong class="text-navy">
+            Location:
+          </strong>
+
+          <span>
+            Goa, India
+          </span>
+
+        </li>
+
+
+        <!-- ELIGIBILITY -->
+
+        <li class="d-flex justify-content-between border-bottom pb-2">
+
+          <strong class="text-navy">
+            Eligibility:
+          </strong>
+
+          <span>
+            STCW Holder / Ex-Seafarer
+          </span>
+
+        </li>
+
+
+        <!-- COURSE STRUCTURE -->
+
+        <li class="d-flex justify-content-between border-bottom pb-2">
+
+          <strong class="text-navy">
+            Course Structure:
+          </strong>
+
+          <span class="text-end">
+
+            6 Days Offline +
+            2 Days Practical +
+            1 Day Assessment +
+            1 Day Certification
+
+          </span>
+
+        </li>
+
+
+        <!-- PROGRAM FEES -->
+
+        <li class="d-flex justify-content-between pt-2">
+
+          <strong class="text-gold fw-bold fs-5">
+            Program Fees:
+          </strong>
+
+          <span class="text-gold fw-bold fs-5">
+            ₹2,08,000/-
+          </span>
+
+        </li>
+
+
+      </ul>
+
+    </div>
+
+
+    <!-- APPLY BUTTON -->
+
+    <a
+      routerLink="/apply-now"
+      class="btn btn-warning px-4 py-3 btn-lg fw-bold shadow-lg text-uppercase text-navy-dark letter-spacing-1 mt-3">
+
+      Apply Now
+
     </a>
+
+
   </div>
+
 </section>

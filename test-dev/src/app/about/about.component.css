@@ -39,6 +39,7 @@
   line-height: 1.6;
 }
 
+
 /* =========================================================
    STORY SECTION
 ========================================================= */
@@ -58,8 +59,9 @@
   margin-bottom: 0;
 }
 
+
 /* =========================================================
-   OLD STORY VIDEO
+   STORY VIDEO
 ========================================================= */
 
 .about-video-wrapper {
@@ -67,7 +69,10 @@
   background-color: #ffffff;
   border-radius: 12px;
   overflow: hidden;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.06);
+
+  box-shadow:
+    0 10px 30px rgba(0, 0, 0, 0.06);
+
   transition:
     transform 0.3s ease,
     box-shadow 0.3s ease;
@@ -75,8 +80,11 @@
 
 .about-video-wrapper:hover {
   transform: translateY(-4px);
-  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+
+  box-shadow:
+    0 15px 40px rgba(0, 0, 0, 0.1);
 }
+
 
 /* =========================================================
    CAPTURING MOMENTS
@@ -98,7 +106,10 @@
   font-size: 2.6rem;
   letter-spacing: 2px;
   font-weight: 800;
-  text-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+
+  text-shadow:
+    0 4px 15px rgba(0, 0, 0, 0.5);
+
   color: #ffffff;
 }
 
@@ -117,15 +128,16 @@
 .cursor-blink {
   font-weight: bold;
   color: var(--gold-accent);
-  animation: blink 0.7s infinite;
+  animation: aboutCursorBlink 0.7s infinite;
   margin-left: 4px;
 }
 
-@keyframes blink {
+@keyframes aboutCursorBlink {
   50% {
     opacity: 0;
   }
 }
+
 
 /* =========================================================
    VISION SECTION
@@ -133,10 +145,12 @@
 
 .vision-redesigned-section {
   position: relative;
+
   background:
     url('/assets/images/cruise-4.jpg') center/cover no-repeat;
 
   min-height: 480px;
+
   display: flex;
   align-items: center;
   justify-content: center;
@@ -163,7 +177,10 @@
   font-weight: 800;
   color: #ffffff;
   letter-spacing: 5px;
-  text-shadow: 0 4px 15px rgba(0, 0, 0, 0.45);
+
+  text-shadow:
+    0 4px 15px rgba(0, 0, 0, 0.45);
+
   transition: font-size 0.3s ease;
 }
 
@@ -173,8 +190,11 @@
   font-weight: 500;
   line-height: 1.7;
   color: #ffffff;
-  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+
+  text-shadow:
+    0 2px 10px rgba(0, 0, 0, 0.5);
 }
+
 
 /* =========================================================
    MISSION SECTION
@@ -236,7 +256,9 @@
   font-weight: 800;
   color: #ffffff;
   letter-spacing: 2px;
-  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
+
+  text-shadow:
+    0 2px 8px rgba(0, 0, 0, 0.5);
 }
 
 .excellence-text {
@@ -244,7 +266,9 @@
   line-height: 1.5;
   color: #e2e8f0;
   font-weight: 400;
-  text-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+
+  text-shadow:
+    0 2px 5px rgba(0, 0, 0, 0.5);
 }
 
 .mission-title {
@@ -261,12 +285,14 @@
   max-width: 580px;
 }
 
+
 /* =========================================================
    VALUES SECTION
 ========================================================= */
 
 .values-redesigned-section {
   background-color: #000000;
+
   border-top: 1px solid rgba(255, 255, 255, 0.05);
   border-bottom: 1px solid rgba(255, 255, 255, 0.05);
 }
@@ -287,6 +313,33 @@
   font-size: 1.2rem;
   font-weight: 700;
   color: #ffffff !important;
+}
+
+.value-item {
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 12px;
+
+  background:
+    linear-gradient(
+      135deg,
+      rgba(15, 41, 74, 0.45),
+      rgba(10, 20, 35, 0.65)
+    );
+
+  transition:
+    transform 0.3s ease,
+    border-color 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.value-item:hover {
+  transform: translateY(-5px);
+
+  border-color:
+    rgba(255, 183, 3, 0.35);
+
+  box-shadow:
+    0 12px 30px rgba(0, 0, 0, 0.35);
 }
 
 .values-card {
@@ -334,15 +387,20 @@
   font-weight: 800;
   color: #ffffff;
   letter-spacing: 3px;
-  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+
+  text-shadow:
+    0 2px 8px rgba(0, 0, 0, 0.4);
 }
 
 .values-card-text {
   font-size: 1.1rem;
   line-height: 1.6;
   color: #ffffff;
-  text-shadow: 0 2px 5px rgba(0, 0, 0, 0.4);
+
+  text-shadow:
+    0 2px 5px rgba(0, 0, 0, 0.4);
 }
+
 
 /* =========================================================
    LEADERSHIP SECTION
@@ -387,7 +445,8 @@
   object-fit: cover;
   display: block;
 
-  transition: transform 0.5s ease;
+  transition:
+    transform 0.5s ease;
 }
 
 .leadership-card:hover .leadership-image {
@@ -409,6 +468,7 @@
   line-height: 1.7;
   font-size: 0.95rem;
 }
+
 
 /* =========================================================
    TRAINING EXPERIENCE SECTION
@@ -454,8 +514,9 @@
   line-height: 1.7;
 }
 
+
 /* =========================================================
-   STUDIO SECTION ONLY
+   STUDIO SECTION
    HORIZONTAL AUTOMATIC SLIDER
 ========================================================= */
 
@@ -463,13 +524,11 @@
   width: 100%;
   overflow: hidden;
   position: relative;
-
   padding: 10px 0 25px;
 }
 
 .studio-slider-wrapper::before {
   content: "";
-
   position: absolute;
   top: 0;
   left: 0;
@@ -490,7 +549,6 @@
 
 .studio-slider-wrapper::after {
   content: "";
-
   position: absolute;
   top: 0;
   right: 0;
@@ -512,7 +570,6 @@
 .studio-slider {
   display: flex;
   width: max-content;
-
   gap: 24px;
 
   animation:
@@ -538,6 +595,7 @@
   }
 }
 
+
 /* =========================================================
    TRAINING MEDIA CARD
 ========================================================= */
@@ -549,11 +607,9 @@
   height: 230px;
 
   overflow: hidden;
-
   border-radius: 14px;
 
   background-color: #0f294a;
-
   border: 1px solid #e2e8f0;
 
   box-shadow:
@@ -571,6 +627,7 @@
     0 15px 35px rgba(15, 41, 74, 0.18);
 }
 
+
 /* =========================================================
    TRAINING IMAGES
 ========================================================= */
@@ -578,7 +635,6 @@
 .training-media-image {
   width: 100%;
   height: 100%;
-
   display: block;
 
   object-fit: cover;
@@ -591,6 +647,7 @@
   transform: scale(1.05);
 }
 
+
 /* =========================================================
    TRAINING VIDEOS
 ========================================================= */
@@ -598,11 +655,9 @@
 .training-media-video {
   width: 100%;
   height: 100%;
-
   display: block;
 
   object-fit: cover;
-
   background-color: #000000;
 }
 
@@ -610,13 +665,20 @@
   background-color: #000000;
 }
 
+.training-media-card.video-card iframe {
+  width: 100%;
+  height: 100%;
+  display: block;
+  border: 0;
+}
+
+
 /* =========================================================
    MEDIA OVERLAY
 ========================================================= */
 
 .training-media-card::after {
   content: "";
-
   position: absolute;
   inset: 0;
 
@@ -629,6 +691,7 @@
       rgba(10, 20, 35, 0.25) 100%
     );
 }
+
 
 /* =========================================================
    CLASSROOM TRAINING
@@ -645,6 +708,7 @@
   height: 270px;
 }
 
+
 /* =========================================================
    STUDENT PRACTICAL
    NORMAL GRID - NO SLIDER
@@ -660,6 +724,7 @@
   height: 300px;
 }
 
+
 /* =========================================================
    GALLERY
 ========================================================= */
@@ -670,9 +735,7 @@
 
 .gallery-img-wrapper {
   position: relative;
-
   width: 100%;
-
   aspect-ratio: 3 / 2;
 
   border-color: #e2e8f0 !important;
@@ -693,7 +756,6 @@
 .gallery-img {
   width: 100%;
   height: 100%;
-
   object-fit: cover;
 
   transition:
@@ -704,13 +766,13 @@
   transform: scale(1.05);
 }
 
+
 /* =========================================================
    LIGHTBOX MODAL
 ========================================================= */
 
 .lightbox-modal {
   position: fixed;
-
   z-index: 9999;
 
   left: 0;
@@ -723,17 +785,16 @@
     rgba(10, 20, 35, 0.95);
 
   display: flex;
-
   align-items: center;
   justify-content: center;
 
   cursor: zoom-out;
 
   animation:
-    fadeIn 0.3s ease;
+    lightboxFadeIn 0.3s ease;
 }
 
-@keyframes fadeIn {
+@keyframes lightboxFadeIn {
   from {
     opacity: 0;
   }
@@ -750,9 +811,7 @@
   max-height: 80%;
 
   display: flex;
-
   flex-direction: column;
-
   align-items: center;
 
   cursor: default;
@@ -792,11 +851,9 @@
 
 .lightbox-caption {
   color: #e2e8f0;
-
   margin-top: 15px;
 
   font-size: 1.1rem;
-
   font-weight: 500;
 
   text-shadow:
@@ -826,7 +883,6 @@
 
 .lightbox-close:hover {
   color: var(--gold-accent);
-
   transform: scale(1.1);
 }
 
@@ -834,7 +890,6 @@
   position: absolute;
 
   top: 50%;
-
   transform: translateY(-50%);
 
   background:
@@ -851,11 +906,9 @@
   font-size: 20px;
 
   cursor: pointer;
-
   border-radius: 50%;
 
   display: flex;
-
   align-items: center;
   justify-content: center;
 
@@ -885,11 +938,13 @@
   right: 35px;
 }
 
+
 /* =========================================================
    TABLET RESPONSIVE
 ========================================================= */
 
 @media (max-width: 991px) {
+
   .about-hero-section {
     padding: 140px 0 70px 0;
   }
@@ -956,11 +1011,13 @@
   }
 }
 
+
 /* =========================================================
    MOBILE RESPONSIVE
 ========================================================= */
 
 @media (max-width: 575px) {
+
   .about-hero-section {
     padding: 120px 0 50px 0;
   }
@@ -973,8 +1030,24 @@
     font-size: 1rem;
   }
 
+  .capturing-moments-banner {
+    padding: 70px 0;
+  }
+
   .capturing-title {
     font-size: 1.8rem;
+  }
+
+  .capturing-paragraph {
+    font-size: 1rem;
+  }
+
+  .vision-redesigned-section {
+    min-height: 400px;
+  }
+
+  .vision-banner-overlay {
+    min-height: 400px;
   }
 
   .vision-banner-title {
@@ -1000,6 +1073,10 @@
 
   .values-card-text {
     font-size: 0.95rem;
+  }
+
+  .value-text {
+    font-size: 1rem;
   }
 
   .excellence-card,
@@ -1057,5 +1134,48 @@
   .studio-slider-wrapper::before,
   .studio-slider-wrapper::after {
     width: 45px;
+  }
+
+  .lightbox-content {
+    max-width: 92%;
+  }
+
+  .lightbox-img {
+    max-height: 70vh;
+  }
+
+  .lightbox-close {
+    top: 10px;
+    right: 15px;
+    font-size: 32px;
+  }
+}
+
+
+/* =========================================================
+   ACCESSIBILITY / REDUCED MOTION
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+  .studio-slider {
+    animation: none;
+  }
+
+  .cursor-blink {
+    animation: none;
+  }
+
+  .leadership-card,
+  .leadership-image,
+  .training-media-card,
+  .training-media-image,
+  .about-video-wrapper,
+  .excellence-card,
+  .values-card,
+  .value-item,
+  .gallery-img-wrapper,
+  .gallery-img {
+    transition: none;
   }
 }

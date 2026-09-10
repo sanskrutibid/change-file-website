@@ -10,9 +10,7 @@ import {
 } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 
-import { SupabaseService } from '../supabase.service';
 import { environment } from '../../environments/environment';
-
 
 @Component({
   selector: 'app-apply-now',
@@ -34,7 +32,6 @@ export class ApplyNowComponent implements OnInit {
 
   step = 1;
 
-
   // ============================================================
   // FORMS
   // ============================================================
@@ -43,13 +40,11 @@ export class ApplyNowComponent implements OnInit {
   courseForm: FormGroup;
   courseQuestions: FormGroup;
 
-
   // ============================================================
   // COURSE
   // ============================================================
 
   selectedCourse = '';
-
 
   // ============================================================
   // DOCUMENTS
@@ -57,29 +52,23 @@ export class ApplyNowComponent implements OnInit {
 
   resumeFiles: File[] = [];
 
-
   // ============================================================
   // PAYMENT
   // ============================================================
 
   paymentMode = '';
-
   customAmount = 0;
+
+  // ============================================================
+  // LOADING
+  // ============================================================
 
   isLoading = false;
 
-
-  // ============================================================
-  // CONSTRUCTOR
-  // ============================================================
-
-  constructor(
-    private fb: FormBuilder,
-    private supabaseService: SupabaseService
-  ) {
+  constructor(private fb: FormBuilder) {
 
     // ==========================================================
-    // STEP 1 - PERSONAL FORM
+    // STEP 1 - PERSONAL DETAILS
     // ==========================================================
 
     this.personalForm = this.fb.group({
@@ -124,9 +113,8 @@ export class ApplyNowComponent implements OnInit {
 
     });
 
-
     // ==========================================================
-    // STEP 2 - COURSE FORM
+    // STEP 2 - COURSE
     // ==========================================================
 
     this.courseForm = this.fb.group({
@@ -138,57 +126,47 @@ export class ApplyNowComponent implements OnInit {
 
     });
 
-
     // ==========================================================
-    // STEP 2 - COMMON COURSE QUESTIONS
+    // COURSE QUESTIONS
     // ==========================================================
 
     this.courseQuestions = this.fb.group({
 
-      // Question 1
       usedCamera: [
         '',
         Validators.required
       ],
 
-      // Question 2
       hospitalityExp: [
         '',
         Validators.required
       ],
 
-      // Question 3
       professionalExperience: [
         '',
         Validators.required
       ],
 
-      // Question 4
       photographyExperience: [
         '',
         Validators.required
       ],
 
-      // Question 5
       visibleTattoos: [
         '',
         Validators.required
       ],
 
-      // Complete Career Program only
       medicalCondition: [
         ''
       ],
 
-      // Optional
       message: [
         ''
       ]
 
     });
-
   }
-
 
   // ============================================================
   // INIT
@@ -203,43 +181,34 @@ export class ApplyNowComponent implements OnInit {
 
         this.selectedCourse = value;
 
-        // Reset payment whenever course changes
         this.paymentMode = '';
-
         this.customAmount = 0;
 
-        // Reset medical question
-        this.courseQuestions
-          .get('medicalCondition')
-          ?.reset('');
+        const medicalControl =
+          this.courseQuestions.get('medicalCondition');
 
-        // Medical question is required ONLY
-        // for Complete Cruise Career Program
+        medicalControl?.reset('');
+
         if (value === 'course2') {
 
-          this.courseQuestions
-            .get('medicalCondition')
-            ?.setValidators(Validators.required);
+          medicalControl?.setValidators(
+            Validators.required
+          );
 
         } else {
 
-          this.courseQuestions
-            .get('medicalCondition')
-            ?.clearValidators();
+          medicalControl?.clearValidators();
 
         }
 
-        this.courseQuestions
-          .get('medicalCondition')
-          ?.updateValueAndValidity();
+        medicalControl?.updateValueAndValidity();
 
       });
 
   }
 
-
   // ============================================================
-  // COURSE NAME
+  // SELECTED COURSE NAME
   // ============================================================
 
   get selectedCourseName(): string {
@@ -256,12 +225,10 @@ export class ApplyNowComponent implements OnInit {
         return '';
 
     }
-
   }
 
-
   // ============================================================
-  // COURSE TOTAL FEES
+  // COURSE TOTAL
   // ============================================================
 
   get selectedCourseTotal(): number {
@@ -278,9 +245,7 @@ export class ApplyNowComponent implements OnInit {
         return 0;
 
     }
-
   }
-
 
   // ============================================================
   // PAYMENT AMOUNT
@@ -290,41 +255,28 @@ export class ApplyNowComponent implements OnInit {
 
     switch (this.paymentMode) {
 
-      // ----------------------------------------
-      // COURSE 1
-      // ----------------------------------------
-
       case 'c1_advance':
         return 50000;
 
       case 'c1_balance':
-        return 149000 - 50000;
+        return 99000;
 
       case 'c1_custom':
         return this.customAmount || 0;
-
-
-      // ----------------------------------------
-      // COURSE 2
-      // ----------------------------------------
 
       case 'c2_advance':
         return 50000;
 
       case 'c2_balance':
-        return 208000 - 50000;
+        return 158000;
 
       case 'c2_custom':
         return this.customAmount || 0;
 
-
       default:
         return 0;
-
     }
-
   }
-
 
   // ============================================================
   // PROCESSING FEE
@@ -336,9 +288,8 @@ export class ApplyNowComponent implements OnInit {
 
   }
 
-
   // ============================================================
-  // TOTAL INCLUDING PROCESSING FEE
+  // TOTAL PAYABLE
   // ============================================================
 
   get paymentAmountWithProcessingFee(): number {
@@ -347,9 +298,8 @@ export class ApplyNowComponent implements OnInit {
 
   }
 
-
   // ============================================================
-  // PREFERRED CONTACT ARRAY
+  // PREFERRED CONTACT
   // ============================================================
 
   get preferredContactArray(): FormArray {
@@ -360,28 +310,20 @@ export class ApplyNowComponent implements OnInit {
 
   }
 
-
   // ============================================================
   // CURRENT STEP VALIDATION
   // ============================================================
 
   isCurrentStepValid(): boolean {
 
-    // ----------------------------------------------------------
     // STEP 1
-    // ----------------------------------------------------------
-
     if (this.step === 1) {
 
       return this.personalForm.valid;
 
     }
 
-
-    // ----------------------------------------------------------
     // STEP 2
-    // ----------------------------------------------------------
-
     if (this.step === 2) {
 
       if (!this.courseForm.valid) {
@@ -396,37 +338,26 @@ export class ApplyNowComponent implements OnInit {
 
     }
 
-
-    // ----------------------------------------------------------
     // STEP 3
-    // ----------------------------------------------------------
-
     if (this.step === 3) {
 
       return this.resumeFiles.length > 0;
 
     }
 
-
-    // ----------------------------------------------------------
     // STEP 4
-    // ----------------------------------------------------------
-
     if (this.step === 4) {
 
       if (!this.paymentMode) {
         return false;
       }
 
-      // Custom payment must be >= ₹5,000
       if (
         this.paymentMode === 'c1_custom' ||
         this.paymentMode === 'c2_custom'
       ) {
 
-        return (
-          this.customAmount >= 5000
-        );
+        return this.customAmount >= 5000;
 
       }
 
@@ -434,11 +365,8 @@ export class ApplyNowComponent implements OnInit {
 
     }
 
-
     return false;
-
   }
-
 
   // ============================================================
   // NEXT STEP
@@ -462,7 +390,6 @@ export class ApplyNowComponent implements OnInit {
 
   }
 
-
   // ============================================================
   // PREVIOUS STEP
   // ============================================================
@@ -477,9 +404,8 @@ export class ApplyNowComponent implements OnInit {
 
   }
 
-
   // ============================================================
-  // MARK CURRENT FORM TOUCHED
+  // MARK CURRENT STEP TOUCHED
   // ============================================================
 
   private markCurrentStepTouched(): void {
@@ -506,9 +432,8 @@ export class ApplyNowComponent implements OnInit {
 
   }
 
-
   // ============================================================
-  // MARK FORM GROUP TOUCHED
+  // MARK FORM TOUCHED
   // ============================================================
 
   private markFormGroupTouched(
@@ -523,16 +448,23 @@ export class ApplyNowComponent implements OnInit {
 
       if (control instanceof FormGroup) {
 
-        this.markFormGroupTouched(
-          control
-        );
+        this.markFormGroupTouched(control);
+
+      }
+
+      if (control instanceof FormArray) {
+
+        control.controls.forEach(child => {
+
+          child.markAsTouched();
+
+        });
 
       }
 
     });
 
   }
-
 
   // ============================================================
   // COURSE CHANGE
@@ -546,19 +478,11 @@ export class ApplyNowComponent implements OnInit {
     const selectedValue =
       target.value;
 
-    this.selectedCourse =
-      selectedValue;
-
     this.courseForm.patchValue({
       course: selectedValue
     });
 
-    this.paymentMode = '';
-
-    this.customAmount = 0;
-
   }
-
 
   // ============================================================
   // PAYMENT MODE
@@ -568,8 +492,6 @@ export class ApplyNowComponent implements OnInit {
 
     this.paymentMode = mode;
 
-    // Reset custom amount when
-    // switching away from custom
     if (
       mode !== 'c1_custom' &&
       mode !== 'c2_custom'
@@ -581,16 +503,15 @@ export class ApplyNowComponent implements OnInit {
 
   }
 
-
   // ============================================================
-  // CUSTOM PAYMENT VALIDATION
+  // CUSTOM PAYMENT
   // ============================================================
 
   validateCustomAmount(): void {
 
     if (
-      this.customAmount === null ||
-      this.customAmount === undefined
+      !this.customAmount ||
+      this.customAmount < 0
     ) {
 
       this.customAmount = 0;
@@ -599,40 +520,8 @@ export class ApplyNowComponent implements OnInit {
 
   }
 
-
   // ============================================================
-  // CHECK CUSTOM PAYMENT
-  // ============================================================
-
-  private isCustomPaymentValid(): boolean {
-
-    if (
-      this.paymentMode === 'c1_custom' ||
-      this.paymentMode === 'c2_custom'
-    ) {
-
-      if (
-        !this.customAmount ||
-        this.customAmount < 5000
-      ) {
-
-        alert(
-          'Minimum payment amount is ₹5,000.'
-        );
-
-        return false;
-
-      }
-
-    }
-
-    return true;
-
-  }
-
-
-  // ============================================================
-  // CHECK PAYMENT MODE
+  // PAYMENT AMOUNT FOR BACKEND
   // ============================================================
 
   private getPaymentAmountForSubmission(): number {
@@ -664,7 +553,6 @@ export class ApplyNowComponent implements OnInit {
 
   }
 
-
   // ============================================================
   // FILE UPLOAD
   // ============================================================
@@ -675,67 +563,70 @@ export class ApplyNowComponent implements OnInit {
       event.target as HTMLInputElement;
 
     if (
-      input.files &&
-      input.files.length > 0
+      !input.files ||
+      input.files.length === 0
     ) {
 
-      const newFiles =
-        Array.from(input.files);
-
-      // --------------------------------------------------------
-      // Validate max 2MB
-      // --------------------------------------------------------
-
-      const validFiles: File[] = [];
-
-      for (const file of newFiles) {
-
-        const maxSize =
-          2 * 1024 * 1024;
-
-        if (file.size > maxSize) {
-
-          alert(
-            `${file.name} is larger than 2MB and was not added.`
-          );
-
-          continue;
-
-        }
-
-        validFiles.push(file);
-
-      }
-
-
-      // --------------------------------------------------------
-      // Avoid duplicate files
-      // --------------------------------------------------------
-
-      validFiles.forEach(file => {
-
-        const alreadyExists =
-          this.resumeFiles.some(
-            existingFile =>
-              existingFile.name === file.name &&
-              existingFile.size === file.size
-          );
-
-        if (!alreadyExists) {
-
-          this.resumeFiles.push(file);
-
-        }
-
-      });
+      return;
 
     }
 
-    // Allow same file to be selected again
+    const maxSize =
+      2 * 1024 * 1024;
+
+    const newFiles =
+      Array.from(input.files);
+
+    for (const file of newFiles) {
+
+      // 2 MB validation
+      if (file.size > maxSize) {
+
+        alert(
+          `${file.name} is larger than 2MB and was not added.`
+        );
+
+        continue;
+
+      }
+
+      // Optional: restrict file types
+      const allowedTypes = [
+        'application/pdf',
+        'application/msword',
+        'application/vnd.openxmlformats-officedocument.wordprocessingml.document'
+      ];
+
+      if (!allowedTypes.includes(file.type)) {
+
+        alert(
+          `${file.name} is not a supported file type.`
+        );
+
+        continue;
+
+      }
+
+      // Prevent duplicate
+      const alreadyExists =
+        this.resumeFiles.some(
+          existingFile =>
+            existingFile.name === file.name &&
+            existingFile.size === file.size
+        );
+
+      if (!alreadyExists) {
+
+        this.resumeFiles.push(file);
+
+      }
+
+    }
+
+    // Allow selecting same file again
     input.value = '';
 
   }
-
 
   // ============================================================
   // REMOVE FILE
@@ -748,18 +639,14 @@ export class ApplyNowComponent implements OnInit {
       index < this.resumeFiles.length
     ) {
 
-      this.resumeFiles.splice(
-        index,
-        1
-      );
+      this.resumeFiles.splice(index, 1);
 
     }
 
   }
 
-
   // ============================================================
-  // UPLOAD FILES TO BACKEND
+  // UPLOAD FILES
   // ============================================================
 
   async uploadFiles(): Promise<string[]> {
@@ -772,7 +659,6 @@ export class ApplyNowComponent implements OnInit {
 
     const uploadedUrls: string[] = [];
 
-
     for (const file of this.resumeFiles) {
 
       const formData =
@@ -783,7 +669,6 @@ export class ApplyNowComponent implements OnInit {
         file
       );
 
-
       const response =
         await fetch(
           `${environment.backendUrl}/upload-resume`,
@@ -793,7 +678,6 @@ export class ApplyNowComponent implements OnInit {
           }
         );
 
-
       if (!response.ok) {
 
         throw new Error(
@@ -802,10 +686,8 @@ export class ApplyNowComponent implements OnInit {
 
       }
 
-
       const result =
         await response.json();
-
 
       if (result.fileUrl) {
 
@@ -813,27 +695,25 @@ export class ApplyNowComponent implements OnInit {
           result.fileUrl
         );
 
+      } else {
+
+        throw new Error(
+          `No file URL returned for ${file.name}`
+        );
+
       }
 
     }
 
-
     return uploadedUrls;
 
   }
-
 
   // ============================================================
   // COURSE DATA
   // ============================================================
 
   getCourseData(): any {
-
-    if (!this.selectedCourse) {
-
-      return {};
-
-    }
 
     return {
 
@@ -864,9 +744,8 @@ export class ApplyNowComponent implements OnInit {
 
   }
 
-
   // ============================================================
-  // PAYU FORM SUBMISSION
+  // PAYU FORM
   // ============================================================
 
   private submitPayuForm(
@@ -878,42 +757,30 @@ export class ApplyNowComponent implements OnInit {
       document.createElement('form');
 
     form.method = 'POST';
-
     form.action = payuUrl;
-
     form.target = '_self';
-
     form.style.display = 'none';
 
-
-    Object.entries(params)
-      .forEach(([key, value]) => {
+    Object.entries(params).forEach(
+      ([key, value]) => {
 
         const input =
           document.createElement('input');
 
         input.type = 'hidden';
-
         input.name = key;
-
-        input.value =
-          String(value ?? '');
+        input.value = String(value ?? '');
 
         form.appendChild(input);
 
-      });
-
+      }
+    );
 
     document.body.appendChild(form);
 
-
-    setTimeout(
-      () => form.submit(),
-      0
-    );
+    form.submit();
 
   }
-
 
   // ============================================================
   // PROCEED TO PAYMENT
@@ -921,9 +788,9 @@ export class ApplyNowComponent implements OnInit {
 
   async proceedToPayment(): Promise<void> {
 
-    // ----------------------------------------------------------
-    // Validate Step 1
-    // ----------------------------------------------------------
+    // ==========================================================
+    // VALIDATE PERSONAL DETAILS
+    // ==========================================================
 
     if (!this.personalForm.valid) {
 
@@ -941,10 +808,9 @@ export class ApplyNowComponent implements OnInit {
 
     }
 
-
-    // ----------------------------------------------------------
-    // Validate Course
-    // ----------------------------------------------------------
+    // ==========================================================
+    // VALIDATE COURSE
+    // ==========================================================
 
     if (!this.courseForm.valid) {
 
@@ -954,14 +820,17 @@ export class ApplyNowComponent implements OnInit {
 
       this.step = 2;
 
+      this.markFormGroupTouched(
+        this.courseForm
+      );
+
       return;
 
     }
 
-
-    // ----------------------------------------------------------
-    // Validate Questions
-    // ----------------------------------------------------------
+    // ==========================================================
+    // VALIDATE QUESTIONS
+    // ==========================================================
 
     if (!this.courseQuestions.valid) {
 
@@ -979,10 +848,25 @@ export class ApplyNowComponent implements OnInit {
 
     }
 
+    // ==========================================================
+    // VALIDATE RESUME
+    // ==========================================================
 
-    // ----------------------------------------------------------
-    // Validate Payment
-    // ----------------------------------------------------------
+    if (!this.resumeFiles.length) {
+
+      alert(
+        'Please upload at least one document.'
+      );
+
+      this.step = 3;
+
+      return;
+
+    }
+
+    // ==========================================================
+    // VALIDATE PAYMENT
+    // ==========================================================
 
     if (!this.paymentMode) {
 
@@ -990,25 +874,14 @@ export class ApplyNowComponent implements OnInit {
         'Please select a payment option.'
       );
 
-      return;
-
-    }
-
-
-    // ----------------------------------------------------------
-    // Validate Custom Amount
-    // ----------------------------------------------------------
-
-    if (!this.isCustomPaymentValid()) {
+      this.step = 4;
 
       return;
 
     }
-
 
     const paymentAmount =
       this.getPaymentAmountForSubmission();
-
 
     if (
       !paymentAmount ||
@@ -1023,298 +896,38 @@ export class ApplyNowComponent implements OnInit {
 
     }
 
-
-    // ----------------------------------------------------------
-    // Processing Fee
-    // ----------------------------------------------------------
+    // ==========================================================
+    // PROCESSING FEE
+    // ==========================================================
 
     const processingFee =
-      paymentAmount * 0.025;
+      Number(
+        (paymentAmount * 0.025).toFixed(2)
+      );
 
     const totalPayable =
-      paymentAmount + processingFee;
-
-
-    console.log(
-      'Payment amount:',
-      paymentAmount
-    );
-
-    console.log(
-      'Processing fee:',
-      processingFee
-    );
-
-    console.log(
-      'Total payable:',
-      totalPayable
-    );
-
-
-    try {
-
-      this.isLoading = true;
-
-
-      // --------------------------------------------------------
-      // Upload Documents
-      // --------------------------------------------------------
-
-      const resumeUrls =
-        await this.uploadFiles();
-
-
-      // --------------------------------------------------------
-      // Application Data
-      // --------------------------------------------------------
-
-      const applicationData = {
-
-        fullName:
-          this.personalForm.value.fullName,
-
-        email:
-          this.personalForm.value.email,
-
-        phone:
-          this.personalForm.value.phone,
-
-        city:
-          this.personalForm.value.city,
-
-        dob:
-          this.personalForm.value.dob,
-
-        heardFrom:
-          this.personalForm.value.heardFrom,
-
-        preferredContact:
-          this.preferredContactArray.value,
-
-        course:
-          this.courseForm.value.course,
-
-        courseName:
-          this.selectedCourseName,
-
-        courseTotalFees:
-          this.selectedCourseTotal,
-
-        courseData:
-          this.getCourseData(),
-
-        resume_urls:
-          resumeUrls,
-
-        paymentMode:
-          this.paymentMode,
-
-        amount:
-          paymentAmount.toFixed(2),
-
-        processingFee:
-          processingFee.toFixed(2),
-
-        totalPayable:
-          totalPayable.toFixed(2)
-
-      };
-
-
-      console.log(
-        'Application data:',
-        applicationData
+      Number(
+        (paymentAmount + processingFee).toFixed(2)
       );
 
-
-      // --------------------------------------------------------
-      // Initiate PayU
-      // --------------------------------------------------------
-
-      const response =
-        await fetch(
-          `${environment.backendUrl}/payu-initiate`,
-          {
-            method: 'POST',
-
-            headers: {
-              'Content-Type':
-                'application/json'
-            },
-
-            body:
-              JSON.stringify(
-                applicationData
-              )
-
-          }
-        );
-
-
-      if (!response.ok) {
-
-        throw new Error(
-          `Payment server returned ${response.status}`
-        );
-
-      }
-
-
-      const payuResp =
-        await response.json();
-
-
-      // --------------------------------------------------------
-      // Redirect to PayU
-      // --------------------------------------------------------
-
-      if (
-        payuResp?.payuUrl &&
-        payuResp?.payuParams
-      ) {
-
-        this.submitPayuForm(
-          payuResp.payuUrl,
-          payuResp.payuParams
-        );
-
-      } else {
-
-        console.error(
-          'Invalid PayU response:',
-          payuResp
-        );
-
-        alert(
-          'Error: PayU response invalid.'
-        );
-
-      }
-
-    } catch (error) {
-
-      console.error(
-        'Payment error:',
-        error
-      );
-
-
-      const message =
-        error instanceof Error
-          ? error.message
-          : 'Unexpected error';
-
-
-      alert(
-        'Payment error: ' + message
-      );
-
-    } finally {
-
-      this.isLoading = false;
-
-    }
-
-  }
-
-
-  // ============================================================
-  // PREFERRED CONTACT
-  // ============================================================
-
-  onCheckboxChange(event: Event): void {
-
-    const input =
-      event.target as HTMLInputElement;
-
-    const checkArray =
-      this.preferredContactArray;
-
-
-    if (input.checked) {
-
-      const alreadyExists =
-        checkArray.controls.some(
-          control =>
-            control.value === input.value
-        );
-
-      if (!alreadyExists) {
-
-        checkArray.push(
-          this.fb.control(
-            input.value
-          )
-        );
-
-      }
-
-    } else {
-
-      const index =
-        checkArray.controls.findIndex(
-          control =>
-            control.value === input.value
-        );
-
-      if (index >= 0) {
-
-        checkArray.removeAt(index);
-
-      }
-
-    }
-
-
-    checkArray.markAsTouched();
-
-    checkArray.updateValueAndValidity();
-
-  }
-
-
-  // ============================================================
-  // SUBMIT APPLICATION
-  // ============================================================
-
-  async submitApplication(): Promise<void> {
-
-    if (
-      !this.personalForm.valid ||
-      !this.courseForm.valid ||
-      !this.courseQuestions.valid
-    ) {
-
-      alert(
-        'Please fill all required fields.'
-      );
-
-      return;
-
-    }
-
-
-    if (
-      !this.resumeFiles.length
-    ) {
-
-      alert(
-        'Please upload at least one document.'
-      );
-
-      return;
-
-    }
-
+    // ==========================================================
+    // START
+    // ==========================================================
 
     this.isLoading = true;
 
-
     try {
+
+      // ========================================================
+      // UPLOAD RESUME
+      // ========================================================
 
       const resumeUrls =
         await this.uploadFiles();
 
+      // ========================================================
+      // APPLICATION DATA
+      // ========================================================
 
       const applicationData = {
 
@@ -1355,56 +968,108 @@ export class ApplyNowComponent implements OnInit {
           resumeUrls,
 
         paymentMode:
-          this.paymentMode
+          this.paymentMode,
+
+        amount:
+          paymentAmount.toFixed(2),
+
+        processingFee:
+          processingFee.toFixed(2),
+
+        totalPayable:
+          totalPayable.toFixed(2)
 
       };
 
+      console.log(
+        'Sending application:',
+        applicationData
+      );
 
-      const {
-        data: insertData,
-        error: insertError
-      } =
-        await this.supabaseService
-          .insertApplication(
-            applicationData
-          );
+      // ========================================================
+      // CALL BACKEND
+      // ========================================================
 
+      const response =
+        await fetch(
+          `${environment.backendUrl}/payu-initiate`,
+          {
+            method: 'POST',
 
-      if (insertError) {
+            headers: {
+              'Content-Type':
+                'application/json'
+            },
 
-        console.error(
-          'Database insert error:',
-          insertError.message
+            body:
+              JSON.stringify(
+                applicationData
+              )
+
+          }
         );
 
-        alert(
-          'Error submitting application!'
+      // ========================================================
+      // CHECK RESPONSE
+      // ========================================================
+
+      if (!response.ok) {
+
+        const errorText =
+          await response.text();
+
+        throw new Error(
+          errorText ||
+          `Server returned ${response.status}`
+        );
+
+      }
+
+      const payuResp =
+        await response.json();
+
+      console.log(
+        'PayU response:',
+        payuResp
+      );
+
+      // ========================================================
+      // REDIRECT TO PAYU
+      // ========================================================
+
+      if (
+        payuResp &&
+        payuResp.payuUrl &&
+        payuResp.payuParams
+      ) {
+
+        this.submitPayuForm(
+          payuResp.payuUrl,
+          payuResp.payuParams
         );
 
       } else {
 
-        console.log(
-          'Application inserted:',
-          insertData
+        throw new Error(
+          'Invalid PayU response from server.'
         );
-
-        alert(
-          'Application submitted successfully!'
-        );
-
-        this.resetForms();
 
       }
 
     } catch (error) {
 
       console.error(
-        'Unexpected error:',
+        'Payment error:',
         error
       );
 
+      const message =
+        error instanceof Error
+          ? error.message
+          : 'Unexpected error occurred.';
+
       alert(
-        'Something went wrong!'
+        `Payment error: ${message}`
       );
 
     } finally {
@@ -1415,6 +1080,56 @@ export class ApplyNowComponent implements OnInit {
 
   }
 
+  // ============================================================
+  // PREFERRED CONTACT CHECKBOX
+  // ============================================================
+
+  onCheckboxChange(event: Event): void {
+
+    const input =
+      event.target as HTMLInputElement;
+
+    const checkArray =
+      this.preferredContactArray;
+
+    if (input.checked) {
+
+      const alreadyExists =
+        checkArray.controls.some(
+          control =>
+            control.value === input.value
+        );
+
+      if (!alreadyExists) {
+
+        checkArray.push(
+          this.fb.control(
+            input.value
+          )
+        );
+
+      }
+
+    } else {
+
+      const index =
+        checkArray.controls.findIndex(
+          control =>
+            control.value === input.value
+        );
+
+      if (index >= 0) {
+
+        checkArray.removeAt(index);
+
+      }
+
+    }
+
+    checkArray.markAsTouched();
+    checkArray.updateValueAndValidity();
+
+  }
 
   // ============================================================
   // RESET
@@ -1423,13 +1138,9 @@ export class ApplyNowComponent implements OnInit {
   resetForms(): void {
 
     this.personalForm.reset();
-
     this.courseForm.reset();
-
     this.courseQuestions.reset();
 
-
-    // Re-create empty preferred contact array
     const preferredContact =
       this.preferredContactArray;
 
@@ -1441,15 +1152,11 @@ export class ApplyNowComponent implements OnInit {
 
     }
 
-
     this.resumeFiles = [];
 
     this.paymentMode = '';
-
     this.customAmount = 0;
-
     this.selectedCourse = '';
-
     this.step = 1;
 
   }

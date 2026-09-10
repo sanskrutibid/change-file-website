@@ -1,207 +1,231 @@
 <!-- Logo & Brand Info -->
-<a class="navbar-brand d-flex align-items-center py-0" routerLink="/home">
-  <img
-    src="assets/images/logo.png"
-    alt="Cruise Lens Academy Logo"
-    class="logo me-3"
-  />
+
+<a
+class="navbar-brand d-flex align-items-center py-0"
+routerLink="/home"
+aria-label="Cruise Lens Academy Home">
+
+<img
+ src="assets/images/logo.png"
+ alt="Cruise Lens Academy Logo"
+ class="logo me-3"
+/>
 
   <div class="brand-text-container d-flex flex-column text-start">
     <span class="brand-text">Cruise Lens Academy</span>
     <span class="brand-tagline">Dock Here, Sail Everywhere</span>
   </div>
+
 </a>
 
 <!-- Toggler -->
-<button
-  class="navbar-toggler border-0 shadow-none p-2"
-  type="button"
-  data-bs-toggle="collapse"
-  data-bs-target="#navbarNav"
-  aria-controls="navbarNav"
-  aria-expanded="false"
-  aria-label="Toggle navigation">
 
-  <span class="navbar-toggler-icon"></span>
+<button
+class="navbar-toggler border-0 shadow-none p-2"
+type="button"
+data-bs-toggle="collapse"
+data-bs-target="#navbarNav"
+aria-controls="navbarNav"
+aria-expanded="false"
+aria-label="Toggle navigation">
+
+<span class="navbar-toggler-icon"></span>
+
 </button>
 
 <!-- Menu Links and Actions -->
+
 <div class="collapse navbar-collapse" id="navbarNav">
 
   <!-- Nav Links -->
+
   <ul class="navbar-nav ms-auto align-items-center me-xl-2">
 
-    <!-- Home -->
-    <li class="nav-item">
+```
+<!-- Home -->
+<li class="nav-item">
+  <a
+    class="nav-link"
+    routerLink="/home"
+    routerLinkActive="active"
+    [routerLinkActiveOptions]="{ exact: true }"
+    (click)="closeNavbar()">
+    Home
+  </a>
+</li>
+
+<!-- About -->
+<li class="nav-item">
+  <a
+    class="nav-link"
+    routerLink="/about"
+    routerLinkActive="active"
+    (click)="closeNavbar()">
+    About CLA
+  </a>
+</li>
+
+<!-- Programs Dropdown -->
+<li class="nav-item dropdown">
+
+  <a
+    class="nav-link dropdown-toggle"
+    href="#"
+    id="programsDropdown"
+    role="button"
+    data-bs-toggle="dropdown"
+    aria-expanded="false">
+    Programs
+  </a>
+
+  <ul
+    class="dropdown-menu shadow-lg border-0"
+    aria-labelledby="programsDropdown">
+
+    <!-- CLA 2.0 Program 1 -->
+    <li>
       <a
-        class="nav-link"
-        routerLink="/home"
-        routerLinkActive="active"
-        [routerLinkActiveOptions]="{exact: true}"
+        class="dropdown-item"
+        routerLink="/certification-cruise-photography"
         (click)="closeNavbar()">
-        Home
+        Certification in Cruise Photography
       </a>
     </li>
 
-    <!-- About -->
-    <li class="nav-item">
+    <!-- CLA 2.0 Program 2 -->
+    <li>
       <a
-        class="nav-link"
-        routerLink="/about"
-        routerLinkActive="active"
+        class="dropdown-item"
+        routerLink="/complete-cruise-career"
         (click)="closeNavbar()">
-        About CLA
-      </a>
-    </li>
-
-    <!-- Programs Dropdown -->
-    <li class="nav-item dropdown">
-
-      <a
-        class="nav-link dropdown-toggle"
-        href="#"
-        id="programsDropdown"
-        role="button"
-        data-bs-toggle="dropdown"
-        aria-expanded="false">
-        Programs
-      </a>
-
-      <ul
-        class="dropdown-menu shadow-lg border-0"
-        aria-labelledby="programsDropdown">
-
-        <!-- CLA 2.0 Program 1 -->
-        <li>
-          <a
-            class="dropdown-item"
-            routerLink="/certification-cruise-photography"
-            (click)="closeNavbar()">
-            Certification in Cruise Photography
-          </a>
-        </li>
-
-        <!-- CLA 2.0 Program 2 -->
-        <li>
-          <a
-            class="dropdown-item"
-            routerLink="/complete-cruise-career"
-            (click)="closeNavbar()">
-            Complete Cruise Career Program
-          </a>
-        </li>
-
-      </ul>
-
-    </li>
-
-    <!-- Crew Deck -->
-    <li class="nav-item">
-      <a
-        class="nav-link"
-        routerLink="/photographers"
-        routerLinkActive="active"
-        (click)="closeNavbar()">
-        Crew Deck
-      </a>
-    </li>
-
-    <!-- Success Stories -->
-    <li class="nav-item">
-      <a
-        class="nav-link"
-        routerLink="/partners"
-        routerLinkActive="active"
-        (click)="closeNavbar()">
-        Success Stories
-      </a>
-    </li>
-
-    <!-- FAQs -->
-    <li class="nav-item">
-      <a
-        class="nav-link"
-        routerLink="/faq"
-        routerLinkActive="active"
-        (click)="closeNavbar()">
-        FAQs
-      </a>
-    </li>
-
-    <!-- Contact -->
-    <li class="nav-item">
-      <a
-        class="nav-link"
-        routerLink="/contact"
-        routerLinkActive="active"
-        (click)="closeNavbar()">
-        Contact
+        Complete Cruise Career Program
       </a>
     </li>
 
   </ul>
 
+</li>
+
+<!-- Crew Deck -->
+<li class="nav-item">
+  <a
+    class="nav-link"
+    routerLink="/photographers"
+    routerLinkActive="active"
+    (click)="closeNavbar()">
+    Crew Deck
+  </a>
+</li>
+
+<!-- Success Stories -->
+<!-- Updated from old /partners route -->
+<li class="nav-item">
+  <a
+    class="nav-link"
+    routerLink="/success-stories"
+    routerLinkActive="active"
+    (click)="closeNavbar()">
+    Success Stories
+  </a>
+</li>
+
+<!-- FAQs -->
+<li class="nav-item">
+  <a
+    class="nav-link"
+    routerLink="/faq"
+    routerLinkActive="active"
+    (click)="closeNavbar()">
+    FAQs
+  </a>
+</li>
+
+<!-- Contact -->
+<li class="nav-item">
+  <a
+    class="nav-link"
+    routerLink="/contact"
+    routerLinkActive="active"
+    (click)="closeNavbar()">
+    Contact
+  </a>
+</li>
+
+
+  </ul>
+
   <!-- Action Group -->
+
   <div
     class="d-flex align-items-center ms-xl-3 mt-3 mt-xl-0 justify-content-center action-group">
 
-    <!-- MSU & Skill India Partnership Lockup -->
-    <div class="partner-lockup d-none d-xl-flex align-items-center me-3">
 
-      <!-- Left Divider -->
-      <div class="partner-divider"></div>
+<!-- MSU & Skill India Partnership Lockup -->
+<div
+  class="partner-lockup d-none d-xl-flex align-items-center me-3"
+  aria-label="Training and certification partners">
 
-      <!-- MSU Block -->
-      <div class="d-flex flex-column align-items-center text-center me-3">
+  <!-- Left Divider -->
+  <div class="partner-divider"></div>
 
-        <span class="msu-association">
-          Approved Training Partner of
-        </span>
+  <!-- MSU Block -->
+  <div
+    class="d-flex flex-column align-items-center text-center me-3">
 
-        <img
-          src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/0e/Medhavi_Skills_University_official_Logo.png/1280px-Medhavi_Skills_University_official_Logo.png"
-          alt="Medhavi Skills University"
-          class="msu-logo"
-        />
+    <span class="msu-association">
+      Approved Training Partner of
+    </span>
 
-      </div>
+    <img
+      src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/0e/Medhavi_Skills_University_official_Logo.png/1280px-Medhavi_Skills_University_official_Logo.png"
+      alt="Medhavi Skills University"
+      class="msu-logo"
+    />
 
-      <!-- Divider -->
-      <div class="partner-divider me-3"></div>
+  </div>
 
-      <!-- Skill India Logo -->
-      <div class="skill-india-box d-flex align-items-center">
+  <!-- Divider -->
+  <div class="partner-divider me-3"></div>
 
-        <img
-          src="assets/images/skill-india-logo.png"
-          alt="Skill India"
-          class="skill-india-logo"
-        />
+  <!-- Skill India Logo -->
+  <div
+    class="skill-india-box d-flex align-items-center">
 
-      </div>
+    <img
+      src="assets/images/skill-india-logo.png"
+      alt="Skill India"
+      class="skill-india-logo"
+    />
 
-    </div>
+  </div>
 
-    <!-- Apply Button -->
-    <div
-      class="apply-container d-flex flex-column align-items-center ms-xl-1">
+</div>
 
-      <a
-        class="cta-btn apply-btn btn-gold-solid py-2 px-3 text-nowrap d-flex align-items-center gap-2"
-        routerLink="/apply-now"
-        (click)="closeNavbar()">
+<!-- Apply Button -->
+<div
+  class="apply-container d-flex flex-column align-items-center ms-xl-1">
 
-        <span>APPLY NOW</span>
+  <a
+    class="cta-btn apply-btn btn-gold-solid py-2 px-3 text-nowrap d-flex align-items-center gap-2"
+    routerLink="/apply-now"
+    (click)="closeNavbar()"
+    aria-label="Apply now to Cruise Lens Academy">
 
-        <i class="fa-solid fa-arrow-right fs-6"></i>
+    <span>APPLY NOW</span>
 
-      </a>
+    <i
+      class="fa-solid fa-arrow-right fs-6"
+      aria-hidden="true">
+    </i>
 
-      <span class="limited-seats-text">
-        Limited Seats - Enroll Today!
-      </span>
+  </a>
 
-    </div>
+  <span class="limited-seats-text">
+    Limited Seats - Enroll Today!
+  </span>
+
+</div>
+
 
   </div>
 
