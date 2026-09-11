@@ -66,6 +66,20 @@ export const routes: Routes = [
 
 
   // =========================
+  // SUCCESS STORIES
+  // =========================
+
+  // NOTE: Update the import path / component class name below to match
+  // your actual success-stories component location and class name.
+  {
+    path: 'success-stories',
+    loadComponent: () =>
+      import('./success-stories/success-stories.component')
+        .then(m => m.SuccessStoriesComponent)
+  },
+
+
+  // =========================
   // CONTACT
   // =========================
 

@@ -1,0 +1,255 @@
+/* ========================================================= */
+/* HERO / INTRO */
+/* ========================================================= */
+
+.success-hero {
+  padding-top: 3rem;
+  padding-bottom: 2rem;
+}
+
+.success-intro {
+  max-width: 720px;
+  font-size: 1.05rem;
+  line-height: 1.7;
+  color: #4a4a4a;
+}
+
+/* ========================================================= */
+/* FEATURED VIDEO - CREATIVE DISPLAY (not a plain embed) */
+/* ========================================================= */
+
+.featured-story-section {
+  background: #f7f8fa;
+}
+
+.featured-video-card {
+  max-width: 900px;
+  cursor: pointer;
+}
+
+.featured-video-frame {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 20px 45px rgba(10, 30, 60, 0.25);
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
+}
+
+.featured-video-card:hover .featured-video-frame {
+  transform: translateY(-4px) scale(1.01);
+  box-shadow: 0 28px 60px rgba(10, 30, 60, 0.32);
+}
+
+/* Poster layer: swap this background-image for a real still frame
+   from the testimonial video for the best effect. */
+.featured-video-poster {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(circle at 30% 20%, rgba(212, 175, 55, 0.25), transparent 55%),
+    linear-gradient(135deg, #0b2545 0%, #123a6b 45%, #0b2545 100%);
+  background-size: cover;
+  background-position: center;
+}
+
+.featured-video-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to top,
+    rgba(5, 15, 30, 0.85) 0%,
+    rgba(5, 15, 30, 0.15) 45%,
+    rgba(5, 15, 30, 0.05) 100%
+  );
+}
+
+.featured-play-wrapper {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.featured-play-ring {
+  position: absolute;
+  width: 96px;
+  height: 96px;
+  border-radius: 50%;
+  border: 2px solid rgba(255, 255, 255, 0.45);
+  animation: pulse-ring 2.4s ease-out infinite;
+}
+
+.featured-play-btn {
+  position: relative;
+  width: 74px;
+  height: 74px;
+  border-radius: 50%;
+  border: none;
+  background: #d4af37;
+  color: #0b2545;
+  font-size: 1.4rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.35);
+  transition: transform 0.25s ease, background 0.25s ease;
+}
+
+.featured-video-card:hover .featured-play-btn {
+  transform: scale(1.08);
+  background: #e6c559;
+}
+
+.featured-play-btn i {
+  margin-left: 4px; /* optical centering for the play triangle */
+}
+
+@keyframes pulse-ring {
+  0% {
+    transform: scale(0.9);
+    opacity: 0.9;
+  }
+  70% {
+    transform: scale(1.35);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1.35);
+    opacity: 0;
+  }
+}
+
+.featured-video-caption {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  padding: 1.25rem 1.5rem;
+  color: #ffffff;
+}
+
+.featured-video-tag {
+  display: inline-block;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  color: #d4af37;
+  margin-bottom: 0.25rem;
+}
+
+.featured-video-title {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: #ffffff;
+}
+
+.featured-video-icon {
+  font-size: 1.6rem;
+  color: rgba(255, 255, 255, 0.35);
+}
+
+/* ========================================================= */
+/* VIDEO MODAL */
+/* ========================================================= */
+
+.video-modal-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(5, 10, 20, 0.85);
+  z-index: 1050;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem;
+}
+
+.video-modal-box {
+  position: relative;
+  width: 100%;
+  max-width: 900px;
+  background: #000;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+}
+
+.video-modal-box iframe {
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+.video-modal-close {
+  position: absolute;
+  top: -42px;
+  right: 0;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  border: none;
+  background: rgba(255, 255, 255, 0.15);
+  color: #fff;
+  font-size: 1.1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* ========================================================= */
+/* TESTIMONIAL CARDS SECTION */
+/* ========================================================= */
+
+.testimonials-section {
+  background: #ffffff;
+}
+
+/* ========================================================= */
+/* CTA STRIP */
+/* ========================================================= */
+
+.success-cta-strip {
+  background: linear-gradient(135deg, #0b2545 0%, #123a6b 100%);
+  color: #ffffff;
+}
+
+.success-cta-title {
+  color: #ffffff;
+  letter-spacing: 0.02em;
+}
+
+.success-cta-subtitle {
+  color: rgba(255, 255, 255, 0.8);
+  max-width: 560px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* ========================================================= */
+/* RESPONSIVE ADJUSTMENTS */
+/* ========================================================= */
+
+@media (max-width: 767.98px) {
+  .featured-play-ring {
+    width: 78px;
+    height: 78px;
+  }
+
+  .featured-play-btn {
+    width: 60px;
+    height: 60px;
+    font-size: 1.15rem;
+  }
+
+  .featured-video-title {
+    font-size: 1rem;
+  }
+
+  .featured-video-caption {
+    padding: 1rem;
+  }
+}

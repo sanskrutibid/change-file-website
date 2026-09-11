@@ -1,0 +1,194 @@
+<!-- ========================================================= -->
+<!-- SUCCESS STORIES - HERO -->
+<!-- ========================================================= -->
+
+<section class="hero-section success-hero position-relative">
+  <div class="container hero-container position-relative text-center">
+
+    <span class="hero-eyebrow">SUCCESS STORIES</span>
+
+    <h1 class="hero-title mt-2 mb-3">
+      REAL PEOPLE. <span class="text-navy-main">REAL JOURNEYS.</span> <br>
+      REAL EXPERIENCES.
+    </h1>
+
+    <p class="success-intro mx-auto mb-2">
+      Every journey begins with a decision to take the next step.
+    </p>
+
+    <p class="success-intro mx-auto mb-4">
+      At Cruise Lens Academy, our students come from different backgrounds,
+      experiences and stages of their photography journey. What brings them
+      together is the passion to learn, grow and explore opportunities
+      beyond the traditional path.
+    </p>
+
+    <p class="success-intro mx-auto mb-0">
+      Hear directly from our students about their journey and their
+      training experience at Cruise Lens Academy.
+    </p>
+
+  </div>
+</section>
+
+
+<!-- ========================================================= -->
+<!-- FEATURED TESTIMONIAL VIDEO - CREATIVE DISPLAY -->
+<!-- ========================================================= -->
+
+<section class="featured-story-section py-5">
+  <div class="container">
+
+    <div class="text-center mb-4">
+      <span class="section-eyebrow fw-bold text-uppercase">HEAR THEIR STORY</span>
+      <h2 class="section-main-title fw-bold mt-2">SEE THEIR JOURNEY</h2>
+      <div class="section-divider-gold mx-auto"></div>
+    </div>
+
+    <div class="featured-video-card mx-auto" (click)="openVideoModal()">
+
+      <div class="featured-video-frame">
+
+        <!-- Poster / background layer -->
+        <div class="featured-video-poster"></div>
+
+        <!-- Gradient overlay -->
+        <div class="featured-video-overlay"></div>
+
+        <!-- Center play control -->
+        <div class="featured-play-wrapper">
+          <div class="featured-play-ring"></div>
+          <button class="featured-play-btn" type="button" aria-label="Play student testimonial video">
+            <i class="fa-solid fa-play"></i>
+          </button>
+        </div>
+
+        <!-- Caption bar -->
+        <div class="featured-video-caption d-flex align-items-center justify-content-between">
+          <div class="text-start">
+            <span class="featured-video-tag">STUDENT TESTIMONIAL</span>
+            <h3 class="featured-video-title mb-0">From Classroom to Cruise Deck</h3>
+          </div>
+          <i class="fa-solid fa-camera-retro featured-video-icon" aria-hidden="true"></i>
+        </div>
+
+      </div>
+
+    </div>
+
+    <p class="text-center text-muted small mt-3" *ngIf="!videoUrl">
+      Video coming soon.
+    </p>
+
+  </div>
+</section>
+
+
+<!-- ========================================================= -->
+<!-- VIDEO MODAL -->
+<!-- ========================================================= -->
+
+<div class="video-modal-backdrop" *ngIf="showVideoModal" (click)="closeVideoModal()">
+  <div class="video-modal-box" (click)="$event.stopPropagation()">
+
+    <button class="video-modal-close" type="button" aria-label="Close video" (click)="closeVideoModal()">
+      <i class="fa-solid fa-xmark"></i>
+    </button>
+
+    <div class="ratio ratio-16x9">
+      <iframe
+        *ngIf="videoUrl"
+        [src]="videoUrl"
+        title="Cruise Lens Academy Student Testimonial"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen>
+      </iframe>
+    </div>
+
+  </div>
+</div>
+
+
+<!-- ========================================================= -->
+<!-- TESTIMONIAL CARDS -->
+<!-- ========================================================= -->
+
+<section class="testimonials-section py-5">
+  <div class="container">
+
+    <div class="text-center mb-5">
+      <span class="section-eyebrow fw-bold text-uppercase">WHAT OUR STUDENTS SAY</span>
+      <h2 class="section-main-title fw-bold mt-2">MORE STORIES FROM OUR CREW</h2>
+      <div class="section-divider-gold mx-auto"></div>
+    </div>
+
+    <div class="row g-4">
+
+      <div class="col-md-4" *ngFor="let t of testimonials">
+
+        <div class="google-review-card h-100">
+
+          <div class="review-card-top d-flex justify-content-between align-items-center">
+
+            <div class="review-user d-flex align-items-center gap-2">
+
+              <div class="review-avatar">
+                {{ t.avatarInitial }}
+              </div>
+
+              <div>
+                <strong>{{ t.name }}</strong>
+                <small class="d-block text-muted">{{ t.role }}</small>
+              </div>
+
+            </div>
+
+          </div>
+
+          <div class="review-stars my-3">
+            <i class="bi bi-star-fill"></i>
+            <i class="bi bi-star-fill"></i>
+            <i class="bi bi-star-fill"></i>
+            <i class="bi bi-star-fill"></i>
+            <i class="bi bi-star-fill"></i>
+          </div>
+
+          <p class="review-text mb-0">
+            "{{ t.quote }}"
+          </p>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+
+<!-- ========================================================= -->
+<!-- CTA STRIP -->
+<!-- ========================================================= -->
+
+<section class="success-cta-strip py-5 text-center">
+  <div class="container">
+
+    <h2 class="success-cta-title fw-bold mb-3">
+      YOUR STORY COULD BE NEXT
+    </h2>
+
+    <p class="success-cta-subtitle mb-4">
+      Join a community of students building real careers on the world's
+      leading cruise lines.
+    </p>
+
+    <a
+      routerLink="/apply-now"
+      class="btn-gold-solid py-3 px-5 rounded-1 text-uppercase shadow-sm">
+      APPLY NOW
+      <i class="fa-solid fa-arrow-right ms-2"></i>
+    </a>
+
+  </div>
+</section>
