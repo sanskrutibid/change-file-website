@@ -1,29 +1,65 @@
+ /* =========================================================
+   NAVBAR - BASE
+   ========================================================= */
+
 .fixed-top {
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   z-index: 1030;
 }
 
-/* Light Theme Navigation Bar */
-.transparent-nav {
+.transparent-nav,
+.scrolled-nav {
+  width: 100%;
   background-color: #ffffff;
-  padding: 0.75rem 0;
   border-bottom: 1px solid #e2e8f0;
+  display: flex;
+  align-items: center;
+}
+
+.transparent-nav {
+  padding: 0.55rem 0;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.03);
 }
 
 .scrolled-nav {
-  background-color: #ffffff;
-  padding: 0.5rem 0;
+  padding: 0.4rem 0;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.07);
-  border-bottom: 1px solid #e2e8f0;
 }
 
-/* Brand Logo and Text */
+
+/* =========================================================
+   MAIN NAVBAR CONTAINER
+   ========================================================= */
+
+.transparent-nav .container,
+.scrolled-nav .container {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  flex-wrap: nowrap;
+}
+
+
+/* =========================================================
+   LOGO + BRAND
+   ========================================================= */
+
+.navbar-brand {
+  display: flex !important;
+  align-items: center;
+  flex-shrink: 0;
+  margin-right: 1rem;
+  padding: 0 !important;
+  text-decoration: none;
+}
+
 .logo {
-  height: 48px;
+  height: 46px;
   width: auto;
   object-fit: contain;
-  transition: height 0.3s ease-in-out;
+  display: block;
+  flex-shrink: 0;
+  transition: height 0.3s ease;
 }
 
 .scrolled-nav .logo {
@@ -31,53 +67,113 @@
 }
 
 .brand-text-container {
-  line-height: 1.15;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  line-height: 1.1;
+  white-space: nowrap;
 }
 
 .brand-text {
-  font-size: 1.2rem;
+  font-size: 1.08rem;
   font-weight: 800;
   color: var(--gold-accent);
-  letter-spacing: 0.4px;
+  letter-spacing: 0.35px;
   text-transform: uppercase;
   font-family: 'Poppins', sans-serif;
+  white-space: nowrap;
 }
 
 .brand-tagline {
-  font-size: 0.62rem;
+  font-size: 0.56rem;
   font-weight: 700;
   color: var(--primary-navy);
-  letter-spacing: 0.8px;
+  letter-spacing: 0.65px;
   text-transform: uppercase;
-  margin-top: 1px;
+  margin-top: 2px;
+  white-space: nowrap;
 }
 
-/* Navigation Links */
+
+/* =========================================================
+   NAVBAR TOGGLER
+   ========================================================= */
+
+.navbar-toggler {
+  display: none;
+  border: 1px solid #cbd5e1 !important;
+  box-shadow: none !important;
+}
+
+.navbar-toggler-icon {
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='%230f294a' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E") !important;
+}
+
+
+/* =========================================================
+   NAVBAR COLLAPSE
+   FORCE HORIZONTAL DESKTOP ROW
+   ========================================================= */
+
+.navbar-collapse {
+  display: flex !important;
+  align-items: center;
+  justify-content: flex-end;
+  flex: 1 1 auto;
+  width: auto;
+  min-width: 0;
+  flex-basis: auto !important;
+}
+
+
+/* =========================================================
+   NAVIGATION LINKS
+   ========================================================= */
+
 .navbar-nav {
-  gap: 2px;
+  display: flex !important;
+  flex-direction: row !important;
+  align-items: center;
+  justify-content: flex-end;
+  flex-wrap: nowrap !important;
+  gap: 0;
+  margin: 0 !important;
+  padding: 0;
+  min-width: 0;
+}
+
+.navbar-nav .nav-item {
+  position: relative;
+  flex-shrink: 0;
+  white-space: nowrap;
 }
 
 .navbar-nav .nav-link {
   color: var(--primary-navy) !important;
   font-weight: 600;
-  font-size: 0.9rem;
-  padding: 0.5rem 0.8rem !important;
-  transition: all 0.2s ease-in-out;
+  font-size: 0.79rem;
+  padding: 0.45rem 0.48rem !important;
   position: relative;
   white-space: nowrap;
+  transition: all 0.2s ease-in-out;
 }
+
+
+/* =========================================================
+   NAV LINK HOVER / ACTIVE
+   ========================================================= */
 
 .navbar-nav .nav-link::after {
   content: '';
   position: absolute;
-  bottom: 2px;
+  bottom: 1px;
   left: 50%;
   width: 0;
   height: 2px;
   background-color: var(--gold-accent);
-  transition: all 0.25s ease;
   transform: translateX(-50%);
   border-radius: 2px;
+  transition: width 0.25s ease;
 }
 
 .navbar-nav .nav-link:hover,
@@ -90,31 +186,50 @@
   width: 60%;
 }
 
-/* Remove underline indicator for dropdown toggle caret */
+
+/* =========================================================
+   PROGRAMS DROPDOWN
+   ========================================================= */
+
+.nav-item.dropdown {
+  position: relative;
+}
+
 .navbar-nav .nav-link.dropdown-toggle::after {
-  display: inline-block;
   content: "";
   position: static;
-  width: auto;
-  height: auto;
-  background-color: transparent;
+  display: inline-block;
+  width: 0;
+  height: 0;
+  margin-left: 0.3rem;
+  vertical-align: 0.2em;
+  background: transparent;
   transform: none;
-  margin-left: 0.35em;
-  vertical-align: 0.255em;
   border-top: 0.3em solid;
   border-right: 0.3em solid transparent;
   border-bottom: 0;
   border-left: 0.3em solid transparent;
 }
 
-/* Dropdown Menu Styles */
+
+/* Dropdown */
+
 .dropdown-menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  z-index: 1050;
+
+  min-width: 280px;
+  padding: 8px 0;
+  margin-top: 8px !important;
+
   background-color: #ffffff;
   border: 1px solid #e2e8f0 !important;
   border-radius: 8px;
+
   box-shadow: 0 10px 25px rgba(15, 41, 74, 0.12) !important;
-  padding: 8px 0;
-  margin-top: 8px !important;
+
   animation: fadeIn 0.2s ease-in-out;
 }
 
@@ -133,61 +248,96 @@
 .dropdown-item {
   color: var(--primary-navy);
   font-weight: 500;
-  font-size: 0.88rem;
-  padding: 0.6rem 1.25rem;
-  transition: all 0.2s ease-in-out;
+  font-size: 0.84rem;
+  padding: 0.6rem 1.2rem;
+  white-space: nowrap;
+  transition: all 0.2s ease;
 }
 
 .dropdown-item:hover {
   background-color: #f8fafc;
   color: var(--gold-accent);
   font-weight: 600;
-  padding-left: 1.45rem;
+  padding-left: 1.4rem;
 }
 
-/* Partner Lockup Styles (MSU + Skill India) */
+
+/* =========================================================
+   ACTION GROUP
+   MSU + SKILL INDIA + APPLY
+   ========================================================= */
+
+.action-group {
+  display: flex !important;
+  flex-direction: row !important;
+  align-items: center;
+  justify-content: flex-end;
+  flex-shrink: 0;
+  white-space: nowrap;
+  margin-left: 0.7rem;
+}
+
+
+/* =========================================================
+   PARTNER LOCKUP
+   ========================================================= */
+
 .partner-lockup {
   display: flex;
   align-items: center;
-  padding: 2px 0;
+  justify-content: center;
+  flex-shrink: 0;
+  padding: 0;
+  white-space: nowrap;
 }
 
 .partner-divider {
   width: 1px;
-  height: 44px;
+  height: 42px;
   background-color: #cbd5e1;
   border-radius: 1px;
+  flex-shrink: 0;
 }
-/* MSU Partnership Logo */
+
+
+/* =========================================================
+   MSU
+   ========================================================= */
+
 .msu-logo {
-  width: 125px;
+  width: 105px;
   height: auto;
-  max-height: 48px;
+  max-height: 42px;
   object-fit: contain;
   display: block;
 }
 
-/* Text above MSU Logo */
 .msu-association {
-  font-size: 0.62rem;
-  line-height: 1.2;
+  font-size: 0.51rem;
+  line-height: 1.15;
   font-weight: 700;
   color: var(--primary-navy);
-  letter-spacing: 0.3px;
+  letter-spacing: 0.2px;
   white-space: nowrap;
-  margin-bottom: 5px;
+  margin-bottom: 3px;
 }
-/* Dedicated Skill India Logo Styling */
+
+
+/* =========================================================
+   SKILL INDIA
+   ========================================================= */
+
 .skill-india-box {
   display: flex;
   align-items: center;
   justify-content: center;
+  flex-shrink: 0;
 }
 
 .skill-india-logo {
-  height: 58px;
+  height: 48px;
   width: auto;
-  max-width: 130px;
+  max-width: 105px;
   object-fit: contain;
   transition: transform 0.2s ease;
 }
@@ -196,21 +346,39 @@
   transform: scale(1.04);
 }
 
-/* Apply Now Container */
+
+/* =========================================================
+   APPLY NOW
+   ========================================================= */
+
 .apply-container {
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  margin-left: 0.5rem;
 }
 
 .cta-btn.apply-btn {
-  font-size: 0.85rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-size: 0.75rem;
   font-weight: 700;
-  padding: 8px 18px !important;
+
+  padding: 7px 12px !important;
+
   text-transform: uppercase;
-  letter-spacing: 0.5px;
+  letter-spacing: 0.4px;
+
   border-radius: 6px;
+
+  white-space: nowrap;
+
   box-shadow: 0 3px 10px rgba(217, 119, 6, 0.25);
+
   transition: all 0.25s ease;
 }
 
@@ -221,94 +389,388 @@
 }
 
 .limited-seats-text {
-  font-size: 0.58rem;
+  font-size: 0.47rem;
   color: var(--text-muted-dark);
   font-weight: 700;
-  margin-top: 4px;
-  letter-spacing: 0.5px;
+  margin-top: 3px;
+  letter-spacing: 0.35px;
   text-transform: uppercase;
   white-space: nowrap;
 }
 
-/* Toggler Icon color */
-.navbar-toggler {
-  border-color: #cbd5e1 !important;
-}
 
-.navbar-toggler-icon {
-  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='%230f294a' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E") !important;
-}
+/* =========================================================
+   LARGE DESKTOP
+   1400px+
+   ========================================================= */
 
-/* Responsive Styles */
-@media (max-width: 1399px) {
-  .transparent-nav {
-    background-color: #ffffff !important;
-    padding: 0.75rem 1rem;
+@media (min-width: 1400px) {
+
+  .navbar-brand {
+    margin-right: 1.25rem;
   }
 
+  .brand-text {
+    font-size: 1.15rem;
+  }
+
+  .navbar-nav .nav-link {
+    font-size: 0.84rem;
+    padding-left: 0.58rem !important;
+    padding-right: 0.58rem !important;
+  }
+
+  .action-group {
+    margin-left: 1rem;
+  }
+
+  .msu-logo {
+    width: 115px;
+  }
+
+  .skill-india-logo {
+    height: 52px;
+  }
+
+}
+
+
+/* =========================================================
+   1200px - 1399px
+   STILL ONE HORIZONTAL ROW
+   ========================================================= */
+
+@media (min-width: 1200px) and (max-width: 1399px) {
+
+  .transparent-nav {
+    padding: 0.45rem 0;
+  }
+
+  .scrolled-nav {
+    padding: 0.35rem 0;
+  }
+
+  .logo {
+    height: 42px;
+  }
+
+  .brand-text {
+    font-size: 0.98rem;
+  }
+
+  .brand-tagline {
+    font-size: 0.52rem;
+  }
+
+  .navbar-brand {
+    margin-right: 0.7rem;
+  }
+
+  .navbar-nav .nav-link {
+    font-size: 0.72rem;
+    padding-left: 0.34rem !important;
+    padding-right: 0.34rem !important;
+  }
+
+  .action-group {
+    margin-left: 0.45rem;
+  }
+
+  .msu-logo {
+    width: 95px;
+  }
+
+  .skill-india-logo {
+    height: 43px;
+    max-width: 95px;
+  }
+
+  .partner-divider {
+    height: 36px;
+  }
+
+  .msu-association {
+    font-size: 0.46rem;
+  }
+
+  .cta-btn.apply-btn {
+    font-size: 0.68rem;
+    padding: 6px 10px !important;
+  }
+
+  .limited-seats-text {
+    font-size: 0.43rem;
+  }
+
+}
+
+
+/* =========================================================
+   992px - 1199px
+   ONE HORIZONTAL HEADER
+   PARTNER LOGOS HIDDEN TO MAKE SPACE
+   ========================================================= */
+
+@media (min-width: 992px) and (max-width: 1199px) {
+
+  .transparent-nav {
+    padding: 0.45rem 0;
+  }
+
+  .scrolled-nav {
+    padding: 0.35rem 0;
+  }
+
+  .logo {
+    height: 40px;
+  }
+
+  .brand-text {
+    font-size: 0.92rem;
+  }
+
+  .brand-tagline {
+    font-size: 0.49rem;
+  }
+
+  .navbar-brand {
+    margin-right: 0.45rem;
+  }
+
+  .navbar-nav .nav-link {
+    font-size: 0.68rem;
+    padding-left: 0.28rem !important;
+    padding-right: 0.28rem !important;
+  }
+
+  /*
+    Hide partner logos only on this narrower desktop range.
+    Navigation itself remains horizontal.
+  */
+
+  .partner-lockup {
+    display: none !important;
+  }
+
+  .action-group {
+    margin-left: 0.35rem;
+  }
+
+  .cta-btn.apply-btn {
+    font-size: 0.67rem;
+    padding: 6px 9px !important;
+  }
+
+  .limited-seats-text {
+    font-size: 0.42rem;
+  }
+
+}
+
+
+/* =========================================================
+   MOBILE
+   BELOW 992px
+   ========================================================= */
+
+@media (max-width: 991px) {
+
+  .transparent-nav {
+    padding: 0.6rem 0;
+  }
+
+  .scrolled-nav {
+    padding: 0.45rem 0;
+  }
+
+
+  /* Show hamburger */
+
+  .navbar-toggler {
+    display: block;
+    margin-left: auto;
+    flex-shrink: 0;
+  }
+
+
+  /* Collapse becomes full-width mobile menu */
+
   .navbar-collapse {
+    display: none !important;
+    width: 100%;
+    flex-basis: 100% !important;
+    flex-direction: column;
+    align-items: stretch;
     background-color: #ffffff;
-    padding: 1.25rem 1rem;
-    border-top: 1px solid #e2e8f0;
     margin-top: 12px;
-    border-radius: 8px;
+    padding: 12px 0 18px;
+    border-top: 1px solid #e2e8f0;
+    border-radius: 0 0 10px 10px;
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
   }
 
+
+  /*
+    Bootstrap adds .show when hamburger is clicked.
+    Make the menu visible only when expanded.
+  */
+
+  .navbar-collapse.show {
+    display: flex !important;
+  }
+
+
+  /* Mobile nav */
+
   .navbar-nav {
+    width: 100%;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: stretch;
+  }
+
+  .navbar-nav .nav-item {
     width: 100%;
   }
 
   .navbar-nav .nav-link {
-    padding: 0.75rem 1rem !important;
     width: 100%;
     text-align: center;
+    padding: 0.75rem 1rem !important;
     border-bottom: 1px solid #f1f5f9;
+    font-size: 0.9rem;
   }
 
   .navbar-nav .nav-link::after {
     display: none;
   }
 
+
+  /* Mobile dropdown */
+
   .dropdown-menu {
+    position: static !important;
+    width: 100%;
+    min-width: 100%;
+    margin-top: 0 !important;
+    padding: 5px 0;
+
     text-align: center;
+
     background-color: #f8fafc;
+
     border: none !important;
+    border-radius: 0;
+
     box-shadow: none !important;
+
+    animation: none;
   }
 
-  .dropdown-item:hover {
-    padding-left: 1.25rem;
+  .dropdown-item {
+    white-space: normal;
+    padding: 0.65rem 1rem;
+    font-size: 0.84rem;
   }
+
+
+  /* Mobile action group */
 
   .action-group {
-    flex-direction: column;
+    width: 100%;
+    flex-direction: column !important;
+    justify-content: center;
+    align-items: center;
     gap: 12px;
+    margin: 15px 0 0 !important;
   }
 
+
+  /* Show partners on mobile */
+
   .partner-lockup {
-    margin-right: 0 !important;
-    margin-bottom: 8px;
+    display: flex !important;
+    justify-content: center;
+  }
+
+
+  /* Apply button */
+
+  .apply-container {
+    width: 100%;
+    margin-left: 0;
   }
 
   .cta-btn.apply-btn {
-    width: 100%;
+    width: 90%;
+    max-width: 320px;
     justify-content: center;
   }
+
 }
 
-@media (max-width: 575px) {
-  .brand-text {
-    font-size: 1.05rem !important;
-  }
 
-  .brand-tagline {
-    font-size: 0.58rem !important;
-    letter-spacing: 0.5px !important;
-  }
+/* =========================================================
+   SMALL MOBILE
+   ========================================================= */
+
+@media (max-width: 575px) {
 
   .logo {
     height: 38px !important;
     margin-right: 8px !important;
   }
+
+  .brand-text {
+    font-size: 0.9rem !important;
+    letter-spacing: 0.2px;
+  }
+
+  .brand-tagline {
+    font-size: 0.5rem !important;
+    letter-spacing: 0.3px !important;
+  }
+
+  .partner-lockup {
+    transform: scale(0.9);
+  }
+
+  .msu-logo {
+    width: 95px;
+  }
+
+  .skill-india-logo {
+    height: 44px;
+    max-width: 95px;
+  }
+
+  .partner-divider {
+    height: 34px;
+  }
+
+}
+
+
+/* =========================================================
+   VERY SMALL MOBILE
+   ========================================================= */
+
+@media (max-width: 400px) {
+
+  .logo {
+    height: 34px !important;
+  }
+
+  .brand-text {
+    font-size: 0.8rem !important;
+  }
+
+  .brand-tagline {
+    font-size: 0.45rem !important;
+  }
+
+  .navbar-toggler {
+    padding: 0.35rem !important;
+  }
+
 }
