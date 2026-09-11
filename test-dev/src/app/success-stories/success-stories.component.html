@@ -40,12 +40,25 @@
   <div class="container">
 
     <div class="text-center mb-4">
-      <span class="section-eyebrow fw-bold text-uppercase">HEAR THEIR STORY</span>
-      <h2 class="section-main-title fw-bold mt-2">SEE THEIR JOURNEY</h2>
+      <span class="section-eyebrow fw-bold text-uppercase">
+        HEAR THEIR STORY
+      </span>
+
+      <h2 class="section-main-title fw-bold mt-2">
+        SEE THEIR JOURNEY
+      </h2>
+
       <div class="section-divider-gold mx-auto"></div>
     </div>
 
-    <div class="featured-video-card mx-auto" (click)="openVideoModal()">
+
+    <!-- Featured Video Card -->
+    <div
+      class="featured-video-card mx-auto"
+      (click)="openVideoModal()"
+      role="button"
+      tabindex="0"
+      aria-label="Play student testimonial video">
 
       <div class="featured-video-frame">
 
@@ -57,27 +70,57 @@
 
         <!-- Center play control -->
         <div class="featured-play-wrapper">
+
           <div class="featured-play-ring"></div>
-          <button class="featured-play-btn" type="button" aria-label="Play student testimonial video">
+
+          <button
+            class="featured-play-btn"
+            type="button"
+            aria-label="Play student testimonial video"
+            (click)="$event.stopPropagation(); openVideoModal()">
+
             <i class="fa-solid fa-play"></i>
+
           </button>
+
         </div>
 
+
         <!-- Caption bar -->
-        <div class="featured-video-caption d-flex align-items-center justify-content-between">
+        <div
+          class="featured-video-caption d-flex align-items-center justify-content-between">
+
           <div class="text-start">
-            <span class="featured-video-tag">STUDENT TESTIMONIAL</span>
-            <h3 class="featured-video-title mb-0">From Classroom to Cruise Deck</h3>
+
+            <span class="featured-video-tag">
+              STUDENT TESTIMONIAL
+            </span>
+
+            <h3 class="featured-video-title mb-0">
+              From Classroom to Cruise Deck
+            </h3>
+
           </div>
-          <i class="fa-solid fa-camera-retro featured-video-icon" aria-hidden="true"></i>
+
+          <i
+            class="fa-solid fa-camera-retro featured-video-icon"
+            aria-hidden="true">
+          </i>
+
         </div>
 
       </div>
 
     </div>
 
-    <p class="text-center text-muted small mt-3" *ngIf="!videoUrl">
+
+    <!-- Video availability message -->
+    <p
+      class="text-center text-muted small mt-3"
+      *ngIf="!videoUrl">
+
       Video coming soon.
+
     </p>
 
   </div>
@@ -88,24 +131,43 @@
 <!-- VIDEO MODAL -->
 <!-- ========================================================= -->
 
-<div class="video-modal-backdrop" *ngIf="showVideoModal" (click)="closeVideoModal()">
-  <div class="video-modal-box" (click)="$event.stopPropagation()">
+<div
+  class="video-modal-backdrop"
+  *ngIf="showVideoModal"
+  (click)="closeVideoModal()">
 
-    <button class="video-modal-close" type="button" aria-label="Close video" (click)="closeVideoModal()">
+  <div
+    class="video-modal-box"
+    (click)="$event.stopPropagation()">
+
+    <!-- Close Button -->
+    <button
+      class="video-modal-close"
+      type="button"
+      aria-label="Close video"
+      (click)="closeVideoModal()">
+
       <i class="fa-solid fa-xmark"></i>
+
     </button>
 
+
+    <!-- Vimeo Video -->
     <div class="ratio ratio-16x9">
+
       <iframe
         *ngIf="videoUrl"
         [src]="videoUrl"
         title="Cruise Lens Academy Student Testimonial"
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        frameborder="0"
+        allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media"
         allowfullscreen>
       </iframe>
+
     </div>
 
   </div>
+
 </div>
 
 
@@ -117,18 +179,30 @@
   <div class="container">
 
     <div class="text-center mb-5">
-      <span class="section-eyebrow fw-bold text-uppercase">WHAT OUR STUDENTS SAY</span>
-      <h2 class="section-main-title fw-bold mt-2">MORE STORIES FROM OUR CREW</h2>
+
+      <span class="section-eyebrow fw-bold text-uppercase">
+        WHAT OUR STUDENTS SAY
+      </span>
+
+      <h2 class="section-main-title fw-bold mt-2">
+        MORE STORIES FROM OUR CREW
+      </h2>
+
       <div class="section-divider-gold mx-auto"></div>
+
     </div>
+
 
     <div class="row g-4">
 
-      <div class="col-md-4" *ngFor="let t of testimonials">
+      <div
+        class="col-md-4"
+        *ngFor="let t of testimonials">
 
         <div class="google-review-card h-100">
 
-          <div class="review-card-top d-flex justify-content-between align-items-center">
+          <div
+            class="review-card-top d-flex justify-content-between align-items-center">
 
             <div class="review-user d-flex align-items-center gap-2">
 
@@ -137,22 +211,35 @@
               </div>
 
               <div>
-                <strong>{{ t.name }}</strong>
-                <small class="d-block text-muted">{{ t.role }}</small>
+
+                <strong>
+                  {{ t.name }}
+                </strong>
+
+                <small class="d-block text-muted">
+                  {{ t.role }}
+                </small>
+
               </div>
 
             </div>
 
           </div>
 
+
+          <!-- Stars -->
           <div class="review-stars my-3">
+
             <i class="bi bi-star-fill"></i>
             <i class="bi bi-star-fill"></i>
             <i class="bi bi-star-fill"></i>
             <i class="bi bi-star-fill"></i>
             <i class="bi bi-star-fill"></i>
+
           </div>
 
+
+          <!-- Review -->
           <p class="review-text mb-0">
             "{{ t.quote }}"
           </p>
@@ -172,6 +259,7 @@
 <!-- ========================================================= -->
 
 <section class="success-cta-strip py-5 text-center">
+
   <div class="container">
 
     <h2 class="success-cta-title fw-bold mb-3">
@@ -186,9 +274,13 @@
     <a
       routerLink="/apply-now"
       class="btn-gold-solid py-3 px-5 rounded-1 text-uppercase shadow-sm">
+
       APPLY NOW
+
       <i class="fa-solid fa-arrow-right ms-2"></i>
+
     </a>
 
   </div>
+
 </section>
