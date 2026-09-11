@@ -76,16 +76,79 @@
   max-width: 1200px;
 }
 
+
+/* =========================================================
+   STORY CONTENT ALIGNMENT
+   Full-width layout after removing the Story video
+========================================================= */
+
+.story-section .container {
+  width: 100%;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.story-section .row {
+  width: 100%;
+  margin-left: 0;
+  margin-right: 0;
+}
+
+.story-section .col-12 {
+  width: 100%;
+  max-width: 100%;
+  padding-left: 0;
+  padding-right: 0;
+}
+
+.story-section .section-eyebrow {
+  margin-bottom: 8px;
+}
+
+.story-section .section-heading {
+  max-width: 1000px;
+  margin-bottom: 24px;
+}
+
+.story-section .story-paragraph {
+  width: 100%;
+  max-width: 1100px;
+  margin-right: auto;
+  margin-left: 0;
+}
+
+@media (max-width: 767px) {
+  .story-section .container {
+    padding-left: 16px !important;
+    padding-right: 16px !important;
+  }
+
+  .story-section .col-12 {
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  .story-section .section-heading {
+    max-width: 100%;
+    margin-bottom: 20px;
+  }
+
+  .story-section .story-paragraph {
+    max-width: 100%;
+    text-align: left;
+  }
+}
+
+@media (max-width: 575px) {
+  .story-section .container {
+    padding-left: 14px !important;
+    padding-right: 14px !important;
+  }
+}
+
 .story-section .row {
   align-items: center;
-}
-
-.story-section .col-lg-6:first-child {
-  padding-right: 25px;
-}
-
-.story-section .col-lg-6:last-child {
-  padding-left: 25px;
 }
 
 .section-heading {
@@ -104,41 +167,6 @@
 
 .story-paragraph:last-child {
   margin-bottom: 0;
-}
-
-
-/* =========================================================
-   STORY VIDEO
-========================================================= */
-
-.about-video-wrapper {
-  width: 100%;
-  border: 1px solid rgba(15, 41, 74, 0.08);
-  background-color: #ffffff;
-  border-radius: 12px;
-  overflow: hidden;
-
-  box-shadow:
-    0 10px 30px rgba(0, 0, 0, 0.06);
-
-  transition:
-    transform 0.3s ease,
-    box-shadow 0.3s ease;
-}
-
-.about-video-wrapper video {
-  width: 100%;
-  height: auto;
-  min-height: 280px;
-  max-height: 380px;
-  object-fit: cover;
-}
-
-.about-video-wrapper:hover {
-  transform: translateY(-4px);
-
-  box-shadow:
-    0 15px 40px rgba(0, 0, 0, 0.1);
 }
 
 
@@ -1103,17 +1131,6 @@
 
 @media (max-width: 1199px) {
 
-  .story-section .col-lg-6:first-child {
-    padding-right: 12px;
-  }
-
-  .story-section .col-lg-6:last-child {
-    padding-left: 12px;
-  }
-
-  .about-video-wrapper video {
-    min-height: 250px;
-  }
 }
 
 
@@ -1131,24 +1148,12 @@
     font-size: 2.3rem;
   }
 
-  .story-section .col-lg-6:first-child,
-  .story-section .col-lg-6:last-child {
-    padding-left: 12px;
-    padding-right: 12px;
-  }
-
-  .story-section .row {
-    gap: 10px;
-  }
 
   .story-paragraph {
     font-size: 0.98rem;
     line-height: 1.75;
   }
 
-  .about-video-wrapper video {
-    min-height: 280px;
-  }
 
   .vision-redesigned-section {
     min-height: 430px;
@@ -1274,14 +1279,6 @@
     margin-bottom: 1rem;
   }
 
-  .about-video-wrapper {
-    margin-top: 10px;
-  }
-
-  .about-video-wrapper video {
-    min-height: 220px;
-    max-height: 320px;
-  }
 
   .capturing-moments-banner {
     padding: 60px 16px;
@@ -1498,10 +1495,6 @@
     line-height: 1.7;
   }
 
-  .about-video-wrapper video {
-    min-height: 200px;
-    max-height: 280px;
-  }
 
   .capturing-moments-banner {
     padding: 50px 14px;
@@ -1704,7 +1697,6 @@
   .leadership-image,
   .training-media-card,
   .training-media-image,
-  .about-video-wrapper,
   .excellence-card,
   .values-card,
   .value-item,

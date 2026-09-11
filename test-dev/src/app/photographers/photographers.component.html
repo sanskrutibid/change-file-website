@@ -1,154 +1,520 @@
-<!-- ================= CASE 1: STANDALONE ROUTE PAGE (/photographers) ================= -->
-<ng-container *ngIf="isStandalonePage">
-  
-  <!-- Hero Section -->
-  <section class="talent-hero text-center text-white">
-    <div class="container">
-      <span class="talent-eyebrow fw-bold text-uppercase">CREW DECK</span>
-      <h1 class="talent-title fw-bold mt-2 mb-3">CERTIFIED TALENT POOL</h1>
-      <span class="talent-subtitle fw-bold d-block mb-3">Trained. Certified. Cruise Ready.</span>
-      <div class="section-divider-gold mx-auto mb-4" style="width: 70px; height: 3px; background-color: var(--gold-accent);"></div>
-      <p class="talent-lead-text mx-auto" style="max-width: 800px; font-size: 1.15rem; color: #cbd5e1; line-height: 1.7;">
-        Browse our directory of professional photographers trained and certified specifically for luxury cruise ships. View their skills, status, and background.
-      </p>
-    </div>
-  </section>
+<!-- =========================================================
+     PHOTOGRAPHERS / CREW DECK COMPONENT
+     ========================================================= -->
 
-  <!-- Directory Section with Filters and Slider -->
-  <section class="talent-directory-section py-5 bg-light">
+
+<!-- =========================================================
+     CASE 1: STANDALONE ROUTE PAGE (/photographers)
+     ========================================================= -->
+
+<ng-container *ngIf="isStandalonePage">
+
+  <!-- ================= HERO SECTION ================= -->
+
+  <section class="talent-hero text-center text-white">
+
     <div class="container">
-      
-      <!-- Filter and Search Bar -->
-      <div class="row g-3 mb-5 align-items-center">
-        <!-- Filters (Left) -->
-        <div class="col-lg-7 col-md-12 text-start">
-          <div class="d-flex flex-wrap gap-2">
-            <button class="btn btn-filter px-4 py-2 text-uppercase fw-semibold" [class.active]="filterStatus === 'all'" (click)="setFilter('all')">
-              Show All ({{ photographers.length }})
-            </button>
-            <button class="btn btn-filter px-4 py-2 text-uppercase fw-semibold" [class.active]="filterStatus === 'Available'" (click)="setFilter('Available')">
-              <i class="bi bi-circle-fill text-success me-1.5" style="font-size: 0.5rem; vertical-align: middle;"></i>
-              Available for Hire
-            </button>
-            <button class="btn btn-filter px-4 py-2 text-uppercase fw-semibold" [class.active]="filterStatus === 'Onboard'" (click)="setFilter('Onboard')">
-              <i class="bi bi-circle-fill text-primary me-1.5" style="font-size: 0.5rem; vertical-align: middle;"></i>
-              Working Onboard
-            </button>
-          </div>
-        </div>
-        <!-- Search Input (Right) -->
-        <div class="col-lg-5 col-md-12">
-          <div class="search-input-wrapper position-relative">
-            <input type="text" class="form-control px-4 py-3 shadow-sm border-0" placeholder="Search seafarers by name..." (input)="onSearchChange($event)">
-            <i class="bi bi-search position-absolute text-muted" style="right: 20px; top: 16px; font-size: 1.1rem;"></i>
-          </div>
-        </div>
+
+      <span class="talent-eyebrow fw-bold text-uppercase">
+        CREW DECK
+      </span>
+
+      <h1 class="talent-title fw-bold mt-2 mb-3">
+        CERTIFIED TALENT POOL
+      </h1>
+
+      <span class="talent-subtitle fw-bold d-block mb-3">
+        Trained. Certified. Cruise Ready.
+      </span>
+
+      <div
+        class="section-divider-gold mx-auto mb-4"
+        style="
+          width: 70px;
+          height: 3px;
+          background-color: var(--gold-accent);
+        ">
       </div>
 
-      <!-- Slider Carousel -->
-      <div class="carousel-wrapper position-relative" *ngIf="doubled.length > 0">
+      <p
+        class="talent-lead-text mx-auto"
+        style="
+          max-width: 800px;
+          font-size: 1.15rem;
+          color: #cbd5e1;
+          line-height: 1.7;
+        ">
 
-        <button class="nav-btn prev shadow-sm" (click)="prevSlide()">❮</button>
+        Browse our directory of professional photographers trained
+        and certified specifically for luxury cruise ships. View
+        their skills, status, and background.
+
+      </p>
+
+    </div>
+
+  </section>
+
+
+  <!-- =======================================================
+       DIRECTORY SECTION
+       ======================================================= -->
+
+  <section class="talent-directory-section py-5 bg-light">
+
+    <div class="container">
+
+      <!-- ================= FILTER + SEARCH ================= -->
+
+      <div class="row g-3 mb-5 align-items-center">
+
+        <!-- FILTERS -->
+
+        <div class="col-lg-7 col-md-12 text-start">
+
+          <div class="d-flex flex-wrap gap-2">
+
+            <!-- SHOW ALL -->
+
+            <button
+              type="button"
+              class="btn btn-filter px-4 py-2 text-uppercase fw-semibold"
+              [class.active]="filterStatus === 'all'"
+              (click)="setFilter('all')">
+
+              Show All ({{ photographers.length }})
+
+            </button>
+
+
+            <!-- AVAILABLE -->
+
+            <button
+              type="button"
+              class="btn btn-filter px-4 py-2 text-uppercase fw-semibold"
+              [class.active]="filterStatus === 'Available'"
+              (click)="setFilter('Available')">
+
+              <i
+                class="bi bi-circle-fill text-success me-1"
+                style="
+                  font-size: 0.5rem;
+                  vertical-align: middle;
+                ">
+              </i>
+
+              Available for Hire
+
+            </button>
+
+
+            <!-- ONBOARD -->
+
+            <button
+              type="button"
+              class="btn btn-filter px-4 py-2 text-uppercase fw-semibold"
+              [class.active]="filterStatus === 'Onboard'"
+              (click)="setFilter('Onboard')">
+
+              <i
+                class="bi bi-circle-fill text-primary me-1"
+                style="
+                  font-size: 0.5rem;
+                  vertical-align: middle;
+                ">
+              </i>
+
+              Working Onboard
+
+            </button>
+
+          </div>
+
+        </div>
+
+
+        <!-- SEARCH -->
+
+        <div class="col-lg-5 col-md-12">
+
+          <div class="search-input-wrapper position-relative">
+
+            <input
+              type="text"
+              class="form-control px-4 py-3 shadow-sm border-0"
+              placeholder="Search seafarers by name..."
+              [value]="searchQuery"
+              (input)="onSearchChange($event)"
+            />
+
+            <i
+              class="bi bi-search position-absolute text-muted search-icon">
+            </i>
+
+          </div>
+
+        </div>
+
+      </div>
+
+
+      <!-- ===================================================
+           CREW GRID
+           3 COLUMNS × 2 ROWS = 6 INITIAL CARDS
+           =================================================== -->
+
+      <div
+        class="crew-grid"
+        *ngIf="displayedPhotographers.length > 0">
 
         <div
-          #track
-          class="carousel-track py-3"
-          (mouseenter)="pauseAutoSlide()"
-          (mouseleave)="resumeAutoSlide()"
-          [ngStyle]="{
-            transform: 'translateX(' + translateX + 'px)',
-            transition: isTransitionEnabled ? 'transform 0.6s ease' : 'none'
-          }"
-        >
-          <div class="card-item" *ngFor="let member of doubled; trackBy: trackByInitials">
+          class="crew-grid-item"
+          *ngFor="
+            let member of displayedPhotographers;
+            trackBy: trackByInitials
+          ">
 
-            <div class="card-inner shadow-sm" [class.flipped]="flippedCard === member.initials">
+          <!-- ================= CARD ================= -->
 
-              <!-- FRONT OF CARD (Horizontal Layout) -->
-              <div class="card-front p-3 d-flex align-items-center text-start gap-3" style="cursor: pointer;" (click)="flipCard(member.initials)">
-                <div class="photo-circle-horizontal flex-shrink-0">
-                  <img [src]="member.image || 'assets/images/profile.png'" [alt]="member.initials" class="rounded-circle border" width="75" height="75" style="object-fit: cover;" loading="lazy" />
+          <div
+            class="card-item-grid">
+
+            <div
+              class="card-inner shadow-sm"
+              [class.flipped]="flippedCard === member.initials">
+
+
+              <!-- =================================================
+                   CARD FRONT
+                   ================================================= -->
+
+              <div
+                class="card-front crew-card-front"
+                style="cursor: pointer;"
+                (click)="flipCard(member.initials)">
+
+                <div class="crew-card-content">
+
+                  <!-- PHOTO -->
+
+                  <div class="photo-circle-horizontal flex-shrink-0">
+
+                    <img
+                      [src]="
+                        member.image ||
+                        'assets/images/profile.png'
+                      "
+                      [alt]="member.name || member.initials"
+                      class="rounded-circle border"
+                      loading="lazy"
+                    />
+
+                  </div>
+
+
+                  <!-- DETAILS -->
+
+                  <div class="member-details flex-grow-1">
+
+                    <h5
+                      class="fw-bold mb-1 text-navy-main">
+
+                      {{ member.name || member.initials }}
+
+                    </h5>
+
+
+                    <p
+                      class="text-muted small mb-1 fw-semibold">
+
+                      Batch: {{ member.batch }}
+
+                    </p>
+
+
+                    <p
+                      class="member-status-text small mb-2">
+
+                      {{
+                        member.status === 'Onboard'
+                          ? 'Working Onboard'
+                          : (
+                              member.status === 'Available'
+                                ? 'Available for Hire'
+                                : 'Certified Photographer'
+                            )
+                      }}
+
+                    </p>
+
+
+                    <!-- VIEW PROFILE -->
+
+                    <button
+                      type="button"
+                      class="btn btn-white-outline btn-sm py-1 px-3 text-uppercase"
+                      (click)="$event.stopPropagation(); flipCard(member.initials)">
+
+                      View Profile
+
+                      <i
+                        class="bi bi-arrow-right ms-1">
+                      </i>
+
+                    </button>
+
+                  </div>
+
                 </div>
 
-                <div class="member-details flex-grow-1">
-                  <h5 class="fw-bold mb-1 text-navy-main" style="font-size: 1.05rem; color: var(--primary-navy);">{{ member.name || member.initials }}</h5>
-                  <p class="text-muted small mb-1 fw-semibold" style="font-size: 0.78rem;">Batch: {{ member.batch }}</p>
-                  <p class="member-status-text small mb-2" style="font-size: 0.78rem; font-weight: 600; color: var(--accent-blue);">
-                    {{ member.status === 'Onboard' ? 'Working Onboard' : (member.status === 'Available' ? 'Available for Hire' : 'Certified Photographer') }}
-                  </p>
-                  
-                  <button class="btn btn-white-outline btn-sm py-1 px-3 text-uppercase" style="font-size: 0.7rem; font-weight: 600;">
-                    View Profile <i class="bi bi-arrow-right ms-1" style="font-size: 0.65rem;"></i>
-                  </button>
-                </div>
               </div>
 
-              <!-- BACK OF CARD -->
-              <div class="card-back p-3 d-flex flex-column justify-content-between text-start" style="cursor: pointer;" (click)="flipCard(null)">
+
+              <!-- =================================================
+                   CARD BACK
+                   ================================================= -->
+
+              <div
+                class="card-back crew-card-back"
+                style="cursor: pointer;"
+                (click)="flipCard(null)">
+
                 <div>
-                  <h5 class="fw-bold mb-1" style="font-size: 1rem; color: var(--primary-navy);">{{ member.name || member.initials }}</h5>
-                  <div class="back-divider mb-2" style="height: 1px; background-color: #cbd5e1;"></div>
-                  
-                  <div class="details-scroll" style="max-height: 125px; overflow-y: auto;" (click)="$event.stopPropagation()">
-                    <p class="small mb-1 text-muted" style="font-size: 0.72rem; line-height: 1.3;">
-                      <strong>Bio:</strong> {{ member.bio || 'Certified cruise ship photographer trained in corporate workflows, studio portraits, and maritime cruise ethics.' }}
+
+                  <h5 class="fw-bold mb-1">
+
+                    {{ member.name || member.initials }}
+
+                  </h5>
+
+
+                  <div class="back-divider mb-3"></div>
+
+
+                  <div
+                    class="details-scroll"
+                    (click)="$event.stopPropagation()">
+
+                    <p class="small mb-2 text-muted">
+
+                      <strong>Bio:</strong>
+
+                      {{
+                        member.bio ||
+                        'Certified cruise ship photographer trained in corporate workflows, studio portraits, and maritime cruise ethics.'
+                      }}
+
                     </p>
-                    <p class="small mb-0 text-muted" style="font-size: 0.72rem; line-height: 1.3;" *ngIf="member.skills?.length">
-                      <strong>Skills:</strong> {{ member.skills?.join(', ') }}
+
+
+                    <p
+                      class="small mb-2 text-muted"
+                      *ngIf="member.skills?.length">
+
+                      <strong>Skills:</strong>
+
+                      {{ member.skills?.join(', ') }}
+
                     </p>
+
+
+                    <p
+                      class="small mb-0 text-muted"
+                      *ngIf="member.certifications?.length">
+
+                      <strong>Certifications:</strong>
+
+                      {{ member.certifications?.join(', ') }}
+
+                    </p>
+
                   </div>
+
                 </div>
 
-                <button class="btn btn-navy-solid btn-sm py-1 w-100 text-uppercase" style="font-size: 0.7rem; font-weight: 600;">
+
+                <!-- BACK BUTTON -->
+
+                <button
+                  type="button"
+                  class="btn btn-navy-solid btn-sm py-2 w-100 text-uppercase"
+                  (click)="$event.stopPropagation(); flipCard(null)">
+
                   ← Back
+
                 </button>
+
               </div>
 
             </div>
+
           </div>
+
         </div>
 
-        <button class="nav-btn next shadow-sm" (click)="nextSlide()">❯</button>
       </div>
 
-      <!-- Empty State -->
-      <div class="text-center py-5" *ngIf="doubled.length === 0">
-        <i class="bi bi-person-slash fs-1 text-muted d-block mb-3"></i>
-        <h5 class="fw-bold text-navy">No seafarers found</h5>
-        <p class="text-muted">Try adjusting your search query or filter settings.</p>
+
+      <!-- ===================================================
+           SEE MORE
+           =================================================== -->
+
+      <div
+        class="see-more-container text-center"
+        *ngIf="filteredPhotographers.length > visibleCount">
+
+        <button
+          type="button"
+          class="btn see-more-btn"
+          (click)="showMorePhotographers()">
+
+          SEE MORE
+
+          <i class="bi bi-arrow-down ms-2"></i>
+
+        </button>
+
+      </div>
+
+
+      <!-- ===================================================
+           SHOWING COUNT
+           =================================================== -->
+
+      <div
+        class="crew-count text-center"
+        *ngIf="filteredPhotographers.length > 0">
+
+        Showing
+        <strong>{{ displayedPhotographers.length }}</strong>
+        of
+        <strong>{{ filteredPhotographers.length }}</strong>
+        crew members
+
+      </div>
+
+
+      <!-- ===================================================
+           EMPTY STATE
+           =================================================== -->
+
+      <div
+        class="text-center py-5"
+        *ngIf="filteredPhotographers.length === 0">
+
+        <i
+          class="bi bi-person-slash fs-1 text-muted d-block mb-3">
+        </i>
+
+        <h5 class="fw-bold text-navy">
+          No seafarers found
+        </h5>
+
+        <p class="text-muted">
+          Try adjusting your search query or filter settings.
+        </p>
+
       </div>
 
     </div>
+
   </section>
 
 </ng-container>
 
-<!-- ================= CASE 2: EMBEDDED WIDGET SLIDER (Home Page) ================= -->
+
+
+<!-- =========================================================
+     CASE 2: EMBEDDED WIDGET SLIDER (HOME PAGE)
+     ========================================================= -->
+
 <ng-container *ngIf="!isStandalonePage">
-  <section class="photographer-carousel-section py-5 bg-white border-top">
+
+  <section
+    class="photographer-carousel-section py-5 bg-white border-top">
+
     <div class="container text-center">
-      
-      <!-- Section Header -->
-      <div class="d-flex flex-wrap justify-content-between align-items-center mb-4 text-start">
+
+
+      <!-- ================= SECTION HEADER ================= -->
+
+      <div
+        class="d-flex flex-wrap justify-content-between align-items-center mb-4 text-start">
+
         <div>
-          <span class="section-eyebrow fw-bold text-uppercase" style="color: var(--gold-accent);">CREW DECK</span>
-          <h2 class="section-main-title fw-bold mt-1 mb-0" style="color: var(--primary-navy);">OUR CERTIFIED TALENT POOL</h2>
-          <span class="section-subtitle-text text-muted" style="font-size: 0.9rem;">Trained. Certified. Cruise Ready.</span>
+
+          <span
+            class="section-eyebrow fw-bold text-uppercase"
+            style="color: var(--gold-accent);">
+
+            CREW DECK
+
+          </span>
+
+
+          <h2
+            class="section-main-title fw-bold mt-1 mb-0"
+            style="color: var(--primary-navy);">
+
+            OUR CERTIFIED TALENT POOL
+
+          </h2>
+
+
+          <span class="section-subtitle-text text-muted">
+
+            Trained. Certified. Cruise Ready.
+
+          </span>
+
         </div>
+
+
+        <!-- VIEW ALL -->
+
         <div>
-          <!-- Link to view all photographers -->
-          <a routerLink="/photographers" class="btn btn-white-outline py-2 px-3 text-uppercase fw-semibold" style="font-size: 0.85rem;">
-            View All Crew <i class="bi bi-arrow-right ms-2"></i>
+
+          <a
+            routerLink="/photographers"
+            class="btn btn-white-outline py-2 px-3 text-uppercase fw-semibold"
+            style="font-size: 0.85rem;">
+
+            View All Crew
+
+            <i class="bi bi-arrow-right ms-2"></i>
+
           </a>
+
         </div>
+
       </div>
-      
-      <div class="section-divider-gold text-start mb-5" style="width: 70px; height: 3px; background-color: var(--gold-accent);"></div>
 
-      <!-- Carousel Slider -->
-      <div class="carousel-wrapper position-relative" *ngIf="doubled.length > 0">
 
-        <button class="nav-btn prev shadow-sm" (click)="prevSlide()">❮</button>
+      <div
+        class="section-divider-gold text-start mb-5"
+        style="
+          width: 70px;
+          height: 3px;
+          background-color: var(--gold-accent);
+        ">
+      </div>
+
+
+      <!-- ================= HOME CAROUSEL ================= -->
+
+      <div
+        class="carousel-wrapper position-relative"
+        *ngIf="doubled.length > 0">
+
+        <button
+          type="button"
+          class="nav-btn prev shadow-sm"
+          (click)="prevSlide()">
+
+          ❮
+
+        </button>
+
 
         <div
           #track
@@ -156,68 +522,251 @@
           (mouseenter)="pauseAutoSlide()"
           (mouseleave)="resumeAutoSlide()"
           [ngStyle]="{
-            transform: 'translateX(' + translateX + 'px)',
-            transition: isTransitionEnabled ? 'transform 0.6s ease' : 'none'
-          }"
-        >
-          <div class="card-item" *ngFor="let member of doubled; trackBy: trackByInitials">
+            transform:
+              'translateX(' + translateX + 'px)',
+            transition:
+              isTransitionEnabled
+                ? 'transform 0.6s ease'
+                : 'none'
+          }">
 
-            <div class="card-inner shadow-sm" [class.flipped]="flippedCard === member.initials">
 
-              <!-- FRONT OF CARD (Horizontal Layout) -->
-              <div class="card-front p-3 d-flex align-items-center text-start gap-3" style="cursor: pointer;" (click)="flipCard(member.initials)">
-                <div class="photo-circle-horizontal flex-shrink-0">
-                  <img [src]="member.image || 'assets/images/profile.png'" [alt]="member.initials" class="rounded-circle border" width="75" height="75" style="object-fit: cover;" loading="lazy" />
+          <div
+            class="card-item"
+            *ngFor="
+              let member of doubled;
+              trackBy: trackByInitials
+            ">
+
+            <div
+              class="card-inner shadow-sm"
+              [class.flipped]="
+                flippedCard === member.initials
+              ">
+
+
+              <!-- FRONT -->
+
+              <div
+                class="card-front p-3 d-flex align-items-center text-start gap-3"
+                style="cursor: pointer;"
+                (click)="flipCard(member.initials)">
+
+                <div
+                  class="photo-circle-horizontal flex-shrink-0">
+
+                  <img
+                    [src]="
+                      member.image ||
+                      'assets/images/profile.png'
+                    "
+                    [alt]="member.name || member.initials"
+                    class="rounded-circle border"
+                    width="75"
+                    height="75"
+                    style="object-fit: cover;"
+                    loading="lazy"
+                  />
+
                 </div>
 
-                <div class="member-details flex-grow-1">
-                  <h5 class="fw-bold mb-1 text-navy-main" style="font-size: 1.05rem; color: var(--primary-navy);">{{ member.name || member.initials }}</h5>
-                  <p class="text-muted small mb-1 fw-semibold" style="font-size: 0.78rem;">Batch: {{ member.batch }}</p>
-                  <p class="member-status-text small mb-2" style="font-size: 0.78rem; font-weight: 600; color: var(--accent-blue);">
-                    {{ member.status === 'Onboard' ? 'Working Onboard' : (member.status === 'Available' ? 'Available for Hire' : 'Certified Photographer') }}
+
+                <div
+                  class="member-details flex-grow-1">
+
+                  <h5
+                    class="fw-bold mb-1 text-navy-main"
+                    style="
+                      font-size: 1.05rem;
+                      color: var(--primary-navy);
+                    ">
+
+                    {{ member.name || member.initials }}
+
+                  </h5>
+
+
+                  <p
+                    class="text-muted small mb-1 fw-semibold"
+                    style="font-size: 0.78rem;">
+
+                    Batch: {{ member.batch }}
+
                   </p>
-                  
-                  <button class="btn btn-white-outline btn-sm py-1 px-3 text-uppercase" style="font-size: 0.7rem; font-weight: 600;">
-                    View Profile <i class="bi bi-arrow-right ms-1" style="font-size: 0.65rem;"></i>
+
+
+                  <p
+                    class="member-status-text small mb-2"
+                    style="
+                      font-size: 0.78rem;
+                      font-weight: 600;
+                      color: var(--accent-blue);
+                    ">
+
+                    {{
+                      member.status === 'Onboard'
+                        ? 'Working Onboard'
+                        : (
+                            member.status === 'Available'
+                              ? 'Available for Hire'
+                              : 'Certified Photographer'
+                          )
+                    }}
+
+                  </p>
+
+
+                  <button
+                    type="button"
+                    class="btn btn-white-outline btn-sm py-1 px-3 text-uppercase"
+                    style="
+                      font-size: 0.7rem;
+                      font-weight: 600;
+                    ">
+
+                    View Profile
+
+                    <i
+                      class="bi bi-arrow-right ms-1"
+                      style="font-size: 0.65rem;">
+                    </i>
+
                   </button>
+
                 </div>
+
               </div>
 
-              <!-- BACK OF CARD -->
-              <div class="card-back p-3 d-flex flex-column justify-content-between text-start" style="cursor: pointer;" (click)="flipCard(null)">
+
+              <!-- BACK -->
+
+              <div
+                class="card-back p-3 d-flex flex-column justify-content-between text-start"
+                style="cursor: pointer;"
+                (click)="flipCard(null)">
+
                 <div>
-                  <h5 class="fw-bold mb-1" style="font-size: 1rem; color: var(--primary-navy);">{{ member.name || member.initials }}</h5>
-                  <div class="back-divider mb-2" style="height: 1px; background-color: #cbd5e1;"></div>
-                  
-                  <div class="details-scroll" style="max-height: 125px; overflow-y: auto;" (click)="$event.stopPropagation()">
-                    <p class="small mb-1 text-muted" style="font-size: 0.72rem; line-height: 1.3;">
-                      <strong>Bio:</strong> {{ member.bio || 'Certified cruise ship photographer trained in corporate workflows, studio portraits, and maritime cruise ethics.' }}
-                    </p>
-                    <p class="small mb-0 text-muted" style="font-size: 0.72rem; line-height: 1.3;" *ngIf="member.skills?.length">
-                      <strong>Skills:</strong> {{ member.skills?.join(', ') }}
-                    </p>
+
+                  <h5
+                    class="fw-bold mb-1"
+                    style="
+                      font-size: 1rem;
+                      color: var(--primary-navy);
+                    ">
+
+                    {{ member.name || member.initials }}
+
+                  </h5>
+
+
+                  <div
+                    class="back-divider mb-2"
+                    style="
+                      height: 1px;
+                      background-color: #cbd5e1;
+                    ">
                   </div>
+
+
+                  <div
+                    class="details-scroll"
+                    style="
+                      max-height: 125px;
+                      overflow-y: auto;
+                    "
+                    (click)="$event.stopPropagation()">
+
+                    <p
+                      class="small mb-1 text-muted"
+                      style="
+                        font-size: 0.72rem;
+                        line-height: 1.3;
+                      ">
+
+                      <strong>Bio:</strong>
+
+                      {{
+                        member.bio ||
+                        'Certified cruise ship photographer trained in corporate workflows, studio portraits, and maritime cruise ethics.'
+                      }}
+
+                    </p>
+
+
+                    <p
+                      class="small mb-0 text-muted"
+                      style="
+                        font-size: 0.72rem;
+                        line-height: 1.3;
+                      "
+                      *ngIf="member.skills?.length">
+
+                      <strong>Skills:</strong>
+
+                      {{ member.skills?.join(', ') }}
+
+                    </p>
+
+                  </div>
+
                 </div>
 
-                <button class="btn btn-navy-solid btn-sm py-1 w-100 text-uppercase" style="font-size: 0.7rem; font-weight: 600;">
+
+                <button
+                  type="button"
+                  class="btn btn-navy-solid btn-sm py-1 w-100 text-uppercase"
+                  style="
+                    font-size: 0.7rem;
+                    font-weight: 600;
+                  ">
+
                   ← Back
+
                 </button>
+
               </div>
 
             </div>
+
           </div>
+
         </div>
 
-        <button class="nav-btn next shadow-sm" (click)="nextSlide()">❯</button>
+
+        <button
+          type="button"
+          class="nav-btn next shadow-sm"
+          (click)="nextSlide()">
+
+          ❯
+
+        </button>
+
       </div>
 
-      <!-- Empty State -->
-      <div class="text-center py-5" *ngIf="doubled.length === 0">
-        <i class="bi bi-person-slash fs-1 text-muted d-block mb-3"></i>
-        <h5 class="fw-bold text-navy">No seafarers found</h5>
-        <p class="text-muted">Try adjusting your search query or filter settings.</p>
+
+      <!-- EMPTY -->
+
+      <div
+        class="text-center py-5"
+        *ngIf="doubled.length === 0">
+
+        <i
+          class="bi bi-person-slash fs-1 text-muted d-block mb-3">
+        </i>
+
+        <h5 class="fw-bold text-navy">
+          No seafarers found
+        </h5>
+
+        <p class="text-muted">
+          Try adjusting your search query or filter settings.
+        </p>
+
       </div>
 
     </div>
+
   </section>
+
 </ng-container>

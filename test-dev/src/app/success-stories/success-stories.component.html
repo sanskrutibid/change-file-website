@@ -52,7 +52,7 @@
     </div>
 
 
-    <!-- Featured Video Card -->
+    <!-- Featured Video Card  -->
     <div
       class="featured-video-card mx-auto"
       (click)="openVideoModal()"
@@ -62,13 +62,10 @@
 
       <div class="featured-video-frame">
 
-        <!-- Poster / background layer -->
         <div class="featured-video-poster"></div>
 
-        <!-- Gradient overlay -->
         <div class="featured-video-overlay"></div>
 
-        <!-- Center play control -->
         <div class="featured-play-wrapper">
 
           <div class="featured-play-ring"></div>
@@ -86,9 +83,7 @@
         </div>
 
 
-        <!-- Caption bar -->
-        <div
-          class="featured-video-caption d-flex align-items-center justify-content-between">
+        <div class="featured-video-caption d-flex align-items-center justify-content-between">
 
           <div class="text-start">
 
@@ -102,10 +97,7 @@
 
           </div>
 
-          <i
-            class="fa-solid fa-camera-retro featured-video-icon"
-            aria-hidden="true">
-          </i>
+          <i class="fa-solid fa-camera-retro featured-video-icon" aria-hidden="true"></i>
 
         </div>
 
@@ -114,13 +106,8 @@
     </div>
 
 
-    <!-- Video availability message -->
-    <p
-      class="text-center text-muted small mt-3"
-      *ngIf="!videoUrl">
-
+    <p class="text-center text-muted small mt-3" *ngIf="!videoUrl">
       Video coming soon.
-
     </p>
 
   </div>
@@ -131,30 +118,19 @@
 <!-- VIDEO MODAL -->
 <!-- ========================================================= -->
 
-<div
-  class="video-modal-backdrop"
-  *ngIf="showVideoModal"
-  (click)="closeVideoModal()">
+<div class="video-modal-backdrop" *ngIf="showVideoModal" (click)="closeVideoModal()">
 
-  <div
-    class="video-modal-box"
-    (click)="$event.stopPropagation()">
+  <div class="video-modal-box" (click)="$event.stopPropagation()">
 
-    <!-- Close Button -->
     <button
       class="video-modal-close"
       type="button"
       aria-label="Close video"
       (click)="closeVideoModal()">
-
       <i class="fa-solid fa-xmark"></i>
-
     </button>
 
-
-    <!-- Vimeo Video -->
     <div class="ratio ratio-16x9">
-
       <iframe
         *ngIf="videoUrl"
         [src]="videoUrl"
@@ -163,12 +139,134 @@
         allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media"
         allowfullscreen>
       </iframe>
-
     </div>
 
   </div>
 
 </div>
+
+
+<!-- ========================================================= -->
+<!-- MORE VIDEO STORIES - AUTO SLIDER (NEW SECTION) -->
+<!-- ========================================================= -->
+
+<section class="video-stories-slider-section py-5">
+  <div class="container">
+
+    <div class="text-center mb-4">
+      <span class="section-eyebrow fw-bold text-uppercase">
+        MORE MOMENTS
+      </span>
+
+      <h2 class="section-main-title fw-bold mt-2">
+        MORE VIDEO STORIES
+      </h2>
+
+      <div class="section-divider-gold mx-auto"></div>
+    </div>
+
+    <div
+      id="videoStoriesCarousel"
+      class="carousel slide video-stories-carousel mx-auto"
+      data-bs-ride="carousel"
+      data-bs-interval="5000">
+
+      <div class="carousel-inner">
+
+        <div class="carousel-item active">
+          <div class="video-slide-frame">
+            <div class="ratio ratio-16x9">
+              <iframe
+                src="https://player.vimeo.com/video/1225978087?title=0&byline=0&portrait=0"
+                title="Cruise Lens Academy Student Story 1"
+                frameborder="0"
+                allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media"
+                allowfullscreen>
+              </iframe>
+            </div>
+            <div class="video-slide-caption">
+              <span class="video-slide-tag">STUDENT STORY</span>
+              <h3 class="video-slide-title mb-0">Life on the High Seas</h3>
+            </div>
+          </div>
+        </div>
+
+        <div class="carousel-item">
+          <div class="video-slide-frame">
+            <div class="ratio ratio-16x9">
+              <iframe
+                src="https://player.vimeo.com/video/1225978836?title=0&byline=0&portrait=0"
+                title="Cruise Lens Academy Student Story 2"
+                frameborder="0"
+                allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media"
+                allowfullscreen>
+              </iframe>
+            </div>
+            <div class="video-slide-caption">
+              <span class="video-slide-tag">STUDENT STORY</span>
+              <h3 class="video-slide-title mb-0">Behind the Lens Onboard</h3>
+            </div>
+          </div>
+        </div>
+
+        <div class="carousel-item">
+          <div class="video-slide-frame">
+            <div class="ratio ratio-16x9">
+              <iframe
+                src="https://player.vimeo.com/video/1225978916?title=0&byline=0&portrait=0"
+                title="Cruise Lens Academy Student Story 3"
+                frameborder="0"
+                allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media"
+                allowfullscreen>
+              </iframe>
+            </div>
+            <div class="video-slide-caption">
+              <span class="video-slide-tag">STUDENT STORY</span>
+              <h3 class="video-slide-title mb-0">From Training to Deployment</h3>
+            </div>
+          </div>
+        </div>
+
+        <div class="carousel-item">
+          <div class="video-slide-frame">
+            <div class="ratio ratio-16x9">
+              <iframe
+                src="https://player.vimeo.com/video/1225979235?title=0&byline=0&portrait=0"
+                title="Cruise Lens Academy Student Story 4"
+                frameborder="0"
+                allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media"
+                allowfullscreen>
+              </iframe>
+            </div>
+            <div class="video-slide-caption">
+              <span class="video-slide-tag">STUDENT STORY</span>
+              <h3 class="video-slide-title mb-0">A New Career Horizon</h3>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <button class="carousel-control-prev" type="button" data-bs-target="#videoStoriesCarousel" data-bs-slide="prev">
+        <span class="video-slider-arrow" aria-hidden="true"><i class="fa-solid fa-chevron-left"></i></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#videoStoriesCarousel" data-bs-slide="next">
+        <span class="video-slider-arrow" aria-hidden="true"><i class="fa-solid fa-chevron-right"></i></span>
+        <span class="visually-hidden">Next</span>
+      </button>
+
+      <div class="carousel-indicators">
+        <button type="button" data-bs-target="#videoStoriesCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+        <button type="button" data-bs-target="#videoStoriesCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+        <button type="button" data-bs-target="#videoStoriesCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+        <button type="button" data-bs-target="#videoStoriesCarousel" data-bs-slide-to="3" aria-label="Slide 4"></button>
+      </div>
+
+    </div>
+
+  </div>
+</section>
 
 
 <!-- ========================================================= -->
@@ -179,7 +277,6 @@
   <div class="container">
 
     <div class="text-center mb-5">
-
       <span class="section-eyebrow fw-bold text-uppercase">
         WHAT OUR STUDENTS SAY
       </span>
@@ -189,20 +286,15 @@
       </h2>
 
       <div class="section-divider-gold mx-auto"></div>
-
     </div>
 
+    <div class="row g-4 justify-content-center">
 
-    <div class="row g-4">
-
-      <div
-        class="col-md-4"
-        *ngFor="let t of testimonials">
+      <div class="col-md-4" *ngFor="let t of testimonials">
 
         <div class="google-review-card h-100">
 
-          <div
-            class="review-card-top d-flex justify-content-between align-items-center">
+          <div class="review-card-top d-flex justify-content-between align-items-center">
 
             <div class="review-user d-flex align-items-center gap-2">
 
@@ -211,7 +303,6 @@
               </div>
 
               <div>
-
                 <strong>
                   {{ t.name }}
                 </strong>
@@ -219,27 +310,20 @@
                 <small class="d-block text-muted">
                   {{ t.role }}
                 </small>
-
               </div>
 
             </div>
 
           </div>
 
-
-          <!-- Stars -->
           <div class="review-stars my-3">
-
             <i class="bi bi-star-fill"></i>
             <i class="bi bi-star-fill"></i>
             <i class="bi bi-star-fill"></i>
             <i class="bi bi-star-fill"></i>
             <i class="bi bi-star-fill"></i>
-
           </div>
 
-
-          <!-- Review -->
           <p class="review-text mb-0">
             "{{ t.quote }}"
           </p>
@@ -271,14 +355,9 @@
       leading cruise lines.
     </p>
 
-    <a
-      routerLink="/apply-now"
-      class="btn-gold-solid py-3 px-5 rounded-1 text-uppercase shadow-sm">
-
+    <a routerLink="/apply-now" class="btn-gold-solid py-3 px-5 rounded-1 text-uppercase shadow-sm">
       APPLY NOW
-
       <i class="fa-solid fa-arrow-right ms-2"></i>
-
     </a>
 
   </div>
