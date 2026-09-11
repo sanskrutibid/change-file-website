@@ -128,6 +128,19 @@
   box-shadow: 0 10px 25px rgba(217, 119, 6, 0.25);
 }
 
+/* Info Badges (Address / Phone / Email) — clickable phone link styling */
+.info-badges-list a {
+  color: var(--primary-navy, #0f294a);
+  text-decoration: none;
+  transition: color 0.25s ease;
+}
+
+.info-badges-list a:hover,
+.info-badges-list a:focus {
+  color: var(--gold-accent, #d97706);
+  text-decoration: none;
+}
+
 /* ================= Responsive Adjustments ================= */
 @media (max-width: 991px) {
   .faq-hero {

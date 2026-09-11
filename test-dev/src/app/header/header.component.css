@@ -310,7 +310,7 @@
 
 
 /* =========================================================
-   PARTNER LOCKUP
+   PARTNER LOCKUP (updated: heading + both logos together)
    ========================================================= */
 
 .partner-lockup {
@@ -340,18 +340,16 @@
 }
 
 
-/* =========================================================
-   MSU PARTNER
-   ========================================================= */
+/* Wrapper holding heading + logo row */
 
-.msu-partner {
-  height: 64px;
-
+.partner-content {
   display: flex;
   flex-direction: column;
 
   align-items: center;
   justify-content: center;
+
+  height: 64px;
 
   padding: 0 12px;
 
@@ -359,7 +357,9 @@
 }
 
 
-.msu-association {
+/* "Approved Training Partner of" heading */
+
+.partner-heading {
   display: block;
 
   font-size: 0.65rem;
@@ -372,8 +372,26 @@
   white-space: nowrap;
 
   margin-bottom: 4px;
+
+  text-align: center;
 }
 
+
+/* Row containing both logos side by side */
+
+.partner-logos-row {
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  gap: 10px;
+
+  flex-shrink: 0;
+}
+
+
+/* MSU logo */
 
 .msu-logo {
   width: 58px;
@@ -385,27 +403,11 @@
 }
 
 
-/* =========================================================
-   SKILL INDIA
-   ========================================================= */
-
-.skill-india-box {
-  height: 64px;
-
-  display: flex;
-
-  align-items: center;
-  justify-content: center;
-
-  padding: 0 12px;
-
-  flex-shrink: 0;
-}
-
+/* Skill India logo */
 
 .skill-india-logo {
-  width: 72px;
-  height: 48px;
+  width: 60px;
+  height: 40px;
 
   object-fit: contain;
 
@@ -593,11 +595,7 @@
     margin-right: 7px;
   }
 
-  .msu-partner {
-    padding: 0 8px;
-  }
-
-  .skill-india-box {
+  .partner-content {
     padding: 0 8px;
   }
 
