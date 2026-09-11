@@ -1,3 +1,4 @@
+
 /* =========================================================
    ABOUT HERO BANNER
 ========================================================= */
@@ -12,31 +13,55 @@
     ),
     url('/assets/images/cruise-2.jpg') center/cover no-repeat;
 
-  padding: 180px 0 100px 0;
+  padding: 150px 20px 85px;
   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
   color: #ffffff;
 }
 
 .about-eyebrow {
-  font-size: 1.1rem;
+  display: block;
+  font-size: 0.95rem;
   font-weight: 700;
   color: var(--gold-accent);
   letter-spacing: 2px;
   text-transform: uppercase;
+  margin-bottom: 8px;
 }
 
 .about-title {
-  font-size: 3rem;
+  font-size: clamp(2rem, 4vw, 3rem);
+  line-height: 1.2;
   font-weight: 800;
   color: #ffffff;
   letter-spacing: 1px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .about-lead-text {
   color: #cbd5e1 !important;
-  font-size: 1.15rem;
+  font-size: clamp(0.95rem, 1.5vw, 1.15rem);
   font-weight: 500;
-  line-height: 1.6;
+  line-height: 1.7;
+}
+
+
+/* =========================================================
+   COMMON SECTION TYPOGRAPHY
+========================================================= */
+
+.section-eyebrow {
+  display: inline-block;
+  font-size: 0.9rem;
+  letter-spacing: 2px;
+  line-height: 1.4;
+}
+
+.section-main-title,
+.section-heading {
+  line-height: 1.25;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
 }
 
 
@@ -48,11 +73,34 @@
   background-color: #ffffff;
 }
 
+.story-section .container {
+  max-width: 1200px;
+}
+
+.story-section .row {
+  align-items: center;
+}
+
+.story-section .col-lg-6:first-child {
+  padding-right: 25px;
+}
+
+.story-section .col-lg-6:last-child {
+  padding-left: 25px;
+}
+
+.section-heading {
+  font-size: clamp(1.8rem, 3vw, 2.5rem);
+  color: var(--primary-navy);
+}
+
 .story-paragraph {
-  font-size: 0.98rem;
+  font-size: 1rem;
   color: #475569;
-  line-height: 1.7;
-  margin-bottom: 1.25rem;
+  line-height: 1.8;
+  margin-bottom: 1.15rem;
+  text-align: justify;
+  text-justify: inter-word;
 }
 
 .story-paragraph:last-child {
@@ -65,6 +113,7 @@
 ========================================================= */
 
 .about-video-wrapper {
+  width: 100%;
   border: 1px solid rgba(15, 41, 74, 0.08);
   background-color: #ffffff;
   border-radius: 12px;
@@ -76,6 +125,14 @@
   transition:
     transform 0.3s ease,
     box-shadow 0.3s ease;
+}
+
+.about-video-wrapper video {
+  width: 100%;
+  height: auto;
+  min-height: 280px;
+  max-height: 380px;
+  object-fit: cover;
 }
 
 .about-video-wrapper:hover {
@@ -98,18 +155,17 @@
     ),
     url('/assets/images/cruise-3.jpg') center/cover no-repeat;
 
-  padding: 100px 0;
+  padding: 85px 20px;
   border-bottom: 2px solid var(--gold-accent);
 }
 
 .capturing-title {
-  font-size: 2.6rem;
+  font-size: clamp(1.8rem, 4vw, 2.6rem);
   letter-spacing: 2px;
+  line-height: 1.25;
   font-weight: 800;
-
   text-shadow:
     0 4px 15px rgba(0, 0, 0, 0.5);
-
   color: #ffffff;
 }
 
@@ -118,11 +174,19 @@
 }
 
 .capturing-paragraph {
+  width: 100%;
   max-width: 800px;
-  font-size: 1.25rem;
+  margin-left: auto;
+  margin-right: auto;
+
+  font-size: clamp(1rem, 1.7vw, 1.25rem);
   font-weight: 400;
   line-height: 1.8;
+
   color: #cbd5e1;
+
+  text-align: justify;
+  text-justify: inter-word;
 }
 
 .cursor-blink {
@@ -149,7 +213,7 @@
   background:
     url('/assets/images/cruise-4.jpg') center/cover no-repeat;
 
-  min-height: 480px;
+  min-height: 460px;
 
   display: flex;
   align-items: center;
@@ -165,7 +229,7 @@
     );
 
   width: 100%;
-  min-height: 480px;
+  min-height: 460px;
 
   display: flex;
   align-items: center;
@@ -173,10 +237,11 @@
 }
 
 .vision-banner-title {
-  font-size: 4.5rem;
+  font-size: clamp(2.5rem, 6vw, 4.5rem);
   font-weight: 800;
   color: #ffffff;
-  letter-spacing: 5px;
+  letter-spacing: clamp(2px, 0.5vw, 5px);
+  line-height: 1.15;
 
   text-shadow:
     0 4px 15px rgba(0, 0, 0, 0.45);
@@ -185,14 +250,20 @@
 }
 
 .vision-banner-text {
+  width: 100%;
   max-width: 880px;
-  font-size: 1.35rem;
+
+  font-size: clamp(1rem, 1.8vw, 1.35rem);
   font-weight: 500;
-  line-height: 1.7;
+  line-height: 1.75;
+
   color: #ffffff;
 
   text-shadow:
     0 2px 10px rgba(0, 0, 0, 0.5);
+
+  text-align: justify;
+  text-justify: inter-word;
 }
 
 
@@ -203,6 +274,10 @@
 .mission-section {
   background-color: #000000;
   border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.mission-section .container {
+  max-width: 1200px;
 }
 
 .excellence-card {
@@ -219,6 +294,7 @@
 
   border-radius: 12px;
   min-height: 380px;
+
   overflow: hidden;
 
   display: flex;
@@ -247,42 +323,54 @@
 .excellence-content {
   position: relative;
   z-index: 2;
+
+  width: 100%;
   max-width: 85%;
+
   padding: 30px;
 }
 
 .excellence-title {
-  font-size: 2.2rem;
+  font-size: clamp(1.7rem, 3vw, 2.2rem);
   font-weight: 800;
   color: #ffffff;
   letter-spacing: 2px;
+  line-height: 1.2;
 
   text-shadow:
     0 2px 8px rgba(0, 0, 0, 0.5);
 }
 
 .excellence-text {
-  font-size: 1.1rem;
-  line-height: 1.5;
+  font-size: clamp(0.95rem, 1.5vw, 1.1rem);
+  line-height: 1.6;
   color: #e2e8f0;
   font-weight: 400;
 
   text-shadow:
     0 2px 5px rgba(0, 0, 0, 0.5);
+
+  text-align: justify;
+  text-justify: inter-word;
 }
 
 .mission-title {
   color: #ffb703;
-  font-size: 2rem;
+  font-size: clamp(1.6rem, 3vw, 2rem);
   font-weight: 800;
   letter-spacing: 2px;
 }
 
 .mission-text {
-  font-size: 1.15rem;
+  width: 100%;
+  max-width: 580px;
+
+  font-size: clamp(1rem, 1.6vw, 1.15rem);
   line-height: 1.8;
   color: #e2e8f0;
-  max-width: 580px;
+
+  text-align: justify;
+  text-justify: inter-word;
 }
 
 
@@ -304,9 +392,12 @@
 }
 
 .value-text {
-  font-size: 1.15rem;
+  font-size: clamp(0.95rem, 1.5vw, 1.15rem);
   line-height: 1.7;
   color: #cbd5e1;
+
+  text-align: justify;
+  text-justify: inter-word;
 }
 
 .value-term {
@@ -355,6 +446,7 @@
 
   border-radius: 12px;
   min-height: 380px;
+
   overflow: hidden;
 
   display: flex;
@@ -378,12 +470,15 @@
 .values-card-content {
   position: relative;
   z-index: 2;
+
+  width: 100%;
   max-width: 85%;
+
   padding: 30px;
 }
 
 .values-card-title {
-  font-size: 2.5rem;
+  font-size: clamp(1.8rem, 4vw, 2.5rem);
   font-weight: 800;
   color: #ffffff;
   letter-spacing: 3px;
@@ -393,12 +488,15 @@
 }
 
 .values-card-text {
-  font-size: 1.1rem;
+  font-size: clamp(0.95rem, 1.5vw, 1.1rem);
   line-height: 1.6;
   color: #ffffff;
 
   text-shadow:
     0 2px 5px rgba(0, 0, 0, 0.4);
+
+  text-align: justify;
+  text-justify: inter-word;
 }
 
 
@@ -410,8 +508,13 @@
   background-color: #ffffff;
 }
 
+.leadership-section .container {
+  max-width: 1200px;
+}
+
 .leadership-card {
   background-color: #ffffff;
+
   border-radius: 14px;
   overflow: hidden;
 
@@ -435,6 +538,7 @@
 .leadership-image-wrapper {
   width: 100%;
   height: 320px;
+
   overflow: hidden;
   background-color: #f1f5f9;
 }
@@ -442,7 +546,10 @@
 .leadership-image {
   width: 100%;
   height: 100%;
+
   object-fit: cover;
+  object-position: center;
+
   display: block;
 
   transition:
@@ -455,6 +562,7 @@
 
 .leadership-name {
   font-size: 1.5rem;
+  line-height: 1.3;
 }
 
 .leadership-role {
@@ -467,6 +575,9 @@
   color: #64748b;
   line-height: 1.7;
   font-size: 0.95rem;
+
+  text-align: justify;
+  text-justify: inter-word;
 }
 
 
@@ -480,12 +591,18 @@
 }
 
 .training-experience-intro {
+  width: 100%;
   max-width: 800px;
+
   margin: 0 auto;
 
   color: #64748b;
-  font-size: 1.05rem;
+
+  font-size: clamp(0.95rem, 1.5vw, 1.05rem);
   line-height: 1.8;
+
+  text-align: justify;
+  text-justify: inter-word;
 }
 
 .training-category-section {
@@ -495,9 +612,13 @@
 
 .training-category-title {
   color: var(--primary-navy);
-  font-size: 1.7rem;
+
+  font-size: clamp(1.3rem, 2.5vw, 1.7rem);
   font-weight: 800;
+
   letter-spacing: 1px;
+  line-height: 1.3;
+
   margin-bottom: 10px;
 }
 
@@ -506,12 +627,18 @@
 }
 
 .training-category-description {
+  width: 100%;
   max-width: 700px;
+
   margin: 0 auto;
 
   color: #64748b;
-  font-size: 0.98rem;
+
+  font-size: clamp(0.9rem, 1.4vw, 0.98rem);
   line-height: 1.7;
+
+  text-align: justify;
+  text-justify: inter-word;
 }
 
 
@@ -523,13 +650,17 @@
 .studio-slider-wrapper {
   width: 100%;
   overflow: hidden;
+
   position: relative;
+
   padding: 10px 0 25px;
 }
 
 .studio-slider-wrapper::before {
   content: "";
+
   position: absolute;
+
   top: 0;
   left: 0;
 
@@ -537,6 +668,7 @@
   height: 100%;
 
   z-index: 3;
+
   pointer-events: none;
 
   background:
@@ -549,7 +681,9 @@
 
 .studio-slider-wrapper::after {
   content: "";
+
   position: absolute;
+
   top: 0;
   right: 0;
 
@@ -557,6 +691,7 @@
   height: 100%;
 
   z-index: 3;
+
   pointer-events: none;
 
   background:
@@ -569,7 +704,9 @@
 
 .studio-slider {
   display: flex;
+
   width: max-content;
+
   gap: 24px;
 
   animation:
@@ -607,9 +744,11 @@
   height: 230px;
 
   overflow: hidden;
+
   border-radius: 14px;
 
   background-color: #0f294a;
+
   border: 1px solid #e2e8f0;
 
   box-shadow:
@@ -635,6 +774,7 @@
 .training-media-image {
   width: 100%;
   height: 100%;
+
   display: block;
 
   object-fit: cover;
@@ -655,9 +795,11 @@
 .training-media-video {
   width: 100%;
   height: 100%;
+
   display: block;
 
   object-fit: cover;
+
   background-color: #000000;
 }
 
@@ -668,7 +810,9 @@
 .training-media-card.video-card iframe {
   width: 100%;
   height: 100%;
+
   display: block;
+
   border: 0;
 }
 
@@ -679,7 +823,9 @@
 
 .training-media-card::after {
   content: "";
+
   position: absolute;
+
   inset: 0;
 
   pointer-events: none;
@@ -735,7 +881,9 @@
 
 .gallery-img-wrapper {
   position: relative;
+
   width: 100%;
+
   aspect-ratio: 3 / 2;
 
   border-color: #e2e8f0 !important;
@@ -756,6 +904,7 @@
 .gallery-img {
   width: 100%;
   height: 100%;
+
   object-fit: cover;
 
   transition:
@@ -773,6 +922,7 @@
 
 .lightbox-modal {
   position: fixed;
+
   z-index: 9999;
 
   left: 0;
@@ -785,6 +935,7 @@
     rgba(10, 20, 35, 0.95);
 
   display: flex;
+
   align-items: center;
   justify-content: center;
 
@@ -807,11 +958,15 @@
 .lightbox-content {
   position: relative;
 
+  width: 100%;
   max-width: 85%;
+
   max-height: 80%;
 
   display: flex;
+
   flex-direction: column;
+
   align-items: center;
 
   cursor: default;
@@ -851,6 +1006,7 @@
 
 .lightbox-caption {
   color: #e2e8f0;
+
   margin-top: 15px;
 
   font-size: 1.1rem;
@@ -890,6 +1046,7 @@
   position: absolute;
 
   top: 50%;
+
   transform: translateY(-50%);
 
   background:
@@ -906,9 +1063,11 @@
   font-size: 20px;
 
   cursor: pointer;
+
   border-radius: 50%;
 
   display: flex;
+
   align-items: center;
   justify-content: center;
 
@@ -940,17 +1099,64 @@
 
 
 /* =========================================================
+   LARGE TABLET / SMALL DESKTOP
+========================================================= */
+
+@media (max-width: 1199px) {
+
+  .story-section .col-lg-6:first-child {
+    padding-right: 12px;
+  }
+
+  .story-section .col-lg-6:last-child {
+    padding-left: 12px;
+  }
+
+  .about-video-wrapper video {
+    min-height: 250px;
+  }
+}
+
+
+/* =========================================================
    TABLET RESPONSIVE
 ========================================================= */
 
 @media (max-width: 991px) {
 
   .about-hero-section {
-    padding: 140px 0 70px 0;
+    padding: 125px 20px 70px;
   }
 
   .about-title {
     font-size: 2.3rem;
+  }
+
+  .story-section .col-lg-6:first-child,
+  .story-section .col-lg-6:last-child {
+    padding-left: 12px;
+    padding-right: 12px;
+  }
+
+  .story-section .row {
+    gap: 10px;
+  }
+
+  .story-paragraph {
+    font-size: 0.98rem;
+    line-height: 1.75;
+  }
+
+  .about-video-wrapper video {
+    min-height: 280px;
+  }
+
+  .vision-redesigned-section {
+    min-height: 430px;
+  }
+
+  .vision-banner-overlay {
+    min-height: 430px;
   }
 
   .vision-banner-title {
@@ -961,8 +1167,20 @@
     font-size: 1.15rem;
   }
 
+  .excellence-card {
+    min-height: 330px;
+  }
+
   .excellence-title {
     font-size: 1.8rem;
+  }
+
+  .excellence-content {
+    max-width: 90%;
+  }
+
+  .mission-text {
+    max-width: 700px;
   }
 
   .values-card-title {
@@ -1016,47 +1234,95 @@
    MOBILE RESPONSIVE
 ========================================================= */
 
-@media (max-width: 575px) {
+@media (max-width: 767px) {
 
   .about-hero-section {
-    padding: 120px 0 50px 0;
+    padding: 110px 16px 55px;
+  }
+
+  .about-eyebrow {
+    font-size: 0.8rem;
+    letter-spacing: 1.5px;
   }
 
   .about-title {
-    font-size: 1.8rem;
+    font-size: 2rem;
+    letter-spacing: 0.5px;
   }
 
   .about-lead-text {
-    font-size: 1rem;
+    font-size: 0.98rem;
+    line-height: 1.6;
+  }
+
+  .story-section {
+    padding-top: 40px !important;
+    padding-bottom: 40px !important;
+  }
+
+  .story-section .container {
+    padding-top: 15px !important;
+    padding-bottom: 15px !important;
+  }
+
+  .section-heading {
+    font-size: 1.75rem;
+  }
+
+  .story-paragraph {
+    font-size: 0.95rem;
+    line-height: 1.75;
+    margin-bottom: 1rem;
+  }
+
+  .about-video-wrapper {
+    margin-top: 10px;
+  }
+
+  .about-video-wrapper video {
+    min-height: 220px;
+    max-height: 320px;
   }
 
   .capturing-moments-banner {
-    padding: 70px 0;
+    padding: 60px 16px;
   }
 
   .capturing-title {
-    font-size: 1.8rem;
+    font-size: 1.7rem;
+    letter-spacing: 1px;
   }
 
   .capturing-paragraph {
-    font-size: 1rem;
+    font-size: 0.98rem;
+    line-height: 1.75;
   }
 
   .vision-redesigned-section {
-    min-height: 400px;
+    min-height: 380px;
   }
 
   .vision-banner-overlay {
-    min-height: 400px;
+    min-height: 380px;
   }
 
   .vision-banner-title {
-    font-size: 2.2rem;
+    font-size: 2.3rem;
     letter-spacing: 2px;
   }
 
   .vision-banner-text {
     font-size: 1rem;
+    line-height: 1.7;
+  }
+
+  .excellence-card {
+    min-height: 300px;
+  }
+
+  .excellence-content {
+    max-width: 100%;
+    padding: 20px;
   }
 
   .excellence-title {
@@ -1065,6 +1331,38 @@
 
   .excellence-text {
     font-size: 0.95rem;
+    line-height: 1.6;
+  }
+
+  .mission-title {
+    font-size: 1.6rem;
+  }
+
+  .mission-text {
+    font-size: 0.98rem;
+    line-height: 1.75;
+  }
+
+  .value-item {
+    padding: 20px !important;
+  }
+
+  .value-term {
+    font-size: 1.1rem;
+  }
+
+  .value-text {
+    font-size: 0.95rem;
+    line-height: 1.7;
+  }
+
+  .values-card {
+    min-height: 300px;
+  }
+
+  .values-card-content {
+    max-width: 100%;
+    padding: 20px;
   }
 
   .values-card-title {
@@ -1075,17 +1373,36 @@
     font-size: 0.95rem;
   }
 
-  .value-text {
-    font-size: 1rem;
+  .leadership-section {
+    padding-top: 40px !important;
+    padding-bottom: 40px !important;
   }
 
-  .excellence-card,
-  .values-card {
-    min-height: 300px;
+  .leadership-image-wrapper {
+    height: 280px;
+  }
+
+  .leadership-name {
+    font-size: 1.3rem;
+  }
+
+  .leadership-description {
+    font-size: 0.9rem;
+    line-height: 1.7;
+  }
+
+  .training-experience-section {
+    padding-top: 40px !important;
+    padding-bottom: 40px !important;
   }
 
   .training-experience-intro {
     font-size: 0.95rem;
+    line-height: 1.75;
+  }
+
+  .training-category-section {
+    margin-bottom: 45px;
   }
 
   .training-category-title {
@@ -1094,6 +1411,7 @@
 
   .training-category-description {
     font-size: 0.9rem;
+    line-height: 1.65;
   }
 
   .studio-slide {
@@ -1119,16 +1437,8 @@
     height: 220px;
   }
 
-  .leadership-image-wrapper {
-    height: 250px;
-  }
-
-  .leadership-name {
-    font-size: 1.3rem;
-  }
-
-  .leadership-description {
-    font-size: 0.9rem;
+  .training-media-card {
+    border-radius: 12px;
   }
 
   .studio-slider-wrapper::before,
@@ -1148,6 +1458,231 @@
     top: 10px;
     right: 15px;
     font-size: 32px;
+  }
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 575px) {
+
+  .about-hero-section {
+    padding: 95px 14px 45px;
+  }
+
+  .about-title {
+    font-size: 1.65rem;
+    line-height: 1.25;
+  }
+
+  .about-lead-text {
+    font-size: 0.92rem;
+  }
+
+  .section-eyebrow {
+    font-size: 0.78rem;
+    letter-spacing: 1.5px;
+  }
+
+  .section-main-title {
+    font-size: 1.65rem;
+  }
+
+  .section-heading {
+    font-size: 1.6rem;
+  }
+
+  .story-paragraph {
+    font-size: 0.9rem;
+    line-height: 1.7;
+  }
+
+  .about-video-wrapper video {
+    min-height: 200px;
+    max-height: 280px;
+  }
+
+  .capturing-moments-banner {
+    padding: 50px 14px;
+  }
+
+  .capturing-title {
+    font-size: 1.45rem;
+    line-height: 1.35;
+  }
+
+  .capturing-paragraph {
+    font-size: 0.9rem;
+    line-height: 1.7;
+  }
+
+  .vision-redesigned-section {
+    min-height: 350px;
+  }
+
+  .vision-banner-overlay {
+    min-height: 350px;
+  }
+
+  .vision-banner-title {
+    font-size: 2rem;
+    letter-spacing: 1.5px;
+  }
+
+  .vision-banner-text {
+    font-size: 0.9rem;
+    line-height: 1.65;
+  }
+
+  .excellence-card {
+    min-height: 270px;
+  }
+
+  .excellence-content {
+    padding: 18px;
+  }
+
+  .excellence-title {
+    font-size: 1.35rem;
+    letter-spacing: 1px;
+  }
+
+  .excellence-text {
+    font-size: 0.9rem;
+  }
+
+  .mission-title {
+    font-size: 1.4rem;
+  }
+
+  .mission-text {
+    font-size: 0.9rem;
+    line-height: 1.7;
+  }
+
+  .value-item {
+    padding: 18px !important;
+  }
+
+  .value-term {
+    font-size: 1rem;
+  }
+
+  .value-text {
+    font-size: 0.9rem;
+  }
+
+  .leadership-image-wrapper {
+    height: 250px;
+  }
+
+  .leadership-name {
+    font-size: 1.2rem;
+  }
+
+  .leadership-role {
+    font-size: 0.9rem;
+  }
+
+  .leadership-description {
+    font-size: 0.88rem;
+  }
+
+  .training-experience-intro {
+    font-size: 0.9rem;
+  }
+
+  .training-category-title {
+    font-size: 1.2rem;
+  }
+
+  .training-category-description {
+    font-size: 0.85rem;
+  }
+
+  .studio-slide {
+    flex: 0 0 240px;
+    width: 240px;
+  }
+
+  .studio-slider {
+    gap: 14px;
+    animation-duration: 23s;
+  }
+
+  .classroom-training-grid .training-media-card {
+    height: 200px;
+  }
+
+  .student-practical-grid .training-media-card {
+    height: 210px;
+  }
+}
+
+
+/* =========================================================
+   EXTRA SMALL DEVICES
+========================================================= */
+
+@media (max-width: 400px) {
+
+  .about-hero-section {
+    padding-top: 85px;
+  }
+
+  .about-title {
+    font-size: 1.5rem;
+  }
+
+  .about-lead-text {
+    font-size: 0.88rem;
+  }
+
+  .section-heading {
+    font-size: 1.45rem;
+  }
+
+  .story-paragraph {
+    font-size: 0.87rem;
+  }
+
+  .capturing-title {
+    font-size: 1.3rem;
+  }
+
+  .vision-banner-title {
+    font-size: 1.75rem;
+  }
+
+  .vision-banner-text {
+    font-size: 0.86rem;
+  }
+
+  .excellence-card {
+    min-height: 250px;
+  }
+
+  .excellence-title {
+    font-size: 1.2rem;
+  }
+
+  .excellence-text {
+    font-size: 0.85rem;
+  }
+
+  .mission-text {
+    font-size: 0.86rem;
+  }
+
+  .studio-slide {
+    flex: 0 0 220px;
+    width: 220px;
+  }
+
+  .training-media-card {
+    border-radius: 10px;
   }
 }
 
@@ -1179,3 +1714,4 @@
     transition: none;
   }
 }
+

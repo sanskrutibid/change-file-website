@@ -1,42 +1,36 @@
- /* =========================================================
-   NAVBAR - BASE
-   ========================================================= */
-
-.fixed-top {
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  z-index: 1030;
-}
-
-.transparent-nav,
-.scrolled-nav {
-  width: 100%;
-  background-color: #ffffff;
-  border-bottom: 1px solid #e2e8f0;
-  display: flex;
-  align-items: center;
-}
-
-.transparent-nav {
-  padding: 0.55rem 0;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.03);
-}
-
-.scrolled-nav {
-  padding: 0.4rem 0;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.07);
-}
-
-
 /* =========================================================
-   MAIN NAVBAR CONTAINER
+   CRUISE LENS ACADEMY - HEADER
    ========================================================= */
 
-.transparent-nav .container,
-.scrolled-nav .container {
+
+/* ================= MAIN NAVBAR ================= */
+
+.cla-navbar {
   width: 100%;
+  min-height: 86px;
+  background: #ffffff;
+  border-bottom: 1px solid #e2e8f0;
+  padding: 0;
+  position: relative;
+  z-index: 1050;
+}
+
+
+/* ================= NAVBAR CONTAINER ================= */
+
+.cla-navbar-container {
+  width: 100%;
+  min-height: 86px;
+
   display: flex;
   align-items: center;
-  flex-wrap: nowrap;
+
+  padding-left: 18px;
+  padding-right: 18px;
+
+  /* IMPORTANT:
+     Prevent children from overlapping each other */
+  gap: 0;
 }
 
 
@@ -44,85 +38,116 @@
    LOGO + BRAND
    ========================================================= */
 
-.navbar-brand {
+.cla-brand {
   display: flex !important;
-  align-items: center;
+  align-items: center !important;
+  justify-content: flex-start;
+
+  /* IMPORTANT:
+     Brand keeps its own horizontal space */
+  flex: 0 0 auto;
   flex-shrink: 0;
-  margin-right: 1rem;
-  padding: 0 !important;
+
+  height: 86px;
+
+  margin: 0;
+  padding: 0;
+
   text-decoration: none;
+
+  /* Prevent brand from getting underneath navigation */
+  position: relative;
+  z-index: 2;
 }
 
-.logo {
-  height: 46px;
-  width: auto;
+
+/* Logo */
+
+.cla-logo {
+  width: 48px;
+  height: 62px;
+
   object-fit: contain;
+
   display: block;
+
+  margin-right: 12px;
+
   flex-shrink: 0;
-  transition: height 0.3s ease;
 }
 
-.scrolled-nav .logo {
-  height: 40px;
-}
 
-.brand-text-container {
+/* Brand text wrapper */
+
+.cla-brand-text {
   display: flex;
   flex-direction: column;
+
   justify-content: center;
-  line-height: 1.1;
-  white-space: nowrap;
+  align-items: flex-start;
+
+  line-height: 1;
+
+  /* IMPORTANT */
+  flex-shrink: 0;
 }
 
-.brand-text {
-  font-size: 1.08rem;
+
+/* Brand name */
+
+.cla-brand .brand-text {
+  display: block;
+
+  font-size: 1.35rem;
   font-weight: 800;
-  color: var(--gold-accent);
-  letter-spacing: 0.35px;
+
+  color: #d97706;
+
   text-transform: uppercase;
-  font-family: 'Poppins', sans-serif;
+
   white-space: nowrap;
+
+  letter-spacing: 0.2px;
 }
 
-.brand-tagline {
-  font-size: 0.56rem;
+
+/* Tagline */
+
+.cla-brand .brand-tagline {
+  display: block;
+
+  margin-top: 5px;
+
+  font-size: 0.67rem;
   font-weight: 700;
-  color: var(--primary-navy);
-  letter-spacing: 0.65px;
+
+  color: #0f172a;
+
+  letter-spacing: 1px;
+
   text-transform: uppercase;
-  margin-top: 2px;
+
   white-space: nowrap;
-}
-
-
-/* =========================================================
-   NAVBAR TOGGLER
-   ========================================================= */
-
-.navbar-toggler {
-  display: none;
-  border: 1px solid #cbd5e1 !important;
-  box-shadow: none !important;
-}
-
-.navbar-toggler-icon {
-  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='%230f294a' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E") !important;
 }
 
 
 /* =========================================================
    NAVBAR COLLAPSE
-   FORCE HORIZONTAL DESKTOP ROW
    ========================================================= */
 
-.navbar-collapse {
-  display: flex !important;
+.cla-navbar-collapse {
+  display: flex;
   align-items: center;
-  justify-content: flex-end;
+
+  /*
+    IMPORTANT:
+    Navigation gets remaining available space,
+    but cannot overlap the brand.
+  */
   flex: 1 1 auto;
-  width: auto;
   min-width: 0;
-  flex-basis: auto !important;
+
+  margin-left: 18px;
 }
 
 
@@ -130,151 +155,157 @@
    NAVIGATION LINKS
    ========================================================= */
 
-.navbar-nav {
-  display: flex !important;
-  flex-direction: row !important;
+.cla-nav-links {
+  display: flex;
+
   align-items: center;
-  justify-content: flex-end;
-  flex-wrap: nowrap !important;
-  gap: 0;
-  margin: 0 !important;
+
+  /*
+    IMPORTANT:
+    Start navigation after the brand instead of
+    centering it over the brand.
+  */
+  justify-content: flex-start;
+
+  gap: 2px;
+
+  margin: 0;
   padding: 0;
+
+  white-space: nowrap;
+
+  flex: 0 1 auto;
+
   min-width: 0;
 }
 
-.navbar-nav .nav-item {
-  position: relative;
+
+/* Nav item */
+
+.cla-nav-links .nav-item {
+  display: flex;
+  align-items: center;
+
   flex-shrink: 0;
-  white-space: nowrap;
 }
 
-.navbar-nav .nav-link {
-  color: var(--primary-navy) !important;
+
+/* Nav link */
+
+.cla-nav-links .nav-link {
+  position: relative;
+
+  display: flex;
+  align-items: center;
+
+  height: 86px;
+
+  /*
+    Reduced horizontal padding slightly
+    to prevent crowding.
+  */
+  padding: 0 8px !important;
+
+  font-size: 0.98rem;
   font-weight: 600;
-  font-size: 0.79rem;
-  padding: 0.45rem 0.48rem !important;
-  position: relative;
+
+  color: #0f172a;
+
   white-space: nowrap;
-  transition: all 0.2s ease-in-out;
+
+  transition: color 0.2s ease;
+
+  flex-shrink: 0;
 }
 
 
-/* =========================================================
-   NAV LINK HOVER / ACTIVE
-   ========================================================= */
+/* Hover */
 
-.navbar-nav .nav-link::after {
-  content: '';
-  position: absolute;
-  bottom: 1px;
-  left: 50%;
-  width: 0;
-  height: 2px;
-  background-color: var(--gold-accent);
-  transform: translateX(-50%);
-  border-radius: 2px;
-  transition: width 0.25s ease;
-}
-
-.navbar-nav .nav-link:hover,
-.navbar-nav .nav-link.active {
-  color: var(--gold-accent) !important;
-}
-
-.navbar-nav .nav-link:hover::after,
-.navbar-nav .nav-link.active::after {
-  width: 60%;
+.cla-nav-links .nav-link:hover {
+  color: #d97706;
 }
 
 
-/* =========================================================
-   PROGRAMS DROPDOWN
-   ========================================================= */
+/* Active */
 
-.nav-item.dropdown {
-  position: relative;
+.cla-nav-links .nav-link.active {
+  color: #d97706;
 }
 
-.navbar-nav .nav-link.dropdown-toggle::after {
+
+/* Active underline */
+
+.cla-nav-links .nav-link.active::after {
   content: "";
-  position: static;
-  display: inline-block;
-  width: 0;
-  height: 0;
-  margin-left: 0.3rem;
-  vertical-align: 0.2em;
-  background: transparent;
-  transform: none;
-  border-top: 0.3em solid;
-  border-right: 0.3em solid transparent;
-  border-bottom: 0;
-  border-left: 0.3em solid transparent;
-}
 
-
-/* Dropdown */
-
-.dropdown-menu {
   position: absolute;
-  top: 100%;
-  left: 0;
-  z-index: 1050;
 
-  min-width: 280px;
-  padding: 8px 0;
-  margin-top: 8px !important;
+  left: 8px;
+  right: 8px;
 
-  background-color: #ffffff;
-  border: 1px solid #e2e8f0 !important;
-  border-radius: 8px;
+  bottom: 10px;
 
-  box-shadow: 0 10px 25px rgba(15, 41, 74, 0.12) !important;
+  height: 3px;
 
-  animation: fadeIn 0.2s ease-in-out;
-}
+  background: #d97706;
 
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(6px);
-  }
-
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-.dropdown-item {
-  color: var(--primary-navy);
-  font-weight: 500;
-  font-size: 0.84rem;
-  padding: 0.6rem 1.2rem;
-  white-space: nowrap;
-  transition: all 0.2s ease;
-}
-
-.dropdown-item:hover {
-  background-color: #f8fafc;
-  color: var(--gold-accent);
-  font-weight: 600;
-  padding-left: 1.4rem;
+  border-radius: 2px;
 }
 
 
 /* =========================================================
-   ACTION GROUP
-   MSU + SKILL INDIA + APPLY
+   PROGRAM DROPDOWN
    ========================================================= */
 
-.action-group {
-  display: flex !important;
-  flex-direction: row !important;
+.cla-nav-links .dropdown-menu {
+  margin-top: 0;
+
+  min-width: 250px;
+
+  border-radius: 6px;
+
+  padding: 8px 0;
+}
+
+
+.cla-nav-links .dropdown-item {
+  padding: 10px 18px;
+
+  font-size: 0.88rem;
+  font-weight: 500;
+
+  color: #0f172a;
+}
+
+
+.cla-nav-links .dropdown-item:hover {
+  background: #f8fafc;
+
+  color: #d97706;
+}
+
+
+/* =========================================================
+   RIGHT HEADER ACTION AREA
+   ========================================================= */
+
+.cla-header-actions {
+  display: flex;
+
   align-items: center;
   justify-content: flex-end;
+
+  /*
+    IMPORTANT:
+    Action section always stays separate
+    from navigation.
+  */
+  flex: 0 0 auto;
   flex-shrink: 0;
-  white-space: nowrap;
-  margin-left: 0.7rem;
+
+  margin-left: 12px;
+
+  height: 86px;
 }
 
 
@@ -284,42 +315,73 @@
 
 .partner-lockup {
   display: flex;
+
   align-items: center;
   justify-content: center;
+
+  height: 64px;
+
+  margin-right: 12px;
+
   flex-shrink: 0;
-  padding: 0;
-  white-space: nowrap;
 }
+
+
+/* Vertical divider */
 
 .partner-divider {
   width: 1px;
-  height: 42px;
-  background-color: #cbd5e1;
-  border-radius: 1px;
+
+  height: 54px;
+
+  background: #cbd5e1;
+
   flex-shrink: 0;
 }
 
 
 /* =========================================================
-   MSU
+   MSU PARTNER
    ========================================================= */
 
-.msu-logo {
-  width: 105px;
-  height: auto;
-  max-height: 42px;
-  object-fit: contain;
-  display: block;
+.msu-partner {
+  height: 64px;
+
+  display: flex;
+  flex-direction: column;
+
+  align-items: center;
+  justify-content: center;
+
+  padding: 0 12px;
+
+  flex-shrink: 0;
 }
 
+
 .msu-association {
-  font-size: 0.51rem;
-  line-height: 1.15;
+  display: block;
+
+  font-size: 0.65rem;
   font-weight: 700;
-  color: var(--primary-navy);
-  letter-spacing: 0.2px;
+
+  color: #0f172a;
+
+  line-height: 1.1;
+
   white-space: nowrap;
-  margin-bottom: 3px;
+
+  margin-bottom: 4px;
+}
+
+
+.msu-logo {
+  width: 58px;
+  height: 42px;
+
+  object-fit: contain;
+
+  display: block;
 }
 
 
@@ -328,74 +390,114 @@
    ========================================================= */
 
 .skill-india-box {
+  height: 64px;
+
   display: flex;
+
   align-items: center;
   justify-content: center;
+
+  padding: 0 12px;
+
   flex-shrink: 0;
 }
 
-.skill-india-logo {
-  height: 48px;
-  width: auto;
-  max-width: 105px;
-  object-fit: contain;
-  transition: transform 0.2s ease;
-}
 
-.skill-india-logo:hover {
-  transform: scale(1.04);
+.skill-india-logo {
+  width: 72px;
+  height: 48px;
+
+  object-fit: contain;
+
+  display: block;
 }
 
 
 /* =========================================================
-   APPLY NOW
+   APPLY BUTTON
    ========================================================= */
 
 .apply-container {
   display: flex;
+
   flex-direction: column;
+
   align-items: center;
   justify-content: center;
+
   flex-shrink: 0;
-  margin-left: 0.5rem;
+
+  min-width: 165px;
 }
 
-.cta-btn.apply-btn {
-  display: flex;
-  align-items: center;
-  justify-content: center;
 
-  font-size: 0.75rem;
-  font-weight: 700;
+.apply-btn {
+  min-width: 165px;
+  height: 42px;
 
-  padding: 7px 12px !important;
+  display: flex !important;
 
-  text-transform: uppercase;
-  letter-spacing: 0.4px;
+  align-items: center !important;
+  justify-content: center !important;
 
-  border-radius: 6px;
+  gap: 10px;
+
+  padding: 0 16px !important;
+
+  border-radius: 9px;
+
+  font-size: 0.88rem;
+  font-weight: 800;
+
+  text-decoration: none;
 
   white-space: nowrap;
-
-  box-shadow: 0 3px 10px rgba(217, 119, 6, 0.25);
-
-  transition: all 0.25s ease;
 }
 
-.cta-btn.apply-btn:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 6px 16px rgba(217, 119, 6, 0.35);
-  background-color: var(--gold-accent-hover);
+
+.apply-btn i {
+  font-size: 1rem;
+
+  transition: transform 0.2s ease;
 }
+
+
+.apply-btn:hover i {
+  transform: translateX(3px);
+}
+
+
+/* Limited seats */
 
 .limited-seats-text {
-  font-size: 0.47rem;
-  color: var(--text-muted-dark);
+  margin-top: 4px;
+
+  font-size: 0.58rem;
+
   font-weight: 700;
-  margin-top: 3px;
-  letter-spacing: 0.35px;
+
+  color: #64748b;
+
   text-transform: uppercase;
+
+  letter-spacing: 0.4px;
+
   white-space: nowrap;
+}
+
+
+/* =========================================================
+   MOBILE TOGGLER
+   ========================================================= */
+
+.navbar-toggler {
+  margin-left: auto;
+
+  border: none !important;
+
+  outline: none !important;
+
+  box-shadow: none !important;
 }
 
 
@@ -406,30 +508,29 @@
 
 @media (min-width: 1400px) {
 
-  .navbar-brand {
-    margin-right: 1.25rem;
+  .cla-navbar-container {
+    padding-left: 18px;
+    padding-right: 18px;
   }
 
-  .brand-text {
-    font-size: 1.15rem;
+  /*
+    Keep brand completely separate from navigation.
+  */
+  .cla-navbar-collapse {
+    margin-left: 24px;
   }
 
-  .navbar-nav .nav-link {
-    font-size: 0.84rem;
-    padding-left: 0.58rem !important;
-    padding-right: 0.58rem !important;
+  .cla-nav-links {
+    gap: 2px;
   }
 
-  .action-group {
-    margin-left: 1rem;
+  .cla-nav-links .nav-link {
+    padding-left: 8px !important;
+    padding-right: 8px !important;
   }
 
-  .msu-logo {
-    width: 115px;
-  }
-
-  .skill-india-logo {
-    height: 52px;
+  .cla-header-actions {
+    margin-left: 12px;
   }
 
 }
@@ -437,69 +538,76 @@
 
 /* =========================================================
    1200px - 1399px
-   STILL ONE HORIZONTAL ROW
    ========================================================= */
 
 @media (min-width: 1200px) and (max-width: 1399px) {
 
-  .transparent-nav {
-    padding: 0.45rem 0;
+  .cla-navbar-container {
+    padding-left: 15px;
+    padding-right: 15px;
   }
 
-  .scrolled-nav {
-    padding: 0.35rem 0;
+  .cla-brand .brand-text {
+    font-size: 1.18rem;
   }
 
-  .logo {
-    height: 42px;
+  .cla-brand .brand-tagline {
+    font-size: 0.58rem;
   }
 
-  .brand-text {
-    font-size: 0.98rem;
+  .cla-logo {
+    width: 44px;
+    height: 58px;
+
+    margin-right: 9px;
   }
 
-  .brand-tagline {
-    font-size: 0.52rem;
+  /*
+    Slightly smaller gap between brand and menu.
+  */
+  .cla-navbar-collapse {
+    margin-left: 12px;
   }
 
-  .navbar-brand {
-    margin-right: 0.7rem;
+  .cla-nav-links {
+    gap: 0;
   }
 
-  .navbar-nav .nav-link {
-    font-size: 0.72rem;
-    padding-left: 0.34rem !important;
-    padding-right: 0.34rem !important;
+  .cla-nav-links .nav-link {
+    padding-left: 6px !important;
+    padding-right: 6px !important;
+
+    font-size: 0.86rem;
   }
 
-  .action-group {
-    margin-left: 0.45rem;
+  .cla-nav-links .nav-link.active::after {
+    left: 6px;
+    right: 6px;
   }
 
-  .msu-logo {
-    width: 95px;
+  .cla-header-actions {
+    margin-left: 7px;
   }
 
-  .skill-india-logo {
-    height: 43px;
-    max-width: 95px;
+  .partner-lockup {
+    margin-right: 7px;
   }
 
-  .partner-divider {
-    height: 36px;
+  .msu-partner {
+    padding: 0 8px;
   }
 
-  .msu-association {
-    font-size: 0.46rem;
+  .skill-india-box {
+    padding: 0 8px;
   }
 
-  .cta-btn.apply-btn {
-    font-size: 0.68rem;
-    padding: 6px 10px !important;
+  .apply-container,
+  .apply-btn {
+    min-width: 145px;
   }
 
-  .limited-seats-text {
-    font-size: 0.43rem;
+  .apply-btn {
+    font-size: 0.82rem;
   }
 
 }
@@ -507,58 +615,94 @@
 
 /* =========================================================
    992px - 1199px
-   ONE HORIZONTAL HEADER
-   PARTNER LOGOS HIDDEN TO MAKE SPACE
+   DESKTOP / SMALL LAPTOP
    ========================================================= */
 
 @media (min-width: 992px) and (max-width: 1199px) {
 
-  .transparent-nav {
-    padding: 0.45rem 0;
+  .cla-navbar {
+    min-height: 76px;
   }
 
-  .scrolled-nav {
-    padding: 0.35rem 0;
+  .cla-navbar-container {
+    min-height: 76px;
+
+    padding-left: 12px;
+    padding-right: 12px;
   }
 
-  .logo {
-    height: 40px;
+  .cla-brand {
+    height: 76px;
   }
 
-  .brand-text {
-    font-size: 0.92rem;
+  .cla-logo {
+    width: 40px;
+    height: 53px;
+
+    margin-right: 7px;
   }
 
-  .brand-tagline {
-    font-size: 0.49rem;
+  .cla-brand .brand-text {
+    font-size: 1rem;
   }
 
-  .navbar-brand {
-    margin-right: 0.45rem;
-  }
-
-  .navbar-nav .nav-link {
-    font-size: 0.68rem;
-    padding-left: 0.28rem !important;
-    padding-right: 0.28rem !important;
+  .cla-brand .brand-tagline {
+    font-size: 0.51rem;
+    letter-spacing: 0.7px;
   }
 
   /*
-    Hide partner logos only on this narrower desktop range.
-    Navigation itself remains horizontal.
+    Keep menu separated from brand.
   */
+  .cla-navbar-collapse {
+    margin-left: 8px;
+  }
 
+  .cla-nav-links {
+    gap: 0;
+  }
+
+  .cla-nav-links .nav-link {
+    height: 76px;
+
+    padding-left: 4px !important;
+    padding-right: 4px !important;
+
+    font-size: 0.73rem;
+  }
+
+  .cla-nav-links .nav-link.active::after {
+    left: 4px;
+    right: 4px;
+
+    bottom: 8px;
+  }
+
+  /*
+    Hide partner logos if screen is too narrow.
+    This prevents the menu from overlapping.
+  */
   .partner-lockup {
     display: none !important;
   }
 
-  .action-group {
-    margin-left: 0.35rem;
+  .cla-header-actions {
+    height: 76px;
+
+    margin-left: 5px;
   }
 
-  .cta-btn.apply-btn {
-    font-size: 0.67rem;
-    padding: 6px 9px !important;
+  .apply-container,
+  .apply-btn {
+    min-width: 120px;
+  }
+
+  .apply-btn {
+    height: 38px;
+
+    padding: 0 10px !important;
+
+    font-size: 0.72rem;
   }
 
   .limited-seats-text {
@@ -569,141 +713,206 @@
 
 
 /* =========================================================
-   MOBILE
+   TABLET / MOBILE
    BELOW 992px
    ========================================================= */
 
 @media (max-width: 991px) {
 
-  .transparent-nav {
-    padding: 0.6rem 0;
+  .cla-navbar {
+    min-height: 76px;
   }
 
-  .scrolled-nav {
-    padding: 0.45rem 0;
+  .cla-navbar-container {
+    min-height: 76px;
+
+    padding-left: 15px;
+    padding-right: 15px;
+
+    /*
+      Mobile uses normal wrapping.
+    */
+    flex-wrap: wrap;
+  }
+
+  .cla-brand {
+    height: 76px;
+  }
+
+  .cla-logo {
+    width: 43px;
+    height: 55px;
+  }
+
+  .cla-brand .brand-text {
+    font-size: 1.15rem;
+  }
+
+  .cla-brand .brand-tagline {
+    font-size: 0.58rem;
   }
 
 
-  /* Show hamburger */
+  /* =======================================================
+     MOBILE NAVBAR COLLAPSE
+     ======================================================= */
 
-  .navbar-toggler {
-    display: block;
-    margin-left: auto;
-    flex-shrink: 0;
-  }
+  .cla-navbar-collapse {
+    display: none;
 
-
-  /* Collapse becomes full-width mobile menu */
-
-  .navbar-collapse {
-    display: none !important;
     width: 100%;
-    flex-basis: 100% !important;
+
+    flex: 0 0 100%;
+
+    margin-left: 0;
+
     flex-direction: column;
+
     align-items: stretch;
-    background-color: #ffffff;
-    margin-top: 12px;
-    padding: 12px 0 18px;
+
+    background: #ffffff;
+
     border-top: 1px solid #e2e8f0;
-    border-radius: 0 0 10px 10px;
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+
+    padding: 10px 0 18px;
+
+    order: 3;
   }
 
 
   /*
-    Bootstrap adds .show when hamburger is clicked.
-    Make the menu visible only when expanded.
+    Bootstrap .show
   */
 
-  .navbar-collapse.show {
-    display: flex !important;
+  .cla-navbar-collapse.show {
+    display: flex;
   }
 
 
-  /* Mobile nav */
+  /* =======================================================
+     MOBILE NAV LINKS
+     ======================================================= */
 
-  .navbar-nav {
+  .cla-nav-links {
     width: 100%;
-    display: flex !important;
-    flex-direction: column !important;
+
+    display: flex;
+
+    flex-direction: column;
+
     align-items: stretch;
+
+    justify-content: flex-start;
+
+    gap: 0;
+
+    padding: 10px 0;
   }
 
-  .navbar-nav .nav-item {
+
+  .cla-nav-links .nav-item {
+    display: block;
+
     width: 100%;
   }
 
-  .navbar-nav .nav-link {
+
+  .cla-nav-links .nav-link {
+    height: auto;
+
     width: 100%;
-    text-align: center;
-    padding: 0.75rem 1rem !important;
-    border-bottom: 1px solid #f1f5f9;
+
+    padding: 11px 15px !important;
+
     font-size: 0.9rem;
+
+    justify-content: center;
+
+    text-align: center;
   }
 
-  .navbar-nav .nav-link::after {
+
+  .cla-nav-links .nav-link.active::after {
     display: none;
   }
 
 
-  /* Mobile dropdown */
+  /* =======================================================
+     MOBILE DROPDOWN
+     ======================================================= */
 
-  .dropdown-menu {
+  .cla-nav-links .dropdown-menu {
     position: static !important;
+
     width: 100%;
+
     min-width: 100%;
-    margin-top: 0 !important;
+
+    margin: 0 !important;
+
     padding: 5px 0;
 
     text-align: center;
 
-    background-color: #f8fafc;
+    background: #f8fafc;
 
-    border: none !important;
+    border: none;
+
+    box-shadow: none;
+
     border-radius: 0;
-
-    box-shadow: none !important;
-
-    animation: none;
   }
 
-  .dropdown-item {
-    white-space: normal;
-    padding: 0.65rem 1rem;
+
+  .cla-nav-links .dropdown-item {
+    padding: 10px 15px;
+
     font-size: 0.84rem;
+
+    white-space: normal;
   }
 
 
-  /* Mobile action group */
+  /* =======================================================
+     MOBILE HEADER ACTIONS
+     ======================================================= */
 
-  .action-group {
+  .cla-header-actions {
     width: 100%;
-    flex-direction: column !important;
+
+    height: auto;
+
+    flex-direction: column;
+
     justify-content: center;
+
     align-items: center;
-    gap: 12px;
-    margin: 15px 0 0 !important;
+
+    margin: 0;
+
+    padding: 10px 0 20px;
+
+    order: 4;
   }
 
-
-  /* Show partners on mobile */
 
   .partner-lockup {
-    display: flex !important;
-    justify-content: center;
+    display: none !important;
   }
 
-
-  /* Apply button */
 
   .apply-container {
+    min-width: auto;
+
     width: 100%;
-    margin-left: 0;
   }
 
-  .cta-btn.apply-btn {
+
+  .apply-btn {
     width: 90%;
+
     max-width: 320px;
+
     justify-content: center;
   }
 
@@ -716,36 +925,30 @@
 
 @media (max-width: 575px) {
 
-  .logo {
-    height: 38px !important;
-    margin-right: 8px !important;
+  .cla-navbar-container {
+    padding-left: 10px;
+    padding-right: 10px;
   }
 
-  .brand-text {
-    font-size: 0.9rem !important;
-    letter-spacing: 0.2px;
+  .cla-logo {
+    width: 38px;
+    height: 50px;
+
+    margin-right: 7px;
   }
 
-  .brand-tagline {
-    font-size: 0.5rem !important;
-    letter-spacing: 0.3px !important;
+  .cla-brand .brand-text {
+    font-size: 0.95rem;
+
+    letter-spacing: 0;
   }
 
-  .partner-lockup {
-    transform: scale(0.9);
-  }
+  .cla-brand .brand-tagline {
+    font-size: 0.48rem;
 
-  .msu-logo {
-    width: 95px;
-  }
+    letter-spacing: 0.6px;
 
-  .skill-india-logo {
-    height: 44px;
-    max-width: 95px;
-  }
-
-  .partner-divider {
-    height: 34px;
+    margin-top: 4px;
   }
 
 }
@@ -757,16 +960,17 @@
 
 @media (max-width: 400px) {
 
-  .logo {
-    height: 34px !important;
+  .cla-logo {
+    width: 34px;
+    height: 46px;
   }
 
-  .brand-text {
-    font-size: 0.8rem !important;
+  .cla-brand .brand-text {
+    font-size: 0.82rem !important;
   }
 
-  .brand-tagline {
-    font-size: 0.45rem !important;
+  .cla-brand .brand-tagline {
+    font-size: 0.43rem !important;
   }
 
   .navbar-toggler {
