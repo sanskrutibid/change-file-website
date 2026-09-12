@@ -60,6 +60,21 @@ export class ApplyNowComponent implements OnInit {
   customAmount = 0;
 
   // ============================================================
+  // BANK DETAILS MODAL (UPI / IMPS / NEFT / RTGS)
+  // ============================================================
+
+  showBankDetails = false;
+
+  bankDetails = {
+    accountHolderName: 'Your Company Pvt Ltd',   // TODO: replace with real value
+    bankName: 'HDFC Bank',                        // TODO: replace with real value
+    accountNumber: '000000000000',                // TODO: replace with real value
+    ifscCode: 'HDFC0000000',                      // TODO: replace with real value
+    upiId: 'yourcompany@hdfcbank',                // TODO: replace with real value
+    qrCodeUrl: ''                                  // TODO: set to your real QR image path, e.g. '/assets/images/upi-qr.png'
+  };
+
+  // ============================================================
   // LOADING
   // ============================================================
 
@@ -295,6 +310,25 @@ export class ApplyNowComponent implements OnInit {
   get paymentAmountWithProcessingFee(): number {
 
     return this.paymentAmount + this.processingFee;
+
+  }
+
+  // ============================================================
+  // IS CUSTOM AMOUNT INVALID (for template error/disabled states)
+  // ============================================================
+
+  get isCustomAmountInvalid(): boolean {
+
+    if (
+      this.paymentMode !== 'c1_custom' &&
+      this.paymentMode !== 'c2_custom'
+    ) {
+
+      return false;
+
+    }
+
+    return !this.customAmount || this.customAmount < 5000;
 
   }
 
@@ -1128,6 +1162,75 @@ export class ApplyNowComponent implements OnInit {
 
     checkArray.markAsTouched();
     checkArray.updateValueAndValidity();
+
+  }
+
+  // ============================================================
+  // BANK DETAILS MODAL (UPI / IMPS / NEFT / RTGS)
+  // ============================================================
+
+  openBankDetails(): void {
+
+    this.showBankDetails = true;
+
+  }
+
+  closeBankDetails(): void {
+
+    this.showBankDetails = false;
+
+  }
+
+  copyToClipboard(value: string): void {
+
+    navigator.clipboard
+      ?.writeText(value)
+      .catch(err => {
+
+        console.error(
+          'Copy failed:',
+          err
+        );
+
+      });
+
+  }
+
+  downloadBankDetails(): void {
+
+    // Lightweight client-side download so the button works today.
+    // Swap this for a call to a backend endpoint that returns a
+    // branded PDF whenever that's ready.
+
+    const lines = [
+
+      'Bank & Payment Details',
+      '------------------------------',
+      `Account Holder Name: ${this.bankDetails.accountHolderName}`,
+      `Bank Name: ${this.bankDetails.bankName}`,
+      `Account Number: ${this.bankDetails.accountNumber}`,
+      `IFSC Code: ${this.bankDetails.ifscCode}`,
+      `UPI ID: ${this.bankDetails.upiId}`
+
+    ].join('\n');
+
+    const blob =
+      new Blob(
+        [lines],
+        { type: 'text/plain' }
+      );
+
+    const url =
+      window.URL.createObjectURL(blob);
+
+    const link =
+      document.createElement('a');
+
+    link.href = url;
+    link.download = 'bank-payment-details.txt';
+    link.click();
+
+    window.URL.revokeObjectURL(url);
 
   }
 

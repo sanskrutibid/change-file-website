@@ -1156,6 +1156,23 @@
         </div>
 
 
+        <!-- PROCESSING FEE NOTICE (point 26) -->
+        <div class="fee-notice">
+
+          <span class="fee-icon">
+            !
+          </span>
+
+          <p>
+            Note: An additional
+            <strong>2.5%</strong>
+            will be added towards online payment processing fees.
+            This is shown in your payment summary below before you proceed.
+          </p>
+
+        </div>
+
+
         <!-- PAYMENT OPTIONS -->
         <div class="payment-options">
 
@@ -1200,7 +1217,7 @@
           </button>
 
 
-          <!-- BALANCE -->
+          <!-- BALANCE (auto-calculated per point 25, option 2) -->
           <button
             type="button"
             class="payment-option"
@@ -1246,7 +1263,7 @@
           </button>
 
 
-          <!-- CUSTOM -->
+          <!-- CUSTOM (point 25, option 3) -->
           <button
             type="button"
             class="payment-option"
@@ -1277,6 +1294,10 @@
                 Choose an amount of at least ₹5,000.
               </small>
 
+            </span>
+
+            <span class="payment-amount">
+              Custom
             </span>
 
           </button>
@@ -1316,8 +1337,15 @@
 
           </div>
 
-          <small>
-            Minimum payment amount: ₹5,000
+          <small
+            [class.error]="customAmount > 0 && customAmount < 5000"
+          >
+            <ng-container *ngIf="!(customAmount > 0 && customAmount < 5000)">
+              Minimum payment amount: ₹5,000
+            </ng-container>
+            <ng-container *ngIf="customAmount > 0 && customAmount < 5000">
+              Amount must be at least ₹5,000.
+            </ng-container>
           </small>
 
         </div>
@@ -1376,6 +1404,33 @@
         </div>
 
 
+        <!-- UPI / IMPS / NEFT / RTGS (point 27) -->
+        <div class="alt-payment">
+
+          <div class="alt-payment-info">
+
+            <strong>
+              Prefer a direct bank transfer?
+            </strong>
+
+            <span>
+              Pay via UPI, IMPS, NEFT or RTGS using our bank details,
+              then share the transaction reference with us.
+            </span>
+
+          </div>
+
+          <button
+            type="button"
+            class="btn-bank-details"
+            (click)="openBankDetails()"
+          >
+            Download Bank &amp; Payment Details
+          </button>
+
+        </div>
+
+
         <!-- SECURITY NOTE -->
         <div class="secure-payment">
 
@@ -1416,7 +1471,11 @@
             type="button"
             class="btn btn-payment"
             (click)="proceedToPayment()"
-            [disabled]="isLoading || !paymentMode"
+            [disabled]="
+              isLoading ||
+              !paymentMode ||
+              isCustomAmountInvalid
+            "
           >
 
             <span
@@ -1449,6 +1508,149 @@
     </div>
 
   </main>
+
+
+  <!-- ==========================================================
+       BANK DETAILS MODAL (point 27)
+  =========================================================== -->
+
+  <div
+    class="bank-modal-overlay"
+    *ngIf="showBankDetails"
+    (click)="closeBankDetails()"
+  >
+
+    <div
+      class="bank-modal"
+      (click)="$event.stopPropagation()"
+    >
+
+      <div class="bank-modal-header">
+
+        <div>
+
+          <h3>
+            Bank &amp; Payment Details
+          </h3>
+
+          <p>
+            Use these details to pay via UPI, IMPS, NEFT or RTGS.
+          </p>
+
+        </div>
+
+        <button
+          type="button"
+          class="bank-modal-close"
+          (click)="closeBankDetails()"
+          aria-label="Close"
+        >
+          ×
+        </button>
+
+      </div>
+
+      <div class="bank-modal-body">
+
+        <div class="bank-detail-row">
+          <span>Account Holder Name</span>
+          <strong>{{ bankDetails.accountHolderName }}</strong>
+        </div>
+
+        <div class="bank-detail-row">
+          <span>Bank Name</span>
+          <strong>{{ bankDetails.bankName }}</strong>
+        </div>
+
+        <div class="bank-detail-row">
+          <span>Account Number</span>
+          <strong>
+            {{ bankDetails.accountNumber }}
+            <button
+              type="button"
+              class="bank-detail-copy"
+              (click)="copyToClipboard(bankDetails.accountNumber)"
+            >
+              Copy
+            </button>
+          </strong>
+        </div>
+
+        <div class="bank-detail-row">
+          <span>IFSC Code</span>
+          <strong>
+            {{ bankDetails.ifscCode }}
+            <button
+              type="button"
+              class="bank-detail-copy"
+              (click)="copyToClipboard(bankDetails.ifscCode)"
+            >
+              Copy
+            </button>
+          </strong>
+        </div>
+
+        <div class="bank-detail-row">
+          <span>UPI ID</span>
+          <strong>
+            {{ bankDetails.upiId }}
+            <button
+              type="button"
+              class="bank-detail-copy"
+              (click)="copyToClipboard(bankDetails.upiId)"
+            >
+              Copy
+            </button>
+          </strong>
+        </div>
+
+        <div class="qr-code-block">
+
+          <img
+            *ngIf="bankDetails.qrCodeUrl"
+            [src]="bankDetails.qrCodeUrl"
+            alt="Scan to pay via UPI"
+          />
+
+          <div
+            class="qr-code-placeholder"
+            *ngIf="!bankDetails.qrCodeUrl"
+          >
+            QR code will appear here
+          </div>
+
+          <small>
+            Scan with any UPI app to pay directly
+          </small>
+
+        </div>
+
+      </div>
+
+      <div class="bank-modal-footer">
+
+        <button
+          type="button"
+          class="btn btn-secondary"
+          style="flex: 1;"
+          (click)="closeBankDetails()"
+        >
+          Close
+        </button>
+
+        <button
+          type="button"
+          class="btn-download-details"
+          (click)="downloadBankDetails()"
+        >
+          Download as PDF
+        </button>
+
+      </div>
+
+    </div>
+
+  </div>
 
 
   <!-- ==========================================================
