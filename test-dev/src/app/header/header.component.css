@@ -8,9 +8,12 @@
 .cla-navbar {
   width: 100%;
   min-height: 86px;
+
   background: #ffffff;
   border-bottom: 1px solid #e2e8f0;
+
   padding: 0;
+
   position: relative;
   z-index: 1050;
 }
@@ -28,8 +31,6 @@
   padding-left: 18px;
   padding-right: 18px;
 
-  /* IMPORTANT:
-     Prevent children from overlapping each other */
   gap: 0;
 }
 
@@ -43,8 +44,6 @@
   align-items: center !important;
   justify-content: flex-start;
 
-  /* IMPORTANT:
-     Brand keeps its own horizontal space */
   flex: 0 0 auto;
   flex-shrink: 0;
 
@@ -55,19 +54,19 @@
 
   text-decoration: none;
 
-  /* Prevent brand from getting underneath navigation */
   position: relative;
   z-index: 2;
 }
 
 
-/* Logo */
+/* ================= CLA LOGO ================= */
 
 .cla-logo {
   width: 48px;
   height: 62px;
 
   object-fit: contain;
+  object-position: center;
 
   display: block;
 
@@ -77,10 +76,11 @@
 }
 
 
-/* Brand text wrapper */
+/* ================= BRAND TEXT ================= */
 
 .cla-brand-text {
   display: flex;
+
   flex-direction: column;
 
   justify-content: center;
@@ -88,12 +88,11 @@
 
   line-height: 1;
 
-  /* IMPORTANT */
   flex-shrink: 0;
 }
 
 
-/* Brand name */
+/* ================= BRAND NAME ================= */
 
 .cla-brand .brand-text {
   display: block;
@@ -111,7 +110,7 @@
 }
 
 
-/* Tagline */
+/* ================= TAGLINE ================= */
 
 .cla-brand .brand-tagline {
   display: block;
@@ -139,11 +138,6 @@
   display: flex;
   align-items: center;
 
-  /*
-    IMPORTANT:
-    Navigation gets remaining available space,
-    but cannot overlap the brand.
-  */
   flex: 1 1 auto;
   min-width: 0;
 
@@ -159,12 +153,6 @@
   display: flex;
 
   align-items: center;
-
-  /*
-    IMPORTANT:
-    Start navigation after the brand instead of
-    centering it over the brand.
-  */
   justify-content: flex-start;
 
   gap: 2px;
@@ -175,12 +163,11 @@
   white-space: nowrap;
 
   flex: 0 1 auto;
-
   min-width: 0;
 }
 
 
-/* Nav item */
+/* ================= NAV ITEM ================= */
 
 .cla-nav-links .nav-item {
   display: flex;
@@ -190,7 +177,7 @@
 }
 
 
-/* Nav link */
+/* ================= NAV LINK ================= */
 
 .cla-nav-links .nav-link {
   position: relative;
@@ -200,10 +187,6 @@
 
   height: 86px;
 
-  /*
-    Reduced horizontal padding slightly
-    to prevent crowding.
-  */
   padding: 0 8px !important;
 
   font-size: 0.98rem;
@@ -213,27 +196,29 @@
 
   white-space: nowrap;
 
-  transition: color 0.2s ease;
+  transition:
+    color 0.2s ease,
+    background-color 0.2s ease;
 
   flex-shrink: 0;
 }
 
 
-/* Hover */
+/* ================= NAV HOVER ================= */
 
 .cla-nav-links .nav-link:hover {
   color: #d97706;
 }
 
 
-/* Active */
+/* ================= ACTIVE LINK ================= */
 
 .cla-nav-links .nav-link.active {
   color: #d97706;
 }
 
 
-/* Active underline */
+/* ================= ACTIVE UNDERLINE ================= */
 
 .cla-nav-links .nav-link.active::after {
   content: "";
@@ -265,6 +250,10 @@
   border-radius: 6px;
 
   padding: 8px 0;
+
+  background: #ffffff;
+
+  z-index: 2000;
 }
 
 
@@ -275,6 +264,8 @@
   font-weight: 500;
 
   color: #0f172a;
+
+  white-space: normal;
 }
 
 
@@ -295,11 +286,6 @@
   align-items: center;
   justify-content: flex-end;
 
-  /*
-    IMPORTANT:
-    Action section always stays separate
-    from navigation.
-  */
   flex: 0 0 auto;
   flex-shrink: 0;
 
@@ -310,7 +296,7 @@
 
 
 /* =========================================================
-   PARTNER LOCKUP (updated: heading + both logos together)
+   PARTNER LOCKUP
    ========================================================= */
 
 .partner-lockup {
@@ -327,11 +313,12 @@
 }
 
 
-/* Vertical divider */
+/* =========================================================
+   PARTNER VERTICAL DIVIDER
+   ========================================================= */
 
 .partner-divider {
   width: 1px;
-
   height: 54px;
 
   background: #cbd5e1;
@@ -340,10 +327,13 @@
 }
 
 
-/* Wrapper holding heading + logo row */
+/* =========================================================
+   PARTNER CONTENT
+   ========================================================= */
 
 .partner-content {
   display: flex;
+
   flex-direction: column;
 
   align-items: center;
@@ -354,10 +344,14 @@
   padding: 0 12px;
 
   flex-shrink: 0;
+
+  min-width: 170px;
 }
 
 
-/* "Approved Training Partner of" heading */
+/* =========================================================
+   PARTNER HEADING
+   ========================================================= */
 
 .partner-heading {
   display: block;
@@ -371,13 +365,15 @@
 
   white-space: nowrap;
 
-  margin-bottom: 4px;
+  margin-bottom: 5px;
 
   text-align: center;
 }
 
 
-/* Row containing both logos side by side */
+/* =========================================================
+   PARTNER LOGOS ROW
+   ========================================================= */
 
 .partner-logos-row {
   display: flex;
@@ -385,38 +381,68 @@
   align-items: center;
   justify-content: center;
 
-  gap: 10px;
+  gap: 12px;
+
+  width: 100%;
+
+  min-height: 42px;
 
   flex-shrink: 0;
 }
 
 
-/* MSU logo */
+/* =========================================================
+   MEDHAVI SKILLS UNIVERSITY LOGO
+   ========================================================= */
+
+/*
+   IMPORTANT:
+   Keep the original image proportions.
+   Do NOT force the image to fill a fixed box.
+*/
 
 .msu-logo {
-  width: 58px;
+  width: 78px;
   height: 42px;
 
-  object-fit: contain;
-
-  display: block;
-}
-
-
-/* Skill India logo */
-
-.skill-india-logo {
-  width: 60px;
-  height: 40px;
+  max-width: 78px;
+  max-height: 42px;
 
   object-fit: contain;
+  object-position: center;
 
   display: block;
+
+  flex: 0 0 auto;
+
+  margin: 0;
 }
 
 
 /* =========================================================
-   APPLY BUTTON
+   SKILL INDIA LOGO
+   ========================================================= */
+
+.skill-india-logo {
+  width: 64px;
+  height: 42px;
+
+  max-width: 64px;
+  max-height: 42px;
+
+  object-fit: contain;
+  object-position: center;
+
+  display: block;
+
+  flex: 0 0 auto;
+
+  margin: 0;
+}
+
+
+/* =========================================================
+   APPLY BUTTON CONTAINER
    ========================================================= */
 
 .apply-container {
@@ -432,6 +458,10 @@
   min-width: 165px;
 }
 
+
+/* =========================================================
+   APPLY BUTTON
+   ========================================================= */
 
 .apply-btn {
   min-width: 165px;
@@ -457,6 +487,8 @@
 }
 
 
+/* ================= APPLY ICON ================= */
+
 .apply-btn i {
   font-size: 1rem;
 
@@ -469,13 +501,14 @@
 }
 
 
-/* Limited seats */
+/* =========================================================
+   LIMITED SEATS TEXT
+   ========================================================= */
 
 .limited-seats-text {
   margin-top: 4px;
 
   font-size: 0.58rem;
-
   font-weight: 700;
 
   color: #64748b;
@@ -515,24 +548,58 @@
     padding-right: 18px;
   }
 
-  /*
-    Keep brand completely separate from navigation.
-  */
+
   .cla-navbar-collapse {
     margin-left: 24px;
   }
 
+
   .cla-nav-links {
     gap: 2px;
   }
+
 
   .cla-nav-links .nav-link {
     padding-left: 8px !important;
     padding-right: 8px !important;
   }
 
+
   .cla-header-actions {
     margin-left: 12px;
+  }
+
+
+  /* Larger partner logo area on wide screens */
+
+  .partner-content {
+    min-width: 185px;
+
+    padding-left: 12px;
+    padding-right: 12px;
+  }
+
+
+  .partner-logos-row {
+    gap: 12px;
+  }
+
+
+  .msu-logo {
+    width: 82px;
+    height: 44px;
+
+    max-width: 82px;
+    max-height: 44px;
+  }
+
+
+  .skill-india-logo {
+    width: 66px;
+    height: 42px;
+
+    max-width: 66px;
+    max-height: 42px;
   }
 
 }
@@ -549,13 +616,16 @@
     padding-right: 15px;
   }
 
+
   .cla-brand .brand-text {
     font-size: 1.18rem;
   }
 
+
   .cla-brand .brand-tagline {
     font-size: 0.58rem;
   }
+
 
   .cla-logo {
     width: 44px;
@@ -564,16 +634,16 @@
     margin-right: 9px;
   }
 
-  /*
-    Slightly smaller gap between brand and menu.
-  */
+
   .cla-navbar-collapse {
     margin-left: 12px;
   }
 
+
   .cla-nav-links {
     gap: 0;
   }
+
 
   .cla-nav-links .nav-link {
     padding-left: 6px !important;
@@ -582,27 +652,74 @@
     font-size: 0.86rem;
   }
 
+
   .cla-nav-links .nav-link.active::after {
     left: 6px;
     right: 6px;
   }
 
+
   .cla-header-actions {
     margin-left: 7px;
   }
+
+
+  /* ================= PARTNER AREA ================= */
 
   .partner-lockup {
     margin-right: 7px;
   }
 
+
   .partner-content {
-    padding: 0 8px;
+    min-width: 165px;
+
+    padding-left: 7px;
+    padding-right: 7px;
   }
+
+
+  .partner-heading {
+    font-size: 0.58rem;
+
+    margin-bottom: 4px;
+  }
+
+
+  .partner-logos-row {
+    gap: 8px;
+  }
+
+
+  /* MSU */
+
+  .msu-logo {
+    width: 70px;
+    height: 40px;
+
+    max-width: 70px;
+    max-height: 40px;
+  }
+
+
+  /* Skill India */
+
+  .skill-india-logo {
+    width: 58px;
+    height: 38px;
+
+    max-width: 58px;
+    max-height: 38px;
+  }
+
+
+  /* ================= APPLY ================= */
 
   .apply-container,
   .apply-btn {
     min-width: 145px;
   }
+
 
   .apply-btn {
     font-size: 0.82rem;
@@ -622,6 +739,7 @@
     min-height: 76px;
   }
 
+
   .cla-navbar-container {
     min-height: 76px;
 
@@ -629,9 +747,11 @@
     padding-right: 12px;
   }
 
+
   .cla-brand {
     height: 76px;
   }
+
 
   .cla-logo {
     width: 40px;
@@ -640,25 +760,28 @@
     margin-right: 7px;
   }
 
+
   .cla-brand .brand-text {
     font-size: 1rem;
   }
 
+
   .cla-brand .brand-tagline {
     font-size: 0.51rem;
+
     letter-spacing: 0.7px;
   }
 
-  /*
-    Keep menu separated from brand.
-  */
+
   .cla-navbar-collapse {
     margin-left: 8px;
   }
 
+
   .cla-nav-links {
     gap: 0;
   }
+
 
   .cla-nav-links .nav-link {
     height: 76px;
@@ -669,6 +792,7 @@
     font-size: 0.73rem;
   }
 
+
   .cla-nav-links .nav-link.active::after {
     left: 4px;
     right: 4px;
@@ -676,13 +800,60 @@
     bottom: 8px;
   }
 
+
+  /* =======================================================
+     PARTNER LOGOS
+     ======================================================= */
+
   /*
-    Hide partner logos if screen is too narrow.
-    This prevents the menu from overlapping.
+     Keep partner section visible but compact.
+     The MSU logo is reduced proportionally.
   */
+
   .partner-lockup {
-    display: none !important;
+    margin-right: 5px;
   }
+
+
+  .partner-content {
+    min-width: 135px;
+
+    padding-left: 5px;
+    padding-right: 5px;
+  }
+
+
+  .partner-heading {
+    font-size: 0.48rem;
+
+    margin-bottom: 3px;
+  }
+
+
+  .partner-logos-row {
+    gap: 5px;
+  }
+
+
+  .msu-logo {
+    width: 58px;
+    height: 34px;
+
+    max-width: 58px;
+    max-height: 34px;
+  }
+
+
+  .skill-india-logo {
+    width: 48px;
+    height: 32px;
+
+    max-width: 48px;
+    max-height: 32px;
+  }
+
+
+  /* ================= HEADER ACTIONS ================= */
 
   .cla-header-actions {
     height: 76px;
@@ -690,10 +861,12 @@
     margin-left: 5px;
   }
 
+
   .apply-container,
   .apply-btn {
     min-width: 120px;
   }
+
 
   .apply-btn {
     height: 38px;
@@ -702,6 +875,7 @@
 
     font-size: 0.72rem;
   }
+
 
   .limited-seats-text {
     font-size: 0.42rem;
@@ -721,30 +895,32 @@
     min-height: 76px;
   }
 
+
   .cla-navbar-container {
     min-height: 76px;
 
     padding-left: 15px;
     padding-right: 15px;
 
-    /*
-      Mobile uses normal wrapping.
-    */
     flex-wrap: wrap;
   }
+
 
   .cla-brand {
     height: 76px;
   }
+
 
   .cla-logo {
     width: 43px;
     height: 55px;
   }
 
+
   .cla-brand .brand-text {
     font-size: 1.15rem;
   }
+
 
   .cla-brand .brand-tagline {
     font-size: 0.58rem;
@@ -777,10 +953,6 @@
     order: 3;
   }
 
-
-  /*
-    Bootstrap .show
-  */
 
   .cla-navbar-collapse.show {
     display: flex;
@@ -894,6 +1066,11 @@
   }
 
 
+  /*
+     Partner logos are hidden on mobile.
+     This prevents header crowding.
+  */
+
   .partner-lockup {
     display: none !important;
   }
@@ -928,6 +1105,7 @@
     padding-right: 10px;
   }
 
+
   .cla-logo {
     width: 38px;
     height: 50px;
@@ -935,11 +1113,13 @@
     margin-right: 7px;
   }
 
+
   .cla-brand .brand-text {
     font-size: 0.95rem;
 
     letter-spacing: 0;
   }
+
 
   .cla-brand .brand-tagline {
     font-size: 0.48rem;
@@ -963,13 +1143,16 @@
     height: 46px;
   }
 
+
   .cla-brand .brand-text {
     font-size: 0.82rem !important;
   }
 
+
   .cla-brand .brand-tagline {
     font-size: 0.43rem !important;
   }
+
 
   .navbar-toggler {
     padding: 0.35rem !important;
