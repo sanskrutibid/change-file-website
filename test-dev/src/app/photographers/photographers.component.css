@@ -780,12 +780,14 @@
 
 .card-item .photo-circle-horizontal {
   width: 90px;
+
   height: 90px;
 }
 
 
 .card-item .photo-circle-horizontal img {
   width: 90px !important;
+
   height: 90px !important;
 
   object-fit: cover;
@@ -848,6 +850,7 @@
 
   .photo-circle-horizontal {
     width: 82px;
+
     height: 82px;
 
     flex-basis: 82px;
@@ -855,6 +858,7 @@
 
   .photo-circle-horizontal img {
     width: 82px !important;
+
     height: 82px !important;
   }
 
@@ -897,6 +901,7 @@
 
   .photo-circle-horizontal {
     width: 85px;
+
     height: 85px;
 
     flex-basis: 85px;
@@ -904,6 +909,7 @@
 
   .photo-circle-horizontal img {
     width: 85px !important;
+
     height: 85px !important;
   }
 
@@ -961,6 +967,7 @@
 
   .photo-circle-horizontal {
     width: 78px;
+
     height: 78px;
 
     flex-basis: 78px;
@@ -968,6 +975,7 @@
 
   .photo-circle-horizontal img {
     width: 78px !important;
+
     height: 78px !important;
   }
 
@@ -1020,6 +1028,7 @@
     min-height: 360px;
 
     padding-top: 110px;
+
     padding-bottom: 55px;
   }
 
@@ -1064,6 +1073,7 @@
 
   .photo-circle-horizontal {
     width: 65px;
+
     height: 65px;
 
     flex-basis: 65px;
@@ -1071,6 +1081,7 @@
 
   .photo-circle-horizontal img {
     width: 65px !important;
+
     height: 65px !important;
   }
 
@@ -1125,6 +1136,7 @@
 
   .photo-circle-horizontal {
     width: 58px;
+
     height: 58px;
 
     flex-basis: 58px;
@@ -1132,6 +1144,7 @@
 
   .photo-circle-horizontal img {
     width: 58px !important;
+
     height: 58px !important;
   }
 
@@ -1149,6 +1162,7 @@
 
   .btn-white-outline {
     padding-left: 9px !important;
+
     padding-right: 9px !important;
 
     font-size: 0.6rem;

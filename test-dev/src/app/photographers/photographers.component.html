@@ -216,10 +216,17 @@
 
                   <div class="member-details flex-grow-1">
 
+                    <!-- =================================================
+                         UPDATED:
+                         STUDENT NAME IS NOT DISPLAYED.
+                         INITIALS ONLY ARE DISPLAYED.
+                         Example: Rohan Singh -> RS
+                         ================================================= -->
+
                     <h5
                       class="fw-bold mb-1 text-navy-main">
 
-                      {{ member.name || member.initials }}
+                      {{ member.initials }}
 
                     </h5>
 
@@ -281,9 +288,15 @@
 
                 <div>
 
+                  <!-- =================================================
+                       UPDATED:
+                       STUDENT NAME IS NOT DISPLAYED.
+                       INITIALS ONLY ARE DISPLAYED.
+                       ================================================= -->
+
                   <h5 class="fw-bold mb-1">
 
-                    {{ member.name || member.initials }}
+                    {{ member.initials }}
 
                   </h5>
 
@@ -386,9 +399,13 @@
         *ngIf="filteredPhotographers.length > 0">
 
         Showing
+
         <strong>{{ displayedPhotographers.length }}</strong>
+
         of
+
         <strong>{{ filteredPhotographers.length }}</strong>
+
         crew members
 
       </div>
@@ -407,11 +424,15 @@
         </i>
 
         <h5 class="fw-bold text-navy">
+
           No seafarers found
+
         </h5>
 
         <p class="text-muted">
+
           Try adjusting your search query or filter settings.
+
         </p>
 
       </div>
@@ -574,6 +595,12 @@
                 <div
                   class="member-details flex-grow-1">
 
+                  <!-- =================================================
+                       UPDATED:
+                       STUDENT NAME IS NOT DISPLAYED.
+                       INITIALS ONLY ARE DISPLAYED.
+                       ================================================= -->
+
                   <h5
                     class="fw-bold mb-1 text-navy-main"
                     style="
@@ -581,7 +608,7 @@
                       color: var(--primary-navy);
                     ">
 
-                    {{ member.name || member.initials }}
+                    {{ member.initials }}
 
                   </h5>
 
@@ -647,6 +674,12 @@
 
                 <div>
 
+                  <!-- =================================================
+                       UPDATED:
+                       STUDENT NAME IS NOT DISPLAYED.
+                       INITIALS ONLY ARE DISPLAYED.
+                       ================================================= -->
+
                   <h5
                     class="fw-bold mb-1"
                     style="
@@ -654,7 +687,7 @@
                       color: var(--primary-navy);
                     ">
 
-                    {{ member.name || member.initials }}
+                    {{ member.initials }}
 
                   </h5>
 
@@ -756,11 +789,15 @@
         </i>
 
         <h5 class="fw-bold text-navy">
+
           No seafarers found
+
         </h5>
 
         <p class="text-muted">
+
           Try adjusting your search query or filter settings.
+
         </p>
 
       </div>

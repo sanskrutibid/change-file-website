@@ -701,6 +701,7 @@ export class PhotographersComponent
       item.initials ||
       item.name ||
       index
+      
     );
 
   }
