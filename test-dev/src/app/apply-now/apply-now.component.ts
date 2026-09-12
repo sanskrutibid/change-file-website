@@ -965,26 +965,34 @@ export class ApplyNowComponent implements OnInit {
 
       const applicationData = {
 
-        fullName:
-          this.personalForm.value.fullName,
+        // ⚠️ server.js checks `personalInfo?.fullName` and
+        // `personalInfo?.email` (see /api/payu-initiate) — these
+        // MUST be nested under `personalInfo`, not sent flat, or
+        // the backend responds with "Missing required fields".
+        personalInfo: {
 
-        email:
-          this.personalForm.value.email,
+          fullName:
+            this.personalForm.value.fullName,
 
-        phone:
-          this.personalForm.value.phone,
+          email:
+            this.personalForm.value.email,
 
-        city:
-          this.personalForm.value.city,
+          phone:
+            this.personalForm.value.phone,
 
-        dob:
-          this.personalForm.value.dob,
+          city:
+            this.personalForm.value.city,
 
-        heardFrom:
-          this.personalForm.value.heardFrom,
+          dob:
+            this.personalForm.value.dob,
 
-        preferredContact:
-          this.preferredContactArray.value,
+          heardFrom:
+            this.personalForm.value.heardFrom,
+
+          preferredContact:
+            this.preferredContactArray.value
+
+        },
 
         course:
           this.selectedCourse,
